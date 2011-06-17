@@ -1,0 +1,6 @@
+project Delirium is
+
+   for Main use ("Produce_Corporate_Bullshit.adb");
+
+end Delirium;
+
