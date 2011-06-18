@@ -133,7 +133,7 @@ package body Corporate_Bullshit is
   begin
     case p is
       when singular =>
-        case R13 is
+        case R15 is
           when 1  => return "steering committee";
           when 2  => return "group";
           when 3  => return "project manager";
@@ -144,6 +144,7 @@ package body Corporate_Bullshit is
           when 8  => return "powerful champion";
           when 9  => return "thought leader"; -- Thanks Andy!
           when 10 => return "gatekeeper"; -- ME - UWM 2010
+          when 11 => return "resource";   -- no, we're not people, we're "resources"
           when others =>
             return Boss;
         end case;
@@ -174,7 +175,7 @@ package body Corporate_Bullshit is
 
   function Thing_adjective return String is
   begin
-    case R80 is
+    case R85 is
       when 1  => return "efficient";
       when 2  => return "strategic";
       when 3  => return "constructive";
@@ -265,6 +266,12 @@ package body Corporate_Bullshit is
       when 78 => return "coordinated";
       when 79 => return "aligned";
       when 80 => return "enhanced"; -- ME 15-Jun-2011
+      -- Ludovic:
+      when 81 => return "replacement";
+      when 82 => return "industry-standard";
+      when 83 => return "accepted";
+      when 84 => return "agreed-upon";
+      when 85 => return "target";
     end case;
   end Thing_adjective;
 
@@ -296,7 +303,7 @@ package body Corporate_Bullshit is
 
     function Inner return String is -- can be made plural with 's'
     begin
-      case R92 is
+      case R93 is
         when 1 => return "mission";
         when 2 => return "vision";
         when 3 => return "guideline";
@@ -360,7 +367,7 @@ package body Corporate_Bullshit is
         when 60 => return "strategy formulation";
         when 61 => return "decision";
         when 62 => return "enhanced data capture";
-        when 63 => return "SWOT analysis";
+        when 63 => return "energy";
         when 64 => return "plan";
         when 65 => return "initiative";
         when 66 => return "priority";
@@ -396,13 +403,15 @@ package body Corporate_Bullshit is
         -- Andy
         when 91 => return "internal client";
         when 92 => return "consistency";
+        --
+        when 93 => return "on-boarding process";
       end case;
     end Inner;
 
   begin
     case p is
       when singular =>
-        case R125 is
+        case R127 is
           when 1  => return Timeless_event;
           when 2  => return "efficiency";
           when 3  => return "team building";
@@ -476,6 +485,8 @@ package body Corporate_Bullshit is
           when 62 => return "effectiveness";
           when 63 => return "customer experience";
           when 64 => return "centerpiece";
+          --
+          when 65 => return "SWOT analysis";
           when others => return Inner;
         end case;
       when plural =>
@@ -483,6 +494,10 @@ package body Corporate_Bullshit is
           when 1  => return "key target markets";
           when 2  => return "opportunities";
           when 3  => return "style guidelines";
+          when 4  => return "key performance indicators";
+          when 5  => return "metrics";
+          when 6  => return "measures";
+          when 7  => return "measurements";
           when 16 => return "intricacies"; -- Georges Modol [!! negative word]
           when 17 => return "philosophies";
           -- Directly pasted from a management presentation (2009)
@@ -531,7 +546,10 @@ package body Corporate_Bullshit is
     end case;
   end Eventual_Adverb;
 
+  function Add_random_Article(p: Plurality; to: String) return String;
+
   function Eventual_postfixed_Adverb return String is
+    P : constant Plurality := Random_Plural;
   begin
     case R120 is
       when 1 => return " going forward";
@@ -542,9 +560,17 @@ package body Corporate_Bullshit is
       when 5 => return " from the get-go";
       when 6 => return " at the end of the day";
       when 7 => return " throughout the organization";
+      when 8 => return " as part of the plan";
+      when 9 => return " by thinking outside of the box";
+      when 10 => return " using " & Add_Random_Article (P, Thing (p));
+      when 11 => return " by leveraging " & Add_Random_Article (P, Thing (p));
+      when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (p));
       when others => return "";
     end case;
   end Eventual_postfixed_Adverb;
+
+  vowel: constant array(Character) of Boolean:=
+     ('a'|'e'|'i'|'o'|'u' => True, others => False);
 
   function Build_plural_verb(verb: String; p: Plurality) return String is
     last: Natural;
@@ -559,10 +585,22 @@ package body Corporate_Bullshit is
       when plural   => return verb;
       when singular =>
         case verb(last) is
-          when 'e'|'r'|'t'|'y' =>
-            return verb(verb'First..last) & 's' & verb(last+1..verb'Last);
-          when others =>
+          when 'o' | 's' | 'z' =>
             return verb(verb'First..last) & "es" & verb(last+1..verb'Last);
+          when 'h' =>
+            if Verb (Last - 1) = 'c' then -- catch -> catches
+              return verb(verb'First..last) & "es" & verb(last+1..verb'Last);
+            else -- plough -> ploughs
+              return verb(verb'First..last) & 's' & verb(last+1..verb'Last);
+            end if;
+          when 'y' =>
+            if Vowel (Verb (Last - 1)) then -- ploy -> ploys
+              return verb(verb'First..last) & 's' & verb(last+1..verb'Last);
+            else -- try -> tries
+              return verb(verb'First..Last - 1) & "ies" & verb(last+1..verb'Last);
+            end if;
+          when others =>
+            return verb(verb'First..last) & 's' & verb(last+1..verb'Last);
         end case;
     end case;
   end Build_plural_verb;
@@ -615,7 +653,7 @@ package body Corporate_Bullshit is
   function Thing_verb_having_thing_complement(p: Plurality) return String is
     function Inner return String is
     begin
-      case R12 is
+      case R15 is
         when 1  => return "streamline";
         when 2  => return "interact with";
         when 3  => return "boost";
@@ -628,6 +666,9 @@ package body Corporate_Bullshit is
         when 10 => return "empower";
         when 11 => return "enable";
         when 12 => return "prioritize";
+        when 13 => return "transfer";
+        when 14 => return "drive";
+        when 15 => return "result in";
       end case;
     end Inner;
   begin
@@ -639,7 +680,7 @@ package body Corporate_Bullshit is
   function Thing_verb_having_person_complement(p: Plurality) return String is
     function Inner return String is
     begin
-      case R9 is
+      case R10 is
         when 1 => return "motivate";
         when 2 => return "target";
         when 3 => return "enable";
@@ -650,6 +691,8 @@ package body Corporate_Bullshit is
         -- BBC office-speak phrases
         when 8 => return "incentivise";
         when 9 => return "inspire";
+        --
+        when 10 => return "transfer";
       end case;
     end Inner;
   begin
@@ -686,9 +729,6 @@ package body Corporate_Bullshit is
   begin
     return Build_plural_verb(Inner,p);
   end Person_verb_and_complement;
-
-  vowel: constant array(Character) of Boolean:=
-     ('a'|'e'|'i'|'o'|'u' => True, others => False);
 
   function Add_indefinite_Article(p: Plurality; to: String) return String is
   begin

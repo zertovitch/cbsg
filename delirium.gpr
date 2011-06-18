@@ -1,6 +1,10 @@
+-- This is a GNAT, GCC or GNAT Programming Studio (GPS) project file
+-- for the project Corporate Bullshit Generator ( http://sf.net/projects/cbsg/ )
+-- Build me with "gnatmake -P delirium.gpr", or open me with GPS
+--
 project Delirium is
 
-   for Main use ("Produce_Corporate_Bullshit.adb");
+   for Main use ("produce_corporate_bullshit.adb");
 
 end Delirium;
 
