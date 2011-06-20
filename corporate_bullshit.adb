@@ -558,7 +558,7 @@ package body Corporate_Bullshit is
   function Eventual_postfixed_Adverb return String is
     P : constant Plurality := Random_Plural;
   begin
-    case R120 is
+    case R125 is
       when 1 => return " going forward";
       when 2 => return " within the industry";
       when 3 => return " across the board";
@@ -573,6 +573,7 @@ package body Corporate_Bullshit is
       when 11 => return " by leveraging " & Add_Random_Article (P, Thing (p));
       when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (p));
       when 13 => return " within the " & Matrix_or_so;
+      when 14 => return " across the " & Make_eventual_plural(Matrix_or_so, plural);
       when others => return "";
     end case;
   end Eventual_postfixed_Adverb;
