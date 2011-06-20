@@ -11,6 +11,7 @@
 --        Mili Eppler, Nigel Findlater, Emilio Nualart,
 --        Bernhard Maertl, Paul Della Marta, Georges Modol,
 --        Andrew Fox, Kurt Dickmann
+--  - high-level, responsive empowerments by Ludovic Brenta
 --
 --  Legal licensing note:
 --
@@ -165,17 +166,17 @@ package body Corporate_Bullshit is
   function Matrix_or_so return String is
   begin
     case R3 is
-      when 1 => return "matrix";
-      when 2 => return "cube";
-      when 3 => return "silo";
+      when 1 => return "silo";   -- classic 1-dimension units in organizations
+      when 2 => return "matrix"; -- 2nd dimension, with dotted lines
+      when 3 => return "cube";   -- 3rd dimension (at last then, the company has become totally dysfunctional)
     end case;
-  end;
+  end Matrix_or_so;
 
   -- Things --
 
   function Thing_adjective return String is
   begin
-    case R85 is
+    case R86 is
       when 1  => return "efficient";
       when 2  => return "strategic";
       when 3  => return "constructive";
@@ -272,6 +273,8 @@ package body Corporate_Bullshit is
       when 83 => return "accepted";
       when 84 => return "agreed-upon";
       when 85 => return "target";
+      --
+      when 86 => return "well-communicated";
     end case;
   end Thing_adjective;
 
@@ -303,7 +306,7 @@ package body Corporate_Bullshit is
 
     function Inner return String is -- can be made plural with 's'
     begin
-      case R93 is
+      case R94 is
         when 1 => return "mission";
         when 2 => return "vision";
         when 3 => return "guideline";
@@ -403,8 +406,10 @@ package body Corporate_Bullshit is
         -- Andy
         when 91 => return "internal client";
         when 92 => return "consistency";
-        --
+        -- Ludovic
         when 93 => return "on-boarding process";
+        --
+        when 94 => return "dotted line";
       end case;
     end Inner;
 
