@@ -165,11 +165,12 @@ package body Corporate_Bullshit is
 
   function Matrix_or_so return String is
   begin
-    case R4 is
-      when 1 => return "silo";   -- classic 1-dimension units in organizations
-      when 2 => return "matrix"; -- 2nd dimension, with dotted lines
-      when 3 => return "cube";   -- 3rd dimension (at last then, the company has become totally dysfunctional)
-      when 4 => return "organization"; -- a bit flat, but flashy combined with "within the "
+    case R12 is
+      when 1.. 2 => return "organization"; -- a bit flat, but flashy combined with "within the "
+      when 3.. 6 => return "silo";   -- classic 1-dimension units in organizations
+      when 7..10 => return "matrix"; -- 2nd dimension, with dotted lines
+      when 11    => return "cube";   -- 3rd dimension (Converium); at last then, the company has become totally dysfunctional)
+      when 12    => return "sphere"; -- another esoteric 3-dimensional structure - ME 20-Jun-2011
     end case;
   end Matrix_or_so;
 
