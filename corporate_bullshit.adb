@@ -72,7 +72,7 @@ package body Corporate_Bullshit is
         when 1 => return "Managing ";
         when others => return "";
       end case;
-    end;
+    end Managing;
 
     function Title return String is
       function Vice return String is
@@ -97,7 +97,7 @@ package body Corporate_Bullshit is
         when 1 => return "Senior ";
         when others => return "";
       end case;
-    end;
+    end Age;
 
     function Exec return String is
     begin
@@ -105,7 +105,7 @@ package body Corporate_Bullshit is
         when 1 => return "Executive ";
         when others => return "";
       end case;
-    end;
+    end Exec;
 
     function Department return String is
     begin
@@ -117,7 +117,7 @@ package body Corporate_Bullshit is
         when 5 => return "Operations";
         when 6 => return "Management Office";
       end case;
-    end;
+    end Department;
 
   begin
     case R4 is
@@ -165,10 +165,11 @@ package body Corporate_Bullshit is
 
   function Matrix_or_so return String is
   begin
-    case R3 is
+    case R4 is
       when 1 => return "silo";   -- classic 1-dimension units in organizations
       when 2 => return "matrix"; -- 2nd dimension, with dotted lines
       when 3 => return "cube";   -- 3rd dimension (at last then, the company has become totally dysfunctional)
+      when 4 => return "organization"; -- a bit flat, but flashy combined with "within the "
     end case;
   end Matrix_or_so;
 
@@ -570,6 +571,7 @@ package body Corporate_Bullshit is
       when 10 => return " using " & Add_Random_Article (P, Thing (p));
       when 11 => return " by leveraging " & Add_Random_Article (P, Thing (p));
       when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (p));
+      when 13 => return " within the " & Matrix_or_so;
       when others => return "";
     end case;
   end Eventual_postfixed_Adverb;
@@ -757,7 +759,7 @@ package body Corporate_Bullshit is
       when 7..15 => return Add_indefinite_Article(p,to);
       -- Indefinite is preferred in BS language.
     end case;
-  end;
+  end Add_random_Article;
 
   function Thing_verb_and_ending(p: Plurality) return String is
     compl_sp: constant Plurality:= Random_plural;
@@ -784,7 +786,7 @@ package body Corporate_Bullshit is
       when 4 => return "controlling should";
       when 5 => return "we must activate the " & Matrix_or_so & " to";
     end case;
-  end;
+  end Faukon;
 
   function Proposition return String is
     sp1, sp2: constant Plurality:= Random_plural;
@@ -831,14 +833,14 @@ package body Corporate_Bullshit is
       when 22..25 => return Proposition & ", while " & Proposition;
       when 26     => return Proposition & "; in the same time " & Proposition;
     end case;
-  end;
+  end Articulated_propositions;
 
   function Sentence return String is
     ap: String:= Articulated_propositions;
   begin
     ap(1):= To_Upper(ap(1));
     return ap & ". ";
-  end;
+  end Sentence;
 
   function Sentences(possible_dialog_mark: String) return String is
   begin
@@ -870,7 +872,7 @@ package body Corporate_Bullshit is
 
   function Financial_Report return String is
   begin
-    return Sentences(""); -- !! charts !!
+    return Sentences(""); -- !! charts (especially, pie charts) !!
   end Financial_Report;
 
 end Corporate_Bullshit;
