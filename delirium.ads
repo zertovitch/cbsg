@@ -38,13 +38,13 @@ package Delirium is
 
    -- Some categories
 
-   type Plurality is (singular, plural);
+   type Plurality is (Singular, Plural);
 
-   function Random_plural return Plurality;
+   function Random_Plural return Plurality;
 
-   function Make_eventual_plural(s: String; p: Plurality) return String;
+   function Make_Eventual_Plural (S: String; P: Plurality) return String;
 
-   type Blending is (bullshit, normal, custom);
+   type Blending is (Bullshit, Normal, Custom);
 
    -- All the following T* and R* is to make the typing in the random
    -- recursive grammar the shortest possible.

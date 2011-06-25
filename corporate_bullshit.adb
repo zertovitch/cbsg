@@ -15,7 +15,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006..2011
+--  Copyright (c) Gautier de Montmollin 2006 .. 2011
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -128,17 +128,17 @@ package body Corporate_Bullshit is
       end case;
    end Boss;
 
-   function Thing_atom(p: Plurality) return String;
+   function Thing_Atom (P: Plurality) return String;
 
-   function Person(p: Plurality) return String is
+   function Person (P: Plurality) return String is
    begin
-      case p is
-         when singular =>
+      case P is
+         when Singular =>
             case R15 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
-               when 4  => return Thing_atom(Random_plural) & " champion";
+               when 4  => return Thing_Atom (Random_Plural) & " champion";
                when 5  => return "community";
                when 6  => return "sales manager";
                when 7  => return "enabler"; -- also thing
@@ -149,7 +149,7 @@ package body Corporate_Bullshit is
                when others =>
                   return Boss;
             end case;
-         when plural =>
+         when Plural =>
             case R8 is
                when 1  => return "key people";
                when 2  => return "human resources";
@@ -163,20 +163,20 @@ package body Corporate_Bullshit is
       end case;
    end Person;
 
-   function Matrix_or_so return String is
+   function Matrix_Or_So return String is
    begin
       case R12 is
-         when 1.. 2 => return "organization"; -- a bit flat, but flashy combined with "within the "
-         when 3.. 6 => return "silo";   -- classic 1-dimension units in organizations
-         when 7..10 => return "matrix"; -- 2nd dimension, with dotted lines
+         when 1 .. 2 => return "organization"; -- a bit flat, but flashy combined with "within the "
+         when 3 .. 6 => return "silo";   -- classic 1-dimension units in organizations
+         when 7 .. 10 => return "matrix"; -- 2nd dimension, with dotted lines
          when 11    => return "cube";   -- 3rd dimension (Converium); at last then, the company has become totally dysfunctional)
          when 12    => return "sphere"; -- another esoteric 3-dimensional structure - ME 20-Jun-2011
       end case;
-   end Matrix_or_so;
+   end Matrix_Or_So;
 
    -- Things --
 
-   function Thing_adjective return String is
+   function Thing_Adjective return String is
    begin
       case R86 is
          when 1  => return "efficient";
@@ -278,9 +278,9 @@ package body Corporate_Bullshit is
             --
          when 86 => return "well-communicated";
       end case;
-   end Thing_adjective;
+   end Thing_Adjective;
 
-   function Timeless_event return String is
+   function Timeless_Event return String is
    begin
       case R4 is
          when 1 => return "kick-off";
@@ -288,7 +288,7 @@ package body Corporate_Bullshit is
          when 3 => return "client event";
          when 4 => return "quarter results";
       end case;
-   end Timeless_event;
+   end Timeless_Event;
 
    function Growth return String is
       function Adjective return String is
@@ -304,7 +304,7 @@ package body Corporate_Bullshit is
       return Adjective & " growth";
    end Growth;
 
-   function Thing_atom(p: Plurality) return String is
+   function Thing_Atom (P: Plurality) return String is
 
       function Inner return String is -- can be made plural with 's'
       begin
@@ -314,7 +314,7 @@ package body Corporate_Bullshit is
             when 3 => return "guideline";
             when 4 => return "roadmap";
             when 5 => return "timeline";
-            when 6 => return Matrix_or_so;
+            when 6 => return Matrix_Or_So;
             when 7 => return "win-win solution";
             when 8 => return "baseline starting point";
             when 9 => return "sign-off";
@@ -416,10 +416,10 @@ package body Corporate_Bullshit is
       end Inner;
 
    begin
-      case p is
-         when singular =>
+      case P is
+         when Singular =>
             case R127 is
-               when 1  => return Timeless_event;
+               when 1  => return Timeless_Event;
                when 2  => return "efficiency";
                when 3  => return "team building";
                when 4  => return "focus";
@@ -496,7 +496,7 @@ package body Corporate_Bullshit is
                when 65 => return "SWOT analysis";
                when others => return Inner;
             end case;
-         when plural =>
+         when Plural =>
             case R80 is
                when 1  => return "key target markets";
                when 2  => return "opportunities";
@@ -517,20 +517,20 @@ package body Corporate_Bullshit is
                when 22 => return "interpersonal skills";
                   -- UWM 2010
                when 23 => return "soft cycle issues"; -- [!! negative word]
-               when others => return Make_eventual_plural(Inner, plural);
+               when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
-   end Thing_atom;
+   end Thing_Atom;
 
-   function Thing(p: Plurality) return String is
+   function Thing (P: Plurality) return String is
    begin
       case R100 is
-         when  1.. 9 => return Thing_adjective & ", " &
-            Thing_adjective & ", " & Thing_atom(p);
-         when 10..14 => return Thing_adjective & " and " &
-            Thing_adjective & ' ' & Thing_atom(p);
-         when 15..70 => return Thing_adjective & ' ' & Thing_atom(p);
-         when others => return Thing_atom(p);
+         when  1 .. 9 => return Thing_Adjective & ", " &
+            Thing_Adjective & ", " & Thing_Atom (P);
+         when 10 .. 14 => return Thing_Adjective & " and " &
+            Thing_Adjective & ' ' & Thing_Atom (P);
+         when 15 .. 70 => return Thing_Adjective & ' ' & Thing_Atom (P);
+         when others => return Thing_Atom (P);
       end case;
    end Thing;
 
@@ -553,9 +553,9 @@ package body Corporate_Bullshit is
       end case;
    end Eventual_Adverb;
 
-   function Add_random_Article(p: Plurality; to: String) return String;
+   function Add_Random_Article (P: Plurality; To: String) return String;
 
-   function Eventual_postfixed_Adverb return String is
+   function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
       case R125 is
@@ -569,52 +569,52 @@ package body Corporate_Bullshit is
          when 7 => return " throughout the organization";
          when 8 => return " as part of the plan";
          when 9 => return " by thinking outside of the box";
-         when 10 => return " using " & Add_Random_Article (P, Thing (p));
-         when 11 => return " by leveraging " & Add_Random_Article (P, Thing (p));
-         when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (p));
-         when 13 => return " within the " & Matrix_or_so;
-         when 14 => return " across the " & Make_eventual_plural(Matrix_or_so, plural);
+         when 10 => return " using " & Add_Random_Article (P, Thing (P));
+         when 11 => return " by leveraging " & Add_Random_Article (P, Thing (P));
+         when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
+         when 13 => return " within the " & Matrix_Or_So;
+         when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
          when others => return "";
       end case;
-   end Eventual_postfixed_Adverb;
+   end Eventual_Postfixed_Adverb;
 
-   vowel: constant array(Character) of Boolean:=
+   Vowel: constant array (Character) of Boolean:=
      ('a'|'e'|'i'|'o'|'u' => True, others => False);
 
-   function Build_plural_verb(verb: String; p: Plurality) return String is
-      last: Natural;
+   function Build_Plural_Verb (Verb: String; P: Plurality) return String is
+      Last: Natural;
    begin
-      last:= verb'Last;
-      for i in reverse verb'First+1..verb'Last loop
-         if verb(i)=' ' then
-            last:= i-1;
+      Last:= Verb'Last;
+      for I in reverse Verb'First + 1 .. Verb'Last loop
+         if Verb (I) = ' ' then
+            Last := I - 1;
          end if;
       end loop;
-      case p is
-         when plural   => return verb;
-         when singular =>
-            case verb(last) is
+      case P is
+         when Plural   => return Verb;
+         when Singular =>
+            case Verb (Last) is
                when 'o' | 's' | 'z' =>
-                  return verb(verb'First..last) & "es" & verb(last+1..verb'Last);
+                  return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
                when 'h' =>
                   if Verb (Last - 1) = 'c' then -- catch -> catches
-                     return verb(verb'First..last) & "es" & verb(last+1..verb'Last);
+                     return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
                   else -- plough -> ploughs
-                     return verb(verb'First..last) & 's' & verb(last+1..verb'Last);
+                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
                   end if;
                when 'y' =>
                   if Vowel (Verb (Last - 1)) then -- ploy -> ploys
-                     return verb(verb'First..last) & 's' & verb(last+1..verb'Last);
+                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
                   else -- try -> tries
-                     return verb(verb'First..Last - 1) & "ies" & verb(last+1..verb'Last);
+                     return Verb (Verb'First .. Last - 1) & "ies" & Verb (Last+1 .. Verb'Last);
                   end if;
                when others =>
-                  return verb(verb'First..last) & 's' & verb(last+1..verb'Last);
+                  return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
             end case;
       end case;
-   end Build_plural_verb;
+   end Build_Plural_Verb;
 
-   function Person_verb_having_thing_complement(p: Plurality) return String is
+   function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
          case R31 is
@@ -654,12 +654,12 @@ package body Corporate_Bullshit is
          end case;
       end Inner;
    begin
-      return Build_plural_verb(Inner,p);
-   end Person_verb_having_thing_complement;
+      return Build_Plural_Verb (Inner,P);
+   end Person_Verb_Having_Thing_Complement;
 
    -- (thing) verb (thing)
 
-   function Thing_verb_having_thing_complement(p: Plurality) return String is
+   function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
          case R15 is
@@ -681,12 +681,12 @@ package body Corporate_Bullshit is
          end case;
       end Inner;
    begin
-      return Build_plural_verb(Inner,p);
-   end Thing_verb_having_thing_complement;
+      return Build_Plural_Verb (Inner,P);
+   end Thing_Verb_Having_Thing_Complement;
 
    -- (thing) verb (person)
 
-   function Thing_verb_having_person_complement(p: Plurality) return String is
+   function Thing_Verb_Having_Person_Complement (P: Plurality) return String is
       function Inner return String is
       begin
          case R10 is
@@ -705,10 +705,10 @@ package body Corporate_Bullshit is
          end case;
       end Inner;
    begin
-      return Build_plural_verb(Inner,p);
-   end Thing_verb_having_person_complement;
+      return Build_Plural_Verb (Inner,P);
+   end Thing_Verb_Having_Person_Complement;
 
-   function Person_verb_and_complement(p: Plurality) return String is
+   function Person_Verb_And_Complement (P: Plurality) return String is
       -- NB: this function produces an eventual complement after the verb, or
       -- no complement at all.
       function Inner return String is
@@ -736,48 +736,48 @@ package body Corporate_Bullshit is
          end case;
       end Inner;
    begin
-      return Build_plural_verb(Inner,p);
-   end Person_verb_and_complement;
+      return Build_Plural_Verb (Inner,P);
+   end Person_Verb_And_Complement;
 
-   function Add_indefinite_Article(p: Plurality; to: String) return String is
+   function Add_Indefinite_Article (P: Plurality; To: String) return String is
    begin
-      case p is
-         when singular =>
-            if vowel(to(to'First)) then
-               return "an " & to;
+      case P is
+         when Singular =>
+            if Vowel (To (To'First)) then
+               return "an " & To;
             else
-               return "a " & to;
+               return "a " & To;
             end if;
-         when plural =>
-            return to;
+         when Plural =>
+            return To;
       end case;
-   end Add_indefinite_Article;
+   end Add_Indefinite_Article;
 
-   function Add_random_Article(p: Plurality; to: String) return String is
+   function Add_Random_Article (P: Plurality; To: String) return String is
    begin
       case R15 is
-         when 1..2  => return "the " & to;
-         when 3..6  => return "our " & to;
-         when 7..15 => return Add_indefinite_Article(p,to);
+         when 1 .. 2  => return "the " & To;
+         when 3 .. 6  => return "our " & To;
+         when 7 .. 15 => return Add_Indefinite_Article (P,To);
             -- Indefinite is preferred in BS language.
       end case;
-   end Add_random_Article;
+   end Add_Random_Article;
 
-   function Thing_verb_and_ending(p: Plurality) return String is
-      compl_sp: constant Plurality:= Random_plural;
+   function Thing_Verb_And_Ending (P: Plurality) return String is
+      Compl_Sp: constant Plurality:= Random_Plural;
    begin
       case R101 is
-         when 1..55  =>
-            return Thing_verb_having_thing_complement(p) &
+         when 1 .. 55  =>
+            return Thing_Verb_Having_Thing_Complement (P) &
               ' ' &
-              Add_random_Article(compl_sp, Thing(compl_sp));
-         when 56..100 =>
-            return Thing_verb_having_person_complement(p) &
-              " the " & Person(compl_sp);
+              Add_Random_Article (Compl_Sp, Thing (Compl_Sp));
+         when 56 .. 100 =>
+            return Thing_Verb_Having_Person_Complement (P) &
+              " the " & Person (Compl_Sp);
          when 101 =>
-            return Build_plural_verb("add value",p);
+            return Build_Plural_Verb ("add value",P);
       end case;
-   end Thing_verb_and_ending;
+   end Thing_Verb_And_Ending;
 
    function Faukon return String is
    begin
@@ -786,95 +786,95 @@ package body Corporate_Bullshit is
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
          when 4 => return "controlling should";
-         when 5 => return "we must activate the " & Matrix_or_so & " to";
+         when 5 => return "we must activate the " & Matrix_Or_So & " to";
       end case;
    end Faukon;
 
    function Proposition return String is
-      sp1, sp2: constant Plurality:= Random_plural;
+      Sp1, Sp2: constant Plurality:= Random_Plural;
    begin
       case R100 is
-         when 1..5    => -- "We need to..."
+         when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
             Eventual_Adverb &
-            Person_verb_and_complement(plural) &
-            Eventual_postfixed_Adverb;
+            Person_Verb_And_Complement (Plural) &
+            Eventual_Postfixed_Adverb;
             -- infinitive written same as present plural
-         when 6..10    =>
+         when 6 .. 10    =>
             return
-              "the " & person(sp1) & ' ' &
+              "the " & Person (Sp1) & ' ' &
               Eventual_Adverb &
-              Person_verb_and_complement(sp1) &
-              Eventual_postfixed_Adverb;
-         when 11..60  => -- ** THING...
+              Person_Verb_And_Complement (Sp1) &
+              Eventual_Postfixed_Adverb;
+         when 11 .. 60  => -- ** THING...
             return
-            Add_random_Article(sp1, Thing(sp1)) & ' ' &
+            Add_Random_Article (Sp1, Thing (Sp1)) & ' ' &
             Eventual_Adverb &
-            Thing_verb_and_ending(sp1) &
-            Eventual_postfixed_Adverb;
-         when 61..100 => -- ** PERSON...
+            Thing_Verb_And_Ending (Sp1) &
+            Eventual_Postfixed_Adverb;
+         when 61 .. 100 => -- ** PERSON...
             return
-            "the " & person(sp1) & ' ' &
+            "the " & Person (Sp1) & ' ' &
             Eventual_Adverb &
-            Person_verb_having_thing_complement(sp1) &
+            Person_Verb_Having_Thing_Complement (Sp1) &
             ' ' &
-            Add_random_Article(sp2, Thing(sp2)) &
-            Eventual_postfixed_Adverb;
+            Add_Random_Article (Sp2, Thing (Sp2)) &
+            Eventual_Postfixed_Adverb;
       end case;
    end Proposition;
 
-   function Articulated_propositions return String is
+   function Articulated_Propositions return String is
    begin
       case R26 is
-         when 1..17  => return Proposition;
-         when 18     => return Proposition & "; this is why " & Proposition;
-         when 19     => return Proposition & "; nevertheless " & Proposition;
-         when 20     => return Proposition & ", whereas " & Proposition;
-         when 21     => return "our gut-feeling is that " & Proposition;
-         when 22..25 => return Proposition & ", while " & Proposition;
-         when 26     => return Proposition & "; in the same time " & Proposition;
+         when 1 .. 17  => return Proposition;
+         when 18       => return Proposition & "; this is why " & Proposition;
+         when 19       => return Proposition & "; nevertheless " & Proposition;
+         when 20       => return Proposition & ", whereas " & Proposition;
+         when 21       => return "our gut-feeling is that " & Proposition;
+         when 22 .. 25 => return Proposition & ", while " & Proposition;
+         when 26       => return Proposition & "; in the same time " & Proposition;
       end case;
-   end Articulated_propositions;
+   end Articulated_Propositions;
 
    function Sentence return String is
-      ap: String:= Articulated_propositions;
+      Ap: String:= Articulated_Propositions;
    begin
-      ap(1):= To_Upper(ap(1));
-      return ap & ". ";
+      Ap (1):= To_Upper (Ap (1));
+      return Ap & ". ";
    end Sentence;
 
-   function Sentences(possible_dialog_mark: String) return String is
+   function Sentences (Possible_Dialog_Mark: String) return String is
    begin
       case R40 is
-         when 1      => return Sentence;
-         when 2..30  => return Sentences(possible_dialog_mark) & Sentence;
-         when 31..40 => return Sentences(possible_dialog_mark) & Paragraph & possible_dialog_mark & Sentence;
+         when 1        => return Sentence;
+         when 2 .. 30  => return Sentences (Possible_Dialog_Mark) & Sentence;
+         when 31 .. 40 => return Sentences (Possible_Dialog_Mark) & Paragraph & Possible_Dialog_Mark & Sentence;
       end case;
    end Sentences;
 
-   function Sentence_garanteed_amount(count: Positive; possible_dialog_mark: String) return String is
-      element: constant String:=
+   function Sentence_Guaranteed_Amount (Count: Positive; Possible_Dialog_Mark: String) return String is
+      Element : constant String:=
         Paragraph &
-        possible_dialog_mark & Sentences(possible_dialog_mark);
+        Possible_Dialog_Mark & Sentences (Possible_Dialog_Mark);
    begin
-      if count > 1 then
+      if Count > 1 then
          return
-           Sentence_garanteed_amount(count-1, possible_dialog_mark) &
-           element;
+           Sentence_Guaranteed_Amount (Count - 1, Possible_Dialog_Mark) &
+           Element;
       else
-         return element;
+         return Element;
       end if;
-   end Sentence_garanteed_amount;
+   end Sentence_Guaranteed_Amount;
 
    function Workshop return String is
    begin
-      return Sentence_garanteed_amount(500, dialog_mark);
+      return Sentence_Guaranteed_Amount (500, Dialog_Mark);
    end Workshop;
 
    function Financial_Report return String is
    begin
-      return Sentences(""); -- !! charts (especially, pie charts) !!
+      return Sentences (""); -- !! charts (especially, pie charts) !!
    end Financial_Report;
 
 end Corporate_Bullshit;

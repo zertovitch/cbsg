@@ -5,6 +5,9 @@
 project Delirium is
 
    for Main use ("produce_corporate_bullshit.adb");
+   package Compiler is
+      for Default_Switches ("Ada") use ("-g", "-O2", "-gnatyM131");
+   end Compiler;
 
 end Delirium;
 
