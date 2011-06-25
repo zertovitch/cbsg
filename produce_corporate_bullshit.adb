@@ -5,7 +5,7 @@ with Corporate_Bullshit;
 procedure Produce_Corporate_Bullshit is
 
    package HTML_Corporate_Bullshit is
-      new Corporate_Bullshit (Paragraph => "<p>", Dialog_Mark => "- ");
+      new Corporate_Bullshit (Paragraph => ASCII.LF & ASCII.LF & "<li>", Dialog_Mark => "");
 
    package Text_Corporate_Bullshit is
       new Corporate_Bullshit (Paragraph => "", Dialog_Mark => "");
@@ -15,10 +15,16 @@ procedure Produce_Corporate_Bullshit is
       F : File_Type;
    begin
       Create (F, Out_File, "bullshit.html");
-      Put_Line (F, "<html><head><title>Corporate bullshit</title></head>");
+      Put_Line (F, "<head>");
+      Put_Line (F, "   <title>Corporate bullshit</title>");
+      Put_Line (F, "   <style type=""text/css"">");
+      Put_Line (F, "   li { margin-bottom: 1em }");
+      Put_Line (F, "   </style>");
+      Put_Line (F, "</head>");
       Put_Line (F, "<body><p><h1>Workshop minutes</h1>");
+      Put_Line (F, "<ul>");
       Put_Line (F, HTML_Corporate_Bullshit.Workshop);
-      Put_Line (F, "</body></html>");
+      Put_Line (F, "</ul></body></html>");
       Close (F);
       Ada.Text_IO.Put_Line ("New corporate bullshit is in bullshit.html.  Enjoy.");
    end Produce_Workshop_Report;
