@@ -178,7 +178,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R86 is
+      case R88 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -269,14 +269,17 @@ package body Corporate_Bullshit is
          when 78 => return "coordinated";
          when 79 => return "aligned";
          when 80 => return "enhanced"; -- ME 15-Jun-2011
-                                       -- Ludovic:
+
+            -- Ludovic:
          when 81 => return "replacement";
          when 82 => return "industry-standard";
          when 83 => return "accepted";
          when 84 => return "agreed-upon";
          when 85 => return "target";
+         when 86 => return "customer-centric";
+         when 87 => return "wide-spectrum";
             --
-         when 86 => return "well-communicated";
+         when 88 => return "well-communicated";
       end case;
    end Thing_Adjective;
 
@@ -838,9 +841,9 @@ package body Corporate_Bullshit is
    end Articulated_Propositions;
 
    function Sentence return String is
-      Ap: String:= Articulated_Propositions;
+      Ap : String := Articulated_Propositions;
    begin
-      Ap (1):= To_Upper (Ap (1));
+      Ap (1) := To_Upper (Ap (1));
       return Ap & ". ";
    end Sentence;
 
