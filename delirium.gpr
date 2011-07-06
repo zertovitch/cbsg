@@ -5,9 +5,13 @@
 project Delirium is
 
    for Main use ("produce_corporate_bullshit.adb");
+   for Object_Dir use "obj";
+
    package Compiler is
-      for Default_Switches ("Ada") use ("-g", "-O2", "-gnatyM131");
+      for Default_Switches ("ada") use ("-g", "-O2", "-gnatyM131");
    end Compiler;
+
+   for Exec_Dir use ".";
 
 end Delirium;
 
