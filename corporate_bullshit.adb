@@ -109,13 +109,14 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R6 is
+         case R7 is
             when 1 => return "Human Resources";
             when 2 => return "Global Controlling";
             when 3 => return "Internal Audit";
             when 4 => return "Legal";
             when 5 => return "Operations";
             when 6 => return "Management Office";
+            when 7 => return "Customer Relations";
          end case;
       end Department;
 
@@ -178,7 +179,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R92 is
+      case R103 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -285,6 +286,18 @@ package body Corporate_Bullshit is
          when 90 => return "best-in-class";
          when 91 => return "state-of-the-art";
          when 92 => return "verifiable";
+         --
+         when 93  => return "solid";
+         when 94  => return "inspiring";
+         when 95  => return "growing";
+         when 96  => return "market-altering";
+         when 97  => return "vertical";
+         when 98  => return "emerging";
+         when 99  => return "differenciating";
+         when 100 => return "integrative";
+         when 101 => return "cross-functional";
+         when 102 => return "measurable";
+         when 103 => return "well-planned";
       end case;
    end Thing_Adjective;
 
@@ -316,7 +329,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural with 's'
       begin
-         case R94 is
+         case R107 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -419,14 +432,27 @@ package body Corporate_Bullshit is
                -- Ludovic
             when 93 => return "on-boarding process";
                --
-            when 94 => return "dotted line";
+            when 94  => return "dotted line";
+            when 95  => return "action item";
+            when 96  => return "bandwidth";
+            when 97  => return "channel";
+            when 98  => return "convergence";
+            when 99  => return "infrastructure";
+            when 100 => return "metric";
+            when 101 => return "technology";
+            when 102 => return "relationship";
+            when 103 => return "partnership";
+            when 104 => return "supply-chain";
+            when 105 => return "portal";
+            when 106 => return "solution";
+            when 107 => return "business line";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R127 is
+            case R150 is
                when 1  => return Timeless_Event;
                when 2  => return "efficiency";
                when 3  => return "team building";
@@ -502,15 +528,23 @@ package body Corporate_Bullshit is
                when 64 => return "centerpiece";
                   --
                when 65 => return "SWOT analysis";
+               when 66 => return "market";
+               when 67 => return "responsibility";
+               when 68 => return "accountability";
+               when 69 => return "ROI";
+               when 70 => return "diversity";
+               when 71 => return "line of business";
+               when 72 => return "serviceability";
+               when 73 => return "branding strategy";
                when others => return Inner;
             end case;
          when Plural =>
-            case R80 is
+            case R90 is
                when 1  => return "key target markets";
                when 2  => return "opportunities";
                when 3  => return "style guidelines";
                when 4  => return "key performance indicators";
-               when 5  => return "metrics";
+               when 5  => return "market forces";
                when 6  => return "measures";
                when 7  => return "measurements";
                when 16 => return "intricacies"; -- Georges Modol [!! negative word]
@@ -525,6 +559,7 @@ package body Corporate_Bullshit is
                when 22 => return "interpersonal skills";
                   -- UWM 2010
                when 23 => return "soft cycle issues"; -- [!! negative word]
+               --
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
@@ -546,7 +581,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R33 is
+      case R40 is
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -557,6 +592,11 @@ package body Corporate_Bullshit is
          when 7 => return "globally ";
          when 8 => return "culturally ";
          when 9 => return "technically ";
+         --
+         when 10 => return "strategically ";
+         when 11 => return "swiftly ";
+         when 12 => return "cautiously ";
+         when 13 => return "expediently ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -625,7 +665,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R31 is
+         case R39 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -659,6 +699,15 @@ package body Corporate_Bullshit is
             when 29 => return "deliver";
             when 30 => return "champion";
             when 31 => return "embrace";
+            --
+            when 32 => return "enhance";
+            when 33 => return "engineer";
+            when 34 => return "envision";
+            when 35 => return "incentivize";
+            when 36 => return "maximize";
+            when 37 => return "visualize";
+            when 38 => return "whiteboard";
+            when 39 => return "institutionalize";
          end case;
       end Inner;
    begin
