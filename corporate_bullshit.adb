@@ -179,7 +179,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R103 is
+      case R122 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -298,6 +298,25 @@ package body Corporate_Bullshit is
          when 101 => return "cross-functional";
          when 102 => return "measurable";
          when 103 => return "well-planned";
+         when 104 => return "accessible";
+         when 105 => return "actionable";
+         when 106 => return "accurate";
+         when 107 => return "insightful";
+         when 108 => return "relevant";
+         when 109 => return "long-term";
+         when 110 => return "top";
+         when 111 => return "tactical";
+         when 112 => return "best-of-breed";
+         when 113 => return "robust";
+         when 114 => return "targeted";
+         when 115 => return "personalized";
+         when 116 => return "interactive";
+         when 117 => return "streamlined";
+         when 118 => return "transparent";
+         when 119 => return "traceable";
+         when 120 => return "far-reaching";
+         when 121 => return "powerful";
+         when 122 => return "improved";
       end case;
    end Thing_Adjective;
 
@@ -329,7 +348,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural with 's'
       begin
-         case R107 is
+         case R112 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -446,6 +465,11 @@ package body Corporate_Bullshit is
             when 105 => return "portal";
             when 106 => return "solution";
             when 107 => return "business line";
+            when 108 => return "white paper";
+            when 109 => return "scalability";
+            when 110 => return "innovation";
+            when 111 => return "Strategic Management System";
+            when 112 => return "Balanced Scorecard";
          end case;
       end Inner;
 
@@ -597,6 +621,7 @@ package body Corporate_Bullshit is
          when 11 => return "swiftly ";
          when 12 => return "cautiously ";
          when 13 => return "expediently ";
+         when 14 => return "organically ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -622,6 +647,7 @@ package body Corporate_Bullshit is
          when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
          when 13 => return " within the " & Matrix_Or_So;
          when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
+         when 15 => return " up-front";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
