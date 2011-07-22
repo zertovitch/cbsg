@@ -48,7 +48,7 @@ package body Corporate_Bullshit is
 
    -- To do:
    --   * Enrich the Proposition function
-   --   * Person_adjecive: "commited"
+   --   * Person_adjecive: "commited", "multi-skilled"
    --   * specific place for BAD, negative items, to be fought (
    --      "issues", "intricacies", "organizational diseconomies" ,
    --      "black swan")
@@ -179,7 +179,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R124 is
+      case R129 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -319,6 +319,11 @@ package body Corporate_Bullshit is
          when 122 => return "improved";
          when 123 => return "executive-level";
          when 124 => return "goal-based";
+         when 125 => return "top-level";
+         when 126 => return "cooperative";
+         when 127 => return "value-adding";
+         when 128 => return "streamlining";
+         when 129 => return "time-honored"; -- PDM
       end case;
    end Thing_Adjective;
 
@@ -350,7 +355,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural with 's'
       begin
-         case R112 is
+         case R114 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -472,6 +477,8 @@ package body Corporate_Bullshit is
             when 110 => return "innovation";
             when 111 => return "Strategic Management System";
             when 112 => return "Balanced Scorecard";
+            when 113 => return "key differentiator"; -- PDM
+            when 114 => return "case study";
          end case;
       end Inner;
 
