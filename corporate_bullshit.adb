@@ -151,7 +151,7 @@ package body Corporate_Bullshit is
                   return Boss;
             end case;
          when Plural =>
-            case R8 is
+            case R9 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -160,6 +160,7 @@ package body Corporate_Bullshit is
                when 6  => return "team players";
                when 7  => return "enablers"; -- also thing
                when 8  => return "stakeholders";
+               when 9  => return "standard-setters";
             end case;
       end case;
    end Person;
@@ -179,7 +180,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R129 is
+      case R131 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -324,6 +325,8 @@ package body Corporate_Bullshit is
          when 127 => return "value-adding";
          when 128 => return "streamlining";
          when 129 => return "time-honored"; -- PDM
+         when 130 => return "idiosyncratic"; -- ED
+         when 131 => return "sustainable";
       end case;
    end Thing_Adjective;
 
@@ -355,7 +358,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural with 's'
       begin
-         case R114 is
+         case R116 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -479,6 +482,8 @@ package body Corporate_Bullshit is
             when 112 => return "Balanced Scorecard";
             when 113 => return "key differentiator"; -- PDM
             when 114 => return "case study";
+            when 115 => return "idiosyncrasy"; -- ED
+            when 116 => return "benefit";
          end case;
       end Inner;
 
@@ -700,7 +705,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R39 is
+         case R40 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -743,6 +748,7 @@ package body Corporate_Bullshit is
             when 37 => return "visualize";
             when 38 => return "whiteboard";
             when 39 => return "institutionalize";
+            when 40 => return "promote";
          end case;
       end Inner;
    begin
@@ -754,7 +760,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R15 is
+         case R16 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -770,6 +776,7 @@ package body Corporate_Bullshit is
             when 13 => return "transfer";
             when 14 => return "drive";
             when 15 => return "result in";
+            when 16 => return "promote";
          end case;
       end Inner;
    begin
@@ -781,7 +788,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Person_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R10 is
+         case R11 is
             when 1 => return "motivate";
             when 2 => return "target";
             when 3 => return "enable";
@@ -794,6 +801,7 @@ package body Corporate_Bullshit is
             when 9 => return "inspire";
                --
             when 10 => return "transfer";
+            when 11 => return "promote";
          end case;
       end Inner;
    begin
