@@ -180,7 +180,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R131 is
+      case R132 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -327,6 +327,7 @@ package body Corporate_Bullshit is
          when 129 => return "time-honored"; -- PDM
          when 130 => return "idiosyncratic"; -- ED
          when 131 => return "sustainable";
+         when 132 => return "in-depth";
       end case;
    end Thing_Adjective;
 
@@ -358,7 +359,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural with 's'
       begin
-         case R116 is
+         case R119 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -480,10 +481,13 @@ package body Corporate_Bullshit is
             when 110 => return "innovation";
             when 111 => return "Strategic Management System";
             when 112 => return "Balanced Scorecard";
-            when 113 => return "key differentiator"; -- PDM
+            when 113 => return "differentiator"; -- PDM
             when 114 => return "case study";
             when 115 => return "idiosyncrasy"; -- ED
             when 116 => return "benefit";
+            when 117 => return "say/do ratio";
+            when 118 => return "segmentation";
+            when 119 => return "image";
          end case;
       end Inner;
 
@@ -705,7 +709,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R40 is
+         case R41 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -749,6 +753,7 @@ package body Corporate_Bullshit is
             when 38 => return "whiteboard";
             when 39 => return "institutionalize";
             when 40 => return "promote";
+            when 41 => return "overdeliver";
          end case;
       end Inner;
    begin
