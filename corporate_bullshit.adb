@@ -180,7 +180,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R132 is
+      case R133 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -328,6 +328,7 @@ package body Corporate_Bullshit is
          when 130 => return "idiosyncratic"; -- ED
          when 131 => return "sustainable";
          when 132 => return "in-depth";
+         when 133 => return "immersive";
       end case;
    end Thing_Adjective;
 
@@ -709,7 +710,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R41 is
+         case R44 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -754,6 +755,9 @@ package body Corporate_Bullshit is
             when 39 => return "institutionalize";
             when 40 => return "promote";
             when 41 => return "overdeliver";
+            when 42 => return "right-size";
+            when 43 => return "rebalance";
+            when 44 => return "re-imagine";
          end case;
       end Inner;
    begin
@@ -818,7 +822,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R16 is
+         case R17 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -838,6 +842,7 @@ package body Corporate_Bullshit is
             when 15 => return "deliver"; -- deliver, form without complement
                                          -- GAC 2010
             when 16 => return "connect the dots";
+            when 17 => return "stay in the zone";
          end case;
       end Inner;
    begin
