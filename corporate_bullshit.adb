@@ -15,7 +15,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2011
+--  Copyright (c) Gautier de Montmollin 2006 .. 2012
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -579,6 +579,11 @@ package body Corporate_Bullshit is
                when 71 => return "line of business";
                when 72 => return "serviceability";
                when 73 => return "branding strategy";
+               when 74 => return "responsiveness";
+               when 75 => return "simplicity";
+               when 76 => return "portfolio shaping";
+               when 77 => return "knowledge sharing";
+               when 78 => return "continuity";
                when others => return Inner;
             end case;
          when Plural =>
