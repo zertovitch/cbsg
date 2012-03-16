@@ -987,6 +987,11 @@ package body Corporate_Bullshit is
       return Sentence_Guaranteed_Amount (500, Dialog_Mark);
    end Workshop;
 
+   function Short_Workshop return String is
+   begin
+      return Sentence_Guaranteed_Amount (5, Dialog_Mark);
+   end Short_Workshop;
+
    function Financial_Report return String is
    begin
       return Sentences (""); -- !! charts (especially, pie charts) !!

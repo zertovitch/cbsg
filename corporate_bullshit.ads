@@ -7,6 +7,8 @@ package Corporate_Bullshit is
 
    function Workshop return String;
 
+   function Short_Workshop return String;
+
    function Financial_Report return String;
 
 end Corporate_Bullshit;
