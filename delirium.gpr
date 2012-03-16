@@ -1,6 +1,6 @@
 -- This is a GNAT, GCC or GNAT Programming Studio (GPS) project file
 -- for the project Corporate Bullshit Generator ( http://sf.net/projects/cbsg/ )
--- Build me with "gnatmake -P delirium.gpr", or open me with GPS
+-- Build me with "gnatmake -P delirium", or open me with GPS
 --
 project Delirium is
 
@@ -8,7 +8,7 @@ project Delirium is
    for Object_Dir use "obj";
 
    package Compiler is
-      for Default_Switches ("ada") use ("-g", "-O2", "-gnatyM131");
+      for Default_Switches ("ada") use ("-g", "-O2", "-gnatpn", "-gnatyM131");
    end Compiler;
 
    for Exec_Dir use ".";
