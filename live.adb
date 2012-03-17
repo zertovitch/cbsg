@@ -18,16 +18,26 @@ begin
   Put_Line("<h1>The Corporate Bullshit Generator</h1>");
   Put_Line(
     "<form method=""POST"">Click here for more bullshit !" &
-    " &rarr; &rarr; &rarr; <input type=""submit""></form>"
+    " &rarr; &rarr; &rarr;" &
+    " <input type=""submit"" value=""More bullshit!""></form>"
   );
   Put_Line("The CBSG project site is <a href=http://sf.net/projects/cbsg/>here</a>.");
   Put_Line("<hr><ul>");
-  Put_Line(HTML_Corporate_Bullshit.Short_Workshop);
+  --
+  Put_Line(HTML_Corporate_Bullshit.Short_Workshop); --<-- Here happens the whole magic :-)
+  --
   Put_Line("</ul>");
   Put_Line("</font><hr>");
   Put_Line("<center>");
-  Put_Line("<img align=absmiddle src=http://sflogo.sf.net/sflogo.php?group_id=557838&type=16>");
-  Put_Line("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img align=absmiddle src=durada.gif>");
+  Put_Line(
+    "<img align=absmiddle src=""http://sflogo.sf.net/sflogo.php?group_id=" &
+    "557838&amp;type=16"" width=""150"" height=""40"" alt=""SourceForge.net"" />"
+  );
+  Put_Line("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+  Put_Line(
+    "<img align=absmiddle width=100 height=64 src=durada.gif" &
+    " alt=""Powered by Ada"">"
+  );
   Put_Line("</center>");
   Put_HTML_Tail;
 end Live;
