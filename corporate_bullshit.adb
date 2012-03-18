@@ -180,7 +180,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R133 is
+      case R134 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -329,6 +329,7 @@ package body Corporate_Bullshit is
          when 131 => return "sustainable";
          when 132 => return "in-depth";
          when 133 => return "immersive";
+         when 134 => return "cross-industry";
       end case;
    end Thing_Adjective;
 
@@ -498,7 +499,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R152 is
+            case R153 is
                when 1  => return Timeless_Event;
                when 2  => return "efficiency";
                when 3  => return "team building";
@@ -589,6 +590,7 @@ package body Corporate_Bullshit is
                when 78 => return "continuity";
                when 79 => return "visual thinking";
                when 80 => return "interoperability";
+               when 81 => return "compliance";
                when others => return Inner;
             end case;
          when Plural =>
@@ -720,7 +722,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R45 is
+         case R46 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -769,6 +771,7 @@ package body Corporate_Bullshit is
             when 43 => return "rebalance";
             when 44 => return "re-imagine";
             when 45 => return "influence";
+            when 46 => return "facilitate";
          end case;
       end Inner;
    begin
@@ -780,7 +783,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R17 is
+         case R18 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -798,6 +801,7 @@ package body Corporate_Bullshit is
             when 15 => return "result in";
             when 16 => return "promote";
             when 17 => return "influence";
+            when 18 => return "facilitate";
          end case;
       end Inner;
    begin

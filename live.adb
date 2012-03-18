@@ -35,8 +35,8 @@ begin
   );
   Put_Line("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
   Put_Line(
-    "<img align=absmiddle width=100 height=64 src=durada.gif" &
-    " alt=""Powered by Ada"">"
+    "<img align=absmiddle width=100 height=64 " &
+    "src=""http://cbsg.sf.net/durada.gif"" alt=""Powered by Ada"">"
   );
   Put_Line("</center>");
   Put_HTML_Tail;
