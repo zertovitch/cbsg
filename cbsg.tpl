@@ -9,9 +9,11 @@
    <body>
       <font face="Calibri, Arial">
       <h1>The Corporate Bullshit Generator</h1>
-      <form method="POST">Yes, I want more ! &nbsp; &rarr; &rarr; &rarr; &nbsp; <input value="More bullshit please!" type="submit"></form>
+      <form method="POST">Yes, I want more ! &nbsp; &rarr; &rarr; &rarr; &nbsp; <input value="More bullshit, please !" type="submit"></form>
       <hr>
-      @_SHORT_WORKSHOP_@
+      <ul>
+        @_SHORT_WORKSHOP_@
+      </ul>
       <hr>
       <p>Our mentor :<br>
          <a href="http://dilbert.com">Dilbert</a>'s pointy-haired boss.</p>
@@ -25,7 +27,7 @@
                 alt="SourceForge.net" height="40" width="150" align="absmiddle">
          </a>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <img src="durada.gif" alt="Powered by Ada" height="62" width="91" align="absmiddle">
+         <img src="http://cbsg.sf.net/durada.gif" alt="Powered by Ada" height="62" width="91" align="absmiddle">
       </center>
       </font>
    </body>
