@@ -2,42 +2,81 @@
 -- http://cbsg.sf.net/cgi-bin/live (full, unredirected URL)
 -- 16-Mar-2012
 -- Thx to Frédéric Praca for the help about CGI!
---
+-- 19-Mar-2012
+-- Use of a template file. Contribution by François Fabien.
+
 with Corporate_Bullshit;
-with CGI;                               use CGI;
-with Ada.Text_IO;                       use Ada.Text_IO;
+with CGI;                use CGI;
+with Ada.Text_IO;        use Ada.Text_IO;
+with Ada.Exceptions;     use Ada.Exceptions;
+with Ada.Strings.Fixed;  use Ada.Strings.Fixed;
 
 procedure Live is
-   package HTML_Corporate_Bullshit is
-      new Corporate_Bullshit (Paragraph => ASCII.LF & ASCII.LF & "<li>", Dialog_Mark => "");
+
+  package HTML_Corporate_Bullshit is new Corporate_Bullshit (
+                                                             Paragraph => ASCII.LF & ASCII.LF & "<li>",
+                                                             Dialog_Mark => "");
+
+  -- the HTML template input containing Tags
+  -- currently in dir /cgi-bin ; if you relocate, adjust the string
+  HTML_Template : constant String := "cbsg.tpl";
+  Template      : File_Type;
+
+  -- current line of the template file
+  Line      : String (1 .. 300); -- adjust if the a Line is longer.
+  Last, Pos : Natural;
+  -- each of these tags will be dynamically replaced by a special content
+  type Special_tag is (sentence, short_workshop);
+  -- The tags in the template appear as: "@_" & Special_tag'Image(t) & "_@";
+  special_tag_found: Boolean;
+
 begin
-  Put_CGI_Header;
-  Put_HTML_Head("Corporate Bullshit Generator");
-  -- We ignore CGI.Input_Received (in a later version, we will include some input :-) )
-  Put_Line("<font face=""Calibri, Arial"">");
-  Put_Line("<h1>The Corporate Bullshit Generator</h1>");
-  Put_Line(
-    "<form method=""POST"">Click here for more bullshit !" &
-    " &rarr; &rarr; &rarr;" &
-    " <input type=""submit"" value=""More bullshit!""></form>"
-  );
-  Put_Line("The CBSG project site is <a href=http://sf.net/projects/cbsg/>here</a>.");
-  Put_Line("<hr><ul>");
-  --
-  Put_Line(HTML_Corporate_Bullshit.Short_Workshop); --<-- Here happens the whole magic :-)
-  --
-  Put_Line("</ul>");
-  Put_Line("</font><hr>");
-  Put_Line("<center>");
-  Put_Line(
-    "<img align=absmiddle src=""http://sflogo.sf.net/sflogo.php?group_id=" &
-    "557838&amp;type=16"" width=""150"" height=""40"" alt=""SourceForge.net"" />"
-  );
-  Put_Line("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-  Put_Line(
-    "<img align=absmiddle width=100 height=64 " &
-    "src=""http://cbsg.sf.net/durada.gif"" alt=""Powered by Ada"">"
-  );
-  Put_Line("</center>");
-  Put_HTML_Tail;
+  -- 1/ Send header
+  Put_CGI_Header; -- send Content-type: text/html
+
+  -- 2/ Generate HTML from template
+  begin
+    Open (File => Template, Mode => In_File, Name => HTML_Template);
+  exception
+    when E : others =>
+      Put_Line ("<html><head><title>CBSG File error</title></head>");
+      Put_Line
+        ("<body>Unexpected error :" &
+         Exception_Information (E) &
+         "</body></html>");
+      return;
+  end;
+  Set_Input (Template);
+  while not End_Of_File (Template) loop
+    Get_Line (Line, Last);
+    special_tag_found:= False;
+    for t in Special_tag loop
+      -- Check if there is a Sentence_Tag within the line
+      declare
+        tag_match: constant String:= "@_" & Special_tag'Image(t) & "_@";
+      begin
+        Pos := Index (Line (1 .. Last), tag_match);
+        if Pos > 0 then
+          -- there is a Tag / we admit only one tag per line
+          Put (Line (1 .. Pos - 1));
+          case t is
+            when sentence =>
+              Put (HTML_Corporate_Bullshit.Sentence);
+            when short_workshop =>
+              Put (HTML_Corporate_Bullshit.Short_Workshop);
+          end case;
+          Put_Line (Line (Pos + tag_match'Length .. Last));
+          special_tag_found:= True;
+        end if;
+      end;
+    end loop;
+    if not special_tag_found then
+      -- plain HTML => just output as is
+      Put_Line (Line (1 .. Last));
+    end if;
+  end loop;
+  Close (Template);
+exception
+  when E : others =>
+    Put_Line ("Unexpected error" & Exception_Information (E));
 end Live;
