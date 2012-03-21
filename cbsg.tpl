@@ -16,16 +16,16 @@
       </ul>
       <hr>
       <p>Our mentor :<br>
-         <a href="http://dilbert.com">Dilbert</a>'s pointy-haired boss.</p>
+         &nbsp; <a href="http://dilbert.com">Dilbert</a>'s pointy-haired boss.</p>
       <p>Our motto :<br>
-         Science is 10% inspiration and 90% perspiration. (Louis Pasteur)</p>
+         &nbsp; Science is 10% inspiration and 90% perspiration (Louis Pasteur).</p>
       <hr>
       The CBSG project site is <a href="http://sf.net/projects/cbsg/">here</a>.
       <center>
-         <a href="http://sf.net/projects/cbsg/">
-           <img src="http://sflogo.sf.net/sflogo.php?group_id=557838&amp;type=16"
-                alt="SourceForge.net" height="40" width="150" align="absmiddle">
-         </a>
+         <a href="http://sf.net/projects/cbsg/"><img 
+		   src="http://sflogo.sf.net/sflogo.php?group_id=557838&amp;type=16"
+		   border="0"
+           alt="SourceForge.net" height="40" width="150" align="absmiddle"></a>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <img src="http://cbsg.sf.net/durada.gif" alt="Powered by Ada" height="62" width="91" align="absmiddle">
       </center>

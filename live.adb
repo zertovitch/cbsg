@@ -17,18 +17,10 @@ procedure Live is
                                                              Paragraph => ASCII.LF & ASCII.LF & "<li>",
                                                              Dialog_Mark => "");
 
-  -- the HTML template input containing Tags
+  -- The HTML template input containing Tags
   -- currently in dir /cgi-bin ; if you relocate, adjust the string
   HTML_Template : constant String := "cbsg.tpl";
   Template      : File_Type;
-
-  -- current line of the template file
-  Line      : String (1 .. 300); -- adjust if the a Line is longer.
-  Last, Pos : Natural;
-  -- each of these tags will be dynamically replaced by a special content
-  type Special_tag is (sentence, short_workshop);
-  -- The tags in the template appear as: "@_" & Special_tag'Image(t) & "_@";
-  special_tag_found: Boolean;
 
 begin
   -- 1/ Send header
@@ -48,32 +40,39 @@ begin
   end;
   Set_Input (Template);
   while not End_Of_File (Template) loop
-    Get_Line (Line, Last);
-    special_tag_found:= False;
-    for t in Special_tag loop
-      -- Check if there is a Sentence_Tag within the line
-      declare
-        tag_match: constant String:= "@_" & Special_tag'Image(t) & "_@";
-      begin
-        Pos := Index (Line (1 .. Last), tag_match);
-        if Pos > 0 then
-          -- there is a Tag / we admit only one tag per line
-          Put (Line (1 .. Pos - 1));
-          case t is
-            when sentence =>
-              Put (HTML_Corporate_Bullshit.Sentence);
-            when short_workshop =>
-              Put (HTML_Corporate_Bullshit.Short_Workshop);
-          end case;
-          Put_Line (Line (Pos + tag_match'Length .. Last));
-          special_tag_found:= True;
-        end if;
-      end;
-    end loop;
-    if not special_tag_found then
-      -- plain HTML => just output as is
-      Put_Line (Line (1 .. Last));
-    end if;
+    declare
+      -- Current line of the template file
+      Line: constant String:= Get_Line;
+      -- Each of these tags will be dynamically replaced by a special content
+      type Special_tag is (sentence, short_workshop);
+      -- The tags in the template appear as: "@_" & Special_tag'Image(t) & "_@";
+      special_tag_found: Boolean:= False;
+    begin
+      for t in Special_tag loop
+        -- Check if there is a Sentence_Tag within the line
+        declare
+          tag_match: constant String:= "@_" & Special_tag'Image(t) & "_@";
+          Pos: Natural := Index (Line, tag_match);
+        begin
+          if Pos > 0 then
+            -- There is a Tag. We admit only one tag per line.
+            Put (Line (1 .. Pos - 1));
+            case t is
+              when sentence =>
+                Put (HTML_Corporate_Bullshit.Sentence);
+              when short_workshop =>
+                Put (HTML_Corporate_Bullshit.Short_Workshop);
+              end case;
+            Put_Line (Line (Pos + tag_match'Length .. Line'Last));
+            special_tag_found:= True;
+          end if;
+        end;
+      end loop;
+      if not special_tag_found then
+        -- Plain HTML => just output as is
+        Put_Line (Line);
+      end if;
+    end;
   end loop;
   Close (Template);
 exception
