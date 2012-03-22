@@ -380,24 +380,41 @@ package body Corporate_Bullshit is
    end Timeless_Event;
 
    function Growth return String is
-      function Adjective return String is
+      function Superlative return String is
       begin
-         case R4 is
+         case R8 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
             when 4 => return "breakout";
+               -- Ludovic
+            when 5 => return "unprecedented";
+            when 6 => return "unparallelled";
+            when 7 => return "proven";
+            when 8 => return "measured";
          end case;
-      end Adjective;
+      end Superlative;
+
+      function Improvement return String is
+      begin
+         case R5 is
+            -- Ludovic
+            when 1 => return " growth";
+            when 2 => return " improvement";
+            when 3 => return " throughput increase";
+            when 4 => return " efficiency gain";
+            when 5 => return " yield enhancements";
+         end case;
+      end Improvement;
    begin
-      return Adjective & " growth";
+      return Superlative & Improvement;
    end Growth;
 
    function Thing_Atom (P: Plurality) return String is
 
-      function Inner return String is -- can be made plural with 's'
+      function Inner return String is -- can be made plural
       begin
-         case R125 is
+         case R146 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -427,8 +444,8 @@ package body Corporate_Bullshit is
             when 28 => return "document";
             when 29 => return "bottom line";
             when 30 => return "momentum";
-            when 31 => return "intelligence";
-            when 32 => return "governance";
+            when 31 => return "opportunity";
+            when 32 => return "credibility";
             when 33 => return "issue";
             when 34 => return "core meeting";
             when 35 => return "platform";
@@ -477,7 +494,7 @@ package body Corporate_Bullshit is
                -- BBC office-speak phrases
             when 74 => return "low hanging fruit";
             when 75 => return "forward planning";
-            when 76 => return "pre-plan";
+            when 76 => return "pre-plan"; -- also a verb
             when 77 => return "pipeline";
             when 78 => return "bandwidth";
             when 79 => return "workshop";
@@ -502,7 +519,7 @@ package body Corporate_Bullshit is
                --
             when 94  => return "dotted line";
             when 95  => return "action item";
-            when 96  => return "bandwidth";
+            when 96  => return "cost efficiency";
             when 97  => return "channel";
             when 98  => return "convergence";
             when 99  => return "infrastructure";
@@ -532,131 +549,120 @@ package body Corporate_Bullshit is
             when 123 => return "branding";
             when 124 => return "methodology";
             when 125 => return "profile";
+            when 126 => return "measure";
+            when 127 => return "measurements";
+            when 128 => return "philosophy";
+            when 129 => return "branding strategy";
+            when 130 => return "efficiency";
+            when 131 => return "industry";
+            when 132 => return "commitment";
+            when 133 => return "perspective";
+            when 134 => return "risk appetite";
+            when 135 => return "best practice";
+            when 136 => return "brand identity";
+            when 137 => return "customer centricity"; -- Mili
+            when 138 => return "shareholder value"; -- Andrew
+            when 139 => return "attitude";
+            when 140 => return "mindset";
+            when 141 => return "flexibility";
+            when 142 => return "granularity";
+            when 143 => return "engagement";
+            when 144 => return "pyramid";
+            when 145 => return "market";
+            when 146 => return "diversity";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R165 is
+            case R200 is
+               -- Things that have no plural.
                when 1  => return Timeless_Event;
-               when 2  => return "efficiency";
-               when 3  => return "team building";
-               when 4  => return "focus";
-               when 5  => return "strategy";
-               when 6  => return "planning granularity";
-               when 7  => return "best practice";
-               when 8  => return "core business";
-               when 9  => return Growth;
-               when 10 => return "opportunity";
-               when 11 => return "credibility";
-               when 12 => return "ROE";
-               when 13 => return "EBITDA";
-               when 14 => return "enterprise content management";
-               when 15 => return "excellence";
-               when 16 => return "industry";
-               when 17 => return "philosophy";
-               when 18 => return "commitment";
-               when 19 => return "perspective";
-               when 20 => return "risk appetite";
-               when 21 => return "trust";
-               when 22 => return "respect";
-               when 23 => return "openness";
-               when 24 => return "transparency";
-               when 25 => return "Quality Research";
-               when 26 => return "decision making";
-               when 27 => return "risk management";
-               when 28 => return "enterprise risk management";
-                  -- Added 21-Nov-2008:
-               when 29 => return "leverage";
-               when 30 => return "diversification";
-               when 31 => return "successful execution";
-               when 32 => return "effective execution";
-               when 33 => return "brand identity";
-                  -- Mili:
-               when 34 => return "customer centricity";
-                  -- Andrew:
-               when 35 => return "shareholder value";
+               when 2  => return "team building";
+               when 3  => return "focus";
+               when 4  => return "strategy";
+               when 5  => return "planning granularity";
+               when 6  => return "core business";
+               when 7  => return Growth;
+               when 8  => return "intelligence";
+               when 9  => return "governance";
+               when 10 => return "ROE";
+               when 11 => return "EBITDA";
+               when 12 => return "enterprise content management";
+               when 13 => return "excellence";
+               when 14 => return "trust";
+               when 15 => return "respect";
+               when 16 => return "openness";
+               when 17 => return "transparency";
+               when 18 => return "Quality Research";
+               when 19 => return "decision making";
+               when 20 => return "risk management";
+               when 21 => return "enterprise risk management";
+               when 22 => return "leverage";
+               when 23 => return "diversification";
+               when 24 => return "successful execution";
+               when 25 => return "effective execution";
                   -- Directly pasted from a management presentation (2009)
-               when 36 => return "selectivity";
-               when 37 => return "optionality";
-               when 38 => return "expertise";
-               when 39 => return "attitude";
-               when 40 => return "mindset";
-               when 41 => return "awareness";
-               when 42 => return "broader thinking";
-               when 43 => return "client focus";
-                  -- Buzz Phrase Generator.xls (Kurt)
-               when 44 => return "flexibility";
-               when 45 => return "thought leadership"; -- Thanks Andy!
-               when 46 => return "quest for quality"; -- caracal
-                                                      -- BBC office-speak phrases
-               when 47 => return "360-degree thinking";
-               when 48 => return "granularity";
-               when 49 => return "drill-down";
-               when 50 => return "impetus";
-               when 51 => return "fairness";
-               when 52 => return "intellect";
-               when 53 => return "engagement";
-                  -- GAC 2010
-               when 54 => return "emotional impact";
-               when 55 => return "emotional intelligence";
-               when 56 => return "adaptability";
-               when 57 => return "stress management";
-               when 58 => return "self-awareness";
-               when 59 => return "strategic thinking";
-               when 60 => return "pyramid";
-                  -- Andy
-               when 61 => return "cross fertilization";
-                  -- UW Presentation Nov 2010
-               when 62 => return "effectiveness";
-               when 63 => return "customer experience";
-               when 64 => return "centerpiece";
-                  --
-               when 65 => return "SWOT analysis";
-               when 66 => return "market";
-               when 67 => return "responsibility";
-               when 68 => return "accountability";
-               when 69 => return "ROI";
-               when 70 => return "diversity";
-               when 71 => return "line of business";
-               when 72 => return "serviceability";
-               when 73 => return "branding strategy";
-               when 74 => return "responsiveness";
-               when 75 => return "simplicity";
-               when 76 => return "portfolio shaping";
-               when 77 => return "knowledge sharing";
-               when 78 => return "continuity";
-               when 79 => return "visual thinking";
-               when 80 => return "interoperability";
-               when 81 => return "compliance";
-               when 82 => return "teamwork";
-               when 83 => return "self-efficacy";
-               when 84 => return "decision-making";
+               when 26 => return "selectivity";
+               when 27 => return "optionality";
+               when 28 => return "expertise";
+               when 29 => return "awareness";
+               when 30 => return "broader thinking";
+               when 31 => return "client focus";
+               when 32 => return "thought leadership"; -- Thanks Andy!
+               when 33 => return "quest for quality"; -- caracal
+                  -- BBC office-speak phrases
+               when 34 => return "360-degree thinking";
+               when 35 => return "drill-down";
+               when 36 => return "impetus";
+               when 37 => return "fairness";
+               when 38 => return "intellect";
+               when 39 => return "emotional impact";
+               when 40 => return "emotional intelligence";
+               when 41 => return "adaptability";
+               when 42 => return "stress management";
+               when 43 => return "self-awareness";
+               when 44 => return "strategic thinking";
+               when 45 => return "cross fertilization"; -- Andy
+               when 46 => return "effectiveness";
+               when 47 => return "customer experience";
+               when 48 => return "centerpiece";
+               when 49 => return "SWOT analysis";
+               when 50 => return "responsibility";
+               when 51 => return "accountability";
+               when 52 => return "ROI";
+               when 53 => return "line of business";
+               when 54 => return "serviceability";
+               when 55 => return "responsiveness";
+               when 56 => return "simplicity";
+               when 57 => return "portfolio shaping";
+               when 58 => return "knowledge sharing";
+               when 59 => return "continuity";
+               when 60 => return "visual thinking";
+               when 61 => return "interoperability";
+               when 62 => return "compliance";
+               when 63 => return "teamwork";
+               when 64 => return "self-efficacy";
+               when 65 => return "decision-making";
                when others => return Inner;
             end case;
          when Plural =>
-            case R90 is
+            case R200 is
                when 1  => return "key target markets";
-               when 2  => return "opportunities";
-               when 3  => return "style guidelines";
-               when 4  => return "key performance indicators";
-               when 5  => return "market forces";
-               when 6  => return "measures";
-               when 7  => return "measurements";
-               when 16 => return "intricacies"; -- Georges Modol [!! negative word]
-               when 17 => return "philosophies";
+               when 2  => return "style guidelines";
+               when 3  => return "key performance indicators";
+               when 4  => return "market forces";
+               when 5  => return "intricacies"; -- Georges Modol [!! negative word]
                   -- Directly pasted from a management presentation (2009)
-               when 18 => return "cost efficiencies";
-               when 19 => return "lessons learned";
-               when 20 => return "tactics";
+               when 6  => return "lessons learned";
+               when 7  => return "tactics";
                   --
-               when 21 => return "organizing principles";
+               when 8 => return "organizing principles";
                   -- GAC 2010
-               when 22 => return "interpersonal skills";
+               when 9 => return "interpersonal skills";
                   -- UWM 2010
-               when 23 => return "soft cycle issues"; -- [!! negative word]
-               --
+               when 10 => return "soft cycle issues"; -- [!! negative word]
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
