@@ -403,7 +403,7 @@ package body Corporate_Bullshit is
             when 2 => return " improvement";
             when 3 => return " throughput increase";
             when 4 => return " efficiency gain";
-            when 5 => return " yield enhancements";
+            when 5 => return " yield enhancement";
          end case;
       end Improvement;
    begin
@@ -584,7 +584,7 @@ package body Corporate_Bullshit is
                when 4  => return "strategy";
                when 5  => return "planning granularity";
                when 6  => return "core business";
-               when 7  => return Growth;
+               when 7  => return "implementation";
                when 8  => return "intelligence";
                when 9  => return "governance";
                when 10 => return "ROE";
@@ -678,6 +678,7 @@ package body Corporate_Bullshit is
          when 15 .. 70 => return Thing_Adjective & ' ' & Thing_Atom (P);
          when 71 .. 72 => return Thing_Adjective & " and/or " &
             Thing_Adjective & ' ' & Thing_Atom (P);
+         when 73 .. 74 => return Growth; -- already has a superlative, don't add an adjective
          when others => return Thing_Atom (P);
       end case;
    end Thing;
@@ -710,6 +711,7 @@ package body Corporate_Bullshit is
    end Eventual_Adverb;
 
    function Add_Random_Article (P: Plurality; To: String) return String;
+   function Build_Plural_Verb (Verb: String; P: Plurality) return String;
 
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
@@ -731,6 +733,11 @@ package body Corporate_Bullshit is
          when 13 => return " within the " & Matrix_Or_So;
          when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
          when 15 => return " up-front";
+         when 16 => return " resulting in " & Growth;
+         when 17 => return " reaped from our " & Growth;
+         when 18 => return " as a consequence of " & Growth;
+         when 19 => return " because " & Add_Random_Article (P, Thing (P))
+                           & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -959,7 +966,7 @@ package body Corporate_Bullshit is
             return Thing_Verb_Having_Person_Complement (P) &
               " the " & Person (Compl_Sp);
          when 101 =>
-            return Build_Plural_Verb ("add value",P);
+            return Build_Plural_Verb ("add", P) & " value";
       end case;
    end Thing_Verb_And_Ending;
 
