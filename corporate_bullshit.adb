@@ -678,7 +678,7 @@ package body Corporate_Bullshit is
          when 15 .. 70 => return Thing_Adjective & ' ' & Thing_Atom (P);
          when 71 .. 72 => return Thing_Adjective & " and/or " &
             Thing_Adjective & ' ' & Thing_Atom (P);
-         when 73 .. 74 => return Growth; -- already has a superlative, don't add an adjective
+         when 73 .. 74 => return Make_Eventual_Plural (Growth, P); -- already has a superlative, don't add an adjective
          when others => return Thing_Atom (P);
       end case;
    end Thing;
@@ -733,11 +733,12 @@ package body Corporate_Bullshit is
          when 13 => return " within the " & Matrix_Or_So;
          when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
          when 15 => return " up-front";
-         when 16 => return " resulting in " & Growth;
-         when 17 => return " reaped from our " & Growth;
-         when 18 => return " as a consequence of " & Growth;
+         when 16 => return " resulting in " & Make_Eventual_Plural (Growth, P);
+         when 17 => return " reaped from our " & Make_Eventual_Plural (Growth, P);
+         when 18 => return " as a consequence of " & Make_Eventual_Plural (Growth, P);
          when 19 => return " because " & Add_Random_Article (P, Thing (P))
-                           & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
+            & ' ' & Build_Plural_Verb ("produce", P) & ' '
+            & Make_Eventual_Plural (Growth, Random_Plural);
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
