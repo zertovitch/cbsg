@@ -64,6 +64,7 @@ package body Corporate_Bullshit is
    --   * "Make things happen", "stay ahead"
    --   * ...a [s-whatever] that puts [s-whatever] at the center
    --       of the organization's [whatever]
+   --   * A Silly Abbreviation Generator (SAG).
 
    -- Persons or groups --
 
@@ -195,7 +196,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R155 is
+      case R158 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -366,6 +367,9 @@ package body Corporate_Bullshit is
          when 153 => return "client-oriented";
          when 154 => return "long-established";
          when 155 => return "high-margin";
+         when 156 => return "organizational";
+         when 157 => return "visionary";
+         when 158 => return "trusted";
       end case;
    end Thing_Adjective;
 
@@ -550,7 +554,7 @@ package body Corporate_Bullshit is
             when 124 => return "methodology";
             when 125 => return "profile";
             when 126 => return "measure";
-            when 127 => return "measurements";
+            when 127 => return "measurement";
             when 128 => return "philosophy";
             when 129 => return "branding strategy";
             when 130 => return "efficiency";
@@ -781,7 +785,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R47 is
+         case R48 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -832,6 +836,7 @@ package body Corporate_Bullshit is
             when 45 => return "influence";
             when 46 => return "facilitate";
             when 47 => return "drive";
+            when 48 => return "structure";
          end case;
       end Inner;
    begin
@@ -843,7 +848,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R22 is
+         case R23 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -866,6 +871,7 @@ package body Corporate_Bullshit is
             when 20 => return "architect";
             when 21 => return "cultivate";
             when 22 => return "engage";
+            when 23 => return "structure";
          end case;
       end Inner;
    begin
