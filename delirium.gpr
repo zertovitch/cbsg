@@ -4,12 +4,25 @@
 --
 project Delirium is
 
+   type Build_Mode_Type is ("Debug", "Fast");
+   Build_Mode : Build_Mode_Type := external ("Build_Mode", "Fast");
+
    for Main use ("produce_corporate_bullshit.adb", "live.adb");
    for Object_Dir use "obj";
    for Exec_Dir use ".";
 
+   case Build_Mode is
+      when "Debug" => for Object_Dir use "obj_debug";
+      when "Fast" =>  for Object_Dir use "obj_fast";
+   end case;
+
    package Compiler is
-      for Default_Switches ("ada") use ("-g", "-O2", "-gnatpn", "-gnatyM131");
+      case Build_Mode is
+         when "Debug" =>
+            for Default_Switches ("ada") use ("-g", "-gnatVa", "-gnato", "-gnatyM131");
+         when "Fast" =>
+            for Default_Switches ("ada") use ("-g", "-O2", "-gnatpn", "-gnatyM131");
+      end case;
    end Compiler;
 
    package Binder is
