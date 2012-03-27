@@ -714,8 +714,15 @@ package body Corporate_Bullshit is
       end case;
    end Eventual_Adverb;
 
-   function Add_Random_Article (P: Plurality; To: String) return String;
-   function Build_Plural_Verb (Verb: String; P: Plurality) return String;
+   function Add_Random_Article (P: Plurality; To: String) return String is
+   begin
+      case R15 is
+         when 1 .. 2  => return "the " & To;
+         when 3 .. 6  => return "our " & To;
+         when 7 .. 15 => return Add_Indefinite_Article (P,To);
+            -- Indefinite is preferred in BS language.
+      end case;
+   end Add_Random_Article;
 
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
@@ -745,42 +752,6 @@ package body Corporate_Bullshit is
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
-
-   Vowel: constant array (Character) of Boolean:=
-     ('a'|'e'|'i'|'o'|'u' => True, others => False);
-
-   function Build_Plural_Verb (Verb: String; P: Plurality) return String is
-      Last: Natural;
-   begin
-      Last:= Verb'Last;
-      for I in reverse Verb'First + 1 .. Verb'Last loop
-         if Verb (I) = ' ' then
-            Last := I - 1;
-         end if;
-      end loop;
-      case P is
-         when Plural   => return Verb;
-         when Singular =>
-            case Verb (Last) is
-               when 'o' | 's' | 'z' =>
-                  return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
-               when 'h' =>
-                  if Verb (Last - 1) = 'c' then -- catch -> catches
-                     return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
-                  else -- plough -> ploughs
-                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-                  end if;
-               when 'y' =>
-                  if Vowel (Verb (Last - 1)) then -- ploy -> ploys
-                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-                  else -- try -> tries
-                     return Verb (Verb'First .. Last - 1) & "ies" & Verb (Last+1 .. Verb'Last);
-                  end if;
-               when others =>
-                  return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-            end case;
-      end case;
-   end Build_Plural_Verb;
 
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
@@ -935,30 +906,6 @@ package body Corporate_Bullshit is
    begin
       return Build_Plural_Verb (Inner,P);
    end Person_Verb_And_Complement;
-
-   function Add_Indefinite_Article (P: Plurality; To: String) return String is
-   begin
-      case P is
-         when Singular =>
-            if Vowel (To (To'First)) then
-               return "an " & To;
-            else
-               return "a " & To;
-            end if;
-         when Plural =>
-            return To;
-      end case;
-   end Add_Indefinite_Article;
-
-   function Add_Random_Article (P: Plurality; To: String) return String is
-   begin
-      case R15 is
-         when 1 .. 2  => return "the " & To;
-         when 3 .. 6  => return "our " & To;
-         when 7 .. 15 => return Add_Indefinite_Article (P,To);
-            -- Indefinite is preferred in BS language.
-      end case;
-   end Add_Random_Article;
 
    function Thing_Verb_And_Ending (P: Plurality) return String is
       Compl_Sp: constant Plurality:= Random_Plural;

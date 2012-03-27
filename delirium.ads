@@ -1,10 +1,11 @@
 -------------------------------------------------------------------------
 --  Delirium - Helper package for random recursive grammar
+--
 --  Package specification
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006..2010
+--  Copyright (c) Gautier de Montmollin 2006..2012
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -42,7 +43,17 @@ package Delirium is
 
    function Random_Plural return Plurality;
 
+   ---------------------------
+   -- English grammar tools --
+   ---------------------------
+
    function Make_Eventual_Plural (S: String; P: Plurality) return String;
+
+   function Build_Plural_Verb (Verb: String; P: Plurality) return String;
+
+   function Add_Indefinite_Article (P: Plurality; To: String) return String;
+
+   --
 
    type Blending is (Bullshit, Normal, Custom);
 

@@ -1,10 +1,11 @@
 -------------------------------------------------------------------------
 --  Delirium - Helper package for random recursive grammar
+--
 --  Package body
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006..2010
+--  Copyright (c) Gautier de Montmollin 2006..2012
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -35,14 +36,9 @@ with Ada.Numerics.Discrete_Random;
 
 package body Delirium is
 
-   package Rand_Pl is new Ada.Numerics.Discrete_Random (Plurality);
-
-   Seed_Pl : Rand_Pl.Generator;
-
-   function Random_Plural return Plurality is
-   begin
-      return Rand_Pl.Random (Seed_Pl);
-   end Random_Plural;
+   ---------------------------
+   -- English grammar tools --
+   ---------------------------
 
    function Make_Eventual_Plural (S: String; P: Plurality) return String is
    begin
@@ -63,6 +59,69 @@ package body Delirium is
          end case;
       end if;
    end Make_Eventual_Plural;
+
+   Vowel: constant array (Character) of Boolean:=
+     ('a'|'e'|'i'|'o'|'u' => True, others => False);
+
+   function Build_Plural_Verb (Verb: String; P: Plurality) return String is
+      Last: Natural;
+   begin
+      Last:= Verb'Last;
+      for I in reverse Verb'First + 1 .. Verb'Last loop
+         if Verb (I) = ' ' then
+            Last := I - 1;
+         end if;
+      end loop;
+      case P is
+         when Plural   => return Verb;
+         when Singular =>
+            case Verb (Last) is
+               when 'o' | 's' | 'z' =>
+                  return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
+               when 'h' =>
+                  if Verb (Last - 1) = 'c' then -- catch -> catches
+                     return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
+                  else -- plough -> ploughs
+                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+                  end if;
+               when 'y' =>
+                  if Vowel (Verb (Last - 1)) then -- ploy -> ploys
+                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+                  else -- try -> tries
+                     return Verb (Verb'First .. Last - 1) & "ies" & Verb (Last+1 .. Verb'Last);
+                  end if;
+               when others =>
+                  return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+            end case;
+      end case;
+   end Build_Plural_Verb;
+
+   function Add_Indefinite_Article (P: Plurality; To: String) return String is
+   begin
+      case P is
+         when Singular =>
+            if Vowel (To (To'First)) then
+               return "an " & To;
+            else
+               return "a " & To;
+            end if;
+         when Plural =>
+            return To;
+      end case;
+   end Add_Indefinite_Article;
+
+   ----------------------
+   -- Random functions --
+   ----------------------
+
+   package Rand_Pl is new Ada.Numerics.Discrete_Random (Plurality);
+
+   Seed_Pl : Rand_Pl.Generator;
+
+   function Random_Plural return Plurality is
+   begin
+      return Rand_Pl.Random (Seed_Pl);
+   end Random_Plural;
 
    Seed: Generator;
    function R (N: Positive) return Positive is
