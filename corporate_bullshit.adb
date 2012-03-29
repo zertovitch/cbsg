@@ -252,7 +252,7 @@ package body Corporate_Bullshit is
          when 49 => return "tolerably expensive";
          when 50 => return "organic";
          when 51 => return "forward-looking";
-         when 52 => return "high level";
+         when 52 => return "next-level";
          when 53 => return "executive";
          when 54 => return "seamless";
          when 55 => return "spectral";
@@ -418,7 +418,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R146 is
+         case R147 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -574,6 +574,7 @@ package body Corporate_Bullshit is
             when 144 => return "pyramid";
             when 145 => return "market";
             when 146 => return "diversity";
+            when 147 => return "interdependency";
          end case;
       end Inner;
 
