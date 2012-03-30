@@ -24,16 +24,22 @@
       The CBSG project site is <a href="http://sf.net/projects/cbsg/">here</a>.
       
       <br><br>
-      
+      <table cellspacing=0 cellpadding=0 border=0>
+      <tr><td>
       <!-- Facebook's "Like" button -->
       <iframe
-         src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcbsg.sourceforge.net%2Fcgi-bin%2Flive&amp;send=false&amp;layout=box_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=90"
-         scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:90px;" allowTransparency="true">
+         src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcbsg.sourceforge.net%2Fcgi-bin%2Flive&amp;send=false&amp;layout=button_count&amp;width=450&amp;height=35&amp;show_faces=false&amp;action=like&amp;colorscheme=light"
+         scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;"
+         allowTransparency="true">
       </iframe>
-      <br>
+      </td></tr>
+      <tr><td>
       <!-- The fabulous worth of this site ($27.7M 28-Mar-2012) ;-) -->
-      <a href="http://www.webstatsdomain.com/domains/cbsg.sourceforge.net/" title="Worth for cbsg.sourceforge.net" target="_blank"><img src="http://www.webstatsdomain.com/widget/raiting/cbsg.sourceforge.net/gold-small.png" style="border:none;" alt="Worth for cbsg.sourceforge.net"/></a>
-      
+      <a href="http://www.webstatsdomain.com/domains/cbsg.sourceforge.net/" title="Worth for cbsg.sourceforge.net" target="_blank"><img src="http://www.webstatsdomain.com/widget/raiting/cbsg.sourceforge.net/gold-small.png"
+        style="border:none;"
+        alt="Worth for cbsg.sourceforge.net" width=84 height=34 /></a>
+      </td></tr>
+      </table>
       <hr>
       
       <center>
