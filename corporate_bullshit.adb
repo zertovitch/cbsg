@@ -196,7 +196,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R165 is
+      case R169 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -377,6 +377,10 @@ package body Corporate_Bullshit is
          when 163 => return "high-performing";
          when 164 => return "top-down";
          when 165 => return "cross-enterprise";
+         when 166 => return "outsourced"; -- BBC - LGA banned words
+         when 167 => return "situational"; -- BBC - LGA banned words
+         when 168 => return "bottom-up"; -- BBC - LGA banned words
+         when 169 => return "multidisciplinary"; -- BBC - LGA banned words
       end case;
    end Thing_Adjective;
 
@@ -659,6 +663,7 @@ package body Corporate_Bullshit is
                when 64 => return "self-efficacy";
                when 65 => return "decision-making";
                when 66 => return "line-of-sight";
+               when 67 => return "scoping"; -- BBC - LGA banned words
                when others => return Inner;
             end case;
          when Plural =>

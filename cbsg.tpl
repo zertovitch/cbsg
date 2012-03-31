@@ -5,7 +5,7 @@
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta http-equiv="cache-control" content="no-cache">
       <meta http-equiv="pragma" content="no-cache"> <!-- old browser's variant -->
-      <meta name="keywords" content="random corporate bullshit generator" />
+      <meta name="keywords" content="random corporate bullshit generator">
    </head>
    <body>
       <font face="Calibri, Arial">
@@ -38,7 +38,7 @@
       <!-- The fabulous worth of this site ($27.7M 28-Mar-2012) ;-) -->
       <a href="http://www.webstatsdomain.com/domains/cbsg.sourceforge.net/" title="Worth for cbsg.sourceforge.net" target="_blank"><img src="http://www.webstatsdomain.com/widget/raiting/cbsg.sourceforge.net/gold-small.png"
         style="border:none;"
-        alt="Worth for cbsg.sourceforge.net" width=84 height=34 /></a>
+        alt="Worth for cbsg.sourceforge.net" width=84 height=34></a>
       </td></tr>
       </table>
       <hr>
