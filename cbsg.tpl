@@ -4,6 +4,7 @@
       <title>Corporate Bullshit Generator</title>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <meta http-equiv="cache-control" content="no-cache">
+      <meta http-equiv="pragma" content="no-cache"> <!-- old browser's variant -->
       <meta name="keywords" content="random corporate bullshit generator" />
    </head>
    <body>
