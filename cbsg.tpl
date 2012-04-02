@@ -49,7 +49,7 @@
 		   border="0"
            alt="SourceForge.net" height="40" width="150" align="absmiddle"></a>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <img src="http://cbsg.sf.net/durada.gif" alt="Powered by Ada" height="62" width="91" align="absmiddle">
+         <img src="http://cbsg.sf.net/durada.png" alt="Powered by Ada" height="62" width="91" align="absmiddle">
       </center>
       </font>
    </body>
