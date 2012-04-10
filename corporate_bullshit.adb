@@ -129,7 +129,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R11 is
+         case R13 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -141,6 +141,8 @@ package body Corporate_Bullshit is
             when 9  => return "Client Relationship";
             when 10 => return "Business Planning";
             when 11 => return "Business Operations";
+            when 12 => return "IT Strategy";
+            when 13 => return "IT Operations";
          end case;
       end Department;
 
@@ -448,7 +450,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R151 is
+         case R152 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -609,6 +611,7 @@ package body Corporate_Bullshit is
             when 149 => return "asset";
             when 150 => return "flow charting";
             when 151 => return "value proposition";
+            when 152 => return "performance culture";
          end case;
       end Inner;
 
@@ -794,7 +797,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R48 is
+         case R49 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -846,6 +849,7 @@ package body Corporate_Bullshit is
             when 46 => return "facilitate";
             when 47 => return "drive";
             when 48 => return "structure";
+            when 49 => return "standardize";
          end case;
       end Inner;
    begin
@@ -857,7 +861,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R23 is
+         case R24 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -881,6 +885,7 @@ package body Corporate_Bullshit is
             when 21 => return "cultivate";
             when 22 => return "engage";
             when 23 => return "structure";
+            when 24 => return "standardize";
          end case;
       end Inner;
    begin
