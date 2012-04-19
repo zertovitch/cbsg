@@ -10,7 +10,7 @@
 --      from my colleagues and friends, especially:
 --        Mili Eppler, Nigel Findlater, Emilio Nualart,
 --        Bernhard Maertl, Paul Della Marta, Georges Modol,
---        Andrew Fox, Kurt Dickmann
+--        Andrew Fox, Kurt Dickmann, Georg Bauhaus
 --  - high-level, responsive empowerments by Ludovic Brenta
 --
 --  Legal licensing note:
@@ -207,7 +207,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R179 is
+      case R181 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -402,6 +402,8 @@ package body Corporate_Bullshit is
          when 177 => return "differentiated";
          when 178 => return "solutions-based";
          when 179 => return "compelling";
+         when 180 => return "structural";
+         when 181 => return "go-to-market";
       end case;
    end Thing_Adjective;
 
@@ -450,7 +452,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R152 is
+         case R153 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -612,6 +614,7 @@ package body Corporate_Bullshit is
             when 150 => return "flow charting";
             when 151 => return "value proposition";
             when 152 => return "performance culture";
+            when 153 => return "change";
          end case;
       end Inner;
 
@@ -689,6 +692,7 @@ package body Corporate_Bullshit is
                when 65 => return "decision-making";
                when 66 => return "line-of-sight";
                when 67 => return "scoping"; -- BBC - LGA banned words
+               when 68 => return "line-up";
                when others => return Inner;
             end case;
          when Plural =>
@@ -708,6 +712,7 @@ package body Corporate_Bullshit is
                   -- UWM 2010
                when 10 => return "soft cycle issues"; -- [!! negative word]
                when 11 => return "roles and responsibilities";
+               when 12 => return "cost savings";
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
@@ -790,6 +795,7 @@ package body Corporate_Bullshit is
          when 18 => return " as a consequence of " & Growth;
          when 19 => return " because " & Add_Random_Article (P, Thing (P))
                            & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
+         when 20 => return " ahead of schedule";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -797,7 +803,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R49 is
+         case R53 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -850,6 +856,10 @@ package body Corporate_Bullshit is
             when 47 => return "drive";
             when 48 => return "structure";
             when 49 => return "standardize";
+            when 50 => return "accelerate";
+            when 51 => return "deepen";
+            when 52 => return "strengthen";
+            when 53 => return "broaden";
          end case;
       end Inner;
    begin
@@ -861,7 +871,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R24 is
+         case R27 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -886,6 +896,9 @@ package body Corporate_Bullshit is
             when 22 => return "engage";
             when 23 => return "structure";
             when 24 => return "standardize";
+            when 25 => return "accelerate";
+            when 26 => return "deepen";
+            when 27 => return "strengthen";
          end case;
       end Inner;
    begin
@@ -897,7 +910,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Person_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R12 is
+         case R13 is
             when 1 => return "motivate";
             when 2 => return "target";
             when 3 => return "enable";
@@ -912,6 +925,7 @@ package body Corporate_Bullshit is
             when 10 => return "transfer";
             when 11 => return "promote";
             when 12 => return "influence";
+            when 13 => return "strengthen";
          end case;
       end Inner;
    begin
@@ -923,7 +937,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R17 is
+         case R18 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -944,6 +958,7 @@ package body Corporate_Bullshit is
                                          -- GAC 2010
             when 16 => return "connect the dots";
             when 17 => return "stay in the zone";
+            when 18 => return "evolve";
          end case;
       end Inner;
    begin
