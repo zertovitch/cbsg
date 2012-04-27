@@ -207,7 +207,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R181 is
+      case R183 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -404,6 +404,8 @@ package body Corporate_Bullshit is
          when 179 => return "compelling";
          when 180 => return "structural";
          when 181 => return "go-to-market";
+         when 182 => return "on-message";
+         when 183 => return "adequate";
       end case;
    end Thing_Adjective;
 
@@ -693,6 +695,8 @@ package body Corporate_Bullshit is
                when 66 => return "line-of-sight";
                when 67 => return "scoping"; -- BBC - LGA banned words
                when 68 => return "line-up";
+               when 69 => return "predictability";
+               when 70 => return "recognition";
                when others => return Inner;
             end case;
          when Plural =>
@@ -737,7 +741,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R48 is
+      case R72 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -756,6 +760,8 @@ package body Corporate_Bullshit is
          when 14 => return "organically ";
          when 15 => return "carefully ";
          when 16 => return "significantly ";
+         when 17 => return "conservatively ";
+         when 18 => return "adequately ";
          when others => return "";
       end case;
    end Eventual_Adverb;
