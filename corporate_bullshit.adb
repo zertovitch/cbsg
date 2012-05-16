@@ -454,7 +454,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R153 is
+         case R156 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -617,6 +617,9 @@ package body Corporate_Bullshit is
             when 151 => return "value proposition";
             when 152 => return "performance culture";
             when 153 => return "change";
+            when 154 => return "reward";
+            when 155 => return "risk/return profile";
+            when 156 => return "efficient frontier";
          end case;
       end Inner;
 
@@ -697,6 +700,7 @@ package body Corporate_Bullshit is
                when 68 => return "line-up";
                when 69 => return "predictability";
                when 70 => return "recognition";
+               when 71 => return "investor confidence";
                when others => return Inner;
             end case;
          when Plural =>
@@ -717,6 +721,8 @@ package body Corporate_Bullshit is
                when 10 => return "soft cycle issues"; -- [!! negative word]
                when 11 => return "roles and responsibilities";
                when 12 => return "cost savings";
+               when 13 => return "market conditions";
+               when 14 => return "market opportunities";
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
@@ -779,7 +785,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R125 is
+      case R130 is
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -802,6 +808,7 @@ package body Corporate_Bullshit is
          when 19 => return " because " & Add_Random_Article (P, Thing (P))
                            & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
          when 20 => return " ahead of schedule";
+         when 21 => return ", relative to our peers";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
