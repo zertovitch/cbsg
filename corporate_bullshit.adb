@@ -49,9 +49,6 @@ package body Corporate_Bullshit is
    -- To do:
    --   * Enrich the Proposition function
    --   * Person_adjecive: "commited", "multi-skilled"
-   --   * specific place for BAD, negative items, to be fought (
-   --      "issues", "intricacies", "organizational diseconomies" ,
-   --      "black swan")
    --   * other sentances; rhetorical questions
    --   * Fix bugs marked with !!
    --   * "integrate into"
@@ -207,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R183 is
+      case R184 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -406,6 +403,7 @@ package body Corporate_Bullshit is
          when 181 => return "go-to-market";
          when 182 => return "on-message";
          when 183 => return "adequate";
+         when 184 => return "value-enhancing";
       end case;
    end Thing_Adjective;
 
@@ -454,7 +452,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R156 is
+         case R154 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -542,20 +540,20 @@ package body Corporate_Bullshit is
             when 81 => return "paradigm shift";
             when 82 => return "strategic staircase";
                --
-            when 83 => return "cornerstone";
-            when 84 => return "executive talent";
-            when 85 => return "evolution";
-            when 86 => return "workflow";
-            when 87 => return "message";
+            when 83  => return "cornerstone";
+            when 84  => return "executive talent";
+            when 85  => return "evolution";
+            when 86  => return "workflow";
+            when 87  => return "message";
                -- GAC 2010
-            when 88 => return "known unknown"; -- !! negative
-            when 89 => return "unknown unknown"; -- !! negative
-            when 90 => return "pillar";
+            when 88  => return "risk/return profile";
+            when 89  => return "efficient frontier";
+            when 90  => return "pillar";
                -- Andy
-            when 91 => return "internal client";
-            when 92 => return "consistency";
+            when 91  => return "internal client";
+            when 92  => return "consistency";
                -- Ludovic
-            when 93 => return "on-boarding process";
+            when 93  => return "on-boarding process";
                --
             when 94  => return "dotted line";
             when 95  => return "action item";
@@ -618,8 +616,6 @@ package body Corporate_Bullshit is
             when 152 => return "performance culture";
             when 153 => return "change";
             when 154 => return "reward";
-            when 155 => return "risk/return profile";
-            when 156 => return "efficient frontier";
          end case;
       end Inner;
 
@@ -708,21 +704,19 @@ package body Corporate_Bullshit is
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
                when 3  => return "key performance indicators";
-               when 4  => return "market forces";
-               when 5  => return "intricacies"; -- Georges Modol [!! negative word]
-                  -- Directly pasted from a management presentation (2009)
-               when 6  => return "lessons learned";
+               when 4  => return "market conditions";
+               when 5  => return "market forces";
+               when 6  => return "market opportunities";
                when 7  => return "tactics";
                   --
                when 8 => return "organizing principles";
                   -- GAC 2010
                when 9 => return "interpersonal skills";
                   -- UWM 2010
-               when 10 => return "soft cycle issues"; -- [!! negative word]
-               when 11 => return "roles and responsibilities";
-               when 12 => return "cost savings";
-               when 13 => return "market conditions";
-               when 14 => return "market opportunities";
+               when 10 => return "roles and responsibilities";
+               when 11 => return "cost savings";
+                  -- Directly pasted from a management presentation (2009)
+               when 12 => return "lessons learned";
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
@@ -742,6 +736,30 @@ package body Corporate_Bullshit is
          when others => return Thing_Atom (P);
       end case;
    end Thing;
+
+   -- Bad things.
+   --
+   -- They are always in plural. Singular is avoided for two reasons:
+   --
+   -- 1. It would be too specific - someone would be tempted to ask for details!
+   -- 2. It may be the beginning of a finger-pointing session. Better stay
+   --    impersonal to survive the meeting...
+
+   function Bad_Things return String is
+   begin
+      case R10 is
+         when 1  => return "issues";
+         when 2  => return "intricacies";
+         when 3  => return "organizational diseconomies";
+         when 4  => return "black swans";
+         when 5  => return "gaps";
+         when 6  => return "inefficiencies";
+         when 7  => return "overlaps";
+         when 8  => return "known unknowns";
+         when 9  => return "unknown unknowns";
+         when 10 => return "soft cycle issues";
+      end case;
+   end Bad_Things;
 
    -- Verbs --
 
@@ -879,6 +897,22 @@ package body Corporate_Bullshit is
       return Build_Plural_Verb (Inner,P);
    end Person_Verb_Having_Thing_Complement;
 
+   -- Something Bad is going to happen. Fortunately Supermarketman is there
+   -- with his secret weapon to clean the Evil thing and rescue the Business.
+   -- Well, at least there will be a meeting to begin a discussion about it.
+
+   function Person_Verb_Having_Bad_Thing_Complement (P: Plurality) return String is
+      function Inner return String is
+      begin
+         case R2 is
+            when 1  => return "address";
+            when 2  => return "identify";
+         end case;
+      end Inner;
+   begin
+      return Build_Plural_Verb (Inner,P);
+   end Person_Verb_Having_Bad_Thing_Complement;
+
    -- (thing) verb (thing)
 
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
@@ -1000,10 +1034,15 @@ package body Corporate_Bullshit is
    function Person_Verb_And_Ending (P: Plurality) return String is
       Compl_Sp: constant Plurality:= Random_Plural;
    begin
-      case R9 is
-         when 1  =>
+      case R95 is
+         when  1 .. 10  =>
             return Person_Verb_And_Complement (P);
-         when 2 .. 9 =>
+         when 11 .. 15  => -- Fight-the-Evil situation
+            return
+              Person_Verb_Having_Bad_Thing_Complement (P) &
+              ' ' &
+              Add_Random_Article (Plural, Bad_Things);
+         when 16 .. 95 =>
             return
               Person_Verb_Having_Thing_Complement (P) &
               ' ' &
@@ -1014,7 +1053,7 @@ package body Corporate_Bullshit is
    function Faukon return String is
    begin
       case R5 is
-         when 1 => return "we must";
+         when 1 => return "we need to";
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
          when 4 => return "controlling should";
