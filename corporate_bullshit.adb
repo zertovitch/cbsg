@@ -979,6 +979,8 @@ package body Corporate_Bullshit is
       return Build_Plural_Verb (Inner,P);
    end Person_Verb_And_Complement;
 
+   -- Verb + Ending. Ending is a Complement or something else
+
    function Thing_Verb_And_Ending (P: Plurality) return String is
       Compl_Sp: constant Plurality:= Random_Plural;
    begin
@@ -994,6 +996,20 @@ package body Corporate_Bullshit is
             return Build_Plural_Verb ("add", P) & " value";
       end case;
    end Thing_Verb_And_Ending;
+
+   function Person_Verb_And_Ending (P: Plurality) return String is
+      Compl_Sp: constant Plurality:= Random_Plural;
+   begin
+      case R9 is
+         when 1  =>
+            return Person_Verb_And_Complement (P);
+         when 2 .. 9 =>
+            return
+              Person_Verb_Having_Thing_Complement (P) &
+              ' ' &
+              Add_Random_Article (Compl_Sp, Thing (Compl_Sp));
+      end case;
+   end Person_Verb_And_Ending;
 
    function Faukon return String is
    begin
@@ -1014,28 +1030,20 @@ package body Corporate_Bullshit is
             return
             Faukon & ' ' &
             Eventual_Adverb &
-            Person_Verb_And_Complement (Plural) &
+            Person_Verb_And_Ending (Plural) &
             Eventual_Postfixed_Adverb;
             -- infinitive written same as present plural
-         when 6 .. 10    =>
+         when 6 .. 50    => -- ** PERSON...
             return
               "the " & Person (Sp1) & ' ' &
               Eventual_Adverb &
-              Person_Verb_And_Complement (Sp1) &
+              Person_Verb_And_Ending (Sp1) &
               Eventual_Postfixed_Adverb;
-         when 11 .. 60  => -- ** THING...
+         when 51 .. 100  => -- ** THING...
             return
             Add_Random_Article (Sp1, Thing (Sp1)) & ' ' &
             Eventual_Adverb &
             Thing_Verb_And_Ending (Sp1) &
-            Eventual_Postfixed_Adverb;
-         when 61 .. 100 => -- ** PERSON...
-            return
-            "the " & Person (Sp1) & ' ' &
-            Eventual_Adverb &
-            Person_Verb_Having_Thing_Complement (Sp1) &
-            ' ' &
-            Add_Random_Article (Sp2, Thing (Sp2)) &
             Eventual_Postfixed_Adverb;
       end case;
    end Proposition;
