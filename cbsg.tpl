@@ -33,7 +33,22 @@
          scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:35px;"
          allowTransparency="true">
       </iframe>
-      </td></tr>
+      </td>
+      <td>
+      &nbsp;
+      </td>
+      <td>
+      <!-- Google's "+1" button; Asynchronous JavaScript Loading -->
+      <g:plusone></g:plusone>
+      <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+      </script>
+      </td>
+      </tr>
       <tr><td>
       <!-- The fabulous worth of this site ($27.7M 28-Mar-2012) ;-) -->
       <a href="http://www.webstatsdomain.com/domains/cbsg.sourceforge.net/" title="Worth for cbsg.sourceforge.net" target="_blank"><img src="http://www.webstatsdomain.com/widget/raiting/cbsg.sourceforge.net/gold-small.png"
