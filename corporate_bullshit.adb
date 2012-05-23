@@ -204,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R184 is
+      case R185 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -404,6 +404,7 @@ package body Corporate_Bullshit is
          when 182 => return "on-message";
          when 183 => return "adequate";
          when 184 => return "value-enhancing";
+         when 185 => return "mission-critical";
       end case;
    end Thing_Adjective;
 
@@ -452,7 +453,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R154 is
+         case R156 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -616,6 +617,8 @@ package body Corporate_Bullshit is
             when 152 => return "performance culture";
             when 153 => return "change";
             when 154 => return "reward";
+            when 155 => return "learning";
+            when 156 => return "next step";
          end case;
       end Inner;
 
