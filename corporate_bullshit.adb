@@ -204,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R185 is
+      case R188 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -405,6 +405,9 @@ package body Corporate_Bullshit is
          when 183 => return "adequate";
          when 184 => return "value-enhancing";
          when 185 => return "mission-critical";
+         when 186 => return "business enabling";
+         when 187 => return "transitional";
+         when 188 => return "future";
       end case;
    end Thing_Adjective;
 
@@ -453,7 +456,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R156 is
+         case R160 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -619,6 +622,10 @@ package body Corporate_Bullshit is
             when 154 => return "reward";
             when 155 => return "learning";
             when 156 => return "next step";
+            when 157 => return "delivery framework";
+            when 158 => return "structure";
+            when 159 => return "support structure";
+            when 160 => return "standardization";
          end case;
       end Inner;
 
@@ -830,6 +837,7 @@ package body Corporate_Bullshit is
                            & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
          when 20 => return " ahead of schedule";
          when 21 => return ", relative to our peers";
+         when 22 => return " on a transitional basis";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -987,7 +995,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R19 is
+         case R21 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1010,6 +1018,8 @@ package body Corporate_Bullshit is
             when 17 => return "stay in the zone";
             when 18 => return "evolve";
             when 19 => return "exceed expectations";
+            when 20 => return "develop the plan";
+            when 21 => return "develop the blue print for execution";
          end case;
       end Inner;
    begin
