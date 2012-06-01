@@ -204,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R188 is
+      case R189 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -408,6 +408,7 @@ package body Corporate_Bullshit is
          when 186 => return "business enabling";
          when 187 => return "transitional";
          when 188 => return "future";
+         when 189 => return "game-changing";
       end case;
    end Thing_Adjective;
 
@@ -456,7 +457,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R160 is
+         case R161 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -626,6 +627,7 @@ package body Corporate_Bullshit is
             when 158 => return "structure";
             when 159 => return "support structure";
             when 160 => return "standardization";
+            when 161 => return "objective";
          end case;
       end Inner;
 
@@ -838,6 +840,7 @@ package body Corporate_Bullshit is
          when 20 => return " ahead of schedule";
          when 21 => return ", relative to our peers";
          when 22 => return " on a transitional basis";
+         when 23 => return " by expanding boundaries";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -995,7 +998,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R21 is
+         case R22 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1020,6 +1023,7 @@ package body Corporate_Bullshit is
             when 19 => return "exceed expectations";
             when 20 => return "develop the plan";
             when 21 => return "develop the blue print for execution";
+            when 22 => return "grow and diversify";
          end case;
       end Inner;
    begin
