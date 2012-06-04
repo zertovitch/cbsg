@@ -10,7 +10,7 @@
 --      from my colleagues and friends, especially:
 --        Mili Eppler, Nigel Findlater, Emilio Nualart,
 --        Bernhard Maertl, Paul Della Marta, Georges Modol,
---        Andrew Fox, Kurt Dickmann, Georg Bauhaus
+--        Andrew Fox, Kurt Dickmann, Georg Bauhaus, Frederic Praca
 --  - high-level, responsive empowerments by Ludovic Brenta
 --
 --  Legal licensing note:
@@ -48,7 +48,7 @@ package body Corporate_Bullshit is
 
    -- To do:
    --   * Enrich the Proposition function
-   --   * Person_adjecive: "commited", "multi-skilled"
+   --   * Person_adjective: "commited", "multi-skilled"
    --   * other sentances; rhetorical questions
    --   * Fix bugs marked with !!
    --   * "integrate into"
@@ -204,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R189 is
+      case R190 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -409,6 +409,7 @@ package body Corporate_Bullshit is
          when 187 => return "transitional";
          when 188 => return "future";
          when 189 => return "game-changing";
+         when 190 => return "enterprise-wide";
       end case;
    end Thing_Adjective;
 
@@ -709,6 +710,8 @@ package body Corporate_Bullshit is
                when 69 => return "predictability";
                when 70 => return "recognition";
                when 71 => return "investor confidence";
+               when 72 => return "competitive advantage";
+               when 73 => return "uniformity";
                when others => return Inner;
             end case;
          when Plural =>
@@ -815,7 +818,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R130 is
+      case R140 is
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -841,6 +844,7 @@ package body Corporate_Bullshit is
          when 21 => return ", relative to our peers";
          when 22 => return " on a transitional basis";
          when 23 => return " by expanding boundaries";
+         when 24 => return " by nurturing talent";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -848,7 +852,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R53 is
+         case R54 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -905,6 +909,7 @@ package body Corporate_Bullshit is
             when 51 => return "deepen";
             when 52 => return "strengthen";
             when 53 => return "broaden";
+            when 54 => return "enforce";
          end case;
       end Inner;
    begin
@@ -932,7 +937,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R27 is
+         case R28 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -960,6 +965,7 @@ package body Corporate_Bullshit is
             when 25 => return "accelerate";
             when 26 => return "deepen";
             when 27 => return "strengthen";
+            when 28 => return "enforce";
          end case;
       end Inner;
    begin
@@ -998,7 +1004,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R22 is
+         case R24 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1024,6 +1030,8 @@ package body Corporate_Bullshit is
             when 20 => return "develop the plan";
             when 21 => return "develop the blue print for execution";
             when 22 => return "grow and diversify";
+            when 23 => return "fuel changes";
+            when 24 => return "nurture talent";
          end case;
       end Inner;
    begin
