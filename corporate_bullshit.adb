@@ -52,7 +52,6 @@ package body Corporate_Bullshit is
    --   * other sentances; rhetorical questions
    --   * Fix bugs marked with !!
    --   * "integrate into"
-   --   * think "big picture"
    --   * Bullshit ratio (Emilio)
    --   * mix with specific vocabulary (combined with previous:
    --       blending of (bullshit, normal, custom); type in Delirium)
@@ -204,7 +203,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R191 is
+      case R196 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -411,6 +410,11 @@ package body Corporate_Bullshit is
          when 189 => return "game-changing";
          when 190 => return "enterprise-wide";
          when 191 => return "rock-solid";
+         when 192 => return "bullet-proof";
+         when 193 => return "superior";
+         when 194 => return "genuine";
+         when 195 => return "alert";
+         when 196 => return "nimble";
       end case;
    end Thing_Adjective;
 
@@ -716,6 +720,7 @@ package body Corporate_Bullshit is
                when 72 => return "competitive advantage";
                when 73 => return "uniformity";
                when 74 => return "competitiveness";
+               when 75 => return "big picture";
                when others => return Inner;
             end case;
          when Plural =>
@@ -766,7 +771,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R10 is
+      case R15 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -777,6 +782,11 @@ package body Corporate_Bullshit is
          when 8  => return "known unknowns";
          when 9  => return "unknown unknowns";
          when 10 => return "soft cycle issues";
+         when 11 => return "barriers to success";
+         when 12 => return "surprises";
+         when 13 => return "weaknesses"; -- The W in SWOT
+         when 14 => return "threats";    -- The T in SWOT
+         when 15 => return "obstacles";
       end case;
    end Bad_Things;
 
@@ -784,7 +794,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R72 is -- proportion: 3/4 empty adverb
+      case R80 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -805,6 +815,7 @@ package body Corporate_Bullshit is
          when 16 => return "significantly ";
          when 17 => return "conservatively ";
          when 18 => return "adequately ";
+         when 19 => return "genuinely ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -856,7 +867,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R56 is
+         case R57 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -916,6 +927,7 @@ package body Corporate_Bullshit is
             when 54 => return "enforce";
             when 55 => return "establish";
             when 56 => return "foster";
+            when 57 => return "build";
          end case;
       end Inner;
    begin
@@ -929,9 +941,11 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R2 is
+         case R4 is
             when 1  => return "address";
             when 2  => return "identify";
+            when 3  => return "avoid";
+            when 4  => return "mitigate";
          end case;
       end Inner;
    begin
@@ -1011,7 +1025,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R25 is
+         case R28 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1040,6 +1054,9 @@ package body Corporate_Bullshit is
             when 23 => return "fuel changes";
             when 24 => return "nurture talent";
             when 25 => return "turn every stone";
+            when 26 => return "challenge established ideas";
+            when 27 => return "manage the portfolio";
+            when 28 => return "align resources";
          end case;
       end Inner;
    begin
