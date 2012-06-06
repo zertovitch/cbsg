@@ -79,11 +79,12 @@ package body Delirium is
                when 'o' | 's' | 'z' =>
                   return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
                when 'h' =>
-                  if Verb (Last - 1) = 'c' then -- catch -> catches
-                     return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
-                  else -- plough -> ploughs
-                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-                  end if;
+                  case Verb (Last - 1) is
+                     when 'c' | 's' => -- catch -> catches; establish -> establishes
+                       return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
+                     when others => -- plough -> ploughs
+                       return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+                  end case;
                when 'y' =>
                   if Vowel (Verb (Last - 1)) then -- ploy -> ploys
                      return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);

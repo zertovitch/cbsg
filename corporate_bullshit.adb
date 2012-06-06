@@ -204,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R190 is
+      case R191 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -410,6 +410,7 @@ package body Corporate_Bullshit is
          when 188 => return "future";
          when 189 => return "game-changing";
          when 190 => return "enterprise-wide";
+         when 191 => return "rock-solid";
       end case;
    end Thing_Adjective;
 
@@ -458,7 +459,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R161 is
+         case R163 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -629,6 +630,8 @@ package body Corporate_Bullshit is
             when 159 => return "support structure";
             when 160 => return "standardization";
             when 161 => return "objective";
+            when 162 => return "footprint";
+            when 163 => return "transformation process";
          end case;
       end Inner;
 
@@ -712,6 +715,7 @@ package body Corporate_Bullshit is
                when 71 => return "investor confidence";
                when 72 => return "competitive advantage";
                when 73 => return "uniformity";
+               when 74 => return "competitiveness";
                when others => return Inner;
             end case;
          when Plural =>
@@ -852,7 +856,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R54 is
+         case R56 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -910,6 +914,8 @@ package body Corporate_Bullshit is
             when 52 => return "strengthen";
             when 53 => return "broaden";
             when 54 => return "enforce";
+            when 55 => return "establish";
+            when 56 => return "foster";
          end case;
       end Inner;
    begin
@@ -937,7 +943,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R28 is
+         case R29 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -966,6 +972,7 @@ package body Corporate_Bullshit is
             when 26 => return "deepen";
             when 27 => return "strengthen";
             when 28 => return "enforce";
+            when 29 => return "foster";
          end case;
       end Inner;
    begin
@@ -1004,7 +1011,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R24 is
+         case R25 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1032,6 +1039,7 @@ package body Corporate_Bullshit is
             when 22 => return "grow and diversify";
             when 23 => return "fuel changes";
             when 24 => return "nurture talent";
+            when 25 => return "turn every stone";
          end case;
       end Inner;
    begin
@@ -1075,14 +1083,17 @@ package body Corporate_Bullshit is
       end case;
    end Person_Verb_And_Ending;
 
+   -- "We need to..." and similar forward-looking constructions
+   --
    function Faukon return String is
    begin
-      case R5 is
+      case R6 is
          when 1 => return "we need to";
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
          when 4 => return "controlling should";
          when 5 => return "we must activate the " & Matrix_Or_So & " to";
+         when 6 => return "pursuing this route will enable us to";
       end case;
    end Faukon;
 
