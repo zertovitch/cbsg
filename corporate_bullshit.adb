@@ -204,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R198 is
+      case R202 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -374,7 +374,7 @@ package body Corporate_Bullshit is
          when 152 => return "vision-setting";
          when 153 => return "client-oriented";
          when 154 => return "long-established";
-         when 155 => return "high-margin";
+         when 155 => return "established";
          when 156 => return "organizational";
          when 157 => return "visionary";
          when 158 => return "trusted";
@@ -418,6 +418,10 @@ package body Corporate_Bullshit is
          when 196 => return "nimble";
          when 197 => return "phased";
          when 198 => return "selective";
+         when 199 => return "macroscopic";
+         when 200 => return "low-risk high-yield";
+         when 201 => return "interconnected";
+         when 202 => return "high-margin";
       end case;
    end Thing_Adjective;
 
@@ -466,7 +470,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R164 is
+         case R166 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -640,6 +644,8 @@ package body Corporate_Bullshit is
             when 162 => return "footprint";
             when 163 => return "transformation process";
             when 164 => return "policy";
+            when 165 => return "sales target";
+            when 166 => return "ecosystem";
          end case;
       end Inner;
 
@@ -752,16 +758,43 @@ package body Corporate_Bullshit is
 
    function Thing (P: Plurality) return String is
    begin
-      case R105 is
-         when  1 .. 9 => return Thing_Adjective & ", " &
-            Thing_Adjective & ", " & Thing_Atom (P);
-         when 10 .. 14 => return Thing_Adjective & " and " &
-            Thing_Adjective & ' ' & Thing_Atom (P);
-         when 15 .. 70 => return Thing_Adjective & ' ' & Thing_Atom (P);
-         when 71 .. 72 => return Thing_Adjective & " and/or " &
-            Thing_Adjective & ' ' & Thing_Atom (P);
-         when 73 .. 74 => return Growth; -- already has a superlative, don't add an adjective
-         when others => return Thing_Atom (P);
+      case R110 is
+         when  1 .. 9 =>   -- 2 adjectives, comma separated
+            return
+               Thing_Adjective & ", " &
+               Thing_Adjective & ", " &
+               Thing_Atom (P);
+         when 10 .. 14 =>  -- 2 adjectives, separated by "and"
+            return
+               Thing_Adjective & " and " &
+               Thing_Adjective & ' ' &
+               Thing_Atom (P);
+         when 15 .. 70 =>  -- 1 adjective
+            return
+               Thing_Adjective & ' ' &
+               Thing_Atom (P);
+         when 71 .. 72 =>  -- 2 adjectives, separated by "and/or"
+            return
+               Thing_Adjective & " and/or " &
+               Thing_Adjective & ' ' &
+               Thing_Atom (P);
+         when 73 .. 74 =>
+            return Growth; -- already has a superlative, don't add an adjective
+         when 75 .. 80 =>  -- 3 adjectives
+            return
+               Thing_Adjective & ", " &
+               Thing_Adjective & " and " &
+               Thing_Adjective & ' ' &
+               Thing_Atom (P);
+         when 81 .. 84 =>  -- 4 adjectives
+            return
+               Thing_Adjective & ", " &
+               Thing_Adjective & ", " &
+               Thing_Adjective & " and " &
+               Thing_Adjective & ' ' &
+               Thing_Atom (P);
+         when others =>
+            return Thing_Atom (P);
       end case;
    end Thing;
 
@@ -775,7 +808,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R16 is
+      case R17 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -792,6 +825,7 @@ package body Corporate_Bullshit is
          when 14 => return "threats";    -- The T in SWOT
          when 15 => return "barriers to success";
          when 16 => return "barriers";
+         when 17 => return "shortcomings";
       end case;
    end Bad_Things;
 
