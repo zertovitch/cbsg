@@ -470,7 +470,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R166 is
+         case R168 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -646,6 +646,8 @@ package body Corporate_Bullshit is
             when 164 => return "policy";
             when 165 => return "sales target";
             when 166 => return "ecosystem";
+            when 167 => return "market practice";
+            when 168 => return "atmosphere";
          end case;
       end Inner;
 
@@ -653,7 +655,7 @@ package body Corporate_Bullshit is
       case P is
          when Singular =>
             case R200 is
-               -- Things that have no plural.
+               -- Things where plural would sound clunky.
                when 1  => return Timeless_Event;
                when 2  => return "team building";
                when 3  => return "focus";
@@ -731,10 +733,13 @@ package body Corporate_Bullshit is
                when 73 => return "uniformity";
                when 74 => return "competitiveness";
                when 75 => return "big picture";
+               when 76 => return "resourcefulness";
+               when 77 => return "quality";
                when others => return Inner;
             end case;
          when Plural =>
             case R200 is
+               -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
                when 3  => return "key performance indicators";
@@ -808,7 +813,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R17 is
+      case R18 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -826,6 +831,7 @@ package body Corporate_Bullshit is
          when 15 => return "barriers to success";
          when 16 => return "barriers";
          when 17 => return "shortcomings";
+         when 18 => return "problems";
       end case;
    end Bad_Things;
 
