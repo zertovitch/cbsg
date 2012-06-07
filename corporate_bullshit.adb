@@ -50,6 +50,8 @@ package body Corporate_Bullshit is
    --   * Enrich the Proposition function
    --   * Person_adjective: "commited", "multi-skilled"
    --   * other sentances; rhetorical questions
+   --   * "It's not about X, it's about Y"
+   --   * "It's about breaking down the silos"
    --   * Fix bugs marked with !!
    --   * "integrate into"
    --   * Bullshit ratio (Emilio)
@@ -57,7 +59,6 @@ package body Corporate_Bullshit is
    --       blending of (bullshit, normal, custom); type in Delirium)
    --   * http://www.standardshop.com/bs15000.htm
    --   * "Let us take this offline"
-   --   * "Make things happen", "stay ahead"
    --   * ...a [s-whatever] that puts [s-whatever] at the center
    --       of the organization's [whatever]
    --   * A Silly Abbreviation Generator (SAG).
@@ -203,7 +204,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R196 is
+      case R198 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -415,6 +416,8 @@ package body Corporate_Bullshit is
          when 194 => return "genuine";
          when 195 => return "alert";
          when 196 => return "nimble";
+         when 197 => return "phased";
+         when 198 => return "selective";
       end case;
    end Thing_Adjective;
 
@@ -463,7 +466,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R163 is
+         case R164 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -636,6 +639,7 @@ package body Corporate_Bullshit is
             when 161 => return "objective";
             when 162 => return "footprint";
             when 163 => return "transformation process";
+            when 164 => return "policy";
          end case;
       end Inner;
 
@@ -771,7 +775,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R15 is
+      case R16 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -782,11 +786,12 @@ package body Corporate_Bullshit is
          when 8  => return "known unknowns";
          when 9  => return "unknown unknowns";
          when 10 => return "soft cycle issues";
-         when 11 => return "barriers to success";
+         when 11 => return "obstacles";
          when 12 => return "surprises";
          when 13 => return "weaknesses"; -- The W in SWOT
          when 14 => return "threats";    -- The T in SWOT
-         when 15 => return "obstacles";
+         when 15 => return "barriers to success";
+         when 16 => return "barriers";
       end case;
    end Bad_Things;
 
@@ -1025,7 +1030,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R28 is
+         case R31 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1057,6 +1062,9 @@ package body Corporate_Bullshit is
             when 26 => return "challenge established ideas";
             when 27 => return "manage the portfolio";
             when 28 => return "align resources";
+            when 29 => return "drive the business forward";
+            when 30 => return "make things happen";
+            when 31 => return "stay ahead";
          end case;
       end Inner;
    begin
