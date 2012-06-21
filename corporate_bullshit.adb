@@ -158,7 +158,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R15 is
+            case R17 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -170,11 +170,12 @@ package body Corporate_Bullshit is
                when 9  => return "thought leader"; -- Thanks Andy!
                when 10 => return "gatekeeper"; -- ME - UWM 2010
                when 11 => return "resource";   -- no, we're not people, we're "resources"
+               when 12 => return "senior support staff";
                when others =>
                   return Boss;
             end case;
          when Plural =>
-            case R10 is
+            case R11 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -185,6 +186,7 @@ package body Corporate_Bullshit is
                when 8  => return "stakeholders";
                when 9  => return "standard-setters";
                when 10 => return "partners";
+               when 11 => return "business leaders";
             end case;
       end case;
    end Person;
@@ -470,7 +472,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R168 is
+         case R169 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -648,6 +650,7 @@ package body Corporate_Bullshit is
             when 166 => return "ecosystem";
             when 167 => return "market practice";
             when 168 => return "atmosphere";
+            when 169 => return "operating strategy";
          end case;
       end Inner;
 
@@ -1070,7 +1073,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R31 is
+         case R33 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1105,6 +1108,8 @@ package body Corporate_Bullshit is
             when 29 => return "drive the business forward";
             when 30 => return "make things happen";
             when 31 => return "stay ahead";
+            when 32 => return "outperform peers";
+            when 33 => return "surge ahead";
          end case;
       end Inner;
    begin
@@ -1190,7 +1195,7 @@ package body Corporate_Bullshit is
 
    function Articulated_Propositions return String is
    begin
-      case R27 is
+      case R28 is
          when 1 .. 17  => return Proposition;
          when 18       => return Proposition & "; this is why " & Proposition;
          when 19       => return Proposition & "; nevertheless " & Proposition;
@@ -1199,6 +1204,7 @@ package body Corporate_Bullshit is
          when 22 .. 25 => return Proposition & ", while " & Proposition;
          when 26       => return Proposition & ". In the same time, " & Proposition;
          when 27       => return Proposition & ". As a result, " & Proposition;
+         when 28       => return Proposition & ", whilst " & Proposition;
       end case;
    end Articulated_Propositions;
 
