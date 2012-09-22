@@ -143,12 +143,22 @@ package body Corporate_Bullshit is
          end case;
       end Department;
 
+      function Department_or_Top_Role return String is
+      begin
+        case R14 is
+          when 1..13 =>
+            return Department;
+          when 14 =>
+            return "Visionary";
+        end case;
+      end Department_or_Top_Role;
+
    begin
       case R4 is
          when 1 =>      -- A fully normal boss (eventually, a managing one)
             return Managing & Age & Exec & Title & " of " & Department;
          when others => -- Chief X Officer
-            return Groupal & "Chief " & Department & " Officer";
+            return Groupal & "Chief " & Department_or_Top_Role & " Officer";
       end case;
    end Boss;
 
@@ -472,7 +482,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R169 is
+         case R170 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -651,6 +661,7 @@ package body Corporate_Bullshit is
             when 167 => return "market practice";
             when 168 => return "atmosphere";
             when 169 => return "operating strategy";
+            when 170 => return "core competency";
          end case;
       end Inner;
 
@@ -816,7 +827,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R18 is
+      case R19 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -835,6 +846,7 @@ package body Corporate_Bullshit is
          when 16 => return "barriers";
          when 17 => return "shortcomings";
          when 18 => return "problems";
+         when 19 => return "uncertainties";
       end case;
    end Bad_Things;
 
