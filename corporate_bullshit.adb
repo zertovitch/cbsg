@@ -330,7 +330,7 @@ package body Corporate_Bullshit is
          when 96  => return "market-altering";
          when 97  => return "vertical";
          when 98  => return "emerging";
-         when 99  => return "differenciating";
+         when 99  => return "differentiating";
          when 100 => return "integrative";
          when 101 => return "cross-functional";
          when 102 => return "measurable";
@@ -749,6 +749,7 @@ package body Corporate_Bullshit is
                when 75 => return "big picture";
                when 76 => return "resourcefulness";
                when 77 => return "quality";
+               when 78 => return "upside focus";
                when others => return Inner;
             end case;
          when Plural =>
@@ -927,7 +928,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R57 is
+         case R58 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -988,6 +989,7 @@ package body Corporate_Bullshit is
             when 55 => return "establish";
             when 56 => return "foster";
             when 57 => return "build";
+            when 58 => return "differentiate";
          end case;
       end Inner;
    begin
@@ -1085,7 +1087,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R33 is
+         case R34 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1122,6 +1124,7 @@ package body Corporate_Bullshit is
             when 31 => return "stay ahead";
             when 32 => return "outperform peers";
             when 33 => return "surge ahead";
+            when 34 => return "manage the downside";
          end case;
       end Inner;
    begin
