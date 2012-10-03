@@ -10,7 +10,7 @@
    <body>
       <font face="Calibri, Arial">
       <h1>The Corporate Bullshit Generator</h1>
-      <form method="POST">Yes, I want more ! &nbsp; &rarr; &rarr; &rarr; &nbsp; <input value="More bullshit, please !" type="submit" style="font-size: 16px; font-family: calibri"></form>
+      <form method="POST">Yes, I want more ! &nbsp; &rarr; &rarr; &rarr; &nbsp; <input value="More bullshit, please !" type="submit" style="font-size: 20px; font-family: Arial,Helvetica,Verdana, Calibri"></form>
       <hr>
       <ul>
         @_SHORT_WORKSHOP_@
