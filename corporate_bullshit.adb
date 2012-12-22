@@ -58,7 +58,6 @@ package body Corporate_Bullshit is
    --   * mix with specific vocabulary (combined with previous:
    --       blending of (bullshit, normal, custom); type in Delirium)
    --   * http://www.standardshop.com/bs15000.htm
-   --   * "Let us take this offline"
    --   * ...a [s-whatever] that puts [s-whatever] at the center
    --       of the organization's [whatever]
    --   * A Silly Abbreviation Generator (SAG).
@@ -69,8 +68,9 @@ package body Corporate_Bullshit is
 
       function Managing return String is
       begin
-         case R4 is
+         case R8 is
             when 1 => return "Managing ";
+            when 2 => return "Acting "; -- Well, we could have an actor too
             when others => return "";
          end case;
       end Managing;
@@ -921,6 +921,7 @@ package body Corporate_Bullshit is
          when 22 => return " on a transitional basis";
          when 23 => return " by expanding boundaries";
          when 24 => return " by nurturing talent";
+         when 25 => return ", as a Tier 1 company";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -928,7 +929,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R58 is
+         case R62 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -990,6 +991,10 @@ package body Corporate_Bullshit is
             when 56 => return "foster";
             when 57 => return "build";
             when 58 => return "differentiate";
+            when 59 => return "take a bite out of";
+            when 60 => return "table";
+            when 61 => return "flesh out";
+            when 62 => return "reach out";
          end case;
       end Inner;
    begin
@@ -1087,7 +1092,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R34 is
+         case R42 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1106,7 +1111,7 @@ package body Corporate_Bullshit is
             when 14 => return "achieve efficiencies";
             when 15 => return "deliver"; -- deliver, form without complement
                                          -- GAC 2010
-            when 16 => return "connect the dots";
+            when 16 => return "stay in the mix";
             when 17 => return "stay in the zone";
             when 18 => return "evolve";
             when 19 => return "exceed expectations";
@@ -1125,6 +1130,14 @@ package body Corporate_Bullshit is
             when 32 => return "outperform peers";
             when 33 => return "surge ahead";
             when 34 => return "manage the downside";
+            when 35 => return "stay in the wings";
+            when 36 => return "come to a landing";
+            when 37 => return "shoot it over";
+            when 38 => return "move the needle";
+            when 39 => return "connect the dots";
+            when 40 => return "connect the dots to the end game";
+            when 41 => return "reset the benchmark";
+            when 42 => return "take it offline";
          end case;
       end Inner;
    begin
