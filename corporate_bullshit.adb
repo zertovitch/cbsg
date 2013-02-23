@@ -15,7 +15,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2012
+--  Copyright (c) Gautier de Montmollin 2006 .. 2013
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -482,7 +482,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R170 is
+         case R172 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -658,10 +658,12 @@ package body Corporate_Bullshit is
             when 164 => return "policy";
             when 165 => return "sales target";
             when 166 => return "ecosystem";
-            when 167 => return "market practice";
+            when 167 => return "landscape";
             when 168 => return "atmosphere";
-            when 169 => return "operating strategy";
+            when 169 => return "environment";
             when 170 => return "core competency";
+            when 171 => return "market practice";
+            when 172 => return "operating strategy";
          end case;
       end Inner;
 
