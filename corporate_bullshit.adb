@@ -1,45 +1,9 @@
 -------------------------------------------------------------------------
 --  The Corporate Bullshit Generator (CBSG)
---
---  Sources:
---
---  - personal notes from long years of professional experience
---  - new words from the Internet by feeding a search
---      engine with sentences of the generator
---  - very valuable, appreciated and proactive contributions
---      from my colleagues and friends, especially:
---        Mili Eppler, Nigel Findlater, Emilio Nualart,
---        Bernhard Maertl, Paul Della Marta, Georges Modol,
---        Andrew Fox, Kurt Dickmann, Georg Bauhaus, Frederic Praca
---  - high-level, responsive empowerments by Ludovic Brenta
---
---  Legal licensing note:
---
---  Copyright (c) Gautier de Montmollin 2006 .. 2013
---  CH-8810 Horgen
---  SWITZERLAND
---
---  Permission is hereby granted, free of charge, to any person obtaining a copy
---  of this software and associated documentation files (the "Software"), to deal
---  in the Software without restriction, including without limitation the rights
---  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
---  copies of the Software, and to permit persons to whom the Software is
---  furnished to do so, subject to the following conditions:
---
---  The above copyright notice and this permission notice shall be included in
---  all copies or substantial portions of the Software.
---
---  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
---  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
---  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
---  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
---  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
---  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
---  THE SOFTWARE.
---
--- NB: this is the MIT License, as found 12-Sep-2007 on the site
--- http://www.opensource.org/licenses/mit-license.php
+--  See specification for sources, authors, contributors, license.
 -------------------------------------------------------------------------
+--  NB: this package is done with the functional programming paradigm.
+--  http://en.wikipedia.org/wiki/Functional_programming
 
 with Ada.Characters.Handling;           use Ada.Characters.Handling;
 with Delirium;                          use Delirium;
@@ -216,7 +180,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R202 is
+      case R205 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -434,6 +398,9 @@ package body Corporate_Bullshit is
          when 200 => return "low-risk high-yield";
          when 201 => return "interconnected";
          when 202 => return "high-margin";
+         when 203 => return "resilient";
+         when 204 => return "high-definition";
+         when 205 => return "well-crafted";
       end case;
    end Thing_Adjective;
 
@@ -482,7 +449,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R172 is
+         case R174 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -664,6 +631,8 @@ package body Corporate_Bullshit is
             when 170 => return "core competency";
             when 171 => return "market practice";
             when 172 => return "operating strategy";
+            when 173 => return "insight";
+            when 174 => return "accomplishment";
          end case;
       end Inner;
 
@@ -752,6 +721,8 @@ package body Corporate_Bullshit is
                when 76 => return "resourcefulness";
                when 77 => return "quality";
                when 78 => return "upside focus";
+               when 79 => return "sustainability";
+               when 80 => return "resiliency";
                when others => return Inner;
             end case;
          when Plural =>
@@ -1094,7 +1065,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R44 is
+         case R48 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1142,6 +1113,10 @@ package body Corporate_Bullshit is
             when 42 => return "take it offline";
             when 43 => return "peel the onion";
             when 44 => return "drill down";
+            when 45 => return "get from here to here";
+            when 46 => return "do things differently";
+            when 47 => return "stretch the status quo";
+            when 48 => return "make it possible";
          end case;
       end Inner;
    begin
@@ -1241,10 +1216,9 @@ package body Corporate_Bullshit is
    end Articulated_Propositions;
 
    function Sentence return String is
-      Ap : String := Articulated_Propositions;
+      Ap : constant String := Articulated_Propositions;
    begin
-      Ap (1) := To_Upper (Ap (1));
-      return Ap & ". ";
+      return To_Upper (Ap (Ap'First)) & Ap(Ap'First+1..Ap'Last) & ". ";
    end Sentence;
 
    function Sentences (Possible_Dialog_Mark: String) return String is
