@@ -90,7 +90,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R13 is
+         case R14 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -104,16 +104,21 @@ package body Corporate_Bullshit is
             when 11 => return "Business Operations";
             when 12 => return "IT Strategy";
             when 13 => return "IT Operations";
+            when 14 => return "Marketing";
          end case;
       end Department;
 
       function Department_or_Top_Role return String is
       begin
-        case R14 is
-          when 1..13 =>
+        case R17 is
+          when 1..14 =>
             return Department;
-          when 14 =>
+          when 15 =>
             return "Visionary";
+          when 16 =>
+            return "Digital";
+          when 17 =>
+            return "Technical";
         end case;
       end Department_or_Top_Role;
 
@@ -180,7 +185,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R224 is
+      case R234 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -420,6 +425,16 @@ package body Corporate_Bullshit is
          when 222 => return "well-positioned";
          when 223 => return "end-to-end";
          when 224 => return "high-quality";
+         when 225 => return "siloed";
+         when 226 => return "modular";
+         when 227 => return "service-oriented";
+         when 228 => return "competitive";
+         when 229 => return "scale-as-you-grow";
+         when 230 => return "outside-in";
+         when 231 => return "hyper-hybrid";
+         when 232 => return "long-running";
+         when 233 => return "large-scale";
+         when 234 => return "wide-ranging";
       end case;
    end Thing_Adjective;
 
@@ -468,7 +483,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R174 is
+         case R180 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -652,13 +667,19 @@ package body Corporate_Bullshit is
             when 172 => return "operating strategy";
             when 173 => return "insight";
             when 174 => return "accomplishment";
+            when 175 => return "correlation";
+            when 176 => return "touchpoint";
+            when 177 => return "knowledge transfer";
+            when 178 => return "correlation";
+            when 179 => return "capability";
+            when 180 => return "gamification";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R200 is
+            case R250 is
                -- Things where plural would sound clunky.
                when 1  => return Timeless_Event;
                when 2  => return "team building";
@@ -707,7 +728,7 @@ package body Corporate_Bullshit is
                when 43 => return "self-awareness";
                when 44 => return "strategic thinking";
                when 45 => return "cross fertilization"; -- Andy
-               when 46 => return "effectiveness";
+               when 46 => return "cross-breeding";
                when 47 => return "customer experience";
                when 48 => return "centerpiece";
                when 49 => return "SWOT analysis";
@@ -735,13 +756,19 @@ package body Corporate_Bullshit is
                when 71 => return "investor confidence";
                when 72 => return "competitive advantage";
                when 73 => return "uniformity";
-               when 74 => return "competitiveness";
+               when 74 => return "connectivity";
                when 75 => return "big picture";
-               when 76 => return "resourcefulness";
+               when 76 => return "big-picture thinking";
                when 77 => return "quality";
                when 78 => return "upside focus";
                when 79 => return "sustainability";
                when 80 => return "resiliency";
+               when 81 => return "social sphere";
+               when 82 => return "intuitiveness";
+               when 83 => return "effectiveness";
+               when 84 => return "competitiveness";
+               when 85 => return "resourcefulness";
+               when 86 => return "informationalization";
                when others => return Inner;
             end case;
          when Plural =>
@@ -847,7 +874,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R80 is -- proportion: 3/4 empty adverb
+      case R84 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -870,6 +897,7 @@ package body Corporate_Bullshit is
          when 18 => return "adequately ";
          when 19 => return "genuinely ";
          when 20 => return "efficiently ";
+         when 21 => return "seamlessly ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -887,7 +915,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R140 is
+      case R150 is
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -903,7 +931,7 @@ package body Corporate_Bullshit is
          when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
          when 13 => return " within the " & Matrix_Or_So;
          when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
-         when 15 => return " up-front";
+         when 15 => return " across and beyond the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
          when 16 => return " resulting in " & Growth;
          when 17 => return " reaped from our " & Growth;
          when 18 => return " as a consequence of " & Growth;
@@ -915,6 +943,9 @@ package body Corporate_Bullshit is
          when 23 => return " by expanding boundaries";
          when 24 => return " by nurturing talent";
          when 25 => return ", as a Tier 1 company";
+         when 26 => return " up-front";
+         when 27 => return " on-the-fly";
+         when 28 => return " across our portfolio";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1086,7 +1117,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R49 is
+         case R54 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1096,7 +1127,7 @@ package body Corporate_Bullshit is
             when 7  => return "execute the strategy"; -- Obsessive in 2006
             when 8  => return "think out of the box";
             when 9  => return "think differently";
-            when 10 => return "manage the balance";
+            when 10 => return "think across the full value chain";
                -- BBC office-speak phrases
             when 11 => return "loop back";
             when 12 => return "conversate";
@@ -1114,7 +1145,7 @@ package body Corporate_Bullshit is
             when 22 => return "grow and diversify";
             when 23 => return "fuel changes";
             when 24 => return "nurture talent";
-            when 25 => return "turn every stone";
+            when 25 => return "cultivate talent";
             when 26 => return "make it possible";
             when 27 => return "manage the portfolio";
             when 28 => return "align resources";
@@ -1139,6 +1170,11 @@ package body Corporate_Bullshit is
             when 47 => return "stretch the status quo";
             when 48 => return "challenge the status quo";
             when 49 => return "challenge established ideas";
+            when 50 => return "increase customer satisfaction";
+            when 51 => return "enable customer interaction";
+            when 52 => return "manage the balance";
+            when 53 => return "turn every stone";
+            when 54 => return "drive revenue";
          end case;
       end Inner;
    begin
