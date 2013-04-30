@@ -21,7 +21,10 @@
       <p>Our motto :<br>
          &nbsp; Science is 10% inspiration and 90% perspiration (Louis Pasteur).</p>
       <hr>
-      
+      <b>Radio Bullshit</b>. Click
+      <a target=_blank href="http://www2.research.att.com/~ttsweb/tts/demo.php#top">here</a>
+      for a nice voice generator where you can paste your favourite texts.      
+      <hr>
       The CBSG project site is <a href="http://sf.net/projects/cbsg/">here</a>.
       
       <br><br>
