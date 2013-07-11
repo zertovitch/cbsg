@@ -185,7 +185,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R235 is
+      case R236 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -436,6 +436,7 @@ package body Corporate_Bullshit is
          when 233 => return "large-scale";
          when 234 => return "wide-ranging";
          when 235 => return "unified";
+         when 236 => return "active";
       end case;
    end Thing_Adjective;
 
@@ -484,7 +485,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R180 is
+         case R181 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -674,6 +675,7 @@ package body Corporate_Bullshit is
             when 178 => return "correlation";
             when 179 => return "capability";
             when 180 => return "gamification";
+            when 181 => return "smooth transition";
          end case;
       end Inner;
 
@@ -948,6 +950,7 @@ package body Corporate_Bullshit is
          when 26 => return " up-front";
          when 27 => return " on-the-fly";
          when 28 => return " across our portfolio";
+         when 29 => return " 50/50";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1119,7 +1122,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R54 is
+         case R57 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1177,6 +1180,9 @@ package body Corporate_Bullshit is
             when 52 => return "manage the balance";
             when 53 => return "turn every stone";
             when 54 => return "drive revenue";
+            when 55 => return "rise to the challenge";
+            when 56 => return "keep it on the radar";
+            when 57 => return "stay on trend";
          end case;
       end Inner;
    begin
