@@ -14,8 +14,10 @@ with Ada.Strings.Fixed;  use Ada.Strings.Fixed;
 procedure Live is
 
   package HTML_Corporate_Bullshit is new Corporate_Bullshit (
-                                                             Paragraph => ASCII.LF & ASCII.LF & "<li>",
-                                                             Dialog_Mark => "");
+    Paragraph_Mark => ASCII.LF & ASCII.LF & "<li>",
+    Paragraph_End_Mark => "</li>",
+    Dialog_Mark => ""
+  );
 
   -- The HTML template input containing Tags
   -- currently in dir /cgi-bin ; if you relocate, adjust the string

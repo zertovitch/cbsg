@@ -42,8 +42,9 @@
 -------------------------------------------------------------------------
 
 generic
-   Paragraph   : String;
-   Dialog_Mark : String;
+   Paragraph_Mark     : String;
+   Paragraph_End_Mark : String;
+   Dialog_Mark        : String;
 package Corporate_Bullshit is
 
    function Sentence return String;

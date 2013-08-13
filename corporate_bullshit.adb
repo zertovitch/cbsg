@@ -173,11 +173,11 @@ package body Corporate_Bullshit is
    function Matrix_Or_So return String is
    begin
       case R12 is
-         when 1 .. 2 => return "organization"; -- a bit flat, but flashy combined with "within the "
-         when 3 .. 6 => return "silo";   -- classic 1-dimension units in organizations
+         when 1 .. 2  => return "organization"; -- a bit flat, but flashy combined with "within the "
+         when 3 .. 6  => return "silo";   -- classic 1-dimension units in organizations
          when 7 .. 10 => return "matrix"; -- 2nd dimension, with dotted lines
-         when 11    => return "cube";   -- 3rd dimension (Converium); at last then, the company has become totally dysfunctional)
-         when 12    => return "sphere"; -- another esoteric 3-dimensional structure - ME 20-Jun-2011
+         when 11      => return "cube";   -- 3rd dimension (Converium); at last then, the company has become totally dysfunctional)
+         when 12      => return "sphere"; -- another esoteric 3-dimensional structure - ME 20-Jun-2011
       end case;
    end Matrix_Or_So;
 
@@ -185,7 +185,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R236 is
+      case R239 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -437,6 +437,9 @@ package body Corporate_Bullshit is
          when 234 => return "wide-ranging";
          when 235 => return "unified";
          when 236 => return "active";
+         when 237 => return "dramatic";
+         when 238 => return "aggressive";
+         when 239 => return "innovative";
       end case;
    end Thing_Adjective;
 
@@ -485,7 +488,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R181 is
+         case R184 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -676,6 +679,9 @@ package body Corporate_Bullshit is
             when 179 => return "capability";
             when 180 => return "gamification";
             when 181 => return "smooth transition";
+            when 182 => return "leadership strategy";
+            when 183 => return "collaboration";
+            when 184 => return "success factor";
          end case;
       end Inner;
 
@@ -773,6 +779,7 @@ package body Corporate_Bullshit is
                when 85 => return "resourcefulness";
                when 86 => return "informationalization";
                when 87 => return "role building";
+               when 88 => return "talent retention";
                when others => return Inner;
             end case;
          when Plural =>
@@ -919,7 +926,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R150 is
+      case R155 is
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -951,6 +958,10 @@ package body Corporate_Bullshit is
          when 27 => return " on-the-fly";
          when 28 => return " across our portfolio";
          when 29 => return " 50/50";
+         when 30 => return " up, down and across the " & Matrix_Or_So;
+         when 31 => return " in the marketplace";
+         when 32 => return " by thinking and acting beyond boundaries";
+         when 33 => return " at the individual, team and organizational level";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1257,11 +1268,26 @@ package body Corporate_Bullshit is
               Eventual_Adverb &
               Person_Verb_And_Ending (Sp1) &
               Eventual_Postfixed_Adverb;
-         when 51 .. 100  => -- ** THING...
+         when 51 .. 92   => -- ** THING...
             return
             Add_Random_Article (Sp1, Thing (Sp1)) & ' ' &
             Eventual_Adverb &
             Thing_Verb_And_Ending (Sp1) &
+            Eventual_Postfixed_Adverb;
+         when 93..97     => -- ** thing and thing ...
+            return -- nb: no article, no adjective
+            Thing_Atom (Singular) & " and " &
+            Thing_Atom (Singular) & ' ' &
+            Eventual_Adverb &
+            Thing_Verb_And_Ending (Plural) &
+            Eventual_Postfixed_Adverb;
+         when 98..100    => -- ** thing, thing and thing ...
+            return -- nb: no article, no adjective
+            Thing_Atom (Singular) & ", " &
+            Thing_Atom (Singular) & " and " &
+            Thing_Atom (Singular) & ' ' &
+            Eventual_Adverb &
+            Thing_Verb_And_Ending (Plural) &
             Eventual_Postfixed_Adverb;
       end case;
    end Proposition;
@@ -1290,16 +1316,23 @@ package body Corporate_Bullshit is
    function Sentences (Possible_Dialog_Mark: String) return String is
    begin
       case R40 is
-         when 1        => return Sentence;
-         when 2 .. 30  => return Sentences (Possible_Dialog_Mark) & Sentence;
-         when 31 .. 40 => return Sentences (Possible_Dialog_Mark) & Paragraph & Possible_Dialog_Mark & Sentence;
+         when 1        =>
+            return Sentence;
+         when 2 .. 30  =>
+            return Sentences (Possible_Dialog_Mark) & Sentence;
+         when 31 .. 40 =>
+            return
+               Sentences (Possible_Dialog_Mark) &
+               Paragraph_End_Mark & Paragraph_Mark &
+               Possible_Dialog_Mark & Sentence;
       end case;
    end Sentences;
 
    function Sentence_Guaranteed_Amount (Count: Positive; Possible_Dialog_Mark: String) return String is
       Element : constant String:=
-        Paragraph &
-        Possible_Dialog_Mark & Sentences (Possible_Dialog_Mark);
+        Paragraph_Mark &
+        Possible_Dialog_Mark & Sentences (Possible_Dialog_Mark) &
+        Paragraph_End_Mark;
    begin
       if Count > 1 then
          return
@@ -1322,7 +1355,8 @@ package body Corporate_Bullshit is
 
    function Financial_Report return String is
    begin
-      return Sentences (""); -- !! charts (especially, pie charts) !!
+      return Sentence_Guaranteed_Amount (1, "");
+      -- !! charts (especially, pie charts) !!
    end Financial_Report;
 
 end Corporate_Bullshit;
