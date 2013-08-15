@@ -1133,7 +1133,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R57 is
+         case R59 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1194,6 +1194,8 @@ package body Corporate_Bullshit is
             when 55 => return "rise to the challenge";
             when 56 => return "keep it on the radar";
             when 57 => return "stay on trend";
+            when 58 => return "hunt the business down";
+            when 59 => return "push the envelope to the tilt";
          end case;
       end Inner;
    begin
