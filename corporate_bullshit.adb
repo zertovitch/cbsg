@@ -185,7 +185,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R239 is
+      case R242 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -440,6 +440,9 @@ package body Corporate_Bullshit is
          when 237 => return "dramatic";
          when 238 => return "aggressive";
          when 239 => return "innovative";
+         when 240 => return "high-powered";
+         when 241 => return "above-average";
+         when 242 => return "result-driven";
       end case;
    end Thing_Adjective;
 
@@ -488,7 +491,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R184 is
+         case R185 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -682,13 +685,14 @@ package body Corporate_Bullshit is
             when 182 => return "leadership strategy";
             when 183 => return "collaboration";
             when 184 => return "success factor";
+            when 185 => return "lever";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R250 is
+            case R252 is
                -- Things where plural would sound clunky.
                when 1  => return Timeless_Event;
                when 2  => return "team building";
@@ -780,6 +784,7 @@ package body Corporate_Bullshit is
                when 86 => return "informationalization";
                when 87 => return "role building";
                when 88 => return "talent retention";
+               when 89 => return "innovativeness";
                when others => return Inner;
             end case;
          when Plural =>
