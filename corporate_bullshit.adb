@@ -25,6 +25,7 @@ package body Corporate_Bullshit is
    --   * ...a [s-whatever] that puts [s-whatever] at the center
    --       of the organization's [whatever]
    --   * A Silly Abbreviation Generator (SAG).
+   --   * "...is top-of-mind", "...is key", "...is critical"
 
    -- Persons or groups --
 
@@ -42,8 +43,9 @@ package body Corporate_Bullshit is
       function Title return String is
          function Vice return String is
          begin
-            case R4 is
-               when 1 => return "Vice ";
+            case R40 is
+               when 1..10  => return "Vice ";
+               when 11     => return "Corporate Vice ";
                when others => return "";
             end case;
          end Vice;
@@ -185,7 +187,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R242 is
+      case R245 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -443,6 +445,9 @@ package body Corporate_Bullshit is
          when 240 => return "high-powered";
          when 241 => return "above-average";
          when 242 => return "result-driven";
+         when 243 => return "innovation-driven";
+         when 244 => return "customized";
+         when 245 => return "outstanding";
       end case;
    end Thing_Adjective;
 
@@ -491,7 +496,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R185 is
+         case R187 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -686,13 +691,15 @@ package body Corporate_Bullshit is
             when 183 => return "collaboration";
             when 184 => return "success factor";
             when 185 => return "lever";
+            when 186 => return "breakthrough";
+            when 187 => return "open-door policy";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R252 is
+            case R269 is
                -- Things where plural would sound clunky.
                when 1  => return Timeless_Event;
                when 2  => return "team building";
@@ -785,6 +792,11 @@ package body Corporate_Bullshit is
                when 87 => return "role building";
                when 88 => return "talent retention";
                when 89 => return "innovativeness";
+               when 90 => return "Economic Value Creation";
+               when 91 => return "intellectual capital";
+               when 92 => return "high quality";
+               when 93 => return "full range of products";
+               when 94 => return "technical strength";
                when others => return Inner;
             end case;
          when Plural =>
@@ -806,6 +818,7 @@ package body Corporate_Bullshit is
                when 11 => return "cost savings";
                   -- Directly pasted from a management presentation (2009)
                when 12 => return "lessons learned";
+               when 13 => return "client needs";
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
@@ -863,7 +876,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R19 is
+      case R20 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -883,6 +896,7 @@ package body Corporate_Bullshit is
          when 17 => return "shortcomings";
          when 18 => return "problems";
          when 19 => return "uncertainties";
+         when 20 => return "unfavorable developments";
       end case;
    end Bad_Things;
 
@@ -890,7 +904,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R84 is -- proportion: 3/4 empty adverb
+      case R92 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -914,6 +928,8 @@ package body Corporate_Bullshit is
          when 19 => return "genuinely ";
          when 20 => return "efficiently ";
          when 21 => return "seamlessly ";
+         when 22 => return "consistently ";
+         when 23 => return "diligently";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -1138,7 +1154,7 @@ package body Corporate_Bullshit is
       -- no complement at all.
       function Inner return String is
       begin
-         case R59 is
+         case R60 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1201,6 +1217,7 @@ package body Corporate_Bullshit is
             when 57 => return "stay on trend";
             when 58 => return "hunt the business down";
             when 59 => return "push the envelope to the tilt";
+            when 60 => return "execute on priorities";
          end case;
       end Inner;
    begin
@@ -1248,13 +1265,16 @@ package body Corporate_Bullshit is
    --
    function Faukon return String is
    begin
-      case R6 is
+      case R9 is
          when 1 => return "we need to";
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
          when 4 => return "controlling should";
          when 5 => return "we must activate the " & Matrix_Or_So & " to";
          when 6 => return "pursuing this route will enable us to";
+         when 7 => return "we will go the extra mile to";
+         when 8 => return "we are working hard to";
+         when 9 => return "we continue to work tirelessly and diligently to";
       end case;
    end Faukon;
 
@@ -1266,7 +1286,7 @@ package body Corporate_Bullshit is
             return
             Faukon & ' ' &
             Eventual_Adverb &
-            Person_Verb_And_Ending (Plural) &
+            Person_Verb_And_Ending (Plural) & -- Trick to get the infinitive
             Eventual_Postfixed_Adverb;
             -- infinitive written same as present plural
          when 6 .. 50    => -- ** PERSON...
