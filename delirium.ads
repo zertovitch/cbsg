@@ -61,8 +61,10 @@ package Delirium is
    -- recursive grammar the shortest possible.
    -- No parenthesis, nor "when others => null;" is needed then.
    -- The bounds of the random generation are well under control.
-
-   -- for /l %i in (1,1,400) do echo    type T%i is range 1..%i; function R%i return T%i; >>spec.txt
+   -- Below, a Windows CMD script for producing them:
+   --
+   -- for /l %i in (1,1,500) do echo    type T%i is range 1..%i; function R%i return T%i; >>spec.txt
+   
    type T1 is range 1..1; function R1 return T1;
    type T2 is range 1..2; function R2 return T2;
    type T3 is range 1..3; function R3 return T3;
@@ -463,5 +465,105 @@ package Delirium is
    type T398 is range 1..398; function R398 return T398;
    type T399 is range 1..399; function R399 return T399;
    type T400 is range 1..400; function R400 return T400;
+   type T401 is range 1..401; function R401 return T401; 
+   type T402 is range 1..402; function R402 return T402; 
+   type T403 is range 1..403; function R403 return T403; 
+   type T404 is range 1..404; function R404 return T404; 
+   type T405 is range 1..405; function R405 return T405; 
+   type T406 is range 1..406; function R406 return T406; 
+   type T407 is range 1..407; function R407 return T407; 
+   type T408 is range 1..408; function R408 return T408; 
+   type T409 is range 1..409; function R409 return T409; 
+   type T410 is range 1..410; function R410 return T410; 
+   type T411 is range 1..411; function R411 return T411; 
+   type T412 is range 1..412; function R412 return T412; 
+   type T413 is range 1..413; function R413 return T413; 
+   type T414 is range 1..414; function R414 return T414; 
+   type T415 is range 1..415; function R415 return T415; 
+   type T416 is range 1..416; function R416 return T416; 
+   type T417 is range 1..417; function R417 return T417; 
+   type T418 is range 1..418; function R418 return T418; 
+   type T419 is range 1..419; function R419 return T419; 
+   type T420 is range 1..420; function R420 return T420; 
+   type T421 is range 1..421; function R421 return T421; 
+   type T422 is range 1..422; function R422 return T422; 
+   type T423 is range 1..423; function R423 return T423; 
+   type T424 is range 1..424; function R424 return T424; 
+   type T425 is range 1..425; function R425 return T425; 
+   type T426 is range 1..426; function R426 return T426; 
+   type T427 is range 1..427; function R427 return T427; 
+   type T428 is range 1..428; function R428 return T428; 
+   type T429 is range 1..429; function R429 return T429; 
+   type T430 is range 1..430; function R430 return T430; 
+   type T431 is range 1..431; function R431 return T431; 
+   type T432 is range 1..432; function R432 return T432; 
+   type T433 is range 1..433; function R433 return T433; 
+   type T434 is range 1..434; function R434 return T434; 
+   type T435 is range 1..435; function R435 return T435; 
+   type T436 is range 1..436; function R436 return T436; 
+   type T437 is range 1..437; function R437 return T437; 
+   type T438 is range 1..438; function R438 return T438; 
+   type T439 is range 1..439; function R439 return T439; 
+   type T440 is range 1..440; function R440 return T440; 
+   type T441 is range 1..441; function R441 return T441; 
+   type T442 is range 1..442; function R442 return T442; 
+   type T443 is range 1..443; function R443 return T443; 
+   type T444 is range 1..444; function R444 return T444; 
+   type T445 is range 1..445; function R445 return T445; 
+   type T446 is range 1..446; function R446 return T446; 
+   type T447 is range 1..447; function R447 return T447; 
+   type T448 is range 1..448; function R448 return T448; 
+   type T449 is range 1..449; function R449 return T449; 
+   type T450 is range 1..450; function R450 return T450; 
+   type T451 is range 1..451; function R451 return T451; 
+   type T452 is range 1..452; function R452 return T452; 
+   type T453 is range 1..453; function R453 return T453; 
+   type T454 is range 1..454; function R454 return T454; 
+   type T455 is range 1..455; function R455 return T455; 
+   type T456 is range 1..456; function R456 return T456; 
+   type T457 is range 1..457; function R457 return T457; 
+   type T458 is range 1..458; function R458 return T458; 
+   type T459 is range 1..459; function R459 return T459; 
+   type T460 is range 1..460; function R460 return T460; 
+   type T461 is range 1..461; function R461 return T461; 
+   type T462 is range 1..462; function R462 return T462; 
+   type T463 is range 1..463; function R463 return T463; 
+   type T464 is range 1..464; function R464 return T464; 
+   type T465 is range 1..465; function R465 return T465; 
+   type T466 is range 1..466; function R466 return T466; 
+   type T467 is range 1..467; function R467 return T467; 
+   type T468 is range 1..468; function R468 return T468; 
+   type T469 is range 1..469; function R469 return T469; 
+   type T470 is range 1..470; function R470 return T470; 
+   type T471 is range 1..471; function R471 return T471; 
+   type T472 is range 1..472; function R472 return T472; 
+   type T473 is range 1..473; function R473 return T473; 
+   type T474 is range 1..474; function R474 return T474; 
+   type T475 is range 1..475; function R475 return T475; 
+   type T476 is range 1..476; function R476 return T476; 
+   type T477 is range 1..477; function R477 return T477; 
+   type T478 is range 1..478; function R478 return T478; 
+   type T479 is range 1..479; function R479 return T479; 
+   type T480 is range 1..480; function R480 return T480; 
+   type T481 is range 1..481; function R481 return T481; 
+   type T482 is range 1..482; function R482 return T482; 
+   type T483 is range 1..483; function R483 return T483; 
+   type T484 is range 1..484; function R484 return T484; 
+   type T485 is range 1..485; function R485 return T485; 
+   type T486 is range 1..486; function R486 return T486; 
+   type T487 is range 1..487; function R487 return T487; 
+   type T488 is range 1..488; function R488 return T488; 
+   type T489 is range 1..489; function R489 return T489; 
+   type T490 is range 1..490; function R490 return T490; 
+   type T491 is range 1..491; function R491 return T491; 
+   type T492 is range 1..492; function R492 return T492; 
+   type T493 is range 1..493; function R493 return T493; 
+   type T494 is range 1..494; function R494 return T494; 
+   type T495 is range 1..495; function R495 return T495; 
+   type T496 is range 1..496; function R496 return T496; 
+   type T497 is range 1..497; function R497 return T497; 
+   type T498 is range 1..498; function R498 return T498; 
+   type T499 is range 1..499; function R499 return T499; 
+   type T500 is range 1..500; function R500 return T500; 
 
 end Delirium;

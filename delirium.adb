@@ -5,7 +5,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006..2012
+--  Copyright (c) Gautier de Montmollin 2006..2014
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -135,7 +135,11 @@ package body Delirium is
          return 1 + S;
       end if;
    end R;
-   -- for /l %i in (1,1,400) do echo    function R%i return T%i is begin return T%i (R (%i)); end; >>body.txt
+   
+   -- Below, a Windows CMD script for producing the function bodies:
+   --
+   -- for /l %i in (1,1,500) do echo    function R%i return T%i is begin return T%i (R (%i)); end; >>body.txt
+   
    function R1 return T1 is begin return T1 (R (1)); end;
    function R2 return T2 is begin return T2 (R (2)); end;
    function R3 return T3 is begin return T3 (R (3)); end;
@@ -536,6 +540,106 @@ package body Delirium is
    function R398 return T398 is begin return T398 (R (398)); end;
    function R399 return T399 is begin return T399 (R (399)); end;
    function R400 return T400 is begin return T400 (R (400)); end;
+   function R401 return T401 is begin return T401 (R (401)); end; 
+   function R402 return T402 is begin return T402 (R (402)); end; 
+   function R403 return T403 is begin return T403 (R (403)); end; 
+   function R404 return T404 is begin return T404 (R (404)); end; 
+   function R405 return T405 is begin return T405 (R (405)); end; 
+   function R406 return T406 is begin return T406 (R (406)); end; 
+   function R407 return T407 is begin return T407 (R (407)); end; 
+   function R408 return T408 is begin return T408 (R (408)); end; 
+   function R409 return T409 is begin return T409 (R (409)); end; 
+   function R410 return T410 is begin return T410 (R (410)); end; 
+   function R411 return T411 is begin return T411 (R (411)); end; 
+   function R412 return T412 is begin return T412 (R (412)); end; 
+   function R413 return T413 is begin return T413 (R (413)); end; 
+   function R414 return T414 is begin return T414 (R (414)); end; 
+   function R415 return T415 is begin return T415 (R (415)); end; 
+   function R416 return T416 is begin return T416 (R (416)); end; 
+   function R417 return T417 is begin return T417 (R (417)); end; 
+   function R418 return T418 is begin return T418 (R (418)); end; 
+   function R419 return T419 is begin return T419 (R (419)); end; 
+   function R420 return T420 is begin return T420 (R (420)); end; 
+   function R421 return T421 is begin return T421 (R (421)); end; 
+   function R422 return T422 is begin return T422 (R (422)); end; 
+   function R423 return T423 is begin return T423 (R (423)); end; 
+   function R424 return T424 is begin return T424 (R (424)); end; 
+   function R425 return T425 is begin return T425 (R (425)); end; 
+   function R426 return T426 is begin return T426 (R (426)); end; 
+   function R427 return T427 is begin return T427 (R (427)); end; 
+   function R428 return T428 is begin return T428 (R (428)); end; 
+   function R429 return T429 is begin return T429 (R (429)); end; 
+   function R430 return T430 is begin return T430 (R (430)); end; 
+   function R431 return T431 is begin return T431 (R (431)); end; 
+   function R432 return T432 is begin return T432 (R (432)); end; 
+   function R433 return T433 is begin return T433 (R (433)); end; 
+   function R434 return T434 is begin return T434 (R (434)); end; 
+   function R435 return T435 is begin return T435 (R (435)); end; 
+   function R436 return T436 is begin return T436 (R (436)); end; 
+   function R437 return T437 is begin return T437 (R (437)); end; 
+   function R438 return T438 is begin return T438 (R (438)); end; 
+   function R439 return T439 is begin return T439 (R (439)); end; 
+   function R440 return T440 is begin return T440 (R (440)); end; 
+   function R441 return T441 is begin return T441 (R (441)); end; 
+   function R442 return T442 is begin return T442 (R (442)); end; 
+   function R443 return T443 is begin return T443 (R (443)); end; 
+   function R444 return T444 is begin return T444 (R (444)); end; 
+   function R445 return T445 is begin return T445 (R (445)); end; 
+   function R446 return T446 is begin return T446 (R (446)); end; 
+   function R447 return T447 is begin return T447 (R (447)); end; 
+   function R448 return T448 is begin return T448 (R (448)); end; 
+   function R449 return T449 is begin return T449 (R (449)); end; 
+   function R450 return T450 is begin return T450 (R (450)); end; 
+   function R451 return T451 is begin return T451 (R (451)); end; 
+   function R452 return T452 is begin return T452 (R (452)); end; 
+   function R453 return T453 is begin return T453 (R (453)); end; 
+   function R454 return T454 is begin return T454 (R (454)); end; 
+   function R455 return T455 is begin return T455 (R (455)); end; 
+   function R456 return T456 is begin return T456 (R (456)); end; 
+   function R457 return T457 is begin return T457 (R (457)); end; 
+   function R458 return T458 is begin return T458 (R (458)); end; 
+   function R459 return T459 is begin return T459 (R (459)); end; 
+   function R460 return T460 is begin return T460 (R (460)); end; 
+   function R461 return T461 is begin return T461 (R (461)); end; 
+   function R462 return T462 is begin return T462 (R (462)); end; 
+   function R463 return T463 is begin return T463 (R (463)); end; 
+   function R464 return T464 is begin return T464 (R (464)); end; 
+   function R465 return T465 is begin return T465 (R (465)); end; 
+   function R466 return T466 is begin return T466 (R (466)); end; 
+   function R467 return T467 is begin return T467 (R (467)); end; 
+   function R468 return T468 is begin return T468 (R (468)); end; 
+   function R469 return T469 is begin return T469 (R (469)); end; 
+   function R470 return T470 is begin return T470 (R (470)); end; 
+   function R471 return T471 is begin return T471 (R (471)); end; 
+   function R472 return T472 is begin return T472 (R (472)); end; 
+   function R473 return T473 is begin return T473 (R (473)); end; 
+   function R474 return T474 is begin return T474 (R (474)); end; 
+   function R475 return T475 is begin return T475 (R (475)); end; 
+   function R476 return T476 is begin return T476 (R (476)); end; 
+   function R477 return T477 is begin return T477 (R (477)); end; 
+   function R478 return T478 is begin return T478 (R (478)); end; 
+   function R479 return T479 is begin return T479 (R (479)); end; 
+   function R480 return T480 is begin return T480 (R (480)); end; 
+   function R481 return T481 is begin return T481 (R (481)); end; 
+   function R482 return T482 is begin return T482 (R (482)); end; 
+   function R483 return T483 is begin return T483 (R (483)); end; 
+   function R484 return T484 is begin return T484 (R (484)); end; 
+   function R485 return T485 is begin return T485 (R (485)); end; 
+   function R486 return T486 is begin return T486 (R (486)); end; 
+   function R487 return T487 is begin return T487 (R (487)); end; 
+   function R488 return T488 is begin return T488 (R (488)); end; 
+   function R489 return T489 is begin return T489 (R (489)); end; 
+   function R490 return T490 is begin return T490 (R (490)); end; 
+   function R491 return T491 is begin return T491 (R (491)); end; 
+   function R492 return T492 is begin return T492 (R (492)); end; 
+   function R493 return T493 is begin return T493 (R (493)); end; 
+   function R494 return T494 is begin return T494 (R (494)); end; 
+   function R495 return T495 is begin return T495 (R (495)); end; 
+   function R496 return T496 is begin return T496 (R (496)); end; 
+   function R497 return T497 is begin return T497 (R (497)); end; 
+   function R498 return T498 is begin return T498 (R (498)); end; 
+   function R499 return T499 is begin return T499 (R (499)); end; 
+   function R500 return T500 is begin return T500 (R (500)); end; 
 
 begin
    Reset (Seed);
