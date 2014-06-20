@@ -507,7 +507,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R190 is
+         case R191 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -707,6 +707,7 @@ package body Corporate_Bullshit is
             when 188 => return "recalibration";
             when 189 => return "wow factor"; -- (obtained by bootstrapping)
             when 190 => return "onboarding solution"; -- (obtained by bootstrapping)
+            when 191 => return "brand pyramid"; 
          end case;
       end Inner;
 
@@ -951,7 +952,7 @@ package body Corporate_Bullshit is
          when 20 => return "efficiently ";
          when 21 => return "seamlessly ";
          when 22 => return "consistently ";
-         when 23 => return "diligently";
+         when 23 => return "diligently ";
          when others => return "";
       end case;
    end Eventual_Adverb;
