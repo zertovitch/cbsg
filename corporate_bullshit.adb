@@ -507,7 +507,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R191 is
+         case R192 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -708,6 +708,7 @@ package body Corporate_Bullshit is
             when 189 => return "wow factor"; -- (obtained by bootstrapping)
             when 190 => return "onboarding solution"; -- (obtained by bootstrapping)
             when 191 => return "brand pyramid"; 
+            when 192 => return "brand image"; 
          end case;
       end Inner;
 
@@ -1172,12 +1173,12 @@ package body Corporate_Bullshit is
       return Build_Plural_Verb (Inner,P);
    end Thing_Verb_Having_Person_Complement;
 
-   function Person_Verb_And_Complement (P: Plurality) return String is
-      -- NB: this function produces an eventual complement after the verb, or
-      -- no complement at all.
+   function Person_Verb_And_Definite_Ending (P: Plurality) return String is
+      -- NB: this function produces an eventual definite complement
+      --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R60 is
+         case R62 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1241,18 +1242,34 @@ package body Corporate_Bullshit is
             when 58 => return "hunt the business down";
             when 59 => return "push the envelope to the tilt";
             when 60 => return "execute on priorities";
+            when 61 => return "stand out from the crowd";
+            when 62 => return "make the abstract concrete";
          end case;
       end Inner;
    begin
       return Build_Plural_Verb (Inner,P);
-   end Person_Verb_And_Complement;
+   end Person_Verb_And_Definite_Ending;
+
+   function Thing_Verb_And_Definite_Ending (P: Plurality) return String is
+      -- NB: this function produces an eventual definite complement
+      --     after the verb, or no complement at all.
+      function Inner return String is
+      begin
+         case R2 is
+            when  1 => return "add value";
+            when  2 => return "deliver maximum impact";
+         end case;
+      end Inner;
+   begin
+      return Build_Plural_Verb (Inner,P);
+   end Thing_Verb_And_Definite_Ending;
 
    -- Verb + Ending. Ending is a Complement or something else
 
    function Thing_Verb_And_Ending (P: Plurality) return String is
       Compl_Sp: constant Plurality:= Random_Plural;
    begin
-      case R101 is
+      case R102 is
          when 1 .. 55  =>
             return Thing_Verb_Having_Thing_Complement (P) &
               ' ' &
@@ -1260,8 +1277,8 @@ package body Corporate_Bullshit is
          when 56 .. 100 =>
             return Thing_Verb_Having_Person_Complement (P) &
               " the " & Person (Compl_Sp);
-         when 101 =>
-            return Build_Plural_Verb ("add", P) & " value";
+         when 101 .. 102 =>
+            return Thing_Verb_And_Definite_Ending (P);
       end case;
    end Thing_Verb_And_Ending;
 
@@ -1270,7 +1287,7 @@ package body Corporate_Bullshit is
    begin
       case R95 is
          when  1 .. 10  =>
-            return Person_Verb_And_Complement (P);
+            return Person_Verb_And_Definite_Ending (P);
          when 11 .. 15  => -- Fight-the-Evil situation
             return
               Person_Verb_Having_Bad_Thing_Complement (P) &
