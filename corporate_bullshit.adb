@@ -187,7 +187,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R256 is
+      case R257 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -459,6 +459,7 @@ package body Corporate_Bullshit is
          when 254 => return "market-changing";
          when 255 => return "metrics-driven"; -- Found in an article about criminal activities reported with many details
          when 256 => return "pre-integrated"; -- (obtained by bootstrapping)
+         when 257 => return "solution-oriented";
       end case;
    end Thing_Adjective;
 
@@ -507,7 +508,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R192 is
+         case R191 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -590,7 +591,7 @@ package body Corporate_Bullshit is
             when 76 => return "pre-plan"; -- also a verb
             when 77 => return "pipeline";
             when 78 => return "bandwidth";
-            when 79 => return "workshop";
+            when 79 => return "brand image"; 
             when 80 => return "paradigm";
             when 81 => return "paradigm shift";
             when 82 => return "strategic staircase";
@@ -708,7 +709,6 @@ package body Corporate_Bullshit is
             when 189 => return "wow factor"; -- (obtained by bootstrapping)
             when 190 => return "onboarding solution"; -- (obtained by bootstrapping)
             when 191 => return "brand pyramid"; 
-            when 192 => return "brand image"; 
          end case;
       end Inner;
 
@@ -717,106 +717,108 @@ package body Corporate_Bullshit is
          when Singular =>
             case R468 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
-               when 1  => return Timeless_Event;
-               when 2  => return "team building";
-               when 3  => return "focus";
-               when 4  => return "strategy";
-               when 5  => return "planning granularity";
-               when 6  => return "core business";
-               when 7  => return "implementation";
-               when 8  => return "intelligence";
-               when 9  => return "governance";
-               when 10 => return "ROE";
-               when 11 => return "EBITDA";
-               when 12 => return "enterprise content management";
-               when 13 => return "excellence";
-               when 14 => return "trust";
-               when 15 => return "respect";
-               when 16 => return "openness";
-               when 17 => return "transparency";
-               when 18 => return "Quality Research";
-               when 19 => return "decision making";
-               when 20 => return "risk management";
-               when 21 => return "enterprise risk management";
-               when 22 => return "leverage";
-               when 23 => return "diversification";
-               when 24 => return "successful execution";
-               when 25 => return "effective execution";
+               when 1   => return Timeless_Event;
+               when 2   => return "team building";
+               when 3   => return "focus";
+               when 4   => return "strategy";
+               when 5   => return "planning granularity";
+               when 6   => return "core business";
+               when 7   => return "implementation";
+               when 8   => return "intelligence";
+               when 9   => return "governance";
+               when 10  => return "ROE";
+               when 11  => return "EBITDA";
+               when 12  => return "enterprise content management";
+               when 13  => return "excellence";
+               when 14  => return "trust";
+               when 15  => return "respect";
+               when 16  => return "openness";
+               when 17  => return "transparency";
+               when 18  => return "Quality Research";
+               when 19  => return "decision making";
+               when 20  => return "risk management";
+               when 21  => return "enterprise risk management";
+               when 22  => return "leverage";
+               when 23  => return "diversification";
+               when 24  => return "successful execution";
+               when 25  => return "effective execution";
                   -- Directly pasted from a management presentation (2009)
-               when 26 => return "selectivity";
-               when 27 => return "optionality";
-               when 28 => return "expertise";
-               when 29 => return "awareness";
-               when 30 => return "broader thinking";
-               when 31 => return "client focus";
-               when 32 => return "thought leadership"; -- Thanks Andy!
-               when 33 => return "quest for quality"; -- caracal
+               when 26  => return "selectivity";
+               when 27  => return "optionality";
+               when 28  => return "expertise";
+               when 29  => return "awareness";
+               when 30  => return "broader thinking";
+               when 31  => return "client focus";
+               when 32  => return "thought leadership"; -- Thanks Andy!
+               when 33  => return "quest for quality"; -- caracal
                   -- BBC office-speak phrases
-               when 34 => return "360-degree thinking";
-               when 35 => return "drill-down";
-               when 36 => return "impetus";
-               when 37 => return "fairness";
-               when 38 => return "intellect";
-               when 39 => return "emotional impact";
-               when 40 => return "emotional intelligence";
-               when 41 => return "adaptability";
-               when 42 => return "stress management";
-               when 43 => return "self-awareness";
-               when 44 => return "strategic thinking";
-               when 45 => return "cross fertilization"; -- Andy
-               when 46 => return "cross-breeding";
-               when 47 => return "customer experience";
-               when 48 => return "centerpiece";
-               when 49 => return "SWOT analysis";
-               when 50 => return "responsibility";
-               when 51 => return "accountability";
-               when 52 => return "ROI";
-               when 53 => return "line of business";
-               when 54 => return "serviceability";
-               when 55 => return "responsiveness";
-               when 56 => return "simplicity";
-               when 57 => return "portfolio shaping";
-               when 58 => return "knowledge sharing";
-               when 59 => return "continuity";
-               when 60 => return "visual thinking";
-               when 61 => return "interoperability";
-               when 62 => return "compliance";
-               when 63 => return "teamwork";
-               when 64 => return "self-efficacy";
-               when 65 => return "decision-making";
-               when 66 => return "line-of-sight";
-               when 67 => return "scoping"; -- BBC - LGA banned words
-               when 68 => return "line-up";
-               when 69 => return "predictability";
-               when 70 => return "recognition";
-               when 71 => return "investor confidence";
-               when 72 => return "competitive advantage";
-               when 73 => return "uniformity";
-               when 74 => return "connectivity";
-               when 75 => return "big picture";
-               when 76 => return "big-picture thinking";
-               when 77 => return "quality";
-               when 78 => return "upside focus";
-               when 79 => return "sustainability";
-               when 80 => return "resiliency";
-               when 81 => return "social sphere";
-               when 82 => return "intuitiveness";
-               when 83 => return "effectiveness";
-               when 84 => return "competitiveness";
-               when 85 => return "resourcefulness";
-               when 86 => return "informationalization";
-               when 87 => return "role building";
-               when 88 => return "talent retention";
-               when 89 => return "innovativeness";
-               when 90 => return "Economic Value Creation";
-               when 91 => return "intellectual capital";
-               when 92 => return "high quality";
-               when 93 => return "full range of products";
-               when 94 => return "technical strength";
-               when 95 => return "quality assurance";
-               when 96 => return "specification quality";
-               when 97 => return "market environment";
-               when 98 => return "client perspective";
+               when 34  => return "360-degree thinking";
+               when 35  => return "drill-down";
+               when 36  => return "impetus";
+               when 37  => return "fairness";
+               when 38  => return "intellect";
+               when 39  => return "emotional impact";
+               when 40  => return "emotional intelligence";
+               when 41  => return "adaptability";
+               when 42  => return "stress management";
+               when 43  => return "self-awareness";
+               when 44  => return "strategic thinking";
+               when 45  => return "cross fertilization"; -- Andy
+               when 46  => return "cross-breeding";
+               when 47  => return "customer experience";
+               when 48  => return "centerpiece";
+               when 49  => return "SWOT analysis";
+               when 50  => return "responsibility";
+               when 51  => return "accountability";
+               when 52  => return "ROI";
+               when 53  => return "line of business";
+               when 54  => return "serviceability";
+               when 55  => return "responsiveness";
+               when 56  => return "simplicity";
+               when 57  => return "portfolio shaping";
+               when 58  => return "knowledge sharing";
+               when 59  => return "continuity";
+               when 60  => return "visual thinking";
+               when 61  => return "interoperability";
+               when 62  => return "compliance";
+               when 63  => return "teamwork";
+               when 64  => return "self-efficacy";
+               when 65  => return "decision-making";
+               when 66  => return "line-of-sight";
+               when 67  => return "scoping"; -- BBC - LGA banned words
+               when 68  => return "line-up";
+               when 69  => return "predictability";
+               when 70  => return "recognition";
+               when 71  => return "investor confidence";
+               when 72  => return "competitive advantage";
+               when 73  => return "uniformity";
+               when 74  => return "connectivity";
+               when 75  => return "big picture";
+               when 76  => return "big-picture thinking";
+               when 77  => return "quality";
+               when 78  => return "upside focus";
+               when 79  => return "sustainability";
+               when 80  => return "resiliency";
+               when 81  => return "social sphere";
+               when 82  => return "intuitiveness";
+               when 83  => return "effectiveness";
+               when 84  => return "competitiveness";
+               when 85  => return "resourcefulness";
+               when 86  => return "informationalization";
+               when 87  => return "role building";
+               when 88  => return "talent retention";
+               when 89  => return "innovativeness";
+               when 90  => return "Economic Value Creation";
+               when 91  => return "intellectual capital";
+               when 92  => return "high quality";
+               when 93  => return "full range of products";
+               when 94  => return "technical strength";
+               when 95  => return "quality assurance";
+               when 96  => return "specification quality";
+               when 97  => return "market environment";
+               when 98  => return "client perspective";
+               when 99  => return "solution orientation";
+               when 100 => return "client satisfaction"; -- new old buzzword in 2014 
                when others => return Inner;
             end case;
          when Plural =>
@@ -842,6 +844,7 @@ package body Corporate_Bullshit is
                when 14 => return "requests / solutions";
                when 15 => return "mobile strategies";
                when 16 => return "expectations and allocations";
+               when 17 => return "workshops";
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
