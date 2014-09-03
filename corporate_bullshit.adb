@@ -715,7 +715,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R468 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R475 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -819,6 +819,8 @@ package body Corporate_Bullshit is
                when 98  => return "client perspective";
                when 99  => return "solution orientation";
                when 100 => return "client satisfaction"; -- new old buzzword in 2014 
+               when 101 => return "integrity";
+               when 102 => return "reputation";
                when others => return Inner;
             end case;
          when Plural =>
