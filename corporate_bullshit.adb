@@ -92,7 +92,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R14 is
+         case R16 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -107,6 +107,8 @@ package body Corporate_Bullshit is
             when 12 => return "IT Strategy";
             when 13 => return "IT Operations";
             when 14 => return "Marketing";
+            when 15 => return "Strategic Planning";      -- from a Dilbert cartoon
+            when 16 => return "Facilities Management";   -- from a Dilbert cartoon
          end case;
       end Department;
 
@@ -139,7 +141,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R17 is
+            case R26 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -152,6 +154,11 @@ package body Corporate_Bullshit is
                when 10 => return "gatekeeper"; -- ME - UWM 2010
                when 11 => return "resource";   -- no, we're not people, we're "resources"
                when 12 => return "senior support staff";
+               when 13 => return "brand manager";        -- from a Dilbert cartoon
+               when 14 => return "category manager";     -- from a Dilbert cartoon
+               when 15 => return "account executive";    -- from a Dilbert cartoon
+               when 16 => return "project leader";       -- from a Dilbert cartoon
+               when 17 => return "product manager";      -- from a Dilbert cartoon
                when others =>
                   return Boss;
             end case;
