@@ -15,7 +15,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2013
+--  Copyright (c) Gautier de Montmollin 2006 .. 2014
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
