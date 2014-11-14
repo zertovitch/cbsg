@@ -1,9 +1,10 @@
 -- Corporate Bullshit Live !
--- http://cbsg.sf.net/cgi-bin/live (full, unredirected URL)
+--   http://cbsg.sf.net/ (short URL)
+--   http://cbsg.sourceforge.net/cgi-bin/live (full, unredirected URL)
 -- 16-Mar-2012
--- Thx to Frédéric Praca for the help about CGI!
+--   Thx to Frédéric Praca for the help about CGI!
 -- 19-Mar-2012
--- Use of a template file. Contribution by François Fabien.
+--   Use of a template file. Contribution by François Fabien.
 
 with Corporate_Bullshit;
 with CGI;                use CGI;

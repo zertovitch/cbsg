@@ -483,34 +483,36 @@ package body Corporate_Bullshit is
    function Growth return String is
       function Superlative return String is
       begin
-         case R13 is
+         case R14 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
             when 4 => return "breakout";
                -- Ludovic
             when 5 => return "unprecedented";
-            when 6 => return "unparallelled";
+            when 6 => return "unparalleled";
             when 7 => return "proven";
             when 8 => return "measured";
-               -- 2014 stock exchange fads (some adjectives also in the common list)
-            when  9 => return "healthy";
+               -- 2014 stock exchange fads
+               --    Some adjectives are also in the common list
+            when  9 => return "sustained";
             when 10 => return "sustainable";
             when 11 => return "robust";
             when 12 => return "solid";
             when 13 => return "rock-solid";
+            when 14 => return "healthy";
          end case;
       end Superlative;
 
       function Improvement return String is
       begin
-         case R5 is
-            -- Ludovic
+         case R6 is
             when 1 => return " growth";
             when 2 => return " improvement";
             when 3 => return " throughput increase";
             when 4 => return " efficiency gain";
             when 5 => return " yield enhancement";
+            when 6 => return " expansion";
          end case;
       end Improvement;
    begin
