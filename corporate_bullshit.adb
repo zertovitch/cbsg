@@ -194,7 +194,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R257 is
+      case R263 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -467,6 +467,12 @@ package body Corporate_Bullshit is
          when 255 => return "metrics-driven"; -- Found in an article about criminal activities reported with many details
          when 256 => return "pre-integrated"; -- (obtained by bootstrapping)
          when 257 => return "solution-oriented";
+         when 258 => return "impactful";
+         when 259 => return "world-class";
+         when 260 => return "turn-key";
+         when 261 => return "leading-edge";
+         when 262 => return "next-generation";
+         when 263 => return "extensible";
       end case;
    end Thing_Adjective;
 
