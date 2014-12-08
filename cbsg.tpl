@@ -22,7 +22,7 @@
       </ul>
       <hr />
       <p>Our mentor :<br />
-         &nbsp; <a href="http://dilbert.com">Dilbert</a>'s pointy-haired boss.</p>
+         &nbsp; <a target=_blank href="http://dilbert.com">Dilbert</a>'s pointy-haired boss.</p>
       <p>Our motto :<br />
          &nbsp; Science is 10% inspiration and 90% perspiration (Louis Pasteur).</p>
       <hr />
@@ -30,8 +30,8 @@
       <a target=_blank href="http://www2.research.att.com/~ttsweb/tts/demo.php#top">here</a>
       for a nice voice generator where you can paste your favourite texts.      
       <hr />
-      The CBSG project site is <a href="http://sf.net/projects/cbsg/">here</a>.
-      
+      The CBSG project site is <a target=_blank href="http://sf.net/projects/cbsg/">here</a>.
+	  The author's blog can be read <a target=_blank href="http://gautiersblog.blogspot.ch/">here</a>.
       <br /><br />
       <table cellspacing=0 cellpadding=0 border=0>
       <tr><td>
@@ -67,12 +67,12 @@
       <hr />
       
       <center>
-         <a href="http://sf.net/projects/cbsg/"><img 
+         <a target=_blank href="http://sf.net/projects/cbsg/"><img 
 		   src="http://sflogo.sf.net/sflogo.php?group_id=557838&amp;type=16"
 		   border="0"
            alt="SourceForge.net" height="40" width="150" align="absmiddle" /></a>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <a href="http://sf.net/projects/cbsg/"><img
+         <a target=_blank href="http://sf.net/projects/cbsg/"><img
            src="http://cbsg.sf.net/durada.png" 
 		   border="0"
            alt="Powered by Ada" height="62" width="91" align="absmiddle" /></a>
