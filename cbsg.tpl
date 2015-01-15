@@ -10,6 +10,7 @@
    <body>
       <font face="Calibri, Arial">
       <h1>The Corporate Bullshit Generator</h1>
+	  Short URL: <b><a href="http://cbsg.sf.net">http://cbsg.sf.net</a></b> <br> <br>
       <form method="POST">Yes, I want more ! &#160; &#8594; &#8594; &#8594; &#160; 
         <input 
           value="More bullshit, please !" 
