@@ -68,6 +68,7 @@ begin
               end case;
             Put_Line (Line (Pos + tag_match'Length .. Line'Last));
             special_tag_found:= True;
+			exit;
           end if;
         end;
       end loop;
