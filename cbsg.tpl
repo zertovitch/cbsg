@@ -31,8 +31,9 @@
       <a target=_blank href="http://www2.research.att.com/~ttsweb/tts/demo.php#top">here</a>
       for a nice voice generator where you can paste your favourite texts.      
       <hr />
-      The CBSG project site is <a target=_blank href="http://sf.net/projects/cbsg/">here</a>.
-	  The author's blog can be read <a target=_blank href="http://gautiersblog.blogspot.ch/">here</a>.
+      The Corporate Bullshit Generator is an open-source software.
+      Follow <a target=_blank href="http://sf.net/projects/cbsg/">this link</a> for the project site (source code, suggestions, etc.).<br>
+	  The author's blog can be read <a target=_blank href="http://gautiersblog.blogspot.com/search/label/Ada">here</a>.
       <br /><br />
       <table cellspacing=0 cellpadding=0 border=0>
       <tr><td>
