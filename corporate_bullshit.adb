@@ -194,7 +194,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R266 is
+      case R269 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -476,6 +476,9 @@ package body Corporate_Bullshit is
          when 264 => return "under-the-radar";
          when 265 => return "high-grade";  --  Subprime crisis explanation by The Long Johns ...
          when 266 => return "structured";  --  ... http://www.youtube.com/watch?v=z-oIMJMGd1Q
+         when 267 => return "trust-based";
+         when 268 => return "intra-company";
+         when 269 => return "inter-company";
       end case;
    end Thing_Adjective;
 
@@ -532,7 +535,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R191 is
+         case R192 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -733,6 +736,7 @@ package body Corporate_Bullshit is
             when 189 => return "wow factor"; -- (obtained by bootstrapping)
             when 190 => return "onboarding solution"; -- (obtained by bootstrapping)
             when 191 => return "brand pyramid"; 
+            when 192 => return "dashboard"; 
          end case;
       end Inner;
 
@@ -845,6 +849,8 @@ package body Corporate_Bullshit is
                when 100 => return "client satisfaction"; -- new old buzzword in 2014 
                when 101 => return "integrity";
                when 102 => return "reputation";
+               when 103 => return "time-to-market";
+               when 104 => return "innovative edge";
                when others => return Inner;
             end case;
          when Plural =>
