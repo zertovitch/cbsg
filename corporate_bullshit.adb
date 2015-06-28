@@ -194,7 +194,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R272 is
+      case R282 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -482,6 +482,16 @@ package body Corporate_Bullshit is
          when 270 => return "profit-oriented";
          when 271 => return "sizeable";
          when 272 => return "highly satisfactory";
+         when 273 => return "bi-face";
+         when 274 => return "tri-face";
+         when 275 => return "disruptive";
+         when 276 => return "technological";
+         when 277 => return "marketplace";  --  noun used as an adjective
+         when 278 => return "fast-evolving";
+         when 279 => return "open";
+         when 280 => return "fully networked";
+         when 281 => return "adoptable";
+         when 282 => return "trustworthy";
       end case;
    end Thing_Adjective;
 
@@ -538,7 +548,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R192 is
+         case R193 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -670,7 +680,7 @@ package body Corporate_Bullshit is
             when 120 => return "realignment";
             when 121 => return "business model";
             when 122 => return "business philosophy";
-            when 123 => return "branding";
+            when 123 => return "business platform";
             when 124 => return "methodology";
             when 125 => return "profile";
             when 126 => return "measure";
@@ -740,6 +750,7 @@ package body Corporate_Bullshit is
             when 190 => return "onboarding solution"; -- (obtained by bootstrapping)
             when 191 => return "brand pyramid"; 
             when 192 => return "dashboard"; 
+            when 193 => return "branding";
          end case;
       end Inner;
 
@@ -860,6 +871,7 @@ package body Corporate_Bullshit is
                when 108 => return "active differentiation";
                when 109 => return "solid profitability";
                when 110 => return "core capacity";
+               when 111 => return "digital economy";
                when others => return Inner;
             end case;
          when Plural =>
@@ -1469,7 +1481,7 @@ package body Corporate_Bullshit is
 
    function Short_Workshop return String is
    begin
-      return Sentence_Guaranteed_Amount (5, Dialog_Mark);
+      return Sentence_Guaranteed_Amount (6, Dialog_Mark);
    end Short_Workshop;
 
    function Financial_Report return String is
