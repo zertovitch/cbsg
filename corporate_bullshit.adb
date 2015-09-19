@@ -75,8 +75,9 @@ package body Corporate_Bullshit is
 
       function Exec return String is
       begin
-         case R6 is
+         case R12 is
             when 1 => return "Executive ";
+            when 2 => return "Principal ";
             when others => return "";
          end case;
       end Exec;
@@ -92,7 +93,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R16 is
+         case R19 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -109,19 +110,22 @@ package body Corporate_Bullshit is
             when 14 => return "Marketing";
             when 15 => return "Strategic Planning";      -- from a Dilbert cartoon
             when 16 => return "Facilities Management";   -- from a Dilbert cartoon
+            when 17 => return "Innovation";
+            when 18 => return "Identity";
+            when 19 => return "Branding";
          end case;
       end Department;
 
       function Department_or_Top_Role return String is
       begin
-        case R17 is
-          when 1..14 =>
+        case R22 is
+          when 1..19 =>
             return Department;
-          when 15 =>
+          when 20 =>
             return "Visionary";
-          when 16 =>
+          when 21 =>
             return "Digital";
-          when 17 =>
+          when 22 =>
             return "Technical";
         end case;
       end Department_or_Top_Role;
