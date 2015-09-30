@@ -145,7 +145,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R26 is
+            case R29 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -163,7 +163,9 @@ package body Corporate_Bullshit is
                when 15 => return "account executive";    -- from a Dilbert cartoon
                when 16 => return "project leader";       -- from a Dilbert cartoon
                when 17 => return "product manager";      -- from a Dilbert cartoon
-               when others =>
+               when 18 => return "naming committee";
+               when 19 => return "executive committee";
+               when others =>  --  ~ 1/3
                   return Boss;
             end case;
          when Plural =>
@@ -198,7 +200,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R282 is
+      case R283 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -496,6 +498,7 @@ package body Corporate_Bullshit is
          when 280 => return "fully networked";
          when 281 => return "adoptable";
          when 282 => return "trustworthy";
+         when 283 => return "science-based";
       end case;
    end Thing_Adjective;
 
