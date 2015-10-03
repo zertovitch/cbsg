@@ -1453,7 +1453,7 @@ package body Corporate_Bullshit is
             Eventual_Postfixed_Adverb;
          when 101 => 
             return
-            "There can be no " & Growth &
+            "there can be no " & Growth &
             " until we can achieve " & Growth;
       end case;
    end Proposition;
@@ -1461,21 +1461,22 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P1, P2: Plurality;
    begin
-      case R284 is
+      case R280 is
          when   1 .. 170 => return Proposition;
          when 171 .. 180 => return Proposition & "; this is why " & Proposition;
          when 181 .. 190 => return Proposition & "; nevertheless " & Proposition;
          when 191 .. 200 => return Proposition & ", whereas " & Proposition;
-         when 201 .. 210 => return "our gut-feeling is that " & Proposition;
          when 211 .. 250 => return Proposition & ", while " & Proposition;
          when 251 .. 260 => return Proposition & ". In the same time, " & Proposition;
          when 261 .. 270 => return Proposition & ". As a result, " & Proposition;
          when 271 .. 280 => return Proposition & ", whilst " & Proposition;
-         when 281 .. 282 =>
+         --  Lower probability constructs
+         when 201 .. 203 => return "our gut-feeling is that " & Proposition;
+         when 204 .. 206 =>
             return
             "the point is not merely to " & Person_Infinitive_Verb_And_Ending &
             ". The point is to " & Person_Infinitive_Verb_And_Ending;
-         when 283 .. 284 =>
+         when 207 .. 210 =>
             P1:= Random_Plural;
             P2:= Random_Plural;
             return
