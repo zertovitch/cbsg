@@ -14,7 +14,6 @@ package body Corporate_Bullshit is
    --   * Enrich the Proposition function
    --   * Person_adjective: "committed", "multi-skilled"
    --   * other sentences; rhetorical questions
-   --   * "It's not about X, it's about Y"
    --   * "It's about breaking down the silos"
    --   * Fix bugs marked with !!
    --   * "integrate into"
@@ -57,11 +56,12 @@ package body Corporate_Bullshit is
             end case;
          end Co;
       begin
-         case R4 is
+         case R5 is
             when 1 => return Vice & "Director";
             when 2 => return "Chief";
             when 3 => return Co & "Head";
             when 4 => return Vice & "President";
+            when 5 => return "Supervisor";
          end case;
       end Title;
 
@@ -145,7 +145,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R29 is
+            case R30 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -165,11 +165,12 @@ package body Corporate_Bullshit is
                when 17 => return "product manager";      -- from a Dilbert cartoon
                when 18 => return "naming committee";
                when 19 => return "executive committee";
+               when 20 => return "white-collar workforce";
                when others =>  --  ~ 1/3
                   return Boss;
             end case;
          when Plural =>
-            case R11 is
+            case R13 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -181,6 +182,8 @@ package body Corporate_Bullshit is
                when 9  => return "standard-setters";
                when 10 => return "partners";
                when 11 => return "business leaders";
+               when 12 => return "thinkers/planners";
+               when 13 => return "white-collar workers";
             end case;
       end case;
    end Person;
@@ -200,7 +203,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R283 is
+      case R289 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -499,6 +502,12 @@ package body Corporate_Bullshit is
          when 281 => return "adoptable";
          when 282 => return "trustworthy";
          when 283 => return "science-based";
+         when 284 => return "non-manufacturing";
+         when 285 => return "multi-divisional";
+         when 286 => return "controllable";
+         when 287 => return "high-priority";
+         when 288 => return "values-based";
+         when 289 => return "control-based";
       end case;
    end Thing_Adjective;
 
@@ -538,13 +547,14 @@ package body Corporate_Bullshit is
 
       function Improvement return String is
       begin
-         case R6 is
+         case R7 is
             when 1 => return " growth";
             when 2 => return " improvement";
             when 3 => return " throughput increase";
             when 4 => return " efficiency gain";
             when 5 => return " yield enhancement";
             when 6 => return " expansion";
+            when 7 => return " productivity improvement";
          end case;
       end Improvement;
    begin
@@ -555,7 +565,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R193 is
+         case R194 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -758,6 +768,7 @@ package body Corporate_Bullshit is
             when 191 => return "brand pyramid"; 
             when 192 => return "dashboard"; 
             when 193 => return "branding";
+            when 194 => return "local-for-local strategy";
          end case;
       end Inner;
 
@@ -879,6 +890,8 @@ package body Corporate_Bullshit is
                when 109 => return "solid profitability";
                when 110 => return "core capacity";
                when 111 => return "digital economy";
+               when 112 => return "white-collar productivity";
+               when 113 => return "white-collar efficiency";
                when others => return Inner;
             end case;
          when Plural =>
@@ -952,7 +965,9 @@ package body Corporate_Bullshit is
       end case;
    end Thing;
 
-   -- Bad things.
+   ---------------------------------
+   --   The Bad Things. Whaaaa!   --
+   ---------------------------------
    --
    -- They are always in plural. Singular is avoided for two reasons:
    --
@@ -962,7 +977,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R22 is
+      case R23 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -985,6 +1000,7 @@ package body Corporate_Bullshit is
          when 20 => return "unfavorable developments";
          when 21 => return "consumer/agent disconnects";
          when 22 => return "underperforming areas";
+         when 23 => return "information overloads";
       end case;
    end Bad_Things;
 
@@ -1242,7 +1258,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R69 is
+         case R72 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1315,6 +1331,9 @@ package body Corporate_Bullshit is
             when 67 => return "create long-term value";
             when 68 => return "meet the challenges";
             when 69 => return "move the progress forward";
+            when 70 => return "do the right projects";
+            when 71 => return "do the projects right";
+            when 72 => return "do more with less";
          end case;
       end Inner;
    begin
@@ -1389,15 +1408,20 @@ package body Corporate_Bullshit is
       end case;
    end Faukon;
 
+   function Person_Infinitive_Verb_And_Ending return String is
+   begin
+      return Person_Verb_And_Ending (Plural);  --  Plural: trick to get the infinitive
+   end;
+
    function Proposition return String is
       Sp1, Sp2: constant Plurality:= Random_Plural;
    begin
-      case R100 is
+      case R101 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
             Eventual_Adverb &
-            Person_Verb_And_Ending (Plural) & -- Trick to get the infinitive
+            Person_Infinitive_Verb_And_Ending &
             Eventual_Postfixed_Adverb;
             -- infinitive written same as present plural
          when 6 .. 50    => -- ** PERSON...
@@ -1427,21 +1451,36 @@ package body Corporate_Bullshit is
             Eventual_Adverb &
             Thing_Verb_And_Ending (Plural) &
             Eventual_Postfixed_Adverb;
+         when 101 => 
+            return
+            "There can be no " & Growth &
+            " until we can achieve " & Growth;
       end case;
    end Proposition;
 
    function Articulated_Propositions return String is
+     P1, P2: Plurality;
    begin
-      case R28 is
-         when 1 .. 17  => return Proposition;
-         when 18       => return Proposition & "; this is why " & Proposition;
-         when 19       => return Proposition & "; nevertheless " & Proposition;
-         when 20       => return Proposition & ", whereas " & Proposition;
-         when 21       => return "our gut-feeling is that " & Proposition;
-         when 22 .. 25 => return Proposition & ", while " & Proposition;
-         when 26       => return Proposition & ". In the same time, " & Proposition;
-         when 27       => return Proposition & ". As a result, " & Proposition;
-         when 28       => return Proposition & ", whilst " & Proposition;
+      case R284 is
+         when   1 .. 170 => return Proposition;
+         when 171 .. 180 => return Proposition & "; this is why " & Proposition;
+         when 181 .. 190 => return Proposition & "; nevertheless " & Proposition;
+         when 191 .. 200 => return Proposition & ", whereas " & Proposition;
+         when 201 .. 210 => return "our gut-feeling is that " & Proposition;
+         when 211 .. 250 => return Proposition & ", while " & Proposition;
+         when 251 .. 260 => return Proposition & ". In the same time, " & Proposition;
+         when 261 .. 270 => return Proposition & ". As a result, " & Proposition;
+         when 271 .. 280 => return Proposition & ", whilst " & Proposition;
+         when 281 .. 282 =>
+            return
+            "the point is not merely to " & Person_Infinitive_Verb_And_Ending &
+            ". The point is to " & Person_Infinitive_Verb_And_Ending;
+         when 283 .. 284 =>
+            P1:= Random_Plural;
+            P2:= Random_Plural;
+            return
+            "it's not about " & Add_Random_Article (P1, Thing (P1)) &
+            ". It's about " & Add_Random_Article (P2, Thing (P2));
       end case;
    end Articulated_Propositions;
 

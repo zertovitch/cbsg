@@ -61,7 +61,8 @@ package body Delirium is
    end Make_Eventual_Plural;
 
    Vowel: constant array (Character) of Boolean:=
-     ('a'|'e'|'i'|'o'|'u' => True, others => False);
+     ('a'|'e'|'i'|'o'|'u'|
+      'A'|'E'|'I'|'O'|'U'=> True, others => False);
 
    function Build_Plural_Verb (Verb: String; P: Plurality) return String is
       Last: Natural;
