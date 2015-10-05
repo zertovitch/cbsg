@@ -294,9 +294,9 @@ package body Corporate_Bullshit is
          when 78 => return "coordinated";
          when 79 => return "aligned";
          when 80 => return "enhanced"; -- ME 15-Jun-2011
+         when 81 => return "control-based";
 
             -- Ludovic:
-         when 81 => return "replacement";
          when 82 => return "industry-standard";
          when 83 => return "accepted";
          when 84 => return "agreed-upon";
@@ -360,7 +360,7 @@ package body Corporate_Bullshit is
          when 139 => return "profit-maximizing";
          when 140 => return "generic";
          when 141 => return "granular";
-         when 142 => return "market-driven";
+         when 142 => return "values-based";
          when 143 => return "value-driven";
          when 144 => return "well-defined";
          when 145 => return "outward-looking";
@@ -506,8 +506,8 @@ package body Corporate_Bullshit is
          when 285 => return "multi-divisional";
          when 286 => return "controllable";
          when 287 => return "high-priority";
-         when 288 => return "values-based";
-         when 289 => return "control-based";
+         when 288 => return "market-driven";
+         when 289 => return "market-driving";
       end case;
    end Thing_Adjective;
 
@@ -569,7 +569,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R194 is
+         case R197 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -773,13 +773,16 @@ package body Corporate_Bullshit is
             when 192 => return "dashboard"; 
             when 193 => return "branding";
             when 194 => return "local-for-local strategy";
+            when 195 => return "cross-sell message";   --  (obtained by bootstrapping)
+            when 196 => return "up-sell message";      --  (obtained by bootstrapping)
+            when 197 => return "divisional structure"; --  (obtained by bootstrapping)
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R495 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R315 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -789,7 +792,7 @@ package body Corporate_Bullshit is
                when 6   => return "core business";
                when 7   => return "implementation";
                when 8   => return "intelligence";
-               when 9   => return "governance";
+               when 9   => return "change management";
                when 10  => return "ROE";
                when 11  => return "EBITDA";
                when 12  => return "enterprise content management";
@@ -896,10 +899,15 @@ package body Corporate_Bullshit is
                when 111 => return "digital economy";
                when 112 => return "white-collar productivity";
                when 113 => return "white-collar efficiency";
+               when 114 => return "governance";
+               when 115 => return "corporate governance";
+               when 116 => return "business development";
+               when 117 => return "corporate identity";
+               when 118 => return "attractiveness";  --  (obtained by bootstrapping)
                when others => return Inner;
             end case;
          when Plural =>
-            case R204 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R213 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
