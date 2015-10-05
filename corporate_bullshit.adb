@@ -524,7 +524,7 @@ package body Corporate_Bullshit is
    function Growth return String is
       function Superlative return String is
       begin
-         case R14 is
+         case R17 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -542,12 +542,15 @@ package body Corporate_Bullshit is
             when 12 => return "solid";
             when 13 => return "rock-solid";
             when 14 => return "healthy";
+            when 15 => return "incremental";
+            when 16 => return "significant";
+            when 17 => return "recurring";
          end case;
       end Superlative;
 
       function Improvement return String is
       begin
-         case R7 is
+         case R8 is
             when 1 => return " growth";
             when 2 => return " improvement";
             when 3 => return " throughput increase";
@@ -555,6 +558,7 @@ package body Corporate_Bullshit is
             when 5 => return " yield enhancement";
             when 6 => return " expansion";
             when 7 => return " productivity improvement";
+            when 8 => return " gain in task efficiency";
          end case;
       end Improvement;
    begin
@@ -1068,11 +1072,12 @@ package body Corporate_Bullshit is
          when 13 => return " within the " & Matrix_Or_So;
          when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
          when 15 => return " across and beyond the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
-         when 16 => return " resulting in " & Growth;
+         when 16 => return " resulting in " & Add_Indefinite_Article (Singular, Growth);
          when 17 => return " reaped from our " & Growth;
-         when 18 => return " as a consequence of " & Growth;
+         when 18 => return " as a consequence of " & Add_Indefinite_Article (Singular, Growth);
          when 19 => return " because " & Add_Random_Article (P, Thing (P))
-                           & ' ' & Build_Plural_Verb ("produce", P) & ' ' & Growth;
+                           & ' ' & Build_Plural_Verb ("produce", P) & ' '
+                           & Add_Indefinite_Article (Singular, Growth);
          when 20 => return " ahead of schedule";
          when 21 => return ", relative to our peers";
          when 22 => return " on a transitional basis";
@@ -1454,7 +1459,7 @@ package body Corporate_Bullshit is
          when 101 => 
             return
             "there can be no " & Growth &
-            " until we can achieve " & Growth;
+            " until we can achieve " & Add_Indefinite_Article (Singular, Growth);
       end case;
    end Proposition;
 
