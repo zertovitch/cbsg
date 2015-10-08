@@ -145,7 +145,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R30 is
+            case R33 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -166,11 +166,12 @@ package body Corporate_Bullshit is
                when 18 => return "naming committee";
                when 19 => return "executive committee";
                when 20 => return "white-collar workforce";
+               when 21 => return "innovator";      --  (obtained by bootstrapping)
                when others =>  --  ~ 1/3
                   return Boss;
             end case;
          when Plural =>
-            case R15 is
+            case R16 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -186,6 +187,7 @@ package body Corporate_Bullshit is
                when 13 => return "white-collar workers";
                when 14 => return "board-level executives";  --  (obtained by bootstrapping)
                when 15 => return "key representatives";     --  (obtained by bootstrapping)
+               when 16 => return "innovators";     --  (obtained by bootstrapping)
             end case;
       end case;
    end Person;
@@ -205,7 +207,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R292 is
+      case R296 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -513,6 +515,10 @@ package body Corporate_Bullshit is
          when 290 => return "ingenious";              --  (obtained by bootstrapping)
          when 291 => return "business-for-business";  --  (obtained by bootstrapping)
          when 292 => return "inspirational";          --  (obtained by bootstrapping)
+         when 293 => return "winning";           --  (obtained by bootstrapping)
+         when 294 => return "boundaryless";      --  (obtained by bootstrapping)
+         when 295 => return "reality-based";     --  (obtained by bootstrapping)
+         when 296 => return "customer-focused";  --  (obtained by bootstrapping)
       end case;
    end Thing_Adjective;
 
@@ -788,7 +794,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R318 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R321 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -912,6 +918,9 @@ package body Corporate_Bullshit is
                when 118 => return "attractiveness";  --  (obtained by bootstrapping)
                when 119 => return "design philosophy";  --  (obtained by bootstrapping)
                when 120 => return "global footprint";   --  (obtained by bootstrapping)
+               when 121 => return "risk taking";        --  (obtained by bootstrapping)
+               when 122 => return "focus on speed";     --  (obtained by bootstrapping)
+               when 123 => return "business equation";  --  (obtained by bootstrapping)
                when others => return Inner;
             end case;
          when Plural =>
@@ -998,7 +1007,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R24 is
+      case R25 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1023,6 +1032,7 @@ package body Corporate_Bullshit is
          when 22 => return "underperforming areas";
          when 23 => return "information overloads";
          when 24 => return "concerns";  --  (obtained by bootstrapping)
+         when 25 => return "shortfalls";  --  (obtained by bootstrapping)
       end case;
    end Bad_Things;
 
@@ -1030,7 +1040,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R96 is -- proportion: 3/4 empty adverb
+      case R100 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -1057,6 +1067,7 @@ package body Corporate_Bullshit is
          when 22 => return "consistently ";
          when 23 => return "diligently ";
          when 24 => return "dramatically ";  --  (obtained by bootstrapping)
+         when 25 => return "straightforwardly ";  --  (obtained by bootstrapping)
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -1256,7 +1267,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Person_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R13 is
+         case R15 is
             when 1 => return "motivate";
             when 2 => return "target";
             when 3 => return "enable";
@@ -1272,6 +1283,8 @@ package body Corporate_Bullshit is
             when 11 => return "promote";
             when 12 => return "influence";
             when 13 => return "strengthen";
+            when 14 => return "energize";    --  (obtained by bootstrapping)
+            when 15 => return "invigorate";  --  (obtained by bootstrapping)
          end case;
       end Inner;
    begin
@@ -1283,7 +1296,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R72 is
+         case R74 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1359,6 +1372,8 @@ package body Corporate_Bullshit is
             when 70 => return "do the right projects";
             when 71 => return "do the projects right";
             when 72 => return "do more with less";
+            when 73 => return "build winning teams";     --  (obtained by bootstrapping)
+            when 74 => return "deliver on commitments";  --  (obtained by bootstrapping)
          end case;
       end Inner;
    begin
