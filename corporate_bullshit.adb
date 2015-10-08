@@ -794,7 +794,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R321 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R323 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -921,10 +921,12 @@ package body Corporate_Bullshit is
                when 121 => return "risk taking";        --  (obtained by bootstrapping)
                when 122 => return "focus on speed";     --  (obtained by bootstrapping)
                when 123 => return "business equation";  --  (obtained by bootstrapping)
+               when 124 => return "edge";               --  (obtained by bootstrapping)
+               when 125 => return "ownership";          --  (obtained by bootstrapping)
                when others => return Inner;
             end case;
          when Plural =>
-            case R216 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R217 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -948,6 +950,7 @@ package body Corporate_Bullshit is
                when 16 => return "expectations and allocations";
                when 17 => return "workshops";
                when 18 => return "dynamics";  --  (obtained by bootstrapping)
+               when 19 => return "options";   --  (obtained by bootstrapping)
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
@@ -1296,7 +1299,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R74 is
+         case R77 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1374,6 +1377,9 @@ package body Corporate_Bullshit is
             when 72 => return "do more with less";
             when 73 => return "build winning teams";     --  (obtained by bootstrapping)
             when 74 => return "deliver on commitments";  --  (obtained by bootstrapping)
+            when 75 => return "execute";                 --  (obtained by bootstrapping)
+            when 76 => return "deliver";                 --  (obtained by bootstrapping)
+            when 77 => return "see around the corner";   --  (obtained by bootstrapping)
          end case;
       end Inner;
    begin
@@ -1454,9 +1460,9 @@ package body Corporate_Bullshit is
    end;
 
    function Proposition return String is
-      Sp1, Sp2: constant Plurality:= Random_Plural;
+      Sp1: constant Plurality:= Random_Plural;
    begin
-      case R102 is
+      case R103 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -1497,6 +1503,8 @@ package body Corporate_Bullshit is
             " until we can achieve " & Add_Indefinite_Article (Singular, Growth);
          when 102 =>
             return Thing (Plural) & " challenge us to " & Person_Infinitive_Verb_And_Ending;  --  (obtained by bootstrapping)
+         when 103 =>
+            return Thing (Singular) & " is all about " & Thing (Sp1);  --  (obtained by bootstrapping)
       end case;
    end Proposition;
 
