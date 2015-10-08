@@ -171,7 +171,7 @@ package body Corporate_Bullshit is
                   return Boss;
             end case;
          when Plural =>
-            case R16 is
+            case R17 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -188,6 +188,7 @@ package body Corporate_Bullshit is
                when 14 => return "board-level executives";  --  (obtained by bootstrapping)
                when 15 => return "key representatives";     --  (obtained by bootstrapping)
                when 16 => return "innovators";     --  (obtained by bootstrapping)
+               when 17 => return "policy makers";  --  (obtained by bootstrapping)
             end case;
       end case;
    end Person;
@@ -207,7 +208,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R302 is
+      case R304 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -525,6 +526,8 @@ package body Corporate_Bullshit is
          when 300 => return "inventory-planning";   --  (obtained by bootstrapping)
          when 301 => return "ubiquitous";  --  (obtained by bootstrapping)
          when 302 => return "number-one";  --  (obtained by bootstrapping)
+         when 303 => return "results-oriented";  --  (obtained by bootstrapping)
+         when 304 => return "socially enabled";  --  (obtained by bootstrapping)
       end case;
    end Thing_Adjective;
 
@@ -541,7 +544,7 @@ package body Corporate_Bullshit is
    function Growth return String is
       function Superlative return String is
       begin
-         case R22 is
+         case R23 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -567,6 +570,7 @@ package body Corporate_Bullshit is
             when 20 => return "breakneck";    --  (obtained by bootstrapping)
             when 21 => return "profitable";   --  (obtained by bootstrapping)
             when 22 => return "disciplined";  --  (obtained by bootstrapping)
+            when 23 => return "accelerated";  --  (obtained by bootstrapping)
          end case;
       end Superlative;
 
@@ -1107,7 +1111,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R170 is
+      case R175 is
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1145,6 +1149,7 @@ package body Corporate_Bullshit is
          when 32 => return " by thinking and acting beyond boundaries";
          when 33 => return " at the individual, team and organizational level";
          when 34 => return " ensuring " & Add_Indefinite_Article (P, Thing (P));  --  (obtained by bootstrapping)
+         when 35 => return " over the long term";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1535,7 +1540,7 @@ package body Corporate_Bullshit is
          when 105 =>
             return
             "the key to " & Thing_Atom (Singular) & 
-            " is " & Add_Indefinite_Article (Singular, Thing (Singular));  --  (obtained by bootstrapping)
+            " is " & Thing_Atom (Singular);  --  (obtained by bootstrapping)
       end case;
    end Proposition;
 
