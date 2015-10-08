@@ -207,7 +207,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R297 is
+      case R300 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -520,6 +520,9 @@ package body Corporate_Bullshit is
          when 295 => return "reality-based";     --  (obtained by bootstrapping)
          when 296 => return "customer-focused";  --  (obtained by bootstrapping)
          when 297 => return "preemptive";  --  (obtained by bootstrapping)
+         when 298 => return "location-specific";    --  (obtained by bootstrapping)
+         when 299 => return "revealing ";           --  (obtained by bootstrapping)
+         when 300 => return "inventory-planning ";  --  (obtained by bootstrapping)
       end case;
    end Thing_Adjective;
 
@@ -536,7 +539,7 @@ package body Corporate_Bullshit is
    function Growth return String is
       function Superlative return String is
       begin
-         case R17 is
+         case R19 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -557,12 +560,14 @@ package body Corporate_Bullshit is
             when 15 => return "incremental";
             when 16 => return "significant";
             when 17 => return "recurring";
+            when 18 => return "sizable";  --  (obtained by bootstrapping)
+            when 19 => return "rapid";    --  (obtained by bootstrapping)
          end case;
       end Superlative;
 
       function Improvement return String is
       begin
-         case R8 is
+         case R9 is
             when 1 => return " growth";
             when 2 => return " improvement";
             when 3 => return " throughput increase";
@@ -571,6 +576,7 @@ package body Corporate_Bullshit is
             when 6 => return " expansion";
             when 7 => return " productivity improvement";
             when 8 => return " gain in task efficiency";
+            when 9 => return " shift in value";  --  (obtained by bootstrapping)
          end case;
       end Improvement;
    begin
@@ -581,7 +587,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R198 is
+         case R199 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -789,6 +795,7 @@ package body Corporate_Bullshit is
             when 196 => return "up-sell message";      --  (obtained by bootstrapping)
             when 197 => return "divisional structure"; --  (obtained by bootstrapping)
             when 198 => return "value chain";  --  (obtained by bootstrapping)
+            when 199 => return "microsegment";  --  (obtained by bootstrapping)
          end case;
       end Inner;
 
@@ -924,6 +931,7 @@ package body Corporate_Bullshit is
                when 123 => return "business equation";  --  (obtained by bootstrapping)
                when 124 => return "edge";               --  (obtained by bootstrapping)
                when 125 => return "ownership";          --  (obtained by bootstrapping)
+               when 126 => return "competitive success";  --  (obtained by bootstrapping)
                when others => return Inner;
             end case;
          when Plural =>
@@ -1011,7 +1019,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R26 is
+      case R27 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1038,6 +1046,7 @@ package body Corporate_Bullshit is
          when 24 => return "concerns";  --  (obtained by bootstrapping)
          when 25 => return "shortfalls";  --  (obtained by bootstrapping)
          when 26 => return "limitations";  --  (obtained by bootstrapping)
+         when 27 => return "downtimes";  --  (obtained by bootstrapping)
       end case;
    end Bad_Things;
 
@@ -1135,7 +1144,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R63 is
+         case R65 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1202,6 +1211,8 @@ package body Corporate_Bullshit is
             when 61 => return "flesh out";
             when 62 => return "reach out";
             when 63 => return "jump-start";
+            when 64 => return "cocreate";       --  (obtained by bootstrapping)
+            when 65 => return "capitalize on";  --  (obtained by bootstrapping)
          end case;
       end Inner;
    begin
@@ -1215,11 +1226,12 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R4 is
+         case R5 is
             when 1  => return "address";
             when 2  => return "identify";
             when 3  => return "avoid";
             when 4  => return "mitigate";
+            when 5  => return "minimize";
          end case;
       end Inner;
    begin
@@ -1231,7 +1243,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R29 is
+         case R30 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -1261,6 +1273,7 @@ package body Corporate_Bullshit is
             when 27 => return "strengthen";
             when 28 => return "enforce";
             when 29 => return "foster";
+            when 30 => return "turbocharge";
          end case;
       end Inner;
    begin
@@ -1301,7 +1314,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R77 is
+         case R78 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1382,6 +1395,7 @@ package body Corporate_Bullshit is
             when 75 => return "execute";                 --  (obtained by bootstrapping)
             when 76 => return "deliver";                 --  (obtained by bootstrapping)
             when 77 => return "see around the corner";   --  (obtained by bootstrapping)
+            when 78 => return "meet the surge";   --  (obtained by bootstrapping)
          end case;
       end Inner;
    begin
