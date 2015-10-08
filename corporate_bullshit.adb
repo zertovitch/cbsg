@@ -12,7 +12,7 @@ package body Corporate_Bullshit is
 
    -- To do:
    --   * Enrich the Proposition function
-   --   * Person_adjective: "committed", "multi-skilled"
+   --   * Person_adjective: "committed", "multi-skilled", "inspirational"
    --   * other sentences; rhetorical questions
    --   * "It's about breaking down the silos"
    --   * Fix bugs marked with !!
@@ -207,7 +207,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R296 is
+      case R297 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -519,6 +519,7 @@ package body Corporate_Bullshit is
          when 294 => return "boundaryless";      --  (obtained by bootstrapping)
          when 295 => return "reality-based";     --  (obtained by bootstrapping)
          when 296 => return "customer-focused";  --  (obtained by bootstrapping)
+         when 297 => return "preemptive";  --  (obtained by bootstrapping)
       end case;
    end Thing_Adjective;
 
@@ -1010,7 +1011,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R25 is
+      case R26 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1036,6 +1037,7 @@ package body Corporate_Bullshit is
          when 23 => return "information overloads";
          when 24 => return "concerns";  --  (obtained by bootstrapping)
          when 25 => return "shortfalls";  --  (obtained by bootstrapping)
+         when 26 => return "limitations";  --  (obtained by bootstrapping)
       end case;
    end Bad_Things;
 
@@ -1462,7 +1464,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1: constant Plurality:= Random_Plural;
    begin
-      case R103 is
+      case R105 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -1505,6 +1507,12 @@ package body Corporate_Bullshit is
             return Thing (Plural) & " challenge us to " & Person_Infinitive_Verb_And_Ending;  --  (obtained by bootstrapping)
          when 103 =>
             return Thing (Singular) & " is all about " & Thing (Sp1);  --  (obtained by bootstrapping)
+         when 104 =>
+            return "there is no alternative to " & Thing_Atom (Sp1);  --  (obtained by bootstrapping)
+         when 105 =>
+            return
+            "the key to " & Thing_Atom (Singular) & 
+            " is " & Add_Indefinite_Article (Singular, Thing (Singular));  --  (obtained by bootstrapping)
       end case;
    end Proposition;
 
