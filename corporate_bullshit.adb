@@ -208,7 +208,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R306 is
+      case R308 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -530,6 +530,8 @@ package body Corporate_Bullshit is
          when 304 => return "socially enabled";  --  (obtained by bootstrapping)
          when 305 => return "well-scoped";    --  (obtained by bootstrapping)
          when 306 => return "insight-based";  --  (obtained by bootstrapping)
+         when 307 => return "high-impact";        --  (obtained by bootstrapping)
+         when 308 => return "technology-driven";  --  (obtained by bootstrapping)
       end case;
    end Thing_Adjective;
 
@@ -1068,7 +1070,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R100 is -- proportion: 3/4 empty adverb
+      case R104 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -1096,6 +1098,7 @@ package body Corporate_Bullshit is
          when 23 => return "diligently ";
          when 24 => return "dramatically ";  --  (obtained by bootstrapping)
          when 25 => return "straightforwardly ";  --  (obtained by bootstrapping)
+         when 26 => return "differentially ";  --  (obtained by bootstrapping)
          when others => return "";
       end case;
    end Eventual_Adverb;
