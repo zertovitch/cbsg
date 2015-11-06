@@ -983,7 +983,7 @@ package body Corporate_Bullshit is
 
    function Thing (P: Plurality) return String is
    begin
-      case R110 is
+      case R160 is
          when  1 .. 9 =>   -- 2 adjectives, comma separated
             return
                Thing_Adjective & ", " &
@@ -994,24 +994,24 @@ package body Corporate_Bullshit is
                Thing_Adjective & " and " &
                Thing_Adjective & ' ' &
                Thing_Atom (P);
-         when 15 .. 70 =>  -- 1 adjective
+         when 15 .. 80 =>  -- 1 adjective
             return
                Thing_Adjective & ' ' &
                Thing_Atom (P);
-         when 71 .. 72 =>  -- 2 adjectives, separated by "and/or"
+         when 81 .. 82 =>  -- 2 adjectives, separated by "and/or"
             return
                Thing_Adjective & " and/or " &
                Thing_Adjective & ' ' &
                Thing_Atom (P);
-         when 73 .. 74 =>
+         when 83 .. 84 =>
             return Growth; -- already has a superlative, don't add an adjective
-         when 75 .. 80 =>  -- 3 adjectives
+         when 85 .. 90 =>  -- 3 adjectives
             return
                Thing_Adjective & ", " &
                Thing_Adjective & " and " &
                Thing_Adjective & ' ' &
                Thing_Atom (P);
-         when 81 .. 84 =>  -- 4 adjectives
+         when 91 .. 94 =>  -- 4 adjectives
             return
                Thing_Adjective & ", " &
                Thing_Adjective & ", " &
@@ -1552,7 +1552,7 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P1, P2: Plurality;
    begin
-      case R280 is
+      case R283 is
          when   1 .. 170 => return Proposition;
          when 171 .. 180 => return Proposition & "; this is why " & Proposition;
          when 181 .. 190 => return Proposition & "; nevertheless " & Proposition;
@@ -1573,6 +1573,10 @@ package body Corporate_Bullshit is
             return
             "it's not about " & Add_Random_Article (P1, Thing (P1)) &
             ". It's about " & Add_Random_Article (P2, Thing (P2));
+         when 281 .. 283 =>
+            return
+            "our challenge is not to " & Person_Infinitive_Verb_And_Ending &
+            ". Our challenge is to " & Person_Infinitive_Verb_And_Ending;
       end case;
    end Articulated_Propositions;
 
