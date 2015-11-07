@@ -208,7 +208,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R308 is
+      case R311 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -532,6 +532,9 @@ package body Corporate_Bullshit is
          when 306 => return "insight-based";  --  (obtained by bootstrapping)
          when 307 => return "high-impact";        --  (obtained by bootstrapping)
          when 308 => return "technology-driven";  --  (obtained by bootstrapping)
+         when 309 => return "knowledge-based";      --  (obtained by bootstrapping)
+         when 310 => return "information-age";      --  (obtained by bootstrapping)
+         when 311 => return "technology-centered";  --  (obtained by bootstrapping)
       end case;
    end Thing_Adjective;
 
@@ -600,7 +603,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R200 is
+         case R202 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -810,13 +813,15 @@ package body Corporate_Bullshit is
             when 198 => return "value chain";  --  (obtained by bootstrapping)
             when 199 => return "microsegment";  --  (obtained by bootstrapping)
             when 200 => return "rollout plan";  --  (obtained by bootstrapping)
+            when 201 => return "leadership development system";  --  (obtained by bootstrapping)
+            when 202 => return "architectural approach";         --  (obtained by bootstrapping)
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R327 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R330 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -947,10 +952,11 @@ package body Corporate_Bullshit is
                when 125 => return "ownership";          --  (obtained by bootstrapping)
                when 126 => return "competitive success";  --  (obtained by bootstrapping)
                when 127 => return "discipline";  --  (obtained by bootstrapping)
+               when 128 => return "knowledge management";  --  (obtained by bootstrapping)
                when others => return Inner;
             end case;
          when Plural =>
-            case R220 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R222 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1261,7 +1267,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R30 is
+         case R33 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -1292,6 +1298,9 @@ package body Corporate_Bullshit is
             when 28 => return "enforce";
             when 29 => return "foster";
             when 30 => return "turbocharge";
+            when 31 => return "granularize";      --  (obtained by bootstrapping)
+            when 32 => return "operationalize";   --  (obtained by bootstrapping)
+            when 33 => return "reconceptualize";  --  (obtained by bootstrapping)
          end case;
       end Inner;
    begin
@@ -1552,28 +1561,28 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P1, P2: Plurality;
    begin
-      case R283 is
-         when   1 .. 170 => return Proposition;
-         when 171 .. 180 => return Proposition & "; this is why " & Proposition;
-         when 181 .. 190 => return Proposition & "; nevertheless " & Proposition;
-         when 191 .. 200 => return Proposition & ", whereas " & Proposition;
-         when 211 .. 250 => return Proposition & ", while " & Proposition;
-         when 251 .. 260 => return Proposition & ". In the same time, " & Proposition;
-         when 261 .. 270 => return Proposition & ". As a result, " & Proposition;
-         when 271 .. 280 => return Proposition & ", whilst " & Proposition;
+      case R383 is
+         when   1 .. 270 => return Proposition;
+         when 271 .. 280 => return Proposition & "; this is why " & Proposition;
+         when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
+         when 291 .. 300 => return Proposition & ", whereas " & Proposition;
+         when 311 .. 350 => return Proposition & ", while " & Proposition;
+         when 351 .. 360 => return Proposition & ". In the same time, " & Proposition;
+         when 361 .. 370 => return Proposition & ". As a result, " & Proposition;
+         when 371 .. 380 => return Proposition & ", whilst " & Proposition;
          --  Lower probability constructs
-         when 201 .. 203 => return "our gut-feeling is that " & Proposition;
-         when 204 .. 206 =>
+         when 301 .. 303 => return "our gut-feeling is that " & Proposition;
+         when 304 .. 306 =>
             return
             "the point is not merely to " & Person_Infinitive_Verb_And_Ending &
             ". The point is to " & Person_Infinitive_Verb_And_Ending;
-         when 207 .. 210 =>
+         when 307 .. 310 =>
             P1:= Random_Plural;
             P2:= Random_Plural;
             return
             "it's not about " & Add_Random_Article (P1, Thing (P1)) &
             ". It's about " & Add_Random_Article (P2, Thing (P2));
-         when 281 .. 283 =>
+         when 381 .. 383 =>
             return
             "our challenge is not to " & Person_Infinitive_Verb_And_Ending &
             ". Our challenge is to " & Person_Infinitive_Verb_And_Ending;
