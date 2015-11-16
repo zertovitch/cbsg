@@ -551,7 +551,7 @@ package body Corporate_Bullshit is
    function Growth return String is
       function Superlative return String is
       begin
-         case R23 is
+         case R24 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -578,12 +578,13 @@ package body Corporate_Bullshit is
             when 21 => return "profitable";   --  (obtained by bootstrapping)
             when 22 => return "disciplined";  --  (obtained by bootstrapping)
             when 23 => return "accelerated";  --  (obtained by bootstrapping)
+            when 24 => return "impressive";
          end case;
       end Superlative;
 
       function Improvement return String is
       begin
-         case R9 is
+         case R11 is
             when 1 => return " growth";
             when 2 => return " improvement";
             when 3 => return " throughput increase";
@@ -593,6 +594,8 @@ package body Corporate_Bullshit is
             when 7 => return " productivity improvement";
             when 8 => return " gain in task efficiency";
             when 9 => return " shift in value";  --  (obtained by bootstrapping)
+            when 10 => return " increase in margins";
+            when 11 => return " cost reduction";
          end case;
       end Improvement;
    begin
