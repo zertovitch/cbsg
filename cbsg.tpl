@@ -28,12 +28,13 @@
          &nbsp; Science is 10% inspiration and 90% perspiration (Louis Pasteur).</p>
       <hr />
       <b>Radio Bullshit</b>. Click
-      <a target=_blank href="http://www2.research.att.com/~ttsweb/tts/demo.php#top">here</a>
-      for a nice voice generator where you can paste your favourite texts.      
+      <a target=_blank href="http://www.google.ch/search?q=tts+voice+generator">here</a>
+      for choosing a voice generator where you can paste your favourite texts.      
       <hr />
       The Corporate Bullshit Generator is an open-source software.
       Follow <a target=_blank href="http://sf.net/projects/cbsg/">this link</a> for the project site (source code, suggestions, etc.).<br>
-	  The author's blog can be read <a target=_blank href="http://gautiersblog.blogspot.com/search/label/Ada">here</a>.
+      <img src="http://cbsg.sf.net/blog_16x16.png" border="0" height="16" width="16" align="absmiddle" />
+      The author's blog can be read <a target=_blank href="http://gautiersblog.blogspot.com/search/label/Ada">here</a>.
       <br /><br />
       <table cellspacing=0 cellpadding=0 border=0>
       <tr><td>
