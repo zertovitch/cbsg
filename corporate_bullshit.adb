@@ -171,7 +171,7 @@ package body Corporate_Bullshit is
                   return Boss;
             end case;
          when Plural =>
-            case R17 is
+            case R18 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -189,6 +189,7 @@ package body Corporate_Bullshit is
                when 15 => return "key representatives";     --  (obtained by bootstrapping)
                when 16 => return "innovators";     --  (obtained by bootstrapping)
                when 17 => return "policy makers";  --  (obtained by bootstrapping)
+               when 18 => return "pioneers";
             end case;
       end case;
    end Person;
@@ -606,7 +607,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R202 is
+         case R203 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -818,13 +819,14 @@ package body Corporate_Bullshit is
             when 200 => return "rollout plan";  --  (obtained by bootstrapping)
             when 201 => return "leadership development system";  --  (obtained by bootstrapping)
             when 202 => return "architectural approach";         --  (obtained by bootstrapping)
+            when 203 => return "brand value";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R330 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R334 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -956,10 +958,13 @@ package body Corporate_Bullshit is
                when 126 => return "competitive success";  --  (obtained by bootstrapping)
                when 127 => return "discipline";  --  (obtained by bootstrapping)
                when 128 => return "knowledge management";  --  (obtained by bootstrapping)
+               when 129 => return "ability to move fast";
+               when 130 => return "franchise";
+               when 131 => return "global reach";
                when others => return Inner;
             end case;
          when Plural =>
-            case R222 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R223 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1044,7 +1049,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R27 is
+      case R28 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1072,6 +1077,7 @@ package body Corporate_Bullshit is
          when 25 => return "shortfalls";  --  (obtained by bootstrapping)
          when 26 => return "limitations";  --  (obtained by bootstrapping)
          when 27 => return "downtimes";  --  (obtained by bootstrapping)
+         when 28 => return "headwinds";
       end case;
    end Bad_Things;
 
