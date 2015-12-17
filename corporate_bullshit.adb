@@ -1049,7 +1049,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R28 is
+      case R29 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1078,6 +1078,7 @@ package body Corporate_Bullshit is
          when 26 => return "limitations";  --  (obtained by bootstrapping)
          when 27 => return "downtimes";  --  (obtained by bootstrapping)
          when 28 => return "headwinds";
+         when 29 => return "subpar returns";
       end case;
    end Bad_Things;
 
@@ -1085,7 +1086,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R104 is -- proportion: 3/4 empty adverb
+      case R108 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -1114,6 +1115,7 @@ package body Corporate_Bullshit is
          when 24 => return "dramatically ";  --  (obtained by bootstrapping)
          when 25 => return "straightforwardly ";  --  (obtained by bootstrapping)
          when 26 => return "differentially ";  --  (obtained by bootstrapping)
+         when 27 => return "gradually ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -1177,7 +1179,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R65 is
+         case R66 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1246,6 +1248,7 @@ package body Corporate_Bullshit is
             when 63 => return "jump-start";
             when 64 => return "cocreate";       --  (obtained by bootstrapping)
             when 65 => return "capitalize on";  --  (obtained by bootstrapping)
+            when 66 => return "calibrate";  --  (obtained by bootstrapping)
          end case;
       end Inner;
    begin
