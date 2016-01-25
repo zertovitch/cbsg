@@ -145,7 +145,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R33 is
+            case R34 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -167,11 +167,13 @@ package body Corporate_Bullshit is
                when 19 => return "executive committee";
                when 20 => return "white-collar workforce";
                when 21 => return "innovator";      --  (obtained by bootstrapping)
+               when 22 => return "game changer";
+               when 23 => return "visionary";
                when others =>  --  ~ 1/3
                   return Boss;
             end case;
          when Plural =>
-            case R18 is
+            case R19 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -190,6 +192,7 @@ package body Corporate_Bullshit is
                when 16 => return "innovators";     --  (obtained by bootstrapping)
                when 17 => return "policy makers";  --  (obtained by bootstrapping)
                when 18 => return "pioneers";
+               when 19 => return "game changers";
             end case;
       end case;
    end Person;
@@ -209,7 +212,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R311 is
+      case R314 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -536,6 +539,9 @@ package body Corporate_Bullshit is
          when 309 => return "knowledge-based";      --  (obtained by bootstrapping)
          when 310 => return "information-age";      --  (obtained by bootstrapping)
          when 311 => return "technology-centered";  --  (obtained by bootstrapping)
+         when 312 => return "critical";      --  (obtained by bootstrapping)
+         when 313 => return "cognitive";     --  (obtained by bootstrapping)
+         when 314 => return "acculturated";  --  (obtained by bootstrapping)
       end case;
    end Thing_Adjective;
 
@@ -826,7 +832,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R334 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R335 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -961,6 +967,7 @@ package body Corporate_Bullshit is
                when 129 => return "ability to move fast";
                when 130 => return "franchise";
                when 131 => return "global reach";
+               when 132 => return "integrativeness";  --  (obtained by bootstrapping)
                when others => return Inner;
             end case;
          when Plural =>
