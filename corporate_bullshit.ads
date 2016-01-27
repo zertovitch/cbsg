@@ -10,12 +10,13 @@
 --      from my colleagues and friends, especially:
 --        Mili Eppler, Nigel Findlater, Emilio Nualart,
 --        Bernhard Maertl, Paul Della Marta, Georges Modol,
---        Andrew Fox, Kurt Dickmann, Georg Bauhaus, Frederic Praca
+--        Andrew Fox, Kurt Dickmann, Georg Bauhaus, Frederic Praca,
+--        David Malinge
 --  - high-level, responsive empowerments by Ludovic Brenta
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2014
+--  Copyright (c) Gautier de Montmollin 2006 .. 2016
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
