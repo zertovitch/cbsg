@@ -224,7 +224,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R319 is
+      case R322 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -559,6 +559,9 @@ package body Corporate_Bullshit is
          when 317 => return "ground-breaking";
          when 318 => return "long-standing";
          when 319 => return "accelerating";
+         when 320 => return "forward-thinking";
+         when 321 => return "mind-blowing";  --  DM
+         when 322 => return "jaw-dropping";  --  DM
       end case;
    end Thing_Adjective;
 
@@ -851,7 +854,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R339 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R340 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -990,6 +993,7 @@ package body Corporate_Bullshit is
                when 133 => return "customer footprint";  --  2012 Golden Flannel Awards article
                when 134 => return "time-to-value";       --  2011 Golden Flannel Awards article
                when 135 => return "efficacy";            --  2015 Golden Flannel Awards article
+               when 136 => return "DNA";
                when others => return Inner;
             end case;
          when Plural =>
@@ -1322,7 +1326,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R34 is
+         case R35 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -1357,6 +1361,7 @@ package body Corporate_Bullshit is
             when 32 => return "operationalize";   --  (obtained by bootstrapping)
             when 33 => return "reconceptualize";  --  (obtained by bootstrapping)
             when 34 => return "iterate";  --  2014 Golden Flannel Awards article
+            when 35 => return "revolutionise";
          end case;
       end Inner;
    begin
@@ -1544,7 +1549,7 @@ package body Corporate_Bullshit is
    --
    function Faukon return String is
    begin
-      case R9 is
+      case R11 is
          when 1 => return "we need to";
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
@@ -1554,6 +1559,8 @@ package body Corporate_Bullshit is
          when 7 => return "we will go the extra mile to";
          when 8 => return "we are working hard to";
          when 9 => return "we continue to work tirelessly and diligently to";
+         when 10 => return "we will execute to";
+         when 11 => return "we will sharpen our business models to";
       end case;
    end Faukon;
 
