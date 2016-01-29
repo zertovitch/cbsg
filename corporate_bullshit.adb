@@ -224,7 +224,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R316 is
+      case R319 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -556,6 +556,9 @@ package body Corporate_Bullshit is
          when 314 => return "acculturated";  --  (obtained by bootstrapping)
          when 315 => return "client-centric";  --  2012 Golden Flannel Awards article
          when 316 => return "comprehensive";   --  2011 Golden Flannel Awards article
+         when 317 => return "ground-breaking";
+         when 318 => return "long-standing";
+         when 319 => return "accelerating";
       end case;
    end Thing_Adjective;
 
@@ -627,7 +630,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R204 is
+         case R205 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -841,6 +844,7 @@ package body Corporate_Bullshit is
             when 202 => return "architectural approach";         --  (obtained by bootstrapping)
             when 203 => return "brand value";
             when 204 => return "milestone";  --  2012 Golden Flannel Awards article
+            when 205 => return "co-innovation";
          end case;
       end Inner;
 
@@ -1160,7 +1164,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R185 is  -- proportion: ~ 4/5 empty postfixed adverb
+      case R200 is  -- proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1201,6 +1205,9 @@ package body Corporate_Bullshit is
          when 35 => return " over the long term";
          when 36 => return " across geographies";  --  2012 Golden Flannel Awards article
          when 37 => return " in the core";         --  2011 Golden Flannel Awards article
+         when 38 => return " across industry sectors";
+         when 39 => return " across the wider Group";
+         when 40 => return ", paving the way for " & Add_Indefinite_Article (P, Thing (P));
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1208,7 +1215,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R72 is
+         case R73 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1284,6 +1291,7 @@ package body Corporate_Bullshit is
             when 70 => return "reinvest in";   --  2015 Golden Flannel Awards article
             when 71 => return "potentiate";    --  2015 Golden Flannel Awards article
             when 72 => return "front-face";    --  2015 Golden Flannel Awards article
+            when 73 => return "co-develop";
          end case;
       end Inner;
    begin
