@@ -35,6 +35,7 @@ package body Corporate_Bullshit is
          case R8 is
             when 1 => return "Managing ";  --  The others only pretend to manage
             when 2 => return "Acting ";    --  Well, then we could have an actor too
+            when 3 => return "General ";
             when others => return "";
          end case;
       end Managing;
@@ -56,12 +57,13 @@ package body Corporate_Bullshit is
             end case;
          end Co;
       begin
-         case R5 is
+         case R6 is
             when 1 => return Vice & Co & "Director";
             when 2 => return Co & "Chief";
             when 3 => return Co & "Head";
             when 4 => return Vice & Co & "President";
             when 5 => return "Supervisor";
+            when 6 => return Co & "Manager";
          end case;
       end Title;
 
@@ -224,7 +226,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R322 is
+      case R323 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -562,6 +564,7 @@ package body Corporate_Bullshit is
          when 320 => return "forward-thinking";
          when 321 => return "mind-blowing";  --  DM
          when 322 => return "jaw-dropping";  --  DM
+         when 323 => return "transformative";
       end case;
    end Thing_Adjective;
 
