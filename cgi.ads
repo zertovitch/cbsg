@@ -68,7 +68,6 @@ package CGI is
 -- under the terms of this license.  As described in the LGPL, those
 -- clients then have certain rights to redistribute the library.
 
-
 -- This library was inspired by a perl binding by Steven E. Brenner at
 --   "http://www.bio.cam.ac.uk/web/form.html"
 -- and another perl binding by L. Stein at
@@ -124,7 +123,6 @@ function Key_Exists(Key : in Unbounded_String; Index : in Positive := 1)
 function Key_Count(Key : in String) return Natural;
 function Key_Count(Key : in Unbounded_String) return Natural;
 
-
 -- Access data as an ordered list (it was sent as Key=Value);
 -- Keys and Values may be retrieved from Position (1 .. Argument_Count).
 -- Constraint_Error will be raised if Position<1 or Position>Argument_Count
@@ -151,7 +149,6 @@ generic
   with procedure Evaluate (Key   : in Unbounded_String;
                            Value : in Unbounded_String);
   procedure Iterate_CGI;
-
 
 -- Useful output routines:
 
@@ -184,7 +181,6 @@ procedure Put_Error_Message(Message : in String);
 procedure Put_Variables;
 -- Put to Current_Output all of the CGI variables as an HTML-formatted String.
 
-
 -- Miscellaneous Routines:
 
 function My_URL return String; -- Returns the URL of this script.
@@ -192,7 +188,6 @@ function My_URL return String; -- Returns the URL of this script.
 function Get_Environment(Variable : in String) return String;
 -- Return the given environment variable's value.
 -- Returns "" if the variable does not exist.
-
 
 -- Multi-Line data support:
 
@@ -217,7 +212,6 @@ function Value_of_Line (Key : String; Position : Positive)
 -- return the given line.  If there's no such line, raise Constraint_Error.
 -- If there's no such Key, return the null string.
 -- This is the same as Line(Value(Key), Position).
-
 
 -- Encoding and Decoding functions:
 
@@ -257,7 +251,6 @@ function HTML_Encode(Data : in Unbounded_String) return Unbounded_String;
 function HTML_Encode(Data : in String) return String;
 -- Same as procedure, but returns a new value.
 
-
 -- Cookie handling subprograms
 -- (Note that cookies are automatically read when the program starts):
 
@@ -290,4 +283,3 @@ function Cookie_Count return Natural;
 -- Returns the number of cookies (0 if none)
 
 end CGI;
-

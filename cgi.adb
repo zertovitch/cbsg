@@ -29,8 +29,6 @@ Semicolon     : constant Character_Set      := To_Set(';');
 Unescaped_URL : constant Character_Set      := Alphanumeric_Set or
                                                To_Set("-_.!~*'()");
 
-
-
 -- The following are data internal to this package.
 
 Parsing_Errors_Occurred : Boolean := True;
@@ -39,7 +37,6 @@ Is_Index_Request_Made   : Boolean := False; -- Isindex request made?
 CGI_Data : Access_Key_Value_Sequence; -- Initially nil.
 
 Actual_CGI_Method : CGI_Method_Type := Get;
-
 
 -- The following are private "Helper" subprograms.
 
@@ -53,7 +50,6 @@ begin
   end if;
 end Value_Without_Exception;
 
-
 function Image(N : Natural) return String is
 -- Convert Positive N to a string representation.  This is just like
 -- Ada 'Image, but it doesn't put a space in front of it.
@@ -61,7 +57,6 @@ function Image(N : Natural) return String is
 begin
  return Result( 2 .. Result'Length);
 end Image;
-
 
 function Field_End(Data: Unbounded_String; Field_Separator: Character;
                Starting_At : Positive := 1) return Natural is
@@ -74,7 +69,6 @@ begin
   end loop;
   return Length(Data);
 end Field_End;
-
 
 function Hex_Value(H : in String) return Natural is
  -- Given hex string, return its Value as a Natural.
@@ -94,7 +88,6 @@ begin
  return Value;
 end Hex_Value;
 
-
 procedure URL_Decode(Data : in out Unbounded_String;
                      Translate_Plus : Boolean := True) is
  I : Positive := 1;
@@ -104,7 +97,8 @@ begin
  while I <= Last_Possible_Position loop
    if Element(Data, I) = '%' and then
         Is_Hexadecimal_Digit(Element(Data, I+1)) and then
-        Is_Hexadecimal_Digit(Element(Data, I+2)) then
+        Is_Hexadecimal_Digit(Element(Data, I+2))
+   then
      Replace_Element(Data, I, Character'Val(Hex_Value(Slice(Data, I+1, I+2))));
      Delete(Data, I+1, I+2);
      Last_Possible_Position := Last_Possible_Position - 2;
@@ -222,9 +216,7 @@ end HTML_Encode;
 -- Perhaps someday I'll do "HTML_Decode".  Patches welcome.
 -- As far as I can tell, HTML_Decode is a lot less needed.
 
-
 -- The following are public subprograms.
-
 
 function Get_Environment(Variable : String) return String is
 -- Return the value of the given environment variable.
@@ -243,12 +235,10 @@ begin
  return Result;
 end Get_Environment;
 
-
 function Parsing_Errors return Boolean is
 begin
  return Parsing_Errors_Occurred;
 end Parsing_Errors;
-
 
 function Argument_Count return Natural is
 begin
@@ -257,13 +247,11 @@ begin
   end if;
 end Argument_Count;
 
-
 function Input_Received return Boolean is
   -- True if Input Received.
 begin
   return Argument_Count /= 0; -- Input received if nonzero data entries.
 end Input_Received;
-
 
 function CGI_Method return CGI_Method_Type is
   -- Return Method used to send data.
@@ -271,12 +259,10 @@ begin
   return Actual_CGI_Method;
 end CGI_Method;
 
-
 function Is_Index return Boolean is
 begin
   return Is_Index_Request_Made;
 end Is_Index;
-
 
 function Value(Key : in Unbounded_String; Index : in Positive := 1;
                Required : in Boolean := False)
@@ -300,14 +286,12 @@ begin
  end if;
 end Value;
 
-
 function Value(Key : in String; Index : in Positive := 1;
                Required : in Boolean := False)
          return String is
 begin
   return To_String(Value(To_Unbounded_String(Key), Index, Required));
 end Value;
-
 
 function Value(Key : in String; Index : in Positive := 1;
                Required : in Boolean := False)
@@ -316,14 +300,12 @@ begin
   return Value(To_Unbounded_String(Key), Index, Required);
 end Value;
 
-
 function Value(Key : in Unbounded_String; Index : in Positive := 1;
                Required : in Boolean := False)
          return String is
 begin
   return To_String(Value(Key, Index, Required));
 end Value;
-
 
 function Key_Exists(Key : in Unbounded_String; Index : in Positive := 1)
          return Boolean is
@@ -362,7 +344,6 @@ begin
   return Key_Count(To_Unbounded_String(Key));
 end Key_Count;
 
-
 function Key_Value_Exists(Key : in Unbounded_String;
                           Value : in Unbounded_String)
          return Boolean is
@@ -370,7 +351,8 @@ function Key_Value_Exists(Key : in Unbounded_String;
 begin
  for I in 1 .. Argument_Count loop
    if CGI_Data.all(I).Key = Key and then
-      CGI_Data.all(I).Value = Value then
+      CGI_Data.all(I).Value = Value
+   then
         return True;
    end if;
  end loop;
@@ -389,18 +371,15 @@ begin
  return CGI_Data.all(Position).Key;
 end Key;
 
-
 function Key(Position : in Positive) return String is
 begin
  return To_String(Key(Position));
 end Key;
 
-
 function Value(Position : in Positive) return Unbounded_String is
 begin
  return CGI_Data.all(Position).Value;
 end Value;
-
 
 function Value(Position : in Positive) return String is
 begin
@@ -425,15 +404,12 @@ begin
  end loop;
 end Iterate_CGI;
 
-
-
 function My_URL return String is
  -- Returns the URL of this script.
 begin
   return "http://" & Get_Environment("SERVER_NAME") &
           Get_Environment("SCRIPT_NAME");
 end My_URL;
-
 
 procedure Put_CGI_Header(Header : in String := "Content-type: text/html") is
 -- Put Header to Current_Output, followed by two carriage returns.
@@ -443,16 +419,14 @@ begin
   New_Line;
 end Put_CGI_Header;
 
-
 procedure Put_HTML_Head(Title : in String; Mail_To : in String := "") is
 begin
   Put_Line("<html><head><title>" & Title & "</title>");
   if Mail_To /= "" then
-    Put_Line("<link rev=""made"" href=""mailto:" &  mail_to  & """>");
+    Put_Line("<link rev=""made"" href=""mailto:" &  Mail_To  & """>");
   end if;
   Put_Line("</head><body>");
 end Put_HTML_Head;
-
 
 procedure Put_HTML_Heading(Title : in String; Level : in Positive) is
 -- Put an HTML heading, such as <h1>Title</h1>
@@ -460,12 +434,10 @@ begin
   Put_Line("<h" & Image(Level) & ">" & Title & "</h" & Image(Level) & ">");
 end Put_HTML_Heading;
 
-
 procedure Put_HTML_Tail is
 begin
   Put_Line("</body></html>");
 end Put_HTML_Tail;
-
 
 procedure Put_Error_Message(Message : in String) is
 -- Put to Current_Output an error message.
@@ -476,7 +448,6 @@ begin
   New_Line;
   Flush;
 end Put_Error_Message;
-
 
 procedure Put_Variables is
 -- Put to Current_Output all of the data as an HTML-formatted String.
@@ -492,8 +463,6 @@ begin
  Put_Line("</pre>");
 end Put_Variables;
 
-
-
 -- Helper routine -
 
 function Next_CRLF (S : in String; N : in Natural)
@@ -504,7 +473,7 @@ function Next_CRLF (S : in String; N : in Natural)
 is
    I : Natural := N;
 begin
-   while I < S'LAST loop
+   while I < S'Last loop
       if S(I) = ASCII.CR  and then  S(I+1) = ASCII.LF then
          return I;
       else
@@ -513,8 +482,6 @@ begin
    end loop;
    return 0;
 end;
-
-
 
 function Line_Count (Value : in String) return Natural
 -- Count the number of lines inside the given string.
@@ -526,9 +493,9 @@ function Line_Count (Value : in String) return Natural
 -- (where / is CRLF) return Line_Count of 4.
 is
    Number_of_Lines : Natural := 0;
-   I : Natural := Value'FIRST;
+   I : Natural := Value'First;
 begin
-   if Value'LENGTH = 0 then
+   if Value'Length = 0 then
       return 0;
    else
       loop
@@ -542,7 +509,6 @@ begin
       return Number_of_Lines;
    end if;
 end;
-
 
 function Line (Value : in String; Position : in Positive)
                return String
@@ -592,14 +558,13 @@ begin
          -- enough CRLFs in the line,
          -- thus Line_Number is one less than Position
          if Position = Line_Number+1 then
-            return Value (Start_of_Line .. Value'LAST);
+            return Value (Start_of_Line .. Value'Last);
          else
             raise Constraint_Error;
          end if;
       end if;
  end if;
 end Line;
-
 
 function Line_Count_of_Value (Key : String) return Natural is
 begin
@@ -610,7 +575,6 @@ begin
    end if;
 end Line_Count_of_Value;
 
-
 function Value_of_Line (Key : String; Position : Positive) return String is
 begin
    if Key_Exists (Key) then
@@ -619,8 +583,6 @@ begin
       return "";
    end if;
 end Value_of_Line;
-
-
 
 -- Initialization routines, including some private procedures only
 -- used during initialization.
@@ -639,7 +601,6 @@ begin
   URL_Decode(CGI_Data.all(Key_Number).Value, False);
 end Set_CGI_Position;
 
-
 procedure Set_CGI_Data(Raw_Data : in Unbounded_String) is
 -- Set CGI_Data using Raw_Data.
   Key_Number : Positive := 1;
@@ -654,7 +615,6 @@ begin
    Key_Number := Key_Number + 1;
  end loop;
 end Set_CGI_Data;
-
 
 procedure Set_Cookie_Position(Key_Number : in Positive;
                               Datum : in Unbounded_String) is
@@ -674,7 +634,6 @@ begin
     -- URL_Decode(Cookie_Data.all(Key_Number).Value, False);
 end Set_Cookie_Position;
 
-
 procedure Set_Cookie_Data(Raw_Data : in Unbounded_String) is
   Key_Number : Positive := 1;
   Character_Position : Positive := 1;
@@ -689,7 +648,6 @@ begin
     Key_Number := Key_Number + 1;
   end loop;
 end Set_Cookie_Data;
-
 
 function Cookie_Value(Key : in Unbounded_String; Index : in Positive := 1;
                       Required : in Boolean := False)
@@ -717,14 +675,11 @@ begin
   end if;
 end Cookie_Value;
 
-
-
 function Cookie_Value(Key : in String; Index : in Positive := 1;
                       Required : in Boolean := False) return String is
 begin
   return To_String(Cookie_Value(To_Unbounded_String(Key), Index, Required));
 end Cookie_Value;
-
 
 function Cookie_Value(Key : in String; Index : in Positive := 1;
                       Required : in Boolean := False)
@@ -732,7 +687,6 @@ function Cookie_Value(Key : in String; Index : in Positive := 1;
 begin
   return Cookie_Value(To_Unbounded_String(Key), Index, Required);
 end Cookie_Value;
-
 
 function Cookie_Value(Key : in Unbounded_String; Index : in Positive := 1;
                       Required : in Boolean := False) return String is
@@ -744,7 +698,6 @@ function Cookie_Value(Position : in Positive) return Unbounded_String is
 begin
   return Cookie_Data.all(Position).Value;
 end Cookie_Value;
-
 
 function Cookie_Value(Position : in Positive) return String is
 begin
@@ -778,7 +731,6 @@ begin -- read_cookie
   end if;
 end Read_Cookie;
 
-
 procedure Set_Cookie(Key   : String;
                      Value : String;
                      Expires : String := "";
@@ -800,12 +752,11 @@ begin
     Put("domain=" & Domain & ";");
   end if;
   if Secure then
-    put_line("secure");
+    Put_Line("secure");
   else
-    new_line;
+    New_Line;
   end if;
 end Set_Cookie;
-
 
 procedure Initialize is
   Raw_Data : Unbounded_String;  -- Initially an empty string (LRM A.4.5(73))
@@ -855,4 +806,3 @@ begin
   Initialize;
   Read_Cookie;
 end CGI;
-
