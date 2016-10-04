@@ -228,7 +228,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R324 is
+      case R326 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -568,6 +568,8 @@ package body Corporate_Bullshit is
          when 322 => return "jaw-dropping";  --  DM
          when 323 => return "transformative";
          when 324 => return "better-than-planned";
+         when 325 => return "vital";
+         when 326 => return "radical";
       end case;
    end Thing_Adjective;
 
@@ -640,7 +642,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R205 is
+         case R206 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -855,6 +857,7 @@ package body Corporate_Bullshit is
             when 203 => return "brand value";
             when 204 => return "milestone";  --  2012 Golden Flannel Awards article
             when 205 => return "co-innovation";
+            when 206 => return "speedup";
          end case;
       end Inner;
 
