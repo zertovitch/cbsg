@@ -95,7 +95,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R19 is
+         case R20 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -115,6 +115,7 @@ package body Corporate_Bullshit is
             when 17 => return "Innovation";
             when 18 => return "Identity";
             when 19 => return "Branding";
+            when 20 => return "Diversity and Inclusion";
          end case;
       end Department;
 
@@ -228,7 +229,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R326 is
+      case R329 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -570,6 +571,9 @@ package body Corporate_Bullshit is
          when 324 => return "better-than-planned";
          when 325 => return "vital";
          when 326 => return "radical";
+         when 327 => return "expanding";
+         when 328 => return "fierce";
+         when 329 => return "single-minded";
       end case;
    end Thing_Adjective;
 
@@ -864,7 +868,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R340 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R343 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1004,10 +1008,11 @@ package body Corporate_Bullshit is
                when 134 => return "time-to-value";       --  2011 Golden Flannel Awards article
                when 135 => return "efficacy";            --  2015 Golden Flannel Awards article
                when 136 => return "DNA";
+               when 137 => return "dedication";
                when others => return Inner;
             end case;
          when Plural =>
-            case R226 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R229 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1035,6 +1040,7 @@ package body Corporate_Bullshit is
                when 20 => return "aspirations";  --  (obtained by bootstrapping)
                when 21 => return "swim lanes";  --  2015 Golden Flannel Awards article
                when 22 => return "pockets of opportunities";
+               when 23 => return "social implications";
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
