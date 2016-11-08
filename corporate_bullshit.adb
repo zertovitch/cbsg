@@ -229,7 +229,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R329 is
+      case R331 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -408,7 +408,7 @@ package body Corporate_Bullshit is
          when 161 => return "fast-growth";
          when 162 => return "performance-based";
          when 163 => return "high-performing";
-         when 164 => return "top-down";
+         when 164 => return "high-performance";
          when 165 => return "cross-enterprise";
          when 166 => return "outsourced"; -- BBC - LGA banned words
          when 167 => return "situational"; -- BBC - LGA banned words
@@ -574,6 +574,8 @@ package body Corporate_Bullshit is
          when 327 => return "expanding";
          when 328 => return "fierce";
          when 329 => return "single-minded";
+         when 330 => return "mindful";
+         when 331 => return "top-down";
       end case;
    end Thing_Adjective;
 
@@ -646,7 +648,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R206 is
+         case R207 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -862,13 +864,14 @@ package body Corporate_Bullshit is
             when 204 => return "milestone";  --  2012 Golden Flannel Awards article
             when 205 => return "co-innovation";
             when 206 => return "speedup";
+            when 207 => return "validation";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R343 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R344 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1012,7 +1015,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R229 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R230 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
