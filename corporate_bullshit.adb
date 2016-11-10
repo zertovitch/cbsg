@@ -229,7 +229,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R333 is
+      case R334 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -578,6 +578,7 @@ package body Corporate_Bullshit is
          when 331 => return "top-down";
          when 332 => return "hands-on";
          when 333 => return "one-on-one";
+         when 334 => return "analytic";
       end case;
    end Thing_Adjective;
 
@@ -1107,12 +1108,12 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R30 is
+      case R31 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
          when 4  => return "black swans";
-         when 5  => return "gaps";
+         when 5  => return "challenging market conditions";
          when 6  => return "inefficiencies";
          when 7  => return "overlaps";
          when 8  => return "known unknowns";
@@ -1137,7 +1138,8 @@ package body Corporate_Bullshit is
          when 27 => return "downtimes";  --  (obtained by bootstrapping)
          when 28 => return "headwinds";
          when 29 => return "subpar returns";
-         when 30 => return "challenging market conditions";
+         when 30 => return "gaps";
+         when 31 => return "market gaps";
       end case;
    end Bad_Things;
 
@@ -1428,7 +1430,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R85 is
+         case R83 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1515,8 +1517,6 @@ package body Corporate_Bullshit is
             when 81 => return "action forward";  --  2014 Golden Flannel Awards article
             when 82 => return "move forward";    --  2015 Golden Flannel Awards article
             when 83 => return "take control";
-            when 84 => return "express";
-            when 85 => return "structure";
          end case;
       end Inner;
    begin
