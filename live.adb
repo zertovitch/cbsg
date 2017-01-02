@@ -8,6 +8,7 @@
 
 with Corporate_Bullshit;
 with CGI;                use CGI;
+with Ada.Calendar;       use Ada.Calendar;
 with Ada.Text_IO;        use Ada.Text_IO;
 with Ada.Exceptions;     use Ada.Exceptions;
 with Ada.Strings.Fixed;  use Ada.Strings.Fixed;
@@ -24,6 +25,7 @@ procedure Live is
   -- currently in dir /cgi-bin ; if you relocate, adjust the string
   HTML_Template : constant String := "cbsg.tpl";
   Template      : File_Type;
+  Start_time    : constant Time:= Clock;
 
 begin
   -- 1/ Send header
@@ -47,7 +49,7 @@ begin
       -- Current line of the template file
       Line: constant String:= Get_Line;
       -- Each of these tags will be dynamically replaced by a special content
-      type Special_tag is (sentence, short_workshop);
+      type Special_tag is (sentence, short_workshop, seconds_elapsed);
       -- The tags in the template appear as: "@_" & Special_tag'Image(t) & "_@";
       special_tag_found: Boolean:= False;
     begin
@@ -55,7 +57,7 @@ begin
         -- Check if there is a Sentence_Tag within the line
         declare
           tag_match: constant String:= "@_" & Special_tag'Image(t) & "_@";
-          Pos: Natural := Index (Line, tag_match);
+          Pos: constant Natural := Index (Line, tag_match);
         begin
           if Pos > 0 then
             -- There is a Tag. We admit only one tag per line.
@@ -65,7 +67,9 @@ begin
                 Put (HTML_Corporate_Bullshit.Sentence);
               when short_workshop =>
                 Put (HTML_Corporate_Bullshit.Short_Workshop);
-              end case;
+              when seconds_elapsed =>
+                Put (Duration'Image(Clock - Start_time));
+            end case;
             Put_Line (Line (Pos + tag_match'Length .. Line'Last));
             special_tag_found:= True;
             exit;

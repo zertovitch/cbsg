@@ -49,6 +49,8 @@ package Delirium is
 
    function Make_Eventual_Plural (S: String; P: Plurality) return String;
 
+   --  Input: infinitive form of a verb (without the "to "): be, have, go, see, ...
+   --  Complements can be appended to the input verb.
    function Build_Plural_Verb (Verb: String; P: Plurality) return String;
 
    function Add_Indefinite_Article (P: Plurality; To: String) return String;

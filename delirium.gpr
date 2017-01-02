@@ -19,13 +19,13 @@ project Delirium is
    package Compiler is
       case Build_Mode is
          when "Debug" =>
-            for Default_Switches ("ada") use ("-g", "-gnatVa", "-gnato", "-gnatyM131",
+            for Default_Switches ("ada") use ("-g", "-gnatVa", "-gnato", "-gnatyM131", "-gnatwa",
               "-gnatyaknpr",  --  Style: check all casings: a:attribute, k:keywords, n:package Standard identifiers, p:pragma, r:identifier references
               "-gnatyfhiu",   --  Style: check f:no ff/vtabs, h: no htabs, i:if-then layout, u:no unnecessary blank lines
               "-gnatyx"       --  Style: check x:no extra parens
             );
          when "Fast" =>
-            for Default_Switches ("ada") use ("-g", "-O2", "-gnatpn", "-gnatyM131",
+            for Default_Switches ("ada") use ("-g", "-O2", "-gnatpn", "-gnatyM131", "-gnatwa",
               "-gnatyaknpr",  --  Style: check all casings: a:attribute, k:keywords, n:package Standard identifiers, p:pragma, r:identifier references
               "-gnatyfhiu",   --  Style: check f:no ff/vtabs, h: no htabs, i:if-then layout, u:no unnecessary blank lines
               "-gnatyx"       --  Style: check x:no extra parens

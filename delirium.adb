@@ -73,29 +73,46 @@ package body Delirium is
             Last := I - 1;
          end if;
       end loop;
-      case P is
-         when Plural   => return Verb;
-         when Singular =>
-            case Verb (Last) is
-               when 'o' | 's' | 'z' =>
-                  return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
-               when 'h' =>
-                  case Verb (Last - 1) is
-                     when 'c' | 's' => -- catch -> catches; establish -> establishes
-                       return Verb (Verb'First .. Last) & "es" & Verb (Last+1 .. Verb'Last);
-                     when others => -- plough -> ploughs
-                       return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-                  end case;
-               when 'y' =>
-                  if Vowel (Verb (Last - 1)) then -- ploy -> ploys
-                     return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
-                  else -- try -> tries
-                     return Verb (Verb'First .. Last - 1) & "ies" & Verb (Last+1 .. Verb'Last);
-                  end if;
-               when others =>
-                  return Verb (Verb'First .. Last) & 's' & Verb (Last+1 .. Verb'Last);
+      declare
+         Rest: constant String:= Verb (Last+1 .. Verb'Last);
+         Proper_Verb: constant String:= Verb (Verb'First .. Last);
+      begin
+         if Proper_Verb = "be" then
+            case P is
+               when Singular => return "is" & Rest;
+               when Plural   => return "are" & Rest;
             end case;
-      end case;
+         elsif Proper_Verb = "have" then
+            case P is
+               when Singular => return "has" & Rest;
+               when Plural   => return Verb;
+            end case;
+         end if;
+         case P is
+            when Plural   =>
+               return Verb;
+            when Singular =>
+               case Verb (Last) is
+                  when 'o' | 's' | 'z' =>  --  echo -> echoes; do -> does
+                     return Proper_Verb & "es" & Rest;
+                  when 'h' =>
+                     case Verb (Last - 1) is
+                        when 'c' | 's' => -- catch -> catches; establish -> establishes
+                          return Proper_Verb & "es" & Rest;
+                        when others => -- plough -> ploughs
+                          return Proper_Verb & 's' & Rest;
+                     end case;
+                  when 'y' =>
+                     if Vowel (Verb (Last - 1)) then -- ploy -> ploys
+                        return Proper_Verb & 's' & Rest;
+                     else -- try -> tries
+                        return Verb (Verb'First .. Last - 1) & "ies" & Rest;
+                     end if;
+                  when others =>
+                     return Proper_Verb & 's' & Rest;
+               end case;
+         end case;
+      end;
    end Build_Plural_Verb;
 
    function Add_Indefinite_Article (P: Plurality; To: String) return String is

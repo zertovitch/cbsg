@@ -1425,12 +1425,12 @@ package body Corporate_Bullshit is
       return Build_Plural_Verb (Inner,P);
    end Thing_Verb_Having_Person_Complement;
 
-   function Person_Verb_And_Definite_Ending (P: Plurality) return String is
+   function Person_Verb_And_Definite_Ending (P: Plurality; Infinitive: Boolean) return String is
       -- NB: this function produces an eventual definite complement
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R83 is
+         case R85 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1517,10 +1517,16 @@ package body Corporate_Bullshit is
             when 81 => return "action forward";  --  2014 Golden Flannel Awards article
             when 82 => return "move forward";    --  2015 Golden Flannel Awards article
             when 83 => return "take control";
+            when 84 => return "be cautiously optimistic";
+            when 85 => return "be committed";
          end case;
       end Inner;
    begin
-      return Build_Plural_Verb (Inner,P);
+      if Infinitive then
+         return Inner;
+      else
+         return Build_Plural_Verb (Inner,P);
+      end if;
    end Person_Verb_And_Definite_Ending;
 
    function Thing_Verb_And_Definite_Ending (P: Plurality) return String is
@@ -1555,12 +1561,12 @@ package body Corporate_Bullshit is
       end case;
    end Thing_Verb_And_Ending;
 
-   function Person_Verb_And_Ending (P: Plurality) return String is
+   function Person_Verb_And_Ending (P: Plurality; Infinitive: Boolean) return String is
       Compl_Sp: constant Plurality:= Random_Plural;
    begin
       case R95 is
          when  1 .. 10  =>
-            return Person_Verb_And_Definite_Ending (P);
+            return Person_Verb_And_Definite_Ending (P, Infinitive);
          when 11 .. 15  => -- Fight-the-Evil situation
             return
               Person_Verb_Having_Bad_Thing_Complement (P) &
@@ -1595,7 +1601,8 @@ package body Corporate_Bullshit is
 
    function Person_Infinitive_Verb_And_Ending return String is
    begin
-      return Person_Verb_And_Ending (Plural);  --  Plural: trick to get the infinitive
+      return Person_Verb_And_Ending (Plural, Infinitive => True);
+      --  Plural: trick to get the infinitive, unless explicitely built as infinitive.
    end;
 
    function Proposition return String is
@@ -1605,7 +1612,6 @@ package body Corporate_Bullshit is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
-            Eventual_Adverb &
             Person_Infinitive_Verb_And_Ending &
             Eventual_Postfixed_Adverb;
             -- infinitive written same as present plural
@@ -1613,7 +1619,7 @@ package body Corporate_Bullshit is
             return
               "the " & Person (Sp1) & ' ' &
               Eventual_Adverb &
-              Person_Verb_And_Ending (Sp1) &
+              Person_Verb_And_Ending (Sp1, Infinitive => False) &
               Eventual_Postfixed_Adverb;
          when 51 .. 92   => -- ** THING...
             return

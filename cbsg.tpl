@@ -32,7 +32,7 @@
       for choosing a voice generator where you can paste your favourite texts.      
       <hr />
       The Corporate Bullshit Generator is an open-source software.
-      Follow <a target=_blank href="http://sf.net/projects/cbsg/">this link</a> for the project site (source code, suggestions, etc.).<br>
+      Follow <b><a target=_blank href="http://sf.net/projects/cbsg/">this link</a></b> for the project site (source code, suggestions, etc.).<br>
       <img src="http://cbsg.sf.net/blog_16x16.png" border="0" height="16" width="16" align="absmiddle" />
       The author's blog can be read <a target=_blank href="http://gautiersblog.blogspot.com/search/label/Ada">here</a>.
       <br /><br />
@@ -96,6 +96,7 @@
       </table>
     <!-- ***** End Asocial media buttons ***** --> 
       <hr />
+    <!-- ***** Begin SF buttons ***** --> 
       
       <center>
          <a target=_blank href="http://sf.net/projects/cbsg/"><img 
@@ -108,6 +109,9 @@
 		   border="0"
            alt="Powered by Ada" height="62" width="91" align="absmiddle" /></a>
       </center>
+    <!-- ***** End SF buttons ***** --> 
+      <hr />
+      Page generated in@_SECONDS_ELAPSED_@ seconds.
       </font>
    </body>
 </html>
