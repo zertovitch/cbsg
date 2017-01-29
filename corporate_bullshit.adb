@@ -142,6 +142,8 @@ package body Corporate_Bullshit is
               return " Catalyst";  --  Guffpedia
             when 2 =>
               return " Futurist";  --  Tech bubble 2.0
+            when 3 => 
+              return " Strategist";
             when others => 
               return " Officer";
          end case;
