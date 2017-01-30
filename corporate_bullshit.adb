@@ -95,7 +95,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R20 is
+         case R27 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -116,22 +116,35 @@ package body Corporate_Bullshit is
             when 18 => return "Identity";
             when 19 => return "Branding";
             when 20 => return "Diversity and Inclusion";
+            when 21 => return "Media Relations";
+            when 22 => return "Value Added Services";
+            when 23 => return "Technology";
+            when 24 => return "Campaigning";
+            when 25 => return "Digital Marketing";
+            when 26 => return "Architecture";
+            when 27 => return "Communications";
          end case;
       end Department;
 
       function Department_or_Top_Role return String is
       begin
-        case R23 is
-          when 1..19 =>
+        case R34 is
+          when 1..27 =>
             return Department;
-          when 20 =>
+          when 28 =>
             return "Visionary";
-          when 21 =>
+          when 29 =>
             return "Digital";
-          when 22 =>
+          when 30 =>
             return "Technical";
-          when 23 =>
+          when 31 =>
             return "Manifesto";  --  Guffpedia
+          when 32 =>
+            return "Operating";
+          when 33 =>
+            return "Product";
+          when 34 =>
+            return "Scheme";
         end case;
       end Department_or_Top_Role;
 
