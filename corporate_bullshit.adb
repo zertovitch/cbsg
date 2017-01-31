@@ -177,7 +177,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R34 is
+            case R36 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -201,11 +201,12 @@ package body Corporate_Bullshit is
                when 21 => return "innovator";      --  (obtained by bootstrapping)
                when 22 => return "game changer";
                when 23 => return "visionary";
+               when 24 => return "market thinker";
                when others =>  --  ~ 1/3
                   return Boss;
             end case;
          when Plural =>
-            case R19 is
+            case R21 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -225,6 +226,8 @@ package body Corporate_Bullshit is
                when 17 => return "policy makers";  --  (obtained by bootstrapping)
                when 18 => return "pioneers";
                when 19 => return "game changers";
+               when 20 => return "market thinkers";
+               when 21 => return "thought leaders";
             end case;
       end case;
    end Person;
@@ -244,7 +247,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R334 is
+      case R341 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -369,7 +372,7 @@ package body Corporate_Bullshit is
          when 107 => return "insightful";
          when 108 => return "relevant";
          when 109 => return "long-term";
-         when 110 => return "top";
+         when 110 => return "longer-term";
          when 111 => return "tactical";
          when 112 => return "best-of-breed";
          when 113 => return "robust";
@@ -594,6 +597,13 @@ package body Corporate_Bullshit is
          when 332 => return "hands-on";
          when 333 => return "one-on-one";
          when 334 => return "analytic";
+         when 335 => return "top";
+         when 336 => return "elite";
+         when 337 => return "dedicated";
+         when 338 => return "curated";
+         when 339 => return "highly-curated";
+         when 340 => return "re-imagined";
+         when 341 => return "thought-provoking";
       end case;
    end Thing_Adjective;
 
@@ -666,7 +676,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R207 is
+         case R208 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -705,7 +715,7 @@ package body Corporate_Bullshit is
             when 37 => return "content";
             when 38 => return "communication";
             when 39 => return "goal";
-            when 40 => return "skill";
+            when 40 => return "value creation goals";
             when 41 => return "alternative";
             when 42 => return "culture";
             when 43 => return "requirement";
@@ -883,13 +893,14 @@ package body Corporate_Bullshit is
             when 205 => return "co-innovation";
             when 206 => return "speedup";
             when 207 => return "validation";
+            when 208 => return "skill";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R345 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R347 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1031,10 +1042,12 @@ package body Corporate_Bullshit is
                when 136 => return "DNA";
                when 137 => return "dedication";
                when 138 => return "ingenuity";
+               when 139 => return "insightfulness";
+               --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R231 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R232 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1064,6 +1077,7 @@ package body Corporate_Bullshit is
                when 22 => return "pockets of opportunities";
                when 23 => return "social implications";
                when 24 => return "analytics";
+               --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
       end case;
@@ -1123,7 +1137,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R31 is
+      case R32 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1155,6 +1169,7 @@ package body Corporate_Bullshit is
          when 29 => return "subpar returns";
          when 30 => return "gaps";
          when 31 => return "market gaps";
+         when 32 => return "pitfalls";
       end case;
    end Bad_Things;
 
@@ -1445,7 +1460,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R85 is
+         case R87 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1534,6 +1549,8 @@ package body Corporate_Bullshit is
             when 83 => return "take control";
             when 84 => return "be cautiously optimistic";
             when 85 => return "be committed";
+            when 86 => return "evolve our culture";
+            when 87 => return "leverage the benefits of our differentiation";
          end case;
       end Inner;
    begin
