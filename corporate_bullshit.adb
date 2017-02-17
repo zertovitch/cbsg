@@ -676,7 +676,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R212 is
+         case R213 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -898,13 +898,14 @@ package body Corporate_Bullshit is
             when 210 => return "feedback";
             when 211 => return "learnability";  --  Guffpedia
             when 212 => return "visibility";    --  Guffpedia
+            when 213 => return "agility";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R352 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R354 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1048,11 +1049,12 @@ package body Corporate_Bullshit is
                when 138 => return "franchise";
                when 139 => return "global reach";
                when 140 => return "global touch-base";  --  2016 Golden Flannel Awards
+               when 141 => return "technical excellence";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R236 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R237 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1231,7 +1233,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R200 is  -- proportion: ~ 4/5 empty postfixed adverb
+      case R210 is  -- proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1276,6 +1278,7 @@ package body Corporate_Bullshit is
          when 39 => return " across the wider Group";
          when 40 => return ", paving the way for " & Add_Indefinite_Article (P, Thing (P));
          when 41 => return " by levelling the playing field";  --  2016 Golden Flannel Awards
+         when 42 => return " on a day-to-day basis";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1283,7 +1286,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R77 is
+         case R78 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1364,6 +1367,7 @@ package body Corporate_Bullshit is
             when 75 => return "robustify";  --  Guffpedia
             when 76 => return "harness";  --  2016 Golden Flannel Awards
             when 77 => return "activate";
+            when 78 => return "showcase";
          end case;
       end Inner;
    begin
