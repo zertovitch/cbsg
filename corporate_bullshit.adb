@@ -676,7 +676,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R208 is
+         case R209 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -702,7 +702,7 @@ package body Corporate_Bullshit is
             when 24 => return "solution provider";
             when 25 => return "value";
             when 26 => return "value creation";
-            when 27 => return "feedback";
+            when 27 => return "value realization";
             when 28 => return "document";
             when 29 => return "bottom line";
             when 30 => return "momentum";
@@ -894,13 +894,14 @@ package body Corporate_Bullshit is
             when 206 => return "speedup";
             when 207 => return "validation";
             when 208 => return "skill";
+            when 209 => return "feedback";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R347 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R348 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1047,7 +1048,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R232 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R233 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1137,7 +1138,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R32 is
+      case R33 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1170,6 +1171,7 @@ package body Corporate_Bullshit is
          when 30 => return "gaps";
          when 31 => return "market gaps";
          when 32 => return "pitfalls";
+         when 33 => return "constraints";
       end case;
    end Bad_Things;
 
@@ -1367,12 +1369,13 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R5 is
+         case R6 is
             when 1  => return "address";
             when 2  => return "identify";
             when 3  => return "avoid";
             when 4  => return "mitigate";
             when 5  => return "minimize";
+            when 6  => return "overcome";
          end case;
       end Inner;
    begin
