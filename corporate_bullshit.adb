@@ -904,7 +904,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R351 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R352 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1037,16 +1037,17 @@ package body Corporate_Bullshit is
                when 127 => return "discipline";  --  (obtained by bootstrapping)
                when 128 => return "knowledge management";  --  (obtained by bootstrapping)
                when 129 => return "ability to move fast";
-               when 130 => return "franchise";
-               when 131 => return "global reach";
+               when 130 => return "ingenuity";
+               when 131 => return "insightfulness";
                when 132 => return "integrativeness";  --  (obtained by bootstrapping)
                when 133 => return "customer footprint";  --  2012 Golden Flannel Awards article
                when 134 => return "time-to-value";       --  2011 Golden Flannel Awards article
                when 135 => return "efficacy";            --  2015 Golden Flannel Awards article
                when 136 => return "DNA";
                when 137 => return "dedication";
-               when 138 => return "ingenuity";
-               when 139 => return "insightfulness";
+               when 138 => return "franchise";
+               when 139 => return "global reach";
+               when 140 => return "global touch-base";  --  2016 Golden Flannel Awards
                --  Equiprobable:
                when others => return Inner;
             end case;
@@ -1274,6 +1275,7 @@ package body Corporate_Bullshit is
          when 38 => return " across industry sectors";
          when 39 => return " across the wider Group";
          when 40 => return ", paving the way for " & Add_Indefinite_Article (P, Thing (P));
+         when 41 => return " by levelling the playing field";  --  2016 Golden Flannel Awards
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1281,7 +1283,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R75 is
+         case R77 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1360,6 +1362,8 @@ package body Corporate_Bullshit is
             when 73 => return "co-develop";
             when 74 => return "take control of";
             when 75 => return "robustify";  --  Guffpedia
+            when 76 => return "harness";  --  2016 Golden Flannel Awards
+            when 77 => return "activate";
          end case;
       end Inner;
    begin
