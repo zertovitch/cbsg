@@ -1749,9 +1749,9 @@ package body Corporate_Bullshit is
    function Sentences (Possible_Dialog_Mark: String) return String is
    begin
       case R40 is
-         when 1        =>
+         when  1 .. 10   =>  --  Recursion stops in this case.
             return Sentence;
-         when 2 .. 30  =>
+         when 11 .. 30  =>
             return Sentences (Possible_Dialog_Mark) & Sentence;
          when 31 .. 40 =>
             return
