@@ -247,7 +247,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R341 is
+      case R354 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -351,10 +351,10 @@ package body Corporate_Bullshit is
          when 88 => return "well-communicated";
          -- PDM, July 2011
          when 89 => return "cutting-edge";
-         when 90 => return "best-in-class";
-         when 91 => return "state-of-the-art";
-         when 92 => return "verifiable";
+         when 90 => return "state-of-the-art";
+         when 91 => return "verifiable";
          --
+         when 92  => return "six-sigma";
          when 93  => return "solid";
          when 94  => return "inspiring";
          when 95  => return "growing";
@@ -524,7 +524,7 @@ package body Corporate_Bullshit is
          when 259 => return "world-class";
          when 260 => return "turn-key";
          when 261 => return "leading-edge";
-         when 262 => return "next-generation";
+         when 262 => return "cost-competitive";
          when 263 => return "extensible";
          when 264 => return "under-the-radar";
          when 265 => return "high-grade";  --  Subprime crisis explanation by The Long Johns ...
@@ -604,6 +604,19 @@ package body Corporate_Bullshit is
          when 339 => return "highly-curated";
          when 340 => return "re-imagined";
          when 341 => return "thought-provoking";
+         when 342 => return "quality-oriented";
+         when 343 => return "task-oriented";
+         when 344 => return "teamwork-oriented";
+         when 345 => return "high-growth";
+         when 346 => return "fast-track";
+         when 347 => return "next-generation";
+         when 348 => return "new-generation";
+         when 349 => return "best-in-class";
+         when 350 => return "best-of-class";
+         when 351 => return "first-class";
+         when 352 => return "top-class";
+         when 353 => return "superior-quality";
+         when 354 => return "synergistic";
       end case;
    end Thing_Adjective;
 
