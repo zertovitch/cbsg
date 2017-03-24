@@ -12,7 +12,8 @@ package body Corporate_Bullshit is
 
    -- To do:
    --   * Enrich the Proposition function
-   --   * Person_adjective: "committed", "multi-skilled", "inspirational"
+   --   * Person_adjective: "committed", "multi-skilled", "inspirational",
+   --                       "high-caliber", "cross-trained", "multi-cultural"
    --   * other sentences; rhetorical questions
    --   * "It's about breaking down the silos"
    --   * Fix bugs marked with !!
@@ -1067,7 +1068,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R237 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R238 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1097,6 +1098,7 @@ package body Corporate_Bullshit is
                when 22 => return "pockets of opportunities";
                when 23 => return "social implications";
                when 24 => return "analytics";
+               when 25 => return "growth years";
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
@@ -1645,7 +1647,7 @@ package body Corporate_Bullshit is
    --
    function Faukon return String is
    begin
-      case R11 is
+      case R12 is
          when 1 => return "we need to";
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
@@ -1657,6 +1659,7 @@ package body Corporate_Bullshit is
          when 9 => return "we continue to work tirelessly and diligently to";
          when 10 => return "we will execute to";
          when 11 => return "we will sharpen our business models to";
+         when 12 => return "to continue our growth, we must";
       end case;
    end Faukon;
 
@@ -1762,9 +1765,9 @@ package body Corporate_Bullshit is
    function Sentences (Possible_Dialog_Mark: String) return String is
    begin
       case R40 is
-         when  1 .. 10   =>  --  Recursion stops in this case.
+         when  1 ..  8   =>  --  Recursion stops in this case.
             return Sentence;
-         when 11 .. 30  =>
+         when  9 .. 30  =>
             return Sentences (Possible_Dialog_Mark) & Sentence;
          when 31 .. 40 =>
             return
