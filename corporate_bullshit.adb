@@ -207,7 +207,7 @@ package body Corporate_Bullshit is
                   return Boss;
             end case;
          when Plural =>
-            case R21 is
+            case R23 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -229,6 +229,8 @@ package body Corporate_Bullshit is
                when 19 => return "game changers";
                when 20 => return "market thinkers";
                when 21 => return "thought leaders";
+               when 22 => return "mediators";
+               when 23 => return "facilitators";
             end case;
       end case;
    end Person;
@@ -248,7 +250,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R354 is
+      case R356 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -618,6 +620,8 @@ package body Corporate_Bullshit is
          when 352 => return "top-class";
          when 353 => return "superior-quality";
          when 354 => return "synergistic";
+         when 355 => return "micro-macro";
+         when 356 => return "organization-wide";
       end case;
    end Thing_Adjective;
 
@@ -632,9 +636,10 @@ package body Corporate_Bullshit is
    end Timeless_Event;
 
    function Growth return String is
+
       function Superlative return String is
       begin
-         case R25 is
+         case R27 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -663,27 +668,30 @@ package body Corporate_Bullshit is
             when 23 => return "accelerated";  --  (obtained by bootstrapping)
             when 24 => return "impressive";
             when 25 => return "superior";  --  opposite of "subpar"
+            when 26 => return "attractive-enough";
+            when 27 => return "continual";
          end case;
       end Superlative;
 
       function Improvement return String is
       begin
          case R11 is
-            when 1 => return " growth";
-            when 2 => return " improvement";
-            when 3 => return " throughput increase";
-            when 4 => return " efficiency gain";
-            when 5 => return " yield enhancement";
-            when 6 => return " expansion";
-            when 7 => return " productivity improvement";
-            when 8 => return " gain in task efficiency";
-            when 9 => return " shift in value";  --  (obtained by bootstrapping)
-            when 10 => return " increase in margins";
-            when 11 => return " cost reduction";
+            when 1 => return "growth";
+            when 2 => return "improvement";
+            when 3 => return "throughput increase";
+            when 4 => return "efficiency gain";
+            when 5 => return "yield enhancement";
+            when 6 => return "expansion";
+            when 7 => return "productivity improvement";
+            when 8 => return "gain in task efficiency";
+            when 9 => return "shift in value";  --  (obtained by bootstrapping)
+            when 10 => return "increase in margins";
+            when 11 => return "cost reduction";
          end case;
       end Improvement;
+
    begin
-      return Superlative & Improvement;
+      return Superlative & ' ' & Improvement;
    end Growth;
 
    function Thing_Atom (P: Plurality) return String is
@@ -919,7 +927,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R354 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R358 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1064,6 +1072,10 @@ package body Corporate_Bullshit is
                when 139 => return "global reach";
                when 140 => return "global touch-base";  --  2016 Golden Flannel Awards
                when 141 => return "technical excellence";
+               when 142 => return "values congruence";
+               when 143 => return "purpose";
+               when 144 => return "catalyst for growth";
+               when 145 => return "goal setting";
                --  Equiprobable:
                when others => return Inner;
             end case;
@@ -1159,7 +1171,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R33 is
+      case R34 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1193,6 +1205,7 @@ package body Corporate_Bullshit is
          when 31 => return "market gaps";
          when 32 => return "pitfalls";
          when 33 => return "constraints";
+         when 34 => return "problems/difficulties";
       end case;
    end Bad_Things;
 
@@ -1672,7 +1685,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1: constant Plurality:= Random_Plural;
    begin
-      case R105 is
+      case R106 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -1720,13 +1733,16 @@ package body Corporate_Bullshit is
             return
             "the key to " & Thing_Atom (Singular) & 
             " is " & Thing_Atom (Singular);  --  (obtained by bootstrapping)
+         when 106 =>
+            return
+            "opting out of " & Thing (Sp1) & " is not a choice";  --  (obtained by bootstrapping)
       end case;
    end Proposition;
 
    function Articulated_Propositions return String is
      P1, P2: Plurality;
    begin
-      case R389 is
+      case R392 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -1753,6 +1769,7 @@ package body Corporate_Bullshit is
             ". Our challenge is to " & Person_Infinitive_Verb_And_Ending;
          when 384 .. 386 => return "going forward, " & Proposition;  --  Also as postfix adverb
          when 387 .. 389 => return "actually, " & Proposition;  --  2015 Golden Flannel Awards
+         when 390 .. 392 => return "in the future, " & Proposition;
       end case;
    end Articulated_Propositions;
 
