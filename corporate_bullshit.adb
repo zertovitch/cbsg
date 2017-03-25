@@ -250,7 +250,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R360 is
+      case R361 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -626,6 +626,7 @@ package body Corporate_Bullshit is
          when 358 => return "data-driven";
          when 359 => return "evidence-based";
          when 360 => return "transformational";
+         when 361 => return "fast-paced";
       end case;
    end Thing_Adjective;
 
@@ -1508,7 +1509,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R88 is
+         case R89 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1600,6 +1601,7 @@ package body Corporate_Bullshit is
             when 86 => return "evolve our culture";
             when 87 => return "leverage the benefits of our differentiation";
             when 88 => return "stretch our data bucket";  --  Guffpedia
+            when 89 => return "leapfrog the competition";
          end case;
       end Inner;
    begin
