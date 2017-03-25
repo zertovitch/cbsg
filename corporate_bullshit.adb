@@ -250,7 +250,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R356 is
+      case R360 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -622,6 +622,10 @@ package body Corporate_Bullshit is
          when 354 => return "synergistic";
          when 355 => return "micro-macro";
          when 356 => return "organization-wide";
+         when 357 => return "clear-cut";
+         when 358 => return "data-driven";
+         when 359 => return "evidence-based";
+         when 360 => return "transformational";
       end case;
    end Thing_Adjective;
 
@@ -675,7 +679,7 @@ package body Corporate_Bullshit is
 
       function Improvement return String is
       begin
-         case R11 is
+         case R12 is
             when 1 => return "growth";
             when 2 => return "improvement";
             when 3 => return "throughput increase";
@@ -687,6 +691,7 @@ package body Corporate_Bullshit is
             when 9 => return "shift in value";  --  (obtained by bootstrapping)
             when 10 => return "increase in margins";
             when 11 => return "cost reduction";
+            when 12 => return "cost effectiveness";
          end case;
       end Improvement;
 
@@ -1685,7 +1690,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1: constant Plurality:= Random_Plural;
    begin
-      case R106 is
+      case R107 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -1736,6 +1741,11 @@ package body Corporate_Bullshit is
          when 106 =>
             return
             "opting out of " & Thing (Sp1) & " is not a choice";  --  (obtained by bootstrapping)
+         when 107 =>
+            return 
+            Add_Indefinite_Article (Singular, Growth) & 
+            " goes hand-in-hand with " & 
+            Add_Indefinite_Article (Singular, Growth);  --  (obtained by bootstrapping)
       end case;
    end Proposition;
 
