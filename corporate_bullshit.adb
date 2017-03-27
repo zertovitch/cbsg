@@ -933,7 +933,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R358 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R359 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1082,6 +1082,7 @@ package body Corporate_Bullshit is
                when 143 => return "purpose";
                when 144 => return "catalyst for growth";
                when 145 => return "goal setting";
+               when 146 => return "craftsmanship";
                --  Equiprobable:
                when others => return Inner;
             end case;
@@ -1415,13 +1416,14 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R6 is
+         case R7 is
             when 1  => return "address";
             when 2  => return "identify";
             when 3  => return "avoid";
             when 4  => return "mitigate";
             when 5  => return "minimize";
             when 6  => return "overcome";
+            when 7  => return "tackle";
          end case;
       end Inner;
    begin
