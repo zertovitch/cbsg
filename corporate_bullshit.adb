@@ -153,13 +153,15 @@ package body Corporate_Bullshit is
       begin
          case R20 is
             when 1 =>
-              return " Catalyst";  --  Guffpedia
+              return "Catalyst";  --  Guffpedia
             when 2 =>
-              return " Futurist";  --  Tech bubble 2.0
+              return "Futurist";  --  Tech bubble 2.0
             when 3 => 
-              return " Strategist";
+              return "Strategist";
+            when 4 => 
+              return "Technologist";
             when others => 
-              return " Officer";
+              return "Officer";
          end case;
       end Officer_or_Catalyst;
 
@@ -168,7 +170,7 @@ package body Corporate_Bullshit is
          when 1 =>      -- A fully normal boss (eventually, a managing one)
             return Managing & Age & Exec & Title & " of " & Department;
          when others => -- Chief X Officer
-            return Groupal & "Chief " & Department_or_Top_Role & Officer_or_Catalyst;
+            return Groupal & "Chief " & Department_or_Top_Role & ' ' & Officer_or_Catalyst;
       end case;
    end Boss;
 
@@ -251,7 +253,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R369 is
+      case R371 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -636,6 +638,8 @@ package body Corporate_Bullshit is
          when 367 => return "sprint-based";
          when 368 => return "digitized";
          when 369 => return "hypothesis-driven";
+         when 370 => return "governance-related";
+         when 371 => return "convergent";
       end case;
    end Thing_Adjective;
 
@@ -713,7 +717,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R216 is
+         case R217 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -939,13 +943,14 @@ package body Corporate_Bullshit is
             when 214 => return "simplification";
             when 215 => return "digitization";
             when 216 => return "streamlining";
+            when 217 => return "brainstorming space";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R362 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R363 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1099,7 +1104,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R243 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R244 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1192,7 +1197,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R35 is
+      case R36 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1228,6 +1233,7 @@ package body Corporate_Bullshit is
          when 33 => return "constraints";
          when 34 => return "problems/difficulties";
          when 35 => return "bottlenecks";
+         when 36 => return "misunderstandings";
       end case;
    end Bad_Things;
 
@@ -1337,7 +1343,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R80 is
+         case R81 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1421,6 +1427,7 @@ package body Corporate_Bullshit is
             when 78 => return "showcase";
             when 79 => return "cherry-pick";
             when 80 => return "digitize";
+            when 81 => return "re-invent";
          end case;
       end Inner;
    begin
@@ -1813,14 +1820,19 @@ package body Corporate_Bullshit is
       return To_Upper (Ap (Ap'First)) & Ap(Ap'First+1..Ap'Last) & ". ";
    end Sentence;
 
+   --  The total number of sentences X for each external call to the
+   --  function Sentences follows a geometric distribution.
+   --
+   --  E(X) = 1/p, sigma(X) = (1-p) / (p^2)
+   --
    function Sentences (Possible_Dialog_Mark: String) return String is
    begin
-      case R40 is
-         when  1 ..  8   =>  --  Recursion stops in this case.
+      case R100 is
+         when  1 ..  33 =>  --  Recursion stops in this case. Prob = p.
             return Sentence;
-         when  9 .. 30  =>
+         when 34 ..  80 =>
             return Sentences (Possible_Dialog_Mark) & Sentence;
-         when 31 .. 40 =>
+         when 81 .. 100 =>
             return
                Sentences (Possible_Dialog_Mark) &
                Paragraph_End_Mark & Paragraph_Mark &
@@ -1845,17 +1857,17 @@ package body Corporate_Bullshit is
 
    function Workshop return String is
    begin
-      return Sentence_Guaranteed_Amount (500, Dialog_Mark);
+      return Sentence_Guaranteed_Amount (1250, Dialog_Mark);
    end Workshop;
 
    function Short_Workshop return String is
    begin
-      return Sentence_Guaranteed_Amount (18, Dialog_Mark);
+      return Sentence_Guaranteed_Amount (50, Dialog_Mark);
    end Short_Workshop;
 
    function Financial_Report return String is
    begin
-      return Sentence_Guaranteed_Amount (1, "");
+      return Sentence_Guaranteed_Amount (20, "");
       -- !! charts (especially, pie charts) !!
    end Financial_Report;
 
