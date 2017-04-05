@@ -253,7 +253,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R371 is
+      case R374 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -640,6 +640,9 @@ package body Corporate_Bullshit is
          when 369 => return "hypothesis-driven";
          when 370 => return "governance-related";
          when 371 => return "convergent";
+         when 372 => return "leadership-defined";
+         when 373 => return "operations-oriented";
+         when 374 => return "long-range";
       end case;
    end Thing_Adjective;
 
@@ -717,7 +720,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R217 is
+         case R220 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -944,13 +947,16 @@ package body Corporate_Bullshit is
             when 215 => return "digitization";
             when 216 => return "streamlining";
             when 217 => return "brainstorming space";
+            when 218 => return "crowdsourcing";
+            when 219 => return "big-bang approach";
+            when 220 => return "execution message";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R363 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R368 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1100,11 +1106,13 @@ package body Corporate_Bullshit is
                when 144 => return "catalyst for growth";
                when 145 => return "goal setting";
                when 146 => return "craftsmanship";
+               when 147 => return "operational excellence";
+               when 148 => return "reengineering";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R244 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R248 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1137,6 +1145,7 @@ package body Corporate_Bullshit is
                when 25 => return "advanced analytics";
                when 26 => return "growth years";
                when 27 => return "big data";
+               when 28 => return "adjacencies";
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
