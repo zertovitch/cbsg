@@ -96,7 +96,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R27 is
+         case R28 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -122,8 +122,9 @@ package body Corporate_Bullshit is
             when 23 => return "Technology";
             when 24 => return "Campaigning";
             when 25 => return "Digital Marketing";
-            when 26 => return "Architecture";
+            when 26 => return "Digital Transformation Office";
             when 27 => return "Communications";
+            when 28 => return "Architecture";
          end case;
       end Department;
 
