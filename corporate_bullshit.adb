@@ -456,7 +456,7 @@ package body Corporate_Bullshit is
          when 183 => return "adequate";
          when 184 => return "value-enhancing";
          when 185 => return "mission-critical";
-         when 186 => return "business enabling";
+         when 186 => return "business-enabling";
          when 187 => return "transitional";
          when 188 => return "future";
          when 189 => return "game-changing";
@@ -650,7 +650,7 @@ package body Corporate_Bullshit is
          when 377 => return "user-centric";
          when 378 => return "first-to-market";
          when 379 => return "first-mover";
-         --  http://dilbert.com/strip/2017-04-10 Asok Is In The Jargon Matrix
+         --  Next one is from http://dilbert.com/strip/2017-04-10: Asok Is In The Jargon Matrix:
          when 380 => return "cross-platform";  
          when 381 => return "on-the-go";  
          when 382 => return "all-encompassing";  
@@ -978,7 +978,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R374 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R377 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1132,6 +1132,10 @@ package body Corporate_Bullshit is
                when 148 => return "reengineering";
                when 149 => return "mindfulness";
                when 150 => return "quality thinking";
+               --  Next 3 are from http://dilbert.com/strip/2017-04-11: Dilbert Enters The Jargon Matrix:
+               when 151 => return "user experience";
+               when 152 => return "speed of execution";
+               when 153 => return "responsive design";
                --  Equiprobable:
                when others => return Inner;
             end case;
