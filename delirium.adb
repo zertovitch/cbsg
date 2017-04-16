@@ -42,12 +42,14 @@ package body Delirium is
 
    function Make_Eventual_Plural (S: String; P: Plurality) return String is
    begin
-      if S'Length < 1 or P = Singular then
+      if S'Length < 3 or P = Singular then
          return S;
       elsif S = "matrix" then
          return "matrices";
       elsif S = "analysis" then
          return "analyses";
+      elsif S (S'Last-1..S'Last) = "gh" then  --  E.g.: breakthrough
+         return S & 's';
       else
          case S (S'Last) is
             when 's'|'x'|'z'|'h' =>
