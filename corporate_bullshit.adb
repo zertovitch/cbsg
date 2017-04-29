@@ -256,7 +256,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R400 is
+      case R401 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -672,6 +672,7 @@ package body Corporate_Bullshit is
          when 398 => return "supportive";
          when 399 => return "inspired";
          when 400 => return "high-return";
+         when 401 => return "front-end";
       end case;
    end Thing_Adjective;
 
@@ -751,7 +752,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R229 is
+         case R230 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -990,13 +991,14 @@ package body Corporate_Bullshit is
             when 227 => return "growth engine";
             when 228 => return "tailwind";
             when 229 => return "accelerator";
+            when 230 => return "deliverable";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R383 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R384 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1159,7 +1161,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R258 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R259 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
