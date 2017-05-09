@@ -256,7 +256,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R401 is
+      case R402 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -673,6 +673,7 @@ package body Corporate_Bullshit is
          when 399 => return "inspired";
          when 400 => return "high-return";
          when 401 => return "front-end";
+         when 402 => return "turnkey";
       end case;
    end Thing_Adjective;
 
@@ -752,7 +753,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R230 is
+         case R231 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -992,13 +993,14 @@ package body Corporate_Bullshit is
             when 228 => return "tailwind";
             when 229 => return "accelerator";
             when 230 => return "deliverable";
+            when 231 => return "takeaway";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R384 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R385 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1161,7 +1163,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R259 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R260 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1405,7 +1407,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P: Plurality) return String is
       function Inner return String is
       begin
-         case R86 is
+         case R88 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1495,6 +1497,8 @@ package body Corporate_Bullshit is
             when 84 => return "re-content";
             when 85 => return "commoditize";
             when 86 => return "be eager for";
+            when 87 => return "productize";
+            when 88 => return "repurpose";
          end case;
       end Inner;
    begin
