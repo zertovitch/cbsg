@@ -691,7 +691,7 @@ package body Corporate_Bullshit is
 
    function Growth_Atom return String is
    begin
-      case R14 is
+      case R15 is
          when 1 => return "growth";
          when 2 => return "improvement";
          when 3 => return "throughput increase";
@@ -706,6 +706,7 @@ package body Corporate_Bullshit is
          when 12 => return "cost effectiveness";
          when 13 => return "level of change";
          when 14 => return "revenue growth";
+         when 15 => return "profits growth";  --  ironical, from D. Stockman: https://dailyreckoning.com/hurricane-bearing-casino/
       end case;
    end Growth_Atom;
 
