@@ -7,11 +7,11 @@
       <meta http-equiv="pragma" content="no-cache" /> <!-- old browser's variant -->
       <meta name="keywords" content="random corporate bullshit generator" />
       
-      <meta property="og:url"           content="http://cbsg.sf.net/" />
+      <meta property="og:url"           content="http://cbsg.sourceforge.net/cgi-bin/live" />
       <meta property="og:type"          content="website" />
       <meta property="og:title"         content="Corporate Bullshit Generator" />
       <meta property="og:description"   content="Corporate Bullshit Generator - a high-performance bullshit generator" />
-      <meta property="og:image"         content="http://cbsg.sf.net/cbsg_screenshot_broad.png" />
+      <meta property="og:image"         content="http://cbsg.sourceforge.net/cbsg_screenshot_broad.png" />
       <meta property="og:image:type"    content="image/png" />
       <meta property="og:image:width"   content="916" />
       <meta property="og:image:height"  content="480" />
