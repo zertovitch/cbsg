@@ -6,6 +6,16 @@
       <meta http-equiv="cache-control" content="no-cache" />
       <meta http-equiv="pragma" content="no-cache" /> <!-- old browser's variant -->
       <meta name="keywords" content="random corporate bullshit generator" />
+      
+      <meta property="og:url"           content="http://cbsg.sf.net/" />
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content="Corporate Bullshit Generator" />
+      <meta property="og:description"   content="Corporate Bullshit Generator - a high-performance bullshit generator" />
+      <meta property="og:image"         content="http://cbsg.sf.net/cbsg_screenshot_broad.png" />
+      <meta property="og:image:type"    content="image/png" />
+      <meta property="og:image:width"   content="916" />
+      <meta property="og:image:height"  content="480" />
+      
    </head>
    <body>
       <font face="Calibri, Arial">
@@ -78,7 +88,7 @@
       <td>
       <!-- Facebook's "Like" button -->
       <iframe
-         src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcbsg.sourceforge.net%2Fcgi-bin%2Flive&amp;send=false&amp;layout=button_count&amp;width=450&amp;height=35&amp;show_faces=false&amp;action=like&amp;colorscheme=light"
+         src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fcbsg.sourceforge.net%2Fcgi-bin%2Flive&amp;send=false&amp;layout=button_count&amp;width=450&amp;height=35&amp;show_faces=false&amp;share=true&amp;action=like&amp;colorscheme=light"
          scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:20;"
          allowTransparency="true">
       </iframe>
