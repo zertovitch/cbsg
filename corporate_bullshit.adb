@@ -443,7 +443,7 @@ package body Corporate_Bullshit is
          when 170 => return "one-to-one";
          when 171 => return "goal-directed";
          when 172 => return "intra-organisational";
-         when 173 => return "high-performing";
+         when 173 => return "data-inspired";
          when 174 => return "multi-source";
          when 175 => return "360-degree"; -- !! <-> 360-degree thinking
          when 176 => return "motivational";
@@ -675,7 +675,7 @@ package body Corporate_Bullshit is
          when 401 => return "turn-key";
          when 402 => return "turnkey";
          when 403 => return "decision-ready";
-         when 404 => return "data-inspired";
+         when 404 => return "diversified";
       end case;
    end Thing_Adjective;
 
@@ -714,7 +714,7 @@ package body Corporate_Bullshit is
 
       function Superlative return String is
       begin
-         case R27 is
+         case R28 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -745,6 +745,7 @@ package body Corporate_Bullshit is
             when 25 => return "superior";  --  opposite of "subpar"
             when 26 => return "attractive-enough";
             when 27 => return "continual";
+            when 28 => return "above-potential";
          end case;
       end Superlative;
 
@@ -1357,7 +1358,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R210 is  -- proportion: ~ 4/5 empty postfixed adverb
+      case R215 is  -- proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1403,6 +1404,7 @@ package body Corporate_Bullshit is
          when 40 => return ", paving the way for " & Add_Indefinite_Article (P, Thing (P));
          when 41 => return " by levelling the playing field";  --  2016 Golden Flannel Awards
          when 42 => return " on a day-to-day basis";
+         when 43 => return " across boundaries";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1614,7 +1616,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R93 is
+         case R94 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1714,6 +1716,7 @@ package body Corporate_Bullshit is
                Thing_Atom (Singular) & ", " &
                Thing_Atom (Singular) & " and " &
                Thing_Atom (Singular) & " can thrive";
+            when 94 => return "seize opportunities";
          end case;
       end Inner;
    begin
@@ -1806,7 +1809,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1: constant Plurality:= Random_Plural;
    begin
-      case R108 is
+      case R109 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -1866,6 +1869,9 @@ package body Corporate_Bullshit is
             return
                "the " & Person (Sp1) & 
                " will be well equipped to " & Person_Infinitive_Verb_And_Ending;
+         when 109 =>
+            return
+               Thing_Atom (Singular) & " is a matter of speed of action";
       end case;
    end Proposition;
 
