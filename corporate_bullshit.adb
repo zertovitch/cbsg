@@ -757,7 +757,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R231 is
+         case R233 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -998,13 +998,15 @@ package body Corporate_Bullshit is
             when 229 => return "accelerator";
             when 230 => return "deliverable";
             when 231 => return "takeaway";
+            when 232 => return "insourcing";
+            when 233 => return "outsourcing";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R385 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R387 is -- assume equiprobability between explicit singular and "others => ..." items
                -- Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1167,7 +1169,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R260 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R262 is -- assume equiprobability between explicit plural and "others => ..." items
                -- Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1616,7 +1618,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R94 is
+         case R95 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1717,6 +1719,7 @@ package body Corporate_Bullshit is
                Thing_Atom (Singular) & " and " &
                Thing_Atom (Singular) & " can thrive";
             when 94 => return "seize opportunities";
+            when 95 => return "create momentum";
          end case;
       end Inner;
    begin
