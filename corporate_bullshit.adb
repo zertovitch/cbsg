@@ -256,7 +256,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R404 is
+      case R409 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -676,6 +676,11 @@ package body Corporate_Bullshit is
          when 402 => return "turnkey";
          when 403 => return "decision-ready";
          when 404 => return "diversified";
+         when 405 => return "demanding";          --  (bootstrapped)
+         when 406 => return "ambitious";          --  (bootstrapped)
+         when 407 => return "domain-relevant";    --  (bootstrapped)
+         when 408 => return "novel";              --  (bootstrapped)
+         when 409 => return "pre-planned";        --  (bootstrapped)
       end case;
    end Thing_Adjective;
 
@@ -691,7 +696,7 @@ package body Corporate_Bullshit is
 
    function Growth_Atom return String is
    begin
-      case R15 is
+      case R16 is
          when 1 => return "growth";
          when 2 => return "improvement";
          when 3 => return "throughput increase";
@@ -707,6 +712,7 @@ package body Corporate_Bullshit is
          when 13 => return "level of change";
          when 14 => return "revenue growth";
          when 15 => return "profits growth";  --  ironical, from D. Stockman: https://dailyreckoning.com/hurricane-bearing-casino/
+         when 16 => return "growth momentum";  --  (bootstrapped)
       end case;
    end Growth_Atom;
 
