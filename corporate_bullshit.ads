@@ -38,8 +38,8 @@
 --  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 --  THE SOFTWARE.
 --
--- NB: this is the MIT License, as found 12-Sep-2007 on the site
--- http://www.opensource.org/licenses/mit-license.php
+--  NB: this is the MIT License, as found 12-Sep-2007 on the site
+--  http://www.opensource.org/licenses/mit-license.php
 -------------------------------------------------------------------------
 
 generic
