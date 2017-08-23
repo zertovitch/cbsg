@@ -1382,7 +1382,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R215 is  -- proportion: ~ 4/5 empty postfixed adverb
+      case R220 is  -- proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1429,6 +1429,7 @@ package body Corporate_Bullshit is
          when 41 => return " by levelling the playing field";  --  2016 Golden Flannel Awards
          when 42 => return " on a day-to-day basis";
          when 43 => return " across boundaries";
+         when 44 => return " within the community";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
