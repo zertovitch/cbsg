@@ -259,7 +259,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R421 is
+      case R422 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -696,6 +696,7 @@ package body Corporate_Bullshit is
          when 419 => return "vibrant";
          when 420 => return "bright";
          when 421 => return "pure-play";
+         when 422 => return "bespoke";
       end case;
    end Thing_Adjective;
 
@@ -1557,7 +1558,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P : Plurality) return String is
       function Inner return String is
       begin
-         case R8 is
+         case R9 is
             when 1  => return "address";
             when 2  => return "identify";
             when 3  => return "avoid";
@@ -1566,6 +1567,7 @@ package body Corporate_Bullshit is
             when 6  => return "overcome";
             when 7  => return "tackle";
             when 8  => return "reduce";
+            when 9  => return "alleviate";
          end case;
       end Inner;
    begin
@@ -1658,7 +1660,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R98 is
+         case R99 is
             when 1  => return "streamline the process";
             when 2  => return "address the overarching issues";
             when 3  => return "benchmark the portfolio";
@@ -1763,6 +1765,7 @@ package body Corporate_Bullshit is
             when 96 => return "generate company momentum";
             when 97 => return "pursue new opportunities";
             when 98 => return "increase adherence";
+            when 99 => return "focus on the right things";
          end case;
       end Inner;
    begin
@@ -1924,7 +1927,7 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P1, P2 : Plurality;
    begin
-      case R405 is
+      case R406 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -1970,6 +1973,7 @@ package body Corporate_Bullshit is
          when 403 => return "in today's fast-changing world, " & Proposition;
          when 404 => return "internally and externally, " & Proposition;
          when 405 => return "our message is: " & Proposition;
+         when 406 => return "in a data-first world, " & Proposition;
       end case;
    end Articulated_Propositions;
 
