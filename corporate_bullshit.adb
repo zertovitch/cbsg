@@ -1035,7 +1035,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R394 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R403 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1198,6 +1198,13 @@ package body Corporate_Bullshit is
                when 156 => return "creativity";
                when 157 => return "can-do attitude";
                when 158 => return "relevance";
+               when 159 => return "disruption";             --  (obtained by bootstrapping)
+               when 160 => return "dematerialization";      --  (obtained by bootstrapping)
+               when 161 => return "disintermediation";      --  (obtained by bootstrapping)
+               when 162 => return "disaggregation";         --  (obtained by bootstrapping)
+               when 163 => return "wave of change";         --  (obtained by bootstrapping)
+               when 164 => return "digitalization";         --  (obtained by bootstrapping)
+               when 165 => return "CAPEX ";                 --  (obtained by bootstrapping)
                --  Equiprobable:
                when others => return Inner;
             end case;
@@ -1579,7 +1586,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_Having_Thing_Complement (P : Plurality) return String is
       function Inner return String is
       begin
-         case R39 is
+         case R40 is
             when 1  => return "streamline";
             when 2  => return "interact with";
             when 3  => return "boost";
@@ -1619,6 +1626,7 @@ package body Corporate_Bullshit is
             when 37 => return "solutionize";
             when 38 => return "lead to";
             when 39 => return "reenergize";
+            when 40 => return "restructure";
          end case;
       end Inner;
    begin
