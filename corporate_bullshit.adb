@@ -97,7 +97,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R28 is
+         case R29 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -126,6 +126,7 @@ package body Corporate_Bullshit is
             when 26 => return "Digital Transformation Office";
             when 27 => return "Communications";
             when 28 => return "Architecture";
+            when 29 => return "Data & Analytics";
          end case;
       end Department;
 
@@ -259,7 +260,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R422 is
+      case R424 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -697,6 +698,8 @@ package body Corporate_Bullshit is
          when 420 => return "bright";
          when 421 => return "pure-play";
          when 422 => return "bespoke";
+         when 423 => return "pivotal";
+         when 424 => return "efficiency-enhancing";
       end case;
    end Thing_Adjective;
 
@@ -1035,7 +1038,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R403 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R404 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1204,12 +1207,13 @@ package body Corporate_Bullshit is
                when 162 => return "disaggregation";         --  (obtained by bootstrapping)
                when 163 => return "wave of change";         --  (obtained by bootstrapping)
                when 164 => return "digitalization";         --  (obtained by bootstrapping)
-               when 165 => return "CAPEX ";                 --  (obtained by bootstrapping)
+               when 165 => return "CAPEX";                  --  (obtained by bootstrapping)
+               when 166 => return "window of opportunity";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R268 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R270 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1245,6 +1249,8 @@ package body Corporate_Bullshit is
                when 28 => return "adjacencies";
                when 29 => return "core competences";
                when 30 => return "strengths";
+               when 31 => return "corporate values";
+               when 32 => return "core values";
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
@@ -1668,112 +1674,115 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R99 is
-            when 1  => return "streamline the process";
-            when 2  => return "address the overarching issues";
-            when 3  => return "benchmark the portfolio";
-            when 4  => return "manage the cycle";     -- Fad of 2004
-            when 5  => return "figure out where we come from, where we are going to";
-            when 6  => return "maximize the value";
-            when 7  => return "execute the strategy"; -- Obsessive in 2006
-            when 8  => return "think out of the box";
-            when 9  => return "think differently";
-            when 10 => return "think across the full value chain";
+         case R102 is
+            when   1 => return "streamline the process";
+            when   2 => return "address the overarching issues";
+            when   3 => return "benchmark the portfolio";
+            when   4 => return "manage the cycle";     -- Fad of 2004
+            when   5 => return "figure out where we come from, where we are going to";
+            when   6 => return "maximize the value";
+            when   7 => return "execute the strategy"; -- Obsessive in 2006
+            when   8 => return "think out of the box";
+            when   9 => return "think differently";
+            when  10 => return "think across the full value chain";
                --  BBC office-speak phrases
-            when 11 => return "loop back";
-            when 12 => return "conversate";
-            when 13 => return "go forward together";
+            when  11 => return "loop back";
+            when  12 => return "conversate";
+            when  13 => return "go forward together";
                --
-            when 14 => return "achieve efficiencies";
-            when 15 => return "deliver"; -- deliver, form without complement
+            when  14 => return "achieve efficiencies";
+            when  15 => return "deliver"; -- deliver, form without complement
                                          --  GAC 2010
-            when 16 => return "stay in the mix";
-            when 17 => return "stay in the zone";
-            when 18 => return "evolve";
-            when 19 => return "exceed expectations";
-            when 20 => return "develop the plan";
-            when 21 => return "develop the blue print for execution";
-            when 22 => return "grow and diversify";
-            when 23 => return "fuel changes";
-            when 24 => return "nurture talent";
-            when 25 => return "cultivate talent";
-            when 26 => return "make it possible";
-            when 27 => return "manage the portfolio";
-            when 28 => return "align resources";
-            when 29 => return "drive the business forward";
-            when 30 => return "make things happen";
-            when 31 => return "stay ahead";
-            when 32 => return "outperform peers";
-            when 33 => return "surge ahead";
-            when 34 => return "manage the downside";
-            when 35 => return "stay in the wings";
-            when 36 => return "come to a landing";
-            when 37 => return "shoot it over";
-            when 38 => return "move the needle";
-            when 39 => return "connect the dots";
-            when 40 => return "connect the dots to the end game";
-            when 41 => return "reset the benchmark";
-            when 42 => return "take it offline";
-            when 43 => return "peel the onion";
-            when 44 => return "drill down";
-            when 45 => return "get from here to here";
-            when 46 => return "do things differently";
-            when 47 => return "stretch the status quo";
-            when 48 => return "challenge the status quo";
-            when 49 => return "challenge established ideas";
-            when 50 => return "increase customer satisfaction";
-            when 51 => return "enable customer interaction";
-            when 52 => return "manage the balance";
-            when 53 => return "turn every stone";
-            when 54 => return "drive revenue";
-            when 55 => return "rise to the challenge";
-            when 56 => return "keep it on the radar";
-            when 57 => return "stay on trend";
-            when 58 => return "hunt the business down";
-            when 59 => return "push the envelope to the tilt";
-            when 60 => return "execute on priorities";
-            when 61 => return "stand out from the crowd";
-            when 62 => return "make the abstract concrete";
-            when 63 => return "manage the mix";
-            when 64 => return "grow";
-            when 65 => return "accelerate the strategy";
-            when 66 => return "enhance the strength";
-            when 67 => return "create long-term value";
-            when 68 => return "meet the challenges";
-            when 69 => return "move the progress forward";
-            when 70 => return "do the right projects";
-            when 71 => return "do the projects right";
-            when 72 => return "do more with less";
-            when 73 => return "build winning teams";     --  (obtained by bootstrapping)
-            when 74 => return "deliver on commitments";  --  (obtained by bootstrapping)
-            when 75 => return "execute";                 --  (obtained by bootstrapping)
-            when 76 => return "deliver";                 --  (obtained by bootstrapping)
-            when 77 => return "see around the corner";   --  (obtained by bootstrapping)
-            when 78 => return "meet the surge";   --  (obtained by bootstrapping)
-            when 79 => return "celebrate the success";  --  Souvenir of Converium...
-            when 80 => return "circle back";     --  2014 Golden Flannel Awards article
-            when 81 => return "action forward";  --  2014 Golden Flannel Awards article
-            when 82 => return "move forward";    --  2015 Golden Flannel Awards article
-            when 83 => return "take control";
-            when 84 => return "be cautiously optimistic";
-            when 85 => return "be committed";
-            when 86 => return "evolve our culture";
-            when 87 => return "leverage the benefits of our differentiation";
-            when 88 => return "stretch our data bucket";  --  Guffpedia
-            when 89 => return "leapfrog the competition";
-            when 90 => return "take the elevator beyond the top floor";
-            when 91 => return "stick to the knitting";
-            when 92 => return "bring our vision to reality";
-            when 93 => return "create an environment where " &
+            when  16 => return "stay in the mix";
+            when  17 => return "stay in the zone";
+            when  18 => return "evolve";
+            when  19 => return "exceed expectations";
+            when  20 => return "develop the plan";
+            when  21 => return "develop the blue print for execution";
+            when  22 => return "grow and diversify";
+            when  23 => return "fuel changes";
+            when  24 => return "nurture talent";
+            when  25 => return "cultivate talent";
+            when  26 => return "make it possible";
+            when  27 => return "manage the portfolio";
+            when  28 => return "align resources";
+            when  29 => return "drive the business forward";
+            when  30 => return "make things happen";
+            when  31 => return "stay ahead";
+            when  32 => return "outperform peers";
+            when  33 => return "surge ahead";
+            when  34 => return "manage the downside";
+            when  35 => return "stay in the wings";
+            when  36 => return "come to a landing";
+            when  37 => return "shoot it over";
+            when  38 => return "move the needle";
+            when  39 => return "connect the dots";
+            when  40 => return "connect the dots to the end game";
+            when  41 => return "reset the benchmark";
+            when  42 => return "take it offline";
+            when  43 => return "peel the onion";
+            when  44 => return "drill down";
+            when  45 => return "get from here to here";
+            when  46 => return "do things differently";
+            when  47 => return "stretch the status quo";
+            when  48 => return "challenge the status quo";
+            when  49 => return "challenge established ideas";
+            when  50 => return "increase customer satisfaction";
+            when  51 => return "enable customer interaction";
+            when  52 => return "manage the balance";
+            when  53 => return "turn every stone";
+            when  54 => return "drive revenue";
+            when  55 => return "rise to the challenge";
+            when  56 => return "keep it on the radar";
+            when  57 => return "stay on trend";
+            when  58 => return "hunt the business down";
+            when  59 => return "push the envelope to the tilt";
+            when  60 => return "execute on priorities";
+            when  61 => return "stand out from the crowd";
+            when  62 => return "make the abstract concrete";
+            when  63 => return "manage the mix";
+            when  64 => return "grow";
+            when  65 => return "accelerate the strategy";
+            when  66 => return "enhance the strength";
+            when  67 => return "create long-term value";
+            when  68 => return "meet the challenges";
+            when  69 => return "move the progress forward";
+            when  70 => return "do the right projects";
+            when  71 => return "do the projects right";
+            when  72 => return "do more with less";
+            when  73 => return "build winning teams";     --  (obtained by bootstrapping)
+            when  74 => return "deliver on commitments";  --  (obtained by bootstrapping)
+            when  75 => return "execute";                 --  (obtained by bootstrapping)
+            when  76 => return "deliver";                 --  (obtained by bootstrapping)
+            when  77 => return "see around the corner";   --  (obtained by bootstrapping)
+            when  78 => return "meet the surge";   --  (obtained by bootstrapping)
+            when  79 => return "celebrate the success";  --  Souvenir of Converium...
+            when  80 => return "circle back";     --  2014 Golden Flannel Awards article
+            when  81 => return "action forward";  --  2014 Golden Flannel Awards article
+            when  82 => return "move forward";    --  2015 Golden Flannel Awards article
+            when  83 => return "take control";
+            when  84 => return "be cautiously optimistic";
+            when  85 => return "be committed";
+            when  86 => return "evolve our culture";
+            when  87 => return "leverage the benefits of our differentiation";
+            when  88 => return "stretch our data bucket";  --  Guffpedia
+            when  89 => return "leapfrog the competition";
+            when  90 => return "take the elevator beyond the top floor";
+            when  91 => return "stick to the knitting";
+            when  92 => return "bring our vision to reality";
+            when  93 => return "create an environment where " &
                Thing_Atom (Singular) & ", " &
                Thing_Atom (Singular) & " and " &
                Thing_Atom (Singular) & " can thrive";
-            when 94 => return "seize opportunities";
-            when 95 => return "create momentum";
-            when 96 => return "generate company momentum";
-            when 97 => return "pursue new opportunities";
-            when 98 => return "increase adherence";
-            when 99 => return "focus on the right things";
+            when  94 => return "seize opportunities";
+            when  95 => return "create momentum";
+            when  96 => return "generate company momentum";
+            when  97 => return "pursue new opportunities";
+            when  98 => return "increase adherence";
+            when  99 => return "focus on the right things";
+            when 100 => return "open the kimono";
+            when 101 => return "give 110%";
+            when 102 => return "take it to the next level";
          end case;
       end Inner;
    begin
