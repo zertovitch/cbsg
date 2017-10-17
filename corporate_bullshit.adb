@@ -216,7 +216,7 @@ package body Corporate_Bullshit is
                   return Boss;
             end case;
          when Plural =>
-            case R26 is
+            case R31 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -243,6 +243,11 @@ package body Corporate_Bullshit is
                when 24 => return "attackers";
                when 25 => return "initiators";
                when 26 => return "decision makers";
+               when 27 => return "Growth Hackers";
+               when 28 => return "Digital Marketers";
+               when 29 => return "Creative Technologists";
+               when 30 => return "Products Managers";
+               when 31 => return "Products Owners";
             end case;
       end case;
    end Person;
@@ -262,7 +267,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R426 is
+      case R427 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -704,6 +709,7 @@ package body Corporate_Bullshit is
          when 424 => return "efficiency-enhancing";
          when 425 => return "multi-level";
          when 426 => return "rich";
+         when 427 => return "frictionless";
       end case;
    end Thing_Adjective;
 
@@ -788,7 +794,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R243 is
+         case R244 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -827,7 +833,7 @@ package body Corporate_Bullshit is
             when 37 => return "content";
             when 38 => return "communication";
             when 39 => return "goal";
-            when 40 => return "value creation goals";
+            when 40 => return "value creation goal";
             when 41 => return "alternative";
             when 42 => return "culture";
             when 43 => return "requirement";
@@ -1041,13 +1047,14 @@ package body Corporate_Bullshit is
             when 241 => return "offshoring";
             when 242 => return "quick-win";
             when 243 => return "cross-pollination";
+            when 244 => return "hybridation";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R411 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R412 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1224,7 +1231,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R275 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R276 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1967,7 +1974,7 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P1, P2 : Plurality;
    begin
-      case R406 is
+      case R407 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2014,6 +2021,7 @@ package body Corporate_Bullshit is
          when 404 => return "internally and externally, " & Proposition;
          when 405 => return "our message is: " & Proposition;
          when 406 => return "in a data-first world, " & Proposition;
+         when 407 => return "the future awaits";
       end case;
    end Articulated_Propositions;
 
