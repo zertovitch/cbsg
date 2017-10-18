@@ -13,7 +13,8 @@ package body Corporate_Bullshit is
    --  To do:
    --   * Enrich the Proposition function
    --   * Person_adjective: "committed", "multi-skilled", "inspirational",
-   --                       "high-caliber", "cross-trained", "multi-cultural"
+   --                       "high-caliber", "cross-trained", "multi-cultural",
+   --                       "fully-fledged"
    --   * other sentences; rhetorical questions
    --   * Slogans, such as: "It's about breaking down the silos"
    --     "less is more", "it's about quality, not about quantity",
