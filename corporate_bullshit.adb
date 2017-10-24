@@ -801,7 +801,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R246 is
+         case R248 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1057,13 +1057,15 @@ package body Corporate_Bullshit is
             when 244 => return "hybridation";
             when 245 => return "positioning";
             when 246 => return "reinvention";
+            when 247 => return "functionality";
+            when 248 => return "mindshare";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R414 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R416 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1240,7 +1242,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R278 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R280 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1493,7 +1495,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P : Plurality) return String is
       function Inner return String is
       begin
-         case R94 is
+         case R97 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1591,6 +1593,9 @@ package body Corporate_Bullshit is
             when 92 => return "cross-pollinate";
             when 93 => return "ignite";
             when 94 => return "transgenerate";
+            when 95 => return "orchestrate";
+            when 96 => return "envisioneer";
+            when 97 => return "reintermediate";
          end case;
       end Inner;
    begin
