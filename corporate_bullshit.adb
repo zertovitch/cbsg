@@ -174,7 +174,7 @@ package body Corporate_Bullshit is
          Full : constant String :=
             "Chief " & Department_or_Top_Role & ' ' & Officer_or_Catalyst;
       begin
-         if R2 > 1 then
+         if R3 = 1 then
             return Full;
          else
             return Full & " (" & Silly_Abbreviation_Generator_SAG (Full) & ')';
@@ -227,11 +227,12 @@ package body Corporate_Bullshit is
                when 28 => return "rockstar";
                when 29 => return "facilitator";
                when 30 => return "disruptor";
+               when 31 => return "challenger";
                when others =>  --  ~ 1/3
                   return Boss;
             end case;
          when Plural =>
-            case R32 is
+            case R33 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -264,6 +265,7 @@ package body Corporate_Bullshit is
                when 30 => return "Products Managers";
                when 31 => return "Products Owners";
                when 32 => return "disruptors";
+               when 33 => return "challengers";
             end case;
       end case;
    end Person;
