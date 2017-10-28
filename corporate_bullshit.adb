@@ -1504,7 +1504,7 @@ package body Corporate_Bullshit is
       end case;
    end Eventual_Postfixed_Adverb;
 
-   function Person_Verb_Having_Thing_Complement (P : Plurality) return String is
+   function Person_Verb_Having_Thing_Complement (P : Plurality; Infinitive : Boolean) return String is
       function Inner return String is
       begin
          case R97 is
@@ -1611,7 +1611,11 @@ package body Corporate_Bullshit is
          end case;
       end Inner;
    begin
-      return Build_Plural_Verb (Inner, P);
+      if Infinitive then  --  be /= are
+         return Inner;
+      else
+         return Build_Plural_Verb (Inner, P);
+      end if;
    end Person_Verb_Having_Thing_Complement;
 
    --  Something Bad is going to happen. Fortunately Supermarketman is there
@@ -1843,7 +1847,7 @@ package body Corporate_Bullshit is
          end case;
       end Inner;
    begin
-      if Infinitive then
+      if Infinitive then  --  be /= are
          return Inner;
       else
          return Build_Plural_Verb (Inner, P);
@@ -1895,7 +1899,7 @@ package body Corporate_Bullshit is
               Add_Random_Article (Plural, Bad_Things);
          when 16 .. 95 =>
             return
-              Person_Verb_Having_Thing_Complement (P) &
+              Person_Verb_Having_Thing_Complement (P, Infinitive) &
               ' ' &
               Add_Random_Article (Compl_Sp, Thing (Compl_Sp));
       end case;

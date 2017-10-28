@@ -143,7 +143,7 @@ package body Delirium is
    end Add_Indefinite_Article;
 
    function Silly_Abbreviation_Generator_SAG (X : String) return String is
-     space : Natural;
+      space : Natural;
    begin
       if X'Length = 0 then
          return "";
