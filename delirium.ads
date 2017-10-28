@@ -62,6 +62,13 @@ package Delirium is
    --  Silly Abbreviation Generator (SAG)
    function Silly_Abbreviation_Generator_SAG (X : String) return String;
 
+   --  R (N) returns a random number between 1 and N.
+   function R (N : Positive) return Positive;
+
+   --  Abbreviate appends with a given probability an expression with its acronym
+   --  Example: Chief Internal Audit Officer (CIAO).
+   function Abbreviate (Long : String; Probability : Float) return String;
+
    --  All the following T* and R* is to make the typing in the random
    --  recursive grammar the shortest possible.
    --  No parenthesis, nor "when others => null;" is needed then.

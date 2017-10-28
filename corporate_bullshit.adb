@@ -169,24 +169,14 @@ package body Corporate_Bullshit is
          end case;
       end Officer_or_Catalyst;
 
-      --  Chief X Officer. Add sometimes the (CXO) abbreviation
-      function CXO return String is
-         Full : constant String :=
-            "Chief " & Department_or_Top_Role & ' ' & Officer_or_Catalyst;
-      begin
-         if R3 = 1 then
-            return Full;
-         else
-            return Full & " (" & Silly_Abbreviation_Generator_SAG (Full) & ')';
-         end if;
-      end CXO;
-
    begin
       case R2 is
          when 1 =>      -- A fully normal boss (eventually, a managing one)
             return Managing & Age & Exec & Title & " of " & Department;
          when others => -- Chief X Officer
-            return Groupal & CXO;
+            return
+               Groupal &
+               Abbreviate ("Chief " & Department_or_Top_Role & ' ' & Officer_or_Catalyst, 0.6);
       end case;
    end Boss;
 
@@ -285,7 +275,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R432 is
+      case R433 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -733,6 +723,7 @@ package body Corporate_Bullshit is
          when 430 => return "outcome-driven";
          when 431 => return "hyperaware";
          when 432 => return "high-velocity";
+         when 433 => return "lean";
       end case;
    end Thing_Adjective;
 
@@ -829,12 +820,12 @@ package body Corporate_Bullshit is
             when 9 => return "sign-off";
             when 10 => return "escalation";
             when 12 => return "system";
-            when 13 => return "Management Information System";
-            when 14 => return "Quality Management System";
+            when 13 => return Abbreviate ("Management Information System", 0.5);
+            when 14 => return Abbreviate ("Quality Management System", 0.5);
             when 15 => return "planning";
             when 16 => return "target";
             when 17 => return "calibration";
-            when 18 => return "Control Information System";
+            when 18 => return Abbreviate ("Control Information System", 0.5);
             when 19 => return "process";
             when 20 => return "talent";
             when 21 => return "execution"; -- Winner 2006!
@@ -937,7 +928,7 @@ package body Corporate_Bullshit is
             when 108 => return "white paper";
             when 109 => return "scalability";
             when 110 => return "innovation";
-            when 111 => return "Strategic Management System";
+            when 111 => return Abbreviate ("Strategic Management System", 0.5);
             when 112 => return "Balanced Scorecard";
             when 113 => return "key differentiator"; -- PDM
             when 114 => return "case study";
@@ -1027,7 +1018,7 @@ package body Corporate_Bullshit is
             when 198 => return "value chain";  --  (obtained by bootstrapping)
             when 199 => return "microsegment";  --  (obtained by bootstrapping)
             when 200 => return "rollout plan";  --  (obtained by bootstrapping)
-            when 201 => return "leadership development system";  --  (obtained by bootstrapping)
+            when 201 => return Abbreviate ("Leadership Development System", 0.5);
             when 202 => return "architectural approach";         --  (obtained by bootstrapping)
             when 203 => return "brand value";
             when 204 => return "milestone";  --  2012 Golden Flannel Awards article
@@ -1102,7 +1093,7 @@ package body Corporate_Bullshit is
                when 15  => return "respect";
                when 16  => return "openness";
                when 17  => return "transparency";
-               when 18  => return "Quality Research";
+               when 18  => return Abbreviate ("Quality Research", 0.5);
                when 19  => return "decision making";
                when 20  => return "risk management";
                when 21  => return "enterprise risk management";

@@ -33,6 +33,7 @@
 
 with Ada.Numerics.Float_Random;         use Ada.Numerics.Float_Random;
 with Ada.Numerics.Discrete_Random;
+with Ada.Strings.Fixed;                 use Ada.Strings.Fixed;
 
 package body Delirium is
 
@@ -45,9 +46,15 @@ package body Delirium is
       'A' | 'E' | 'I' | 'O' | 'U' | 'Y' => True, others => False);
 
    function Make_Eventual_Plural (S : String; P : Plurality) return String is
+      abbr : Natural;
    begin
       if S'Length < 3 or P = Singular then
          return S;
+      end if;
+      abbr := Index (S, " (");
+      if abbr > 0 then
+         --  Example: Quality Management Systems (QMS)
+         return Make_Eventual_Plural (S (S'First .. abbr - 1), P) & S (abbr .. S'Last);
       elsif S = "matrix" then
          return "matrices";
       elsif S = "analysis" then
@@ -136,17 +143,17 @@ package body Delirium is
    end Add_Indefinite_Article;
 
    function Silly_Abbreviation_Generator_SAG (X : String) return String is
+     space : Natural;
    begin
       if X'Length = 0 then
          return "";
       end if;
-      for i in X'Range loop
-         if X (i) = ' ' then
-           return
-              X (X'First) &
-              Silly_Abbreviation_Generator_SAG (X (i + 1 .. X'Last));
-         end if;
-      end loop;
+      space := Index (X, " ");
+      if space > X'First then
+         return
+            X (X'First) &
+            Silly_Abbreviation_Generator_SAG (X (space + 1 .. X'Last));
+      end if;
       return (1 => X (X'First));
    end Silly_Abbreviation_Generator_SAG;
 
@@ -174,6 +181,15 @@ package body Delirium is
          return 1 + S;
       end if;
    end R;
+
+   function Abbreviate (Long : String; Probability : Float) return String is
+   begin
+     if Random (Seed) < Probability then
+        return Long & " (" & Silly_Abbreviation_Generator_SAG (Long) & ')';
+     else
+        return Long;
+     end if;
+   end Abbreviate;
 
    --  Below, a Windows CMD script for producing the function bodies:
    --
