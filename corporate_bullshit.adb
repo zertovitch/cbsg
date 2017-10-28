@@ -26,7 +26,6 @@ package body Corporate_Bullshit is
    --       blending of (bullshit, normal, custom); type in Delirium)
    --   * ...a [s-whatever] that puts [s-whatever] at the center
    --       of the organization's [whatever]
-   --   * A Silly Abbreviation Generator (SAG).
    --   * "...is top-of-mind", "...is key", "...is critical"
 
    -- Persons or groups --
@@ -98,7 +97,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R29 is
+         case R30 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -128,6 +127,7 @@ package body Corporate_Bullshit is
             when 27 => return "Communications";
             when 28 => return "Architecture";
             when 29 => return "Data & Analytics";
+            when 30 => return "Compliance";
          end case;
       end Department;
 
@@ -169,12 +169,24 @@ package body Corporate_Bullshit is
          end case;
       end Officer_or_Catalyst;
 
+      --  Chief X Officer. Add sometimes the (CXO) abbreviation
+      function CXO return String is
+         Full : constant String :=
+            "Chief " & Department_or_Top_Role & ' ' & Officer_or_Catalyst;
+      begin
+         if R2 > 1 then
+            return Full;
+         else
+            return Full & " (" & Silly_Abbreviation_Generator_SAG (Full) & ')';
+         end if;
+      end CXO;
+
    begin
       case R2 is
          when 1 =>      -- A fully normal boss (eventually, a managing one)
             return Managing & Age & Exec & Title & " of " & Department;
          when others => -- Chief X Officer
-            return Groupal & "Chief " & Department_or_Top_Role & ' ' & Officer_or_Catalyst;
+            return Groupal & CXO;
       end case;
    end Boss;
 
@@ -271,7 +283,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R430 is
+      case R432 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -717,6 +729,8 @@ package body Corporate_Bullshit is
          when 428 => return "up-to-the-minute";
          when 429 => return "sourced";
          when 430 => return "outcome-driven";
+         when 431 => return "hyperaware";
+         when 432 => return "high-velocity";
       end case;
    end Thing_Adjective;
 
@@ -801,7 +815,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R248 is
+         case R250 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1059,13 +1073,15 @@ package body Corporate_Bullshit is
             when 246 => return "reinvention";
             when 247 => return "functionality";
             when 248 => return "mindshare";
+            when 249 => return "mobility space";
+            when 250 => return "decision-to-execution cycle";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R416 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R419 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1238,11 +1254,12 @@ package body Corporate_Bullshit is
                when 166 => return "window of opportunity";
                when 167 => return "beta";
                when 168 => return "coopetition";
+               when 169 => return "digital change";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R280 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R282 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1340,7 +1357,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R40 is
+      case R41 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1381,6 +1398,7 @@ package body Corporate_Bullshit is
          when 38 => return "interdependencies";
          when 39 => return "discontinuities";
          when 40 => return "hiccups";
+         when 41 => return "vulnerabilities";
       end case;
    end Bad_Things;
 
@@ -1388,7 +1406,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R116 is -- proportion: 3/4 empty adverb
+      case R120 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -1420,6 +1438,7 @@ package body Corporate_Bullshit is
          when 27 => return "gradually ";
          when 28 => return "aggressively ";  --  2011 Golden Flannel Awards article
          when 29 => return "cost-effectively ";
+         when 30 => return "proactively ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -1715,7 +1734,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R105 is
+         case R106 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -1827,6 +1846,7 @@ package body Corporate_Bullshit is
             when 103 => return "boil the ocean";
             when 104 => return "close the loop";
             when 105 => return "create value";
+            when 106 => return "disrupt the status quo";
          end case;
       end Inner;
    begin
@@ -1986,9 +2006,9 @@ package body Corporate_Bullshit is
    end Proposition;
 
    function Articulated_Propositions return String is
-     P1, P2 : Plurality;
+     P : Plurality;
    begin
-      case R407 is
+      case R409 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2004,11 +2024,10 @@ package body Corporate_Bullshit is
                "the point is not merely to " & Person_Infinitive_Verb_And_Ending &
                ". The point is to " & Person_Infinitive_Verb_And_Ending;
          when 307 .. 310 =>
-            P1 := Random_Plural;
-            P2 := Random_Plural;
+            P := Random_Plural;
             return
-               "it's not about " & Add_Random_Article (P1, Thing (P1)) &
-               ". It's about " & Add_Random_Article (P2, Thing (P2));
+               "it's not about " & Thing_Atom (Random_Plural) &
+               ". It's about " & Add_Random_Article (P, Thing (P));
          when 381 .. 383 =>
             return
                "our challenge is not to " & Person_Infinitive_Verb_And_Ending &
@@ -2036,6 +2055,13 @@ package body Corporate_Bullshit is
          when 405 => return "our message is: " & Proposition;
          when 406 => return "in a data-first world, " & Proposition;
          when 407 => return "the future awaits";
+         when 408 =>
+           return Thing_Atom (Plural) & " not only thrive on change, they initiate it";
+         when 409 =>
+           return
+             "as the pace of " & Thing_Atom (Random_Plural) &
+             " continues to accelerate, " & Thing_Atom (Singular) &
+             " has become a necessity";
       end case;
    end Articulated_Propositions;
 

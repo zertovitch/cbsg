@@ -5,7 +5,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006..2014
+--  Copyright (c) Gautier de Montmollin 2006 .. 2017
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -134,6 +134,21 @@ package body Delirium is
             return To;
       end case;
    end Add_Indefinite_Article;
+
+   function Silly_Abbreviation_Generator_SAG (X : String) return String is
+   begin
+      if X'Length = 0 then
+         return "";
+      end if;
+      for i in X'Range loop
+         if X (i) = ' ' then
+           return
+              X (X'First) &
+              Silly_Abbreviation_Generator_SAG (X (i + 1 .. X'Last));
+         end if;
+      end loop;
+      return (1 => X (X'First));
+   end Silly_Abbreviation_Generator_SAG;
 
    ----------------------
    -- Random functions --

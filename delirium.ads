@@ -5,7 +5,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006..2012
+--  Copyright (c) Gautier de Montmollin 2006 .. 2017
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -58,6 +58,9 @@ package Delirium is
    --
 
    type Blending is (Bullshit, Normal, Custom);
+
+   --  Silly Abbreviation Generator (SAG)
+   function Silly_Abbreviation_Generator_SAG (X : String) return String;
 
    --  All the following T* and R* is to make the typing in the random
    --  recursive grammar the shortest possible.
