@@ -275,7 +275,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R433 is
+      case R434 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -724,6 +724,7 @@ package body Corporate_Bullshit is
          when 431 => return "hyperaware";
          when 432 => return "high-velocity";
          when 433 => return "lean";
+         when 434 => return "unmatched";
       end case;
    end Thing_Adjective;
 
@@ -2005,7 +2006,7 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P : Plurality;
    begin
-      case R409 is
+      case R410 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2059,6 +2060,13 @@ package body Corporate_Bullshit is
              "as the pace of " & Thing_Atom (Random_Plural) &
              " continues to accelerate, " & Thing_Atom (Singular) &
              " has become a necessity";
+         when 410 =>
+            return
+               Thing_Atom (Singular) & ", " &
+               Thing_Atom (Singular) & ", " &
+               Thing_Atom (Singular) & ", " &
+               Thing_Atom (Singular) & " - all are competing for the attention of " &
+               Person (Plural);
       end case;
    end Articulated_Propositions;
 
