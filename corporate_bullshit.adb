@@ -133,23 +133,25 @@ package body Corporate_Bullshit is
 
       function Department_or_Top_Role return String is
       begin
-        case R34 is
-          when 1 .. 27 =>
+        case R38 is
+          when 1 .. 30 =>
             return Department;
-          when 28 =>
-            return "Visionary";
-          when 29 =>
-            return "Digital";
-          when 30 =>
-            return "Technical";
           when 31 =>
-            return "Manifesto";  --  Guffpedia
+            return "Visionary";
           when 32 =>
-            return "Operating";
+            return "Digital";
           when 33 =>
-            return "Product";
+            return "Technical";
           when 34 =>
+            return "Manifesto";  --  Guffpedia
+          when 35 =>
+            return "Operating";
+          when 36 =>
+            return "Product";
+          when 37 =>
             return "Scheme";
+          when 38 =>
+            return "Growth";
         end case;
       end Department_or_Top_Role;
 
