@@ -275,7 +275,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R436 is
+      case R437 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -727,6 +727,7 @@ package body Corporate_Bullshit is
          when 434 => return "unmatched";
          when 435 => return "industry-leading";
          when 436 => return "multi-sided";
+         when 437 => return "tailor-made";
       end case;
    end Thing_Adjective;
 
@@ -1077,7 +1078,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R420 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R423 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1252,6 +1253,9 @@ package body Corporate_Bullshit is
                when 168 => return "coopetition";
                when 169 => return "digital change";
                when 170 => return "business excellence";
+               when 171 => return "business impact";
+               when 172 => return "business acumen";
+               when 173 => return "leadership culture";
                --  Equiprobable:
                when others => return Inner;
             end case;
