@@ -97,7 +97,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R31 is
+         case R39 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -129,12 +129,20 @@ package body Corporate_Bullshit is
             when 29 => return "Data & Analytics";
             when 30 => return "Compliance";
             when 31 => return "Research & Development";
+            when 32 => return "Networking Enhancement";     --  "Bullshit jobs" article, Les Echos
+            when 33 => return "Innovative Strategies";      --  "Bullshit jobs" article, Les Echos
+            when 34 => return "Global Innovation Insight";  --  "Bullshit jobs" article, Les Echos
+            when 35 => return "Transition Transformation";  --  "Bullshit jobs" article, Les Echos
+            when 36 => return "Change Management";          --  "Bullshit jobs" article, Les Echos
+            when 37 => return "Global Strategy";            --  "Bullshit jobs" article, Les Echos
+            when 38 => return "Creativity and Innovation";  --  "Bullshit jobs" article, Les Echos
+            when 39 => return "Information Security";  --  http://yetanotherico.com
          end case;
       end Department;
 
       function Department_or_Top_Role return String is
       begin
-         case R44 is
+         case R52 is
             when  1 => return "Visionary";
             when  2 => return "Digital";
             when  3 => return "Technical";
@@ -147,7 +155,7 @@ package body Corporate_Bullshit is
             when 10 => return "Sales";                 --  http://yetanotherico.com
             when 11 => return "Networking";            --  http://yetanotherico.com
             when 12 => return "Content";               --  http://yetanotherico.com
-            when 13 => return "Information Security";  --  http://yetanotherico.com
+            when 13 => return "Holacracy";  --  "Bullshit jobs" article, Les Echos
             when others =>
                return Department;
         end case;
