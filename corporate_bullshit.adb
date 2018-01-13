@@ -820,7 +820,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R250 is
+         case R253 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1080,13 +1080,16 @@ package body Corporate_Bullshit is
             when 248 => return "mindshare";
             when 249 => return "mobility space";
             when 250 => return "decision-to-execution cycle";
+            when 251 => return "adjustment";                --  Article about doublespeak
+            when 252 => return "force management program";  --  Article about doublespeak
+            when 253 => return "launchpad";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R423 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R430 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1237,7 +1240,7 @@ package body Corporate_Bullshit is
                when 145 => return "goal setting";
                when 146 => return "craftsmanship";
                when 147 => return "operational excellence";
-               when 148 => return "reengineering";
+               when 148 => return "re-engineering";
                when 149 => return "mindfulness";
                when 150 => return "quality thinking";
                --  Next 3 are from http://dilbert.com/strip/2017-04-11: Dilbert Enters The Jargon Matrix:
@@ -1264,11 +1267,15 @@ package body Corporate_Bullshit is
                when 171 => return "business impact";
                when 172 => return "business acumen";
                when 173 => return "leadership culture";
+               when 174 => return "glocalization";         --  Article about doublespeak
+               when 175 => return "re-equitizing";         --  Article about doublespeak
+               when 176 => return "cost rationalization";  --  Article about doublespeak
+               when 177 => return "strategic optionality";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R282 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R287 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1306,6 +1313,8 @@ package body Corporate_Bullshit is
                when 30 => return "strengths";
                when 31 => return "corporate values";
                when 32 => return "core values";
+               when 33 => return "competitive dynamics";   --  Article about doublespeak
+               when 34 => return "workforce adjustments";  --  Article about doublespeak
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
@@ -1366,7 +1375,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R41 is
+      case R44 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1408,6 +1417,9 @@ package body Corporate_Bullshit is
          when 39 => return "discontinuities";
          when 40 => return "hiccups";
          when 41 => return "vulnerabilities";
+         when 42 => return "negative cash flows";                --  Article about doublespeak
+         when 43 => return "net profit revenue deficiencies";    --  Article about doublespeak
+         when 44 => return "negative contributions to profits";  --  Article about doublespeak
       end case;
    end Bad_Things;
 
