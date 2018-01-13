@@ -2021,7 +2021,7 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P : Plurality;
    begin
-      case R410 is
+      case R411 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2082,6 +2082,7 @@ package body Corporate_Bullshit is
                Thing_Atom (Singular) & ", " &
                Thing_Atom (Singular) & " - all are competing for the attention of " &
                Person (Plural);
+         when 411 => return "success brings success";  --  Thx Marco!
       end case;
    end Articulated_Propositions;
 
