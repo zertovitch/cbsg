@@ -7,7 +7,7 @@
 --   Use of a template file. Contribution by François Fabien.
 
 with Corporate_Bullshit;
-with CGI;                use CGI;
+with CGI;
 with Ada.Calendar;       use Ada.Calendar;
 with Ada.Text_IO;        use Ada.Text_IO;
 with Ada.Exceptions;     use Ada.Exceptions;
@@ -29,7 +29,7 @@ procedure Live is
 
 begin
   --  1/ Send header
-  Put_CGI_Header; -- send Content-type: text/html
+  CGI.Put_CGI_Header; -- send Content-type: text/html
 
   --  2/ Generate HTML from template
   begin
