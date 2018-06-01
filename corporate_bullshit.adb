@@ -142,7 +142,7 @@ package body Corporate_Bullshit is
 
       function Department_or_Top_Role return String is
       begin
-         case R52 is
+         case R56 is
             when  1 => return "Visionary";
             when  2 => return "Digital";
             when  3 => return "Technical";
@@ -155,7 +155,8 @@ package body Corporate_Bullshit is
             when 10 => return "Sales";                 --  http://yetanotherico.com
             when 11 => return "Networking";            --  http://yetanotherico.com
             when 12 => return "Content";               --  http://yetanotherico.com
-            when 13 => return "Holacracy";  --  "Bullshit jobs" article, Les Echos
+            when 13 => return "Holacracy";        --  "Bullshit jobs" article, Les Echos
+            when 14 => return "Data Protection";  --  GDPR mania, 2018
             when others =>
                return Department;
         end case;
