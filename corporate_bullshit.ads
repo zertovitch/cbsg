@@ -16,7 +16,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2016
+--  Copyright (c) Gautier de Montmollin 2006 .. 2018
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -49,11 +49,9 @@ generic
 package Corporate_Bullshit is
 
    function Sentence return String;
-
    function Workshop return String;
-
    function Short_Workshop return String;
-
+   function Short_Meeting return String;
    function Financial_Report return String;
 
 end Corporate_Bullshit;

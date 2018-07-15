@@ -2152,6 +2152,11 @@ package body Corporate_Bullshit is
       return Sentence_Guaranteed_Amount (30, Dialog_Mark);
    end Short_Workshop;
 
+   function Short_Meeting return String is
+   begin
+      return Sentence_Guaranteed_Amount (5, Dialog_Mark);
+   end Short_Meeting;
+
    function Financial_Report return String is
    begin
       return Sentence_Guaranteed_Amount (20, "");

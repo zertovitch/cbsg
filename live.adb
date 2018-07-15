@@ -49,7 +49,7 @@ begin
       --  Current line of the template file
       Line : constant String := Get_Line;
       --  Each of these tags will be dynamically replaced by a special content
-      type Special_tag is (sentence, short_workshop, seconds_elapsed);
+      type Special_tag is (sentence, short_workshop, short_meeting, seconds_elapsed);
       --  The tags in the template appear as: "@_" & Special_tag'Image(t) & "_@";
       special_tag_found : Boolean := False;
     begin
@@ -67,6 +67,8 @@ begin
                 Put (HTML_Corporate_Bullshit.Sentence);
               when short_workshop =>
                 Put (HTML_Corporate_Bullshit.Short_Workshop);
+              when short_meeting =>
+                Put (HTML_Corporate_Bullshit.Short_Meeting);
               when seconds_elapsed =>
                 Put (Duration'Image (Clock - Start_time));
             end case;
