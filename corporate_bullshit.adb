@@ -284,7 +284,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R440 is
+      case R442 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -740,6 +740,8 @@ package body Corporate_Bullshit is
          when 438 => return "contingent";
          when 439 => return "tangent";
          when 440 => return "moment-centric";
+         when 441 => return "real-world";
+         when 442 => return "inclusive";
       end case;
    end Thing_Adjective;
 
@@ -1660,7 +1662,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P : Plurality) return String is
       function Inner return String is
       begin
-         case R9 is
+         case R10 is
             when 1  => return "address";
             when 2  => return "identify";
             when 3  => return "avoid";
@@ -1670,6 +1672,7 @@ package body Corporate_Bullshit is
             when 7  => return "tackle";
             when 8  => return "reduce";
             when 9  => return "alleviate";
+            when 10 => return "filter out";
          end case;
       end Inner;
    begin
