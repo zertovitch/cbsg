@@ -285,7 +285,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R442 is
+      case R443 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -743,6 +743,7 @@ package body Corporate_Bullshit is
          when 440 => return "moment-centric";
          when 441 => return "real-world";
          when 442 => return "inclusive";
+         when 443 => return "efficiency-enabling";
       end case;
    end Thing_Adjective;
 
@@ -1437,7 +1438,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R120 is -- proportion: 3/4 empty adverb
+      case R124 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -1470,6 +1471,7 @@ package body Corporate_Bullshit is
          when 28 => return "aggressively ";  --  2011 Golden Flannel Awards article
          when 29 => return "cost-effectively ";
          when 30 => return "proactively ";
+         when 31 => return "inherently ";
          when others => return "";
       end case;
    end Eventual_Adverb;
