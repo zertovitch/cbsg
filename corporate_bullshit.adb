@@ -27,6 +27,7 @@ package body Corporate_Bullshit is
    --   * ...a [s-whatever] that puts [s-whatever] at the center
    --       of the organization's [whatever]
    --   * "...is top-of-mind", "...is key", "...is critical"
+   --   * "How to win?"
 
    -- Persons or groups --
 
@@ -285,7 +286,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R443 is
+      case R444 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -744,6 +745,7 @@ package body Corporate_Bullshit is
          when 441 => return "real-world";
          when 442 => return "inclusive";
          when 443 => return "efficiency-enabling";
+         when 444 => return "value-creating";
       end case;
    end Thing_Adjective;
 
@@ -1386,7 +1388,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R44 is
+      case R45 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1403,7 +1405,7 @@ package body Corporate_Bullshit is
          when 14 => return "threats";    -- The T in SWOT
          when 15 => return "barriers to success";
          when 16 => return "barriers";
-         when 17 => return "shortcomings";
+         when 17 => return "barriers to growth";  --  Seen in a train, on a printed presentation
          when 18 => return "problems";
          when 19 => return "uncertainties";
          when 20 => return "unfavorable developments";
@@ -1431,6 +1433,7 @@ package body Corporate_Bullshit is
          when 42 => return "negative cash flows";                --  Article about doublespeak
          when 43 => return "net profit revenue deficiencies";    --  Article about doublespeak
          when 44 => return "negative contributions to profits";  --  Article about doublespeak
+         when 45 => return "shortcomings";
       end case;
    end Bad_Things;
 
