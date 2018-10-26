@@ -144,7 +144,7 @@ package body Corporate_Bullshit is
 
       function Department_or_Top_Role return String is
       begin
-         case R56 is
+         case R57 is
             when  1 => return "Visionary";
             when  2 => return "Digital";
             when  3 => return "Technical";
@@ -159,6 +159,7 @@ package body Corporate_Bullshit is
             when 12 => return "Content";               --  http://yetanotherico.com
             when 13 => return "Holacracy";        --  "Bullshit jobs" article, Les Echos
             when 14 => return "Data Protection";  --  GDPR mania, 2018
+            when 15 => return "Risk Appetite";    --  Job offering in a bank, 2018
             when others =>
                return Department;
         end case;
@@ -286,7 +287,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R445 is
+      case R447 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -747,6 +748,8 @@ package body Corporate_Bullshit is
          when 443 => return "efficiency-enabling";
          when 444 => return "value-creating";
          when 445 => return "alternative";
+         when 446 => return "fit-for-purpose";
+         when 447 => return "fast-changing";
       end case;
    end Thing_Adjective;
 
