@@ -160,6 +160,9 @@ package body Corporate_Bullshit is
             when 13 => return "Holacracy";        --  "Bullshit jobs" article, Les Echos
             when 14 => return "Data Protection";  --  GDPR mania, 2018
             when 15 => return "Risk Appetite";    --  Job offering in a bank, 2018
+            --  Bloomberg 2018-10-29:
+            --  Snapchat CEO Named Chief Business Officer, Then Changed His Mind
+            when 16 => return "Business";
             when others =>
                return Department;
         end case;
