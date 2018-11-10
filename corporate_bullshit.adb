@@ -290,7 +290,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R448 is
+      case R449 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -539,7 +539,7 @@ package body Corporate_Bullshit is
          when 232 => return "long-running";
          when 233 => return "large-scale";
          when 234 => return "wide-ranging";
-         when 235 => return "active";
+         when 235 => return "wide-range";
          when 236 => return "stellar";
          when 237 => return "dramatic";
          when 238 => return "aggressive";
@@ -754,6 +754,7 @@ package body Corporate_Bullshit is
          when 446 => return "fit-for-purpose";
          when 447 => return "fast-changing";
          when 448 => return "onboarded";
+         when 449 => return "active";
       end case;
    end Thing_Adjective;
 
@@ -1500,7 +1501,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R240 is  --  proportion: ~ 4/5 empty postfixed adverb
+      case R245 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1552,6 +1553,7 @@ package body Corporate_Bullshit is
          when 46 => return " round-the-clock";
          when 47 => return " moving forward";
          when 48 => return " downstream";
+         when 49 => return " down the chain";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
