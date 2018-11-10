@@ -290,7 +290,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R447 is
+      case R448 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -753,6 +753,7 @@ package body Corporate_Bullshit is
          when 445 => return "alternative";
          when 446 => return "fit-for-purpose";
          when 447 => return "fast-changing";
+         when 448 => return "onboarded";
       end case;
    end Thing_Adjective;
 
@@ -1499,7 +1500,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R235 is  -- proportion: ~ 4/5 empty postfixed adverb
+      case R240 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1550,6 +1551,7 @@ package body Corporate_Bullshit is
          when 45 => return " from within the data";
          when 46 => return " round-the-clock";
          when 47 => return " moving forward";
+         when 48 => return " downstream";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1782,7 +1784,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R106 is
+         case R107 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -1895,6 +1897,7 @@ package body Corporate_Bullshit is
             when 104 => return "close the loop";
             when 105 => return "create value";
             when 106 => return "disrupt the status quo";
+            when 107 => return "be on the same page";
          end case;
       end Inner;
    begin
@@ -1910,9 +1913,10 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R2 is
+         case R3 is
             when  1 => return "add value";
             when  2 => return "deliver maximum impact";
+            when  3 => return "be on track";
          end case;
       end Inner;
    begin
@@ -1924,7 +1928,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_And_Ending (P : Plurality) return String is
       Compl_Sp : constant Plurality := Random_Plural;
    begin
-      case R102 is
+      case R103 is
          when 1 .. 55  =>
             return Thing_Verb_Having_Thing_Complement (P) &
               ' ' &
@@ -1932,7 +1936,7 @@ package body Corporate_Bullshit is
          when 56 .. 100 =>
             return Thing_Verb_Having_Person_Complement (P) &
               " the " & Person (Compl_Sp);
-         when 101 .. 102 =>
+         when 101 .. 103 =>
             return Thing_Verb_And_Definite_Ending (P);
       end case;
    end Thing_Verb_And_Ending;
