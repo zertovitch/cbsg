@@ -290,7 +290,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R449 is
+      case R453 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -755,6 +755,10 @@ package body Corporate_Bullshit is
          when 447 => return "fast-changing";
          when 448 => return "onboarded";
          when 449 => return "active";
+         when 450 => return "container packaged";
+         when 451 => return "dynamically managed";
+         when 452 => return "microservices-oriented";
+         when 453 => return "higher-quality";
       end case;
    end Thing_Adjective;
 
@@ -1109,7 +1113,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R432 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R437 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1292,6 +1296,11 @@ package body Corporate_Bullshit is
                when 176 => return "cost rationalization";  --  Article about doublespeak
                when 177 => return "strategic optionality";
                when 178 => return "product expertise";
+               when 179 => return "velocity";
+               when 180 => return "elasticity";
+               when 181 => return "value stream management";
+               when 182 => return "digital acceleration";
+               when 183 => return "quality control";
                --  Equiprobable:
                when others => return Inner;
             end case;
@@ -1397,7 +1406,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R45 is
+      case R46 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1429,7 +1438,7 @@ package body Corporate_Bullshit is
          when 29 => return "subpar returns";
          when 30 => return "gaps";
          when 31 => return "market gaps";
-         when 32 => return "pitfalls";
+         when 32 => return "capability gaps";
          when 33 => return "constraints";
          when 34 => return "problems/difficulties";
          when 35 => return "bottlenecks";
@@ -1443,6 +1452,7 @@ package body Corporate_Bullshit is
          when 43 => return "net profit revenue deficiencies";    --  Article about doublespeak
          when 44 => return "negative contributions to profits";  --  Article about doublespeak
          when 45 => return "shortcomings";
+         when 46 => return "pitfalls";
       end case;
    end Bad_Things;
 
@@ -1966,7 +1976,7 @@ package body Corporate_Bullshit is
    --
    function Faukon return String is
    begin
-      case R14 is
+      case R15 is
          when 1 => return "we need to";
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
@@ -1981,6 +1991,7 @@ package body Corporate_Bullshit is
          when 12 => return "to continue our growth, we must";
          when 13 => return "we are going to";
          when 14 => return "we look forward to working together to";
+         when 15 => return "in order to improve, you need to";
       end case;
    end Faukon;
 
@@ -1993,7 +2004,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1 : constant Plurality := Random_Plural;
    begin
-      case R109 is
+      case R110 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -2056,13 +2067,16 @@ package body Corporate_Bullshit is
          when 109 =>
             return
                Thing_Atom (Singular) & " is a matter of speed of action";
+         when 110 =>
+            return
+               Thing_Atom (Singular) & " won't happen without " & Thing_Atom (Sp1);
       end case;
    end Proposition;
 
    function Articulated_Propositions return String is
      P : Plurality;
    begin
-      case R411 is
+      case R412 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2124,6 +2138,7 @@ package body Corporate_Bullshit is
                Thing_Atom (Singular) & " - all are competing for the attention of " &
                Person (Plural);
          when 411 => return "success brings success";  --  Thx Marco!
+         when 412 => return "everyone is coming to grips with the fact that " & Proposition;
       end case;
    end Articulated_Propositions;
 
