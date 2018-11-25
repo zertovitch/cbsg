@@ -290,7 +290,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R453 is
+      case R458 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -650,7 +650,7 @@ package body Corporate_Bullshit is
          when 343 => return "task-oriented";
          when 344 => return "teamwork-oriented";
          when 345 => return "high-growth";
-         when 346 => return "fast-track";
+         when 346 => return "next-gen";
          when 347 => return "next-generation";
          when 348 => return "new-generation";
          when 349 => return "best-in-class";
@@ -759,6 +759,11 @@ package body Corporate_Bullshit is
          when 451 => return "dynamically managed";
          when 452 => return "microservices-oriented";
          when 453 => return "higher-quality";
+         when 454 => return "brute-force";
+         when 455 => return "enterprise-sales-driven";
+         when 456 => return "developer-led";
+         when 457 => return "fast-track";
+         when 458 => return "highly differentiated";
       end case;
    end Thing_Adjective;
 
@@ -843,7 +848,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R254 is
+         case R255 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1107,6 +1112,7 @@ package body Corporate_Bullshit is
             when 252 => return "force management program";  --  Article about doublespeak
             when 253 => return "launchpad";
             when 254 => return "value-chain";
+            when 255 => return "motion";
          end case;
       end Inner;
 
@@ -2076,7 +2082,7 @@ package body Corporate_Bullshit is
    function Articulated_Propositions return String is
      P : Plurality;
    begin
-      case R412 is
+      case R413 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2139,6 +2145,12 @@ package body Corporate_Bullshit is
                Person (Plural);
          when 411 => return "success brings success";  --  Thx Marco!
          when 412 => return "everyone is coming to grips with the fact that " & Proposition;
+         when 413 =>
+            return
+            Thing (Plural) &
+            " will be a thing of the past over the next decade" &
+            " and be fully replaced with " &
+            Thing (Random_Plural);
       end case;
    end Articulated_Propositions;
 
