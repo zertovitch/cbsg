@@ -808,7 +808,7 @@ package body Corporate_Bullshit is
 
       function Superlative return String is
       begin
-         case R29 is
+         case R30 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -841,6 +841,7 @@ package body Corporate_Bullshit is
             when 27 => return "continual";
             when 28 => return "above-potential";
             when 29 => return "better-than-average";
+            when 30 => return "exponential";  --  Search: "Use of the phrase 'exponential growth' by decade"
          end case;
       end Superlative;
 
