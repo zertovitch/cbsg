@@ -1126,7 +1126,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R440 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R441 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1315,11 +1315,12 @@ package body Corporate_Bullshit is
                when 182 => return "digital acceleration";
                when 183 => return "quality control";
                when 184 => return "decision-making";
+               when 185 => return "digital business";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R291 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R292 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1360,6 +1361,7 @@ package body Corporate_Bullshit is
                when 33 => return "competitive dynamics";   --  Article about doublespeak
                when 34 => return "workforce adjustments";  --  Article about doublespeak
                when 35 => return "lessons learned";
+               when 36 => return "core verticals";
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
@@ -1806,12 +1808,14 @@ package body Corporate_Bullshit is
       return Build_Plural_Verb (Inner, P);
    end Thing_Verb_Having_Person_Complement;
 
+   function Person_Infinitive_Verb_And_Ending return String;
+
    function Person_Verb_And_Definite_Ending (P : Plurality; Infinitive : Boolean) return String is
       --  NB: this function produces an eventual definite complement
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R107 is
+         case R111 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -1925,6 +1929,11 @@ package body Corporate_Bullshit is
             when 105 => return "create value";
             when 106 => return "disrupt the status quo";
             when 107 => return "be on the same page";
+            when 108 => return "advance our strategy to " & Person_Infinitive_Verb_And_Ending;
+            when 109 => return "focus on our " & Thing_Atom (Plural) &
+                               " to " & Person_Infinitive_Verb_And_Ending;
+            when 110 => return "deliver greater value for our customers";
+            when 111 => return "generate new value for shareholders";
          end case;
       end Inner;
    begin
@@ -2019,7 +2028,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1 : constant Plurality := Random_Plural;
    begin
-      case R110 is
+      case R111 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -2085,6 +2094,10 @@ package body Corporate_Bullshit is
          when 110 =>
             return
                Thing_Atom (Singular) & " won't happen without " & Thing_Atom (Sp1);
+         when 111 =>
+            return
+               Add_Random_Article (Singular, Thing (Singular)) &
+               " will be best positioned to " & Person_Infinitive_Verb_And_Ending;
       end case;
    end Proposition;
 
