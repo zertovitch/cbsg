@@ -15,6 +15,9 @@ procedure Produce_Corporate_Bullshit is
                               Paragraph_End_Mark => "",
                               Dialog_Mark        => "");
 
+   Current_Output : constant Text_Streams.Stream_Access
+      := Text_Streams.Stream (Ada.Text_IO.Current_Output);
+   
    procedure Produce_Workshop_Report;
    procedure Produce_Workshop_Report is
       F : File_Type;
@@ -23,23 +26,21 @@ procedure Produce_Corporate_Bullshit is
       declare
          Output : constant Text_Streams.Stream_Access := Text_Streams.Stream (F);
       begin
-         String'Write (Output, "<head>");
-         String'Write (Output, "   <title>Corporate bullshit</title>");
-         String'Write (Output, "   <style type=""text/css"">");
-         String'Write (Output, "   li { margin-bottom: 1em }");
-         String'Write (Output, "   </style>");
-         String'Write (Output, "</head>");
-         String'Write (Output, "<body><p><h1>Workshop minutes</h1>");
-         String'Write (Output, "<ul>");
+         String'Write (Output, "<head>" & ASCII.LF);
+         String'Write (Output, "   <title>Corporate bullshit</title>" & ASCII.LF);
+         String'Write (Output, "   <style type=""text/css"">" & ASCII.LF);
+         String'Write (Output, "   li { margin-bottom: 1em }" & ASCII.LF);
+         String'Write (Output, "   </style>" & ASCII.LF);
+         String'Write (Output, "</head>" & ASCII.LF);
+         String'Write (Output, "<body><p><h1>Workshop minutes</h1>" & ASCII.LF);
+         String'Write (Output, "<ul>" & ASCII.LF);
          String'Write (Output, HTML_Corporate_Bullshit.Workshop);
-         String'Write (Output, "</ul></p></body></html>");
+         String'Write (Output, ASCII.LF & "</ul></p></body></html>" & ASCII.LF);
       end;
       Close (F);
-      Ada.Text_IO.Put_Line ("New corporate bullshit is in bullshit.html.  Enjoy.");
+      String'Write (Current_Output, "New corporate bullshit is in bullshit.html.  Enjoy." & ASCII.LF);
    end Produce_Workshop_Report;
 
-   Current_Output : constant Text_Streams.Stream_Access
-      := Text_Streams.Stream (Ada.Text_IO.Current_Output);
 begin
    if Ada.Command_Line.Argument_Count = 0 then
       Produce_Workshop_Report;
