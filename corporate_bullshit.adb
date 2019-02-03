@@ -290,7 +290,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R468 is
+      case R470 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -774,6 +774,8 @@ package body Corporate_Bullshit is
          when 466 => return "data-focused";
          when 467 => return "workforce-focused";
          when 468 => return "organization-focused";
+         when 469 => return "spot-on"; -- FOSDEM 2019
+         when 470 => return "distributed"; -- FOSDEM 2019, with regards to Fred Praca.
       end case;
    end Thing_Adjective;
 
@@ -859,7 +861,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R257 is
+         case R258 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1126,13 +1128,14 @@ package body Corporate_Bullshit is
             when 255 => return "motion";
             when 256 => return "customer-orientation";
             when 257 => return "realignment";
+            when 258 => return "governmentalization"; -- FOSDEM 2019
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R445 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R447 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1326,11 +1329,14 @@ package body Corporate_Bullshit is
                when 187 => return "Business Intelligence";
                when 188 => return "self-actualization";
                when 189 => return "leadership effectiveness";
+               when 190 => return "customer's journey"; -- FOSDEM 2019
+               when 191 => return "adding services"; -- FOSDEM 2019
+
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R292 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R293 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1372,6 +1378,7 @@ package body Corporate_Bullshit is
                when 34 => return "workforce adjustments";  --  Article about doublespeak
                when 35 => return "lessons learned";
                when 36 => return "core verticals";
+               when 37 => return "metrics"; -- FOSDEM 2019
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
@@ -1415,6 +1422,8 @@ package body Corporate_Bullshit is
                Thing_Adjective & " and " &
                Thing_Adjective & ' ' &
                Thing_Atom (P);
+         when 95 .. 100 =>
+            return """why"" behind " & Thing_Atom (P); -- FOSDEM 2019
          when others =>
             return Thing_Atom (P);
       end case;
@@ -1432,7 +1441,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R46 is
+      case R47 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1479,6 +1488,7 @@ package body Corporate_Bullshit is
          when 44 => return "negative contributions to profits";  --  Article about doublespeak
          when 45 => return "shortcomings";
          when 46 => return "pitfalls";
+         when 47 => return "friction"; -- FOSDEM 2019; note: not plural
       end case;
    end Bad_Things;
 
@@ -1716,7 +1726,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P : Plurality) return String is
       function Inner return String is
       begin
-         case R10 is
+         case R11 is
             when 1  => return "address";
             when 2  => return "identify";
             when 3  => return "avoid";
@@ -1727,6 +1737,7 @@ package body Corporate_Bullshit is
             when 8  => return "reduce";
             when 9  => return "alleviate";
             when 10 => return "filter out";
+            when 11 => return "remove"; -- FOSDEM 2019
          end case;
       end Inner;
    begin
@@ -2010,7 +2021,7 @@ package body Corporate_Bullshit is
    --
    function Faukon return String is
    begin
-      case R15 is
+      case R16 is
          when 1 => return "we need to";
          when 2 => return "we've got to";
          when 3 => return "the reporting unit should";
@@ -2026,14 +2037,13 @@ package body Corporate_Bullshit is
          when 13 => return "we are going to";
          when 14 => return "we look forward to working together to";
          when 15 => return "in order to improve, you need to";
+         when 16 => return "trending your numbers should"; -- FOSDEM 2019
       end case;
    end Faukon;
 
    function Person_Infinitive_Verb_And_Ending return String is
-   begin
-      return Person_Verb_And_Ending (Plural, Infinitive => True);
+      (Person_Verb_And_Ending (Plural, Infinitive => True));
       --  Plural: trick to get the infinitive, unless explicitely built as infinitive.
-   end;
 
    function Proposition return String is
       Sp1 : constant Plurality := Random_Plural;
