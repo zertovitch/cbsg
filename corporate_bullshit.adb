@@ -1423,22 +1423,20 @@ package body Corporate_Bullshit is
                Thing_Adjective & " and " &
                Thing_Adjective & ' ' &
                Thing_Atom (P);
-         when 95 .. 100 =>
-            return """why"" behind " & Thing_Atom (P); -- FOSDEM 2019
          when others =>
             return Thing_Atom (P);
       end case;
    end Thing;
 
-   ---------------------------------
-   --   The Bad Things. Whaaaa!   --
-   ---------------------------------
+   -----------------------------------
+   --   The Bad Things.   Whaaaa!   --
+   -----------------------------------
    --
    --  They are always in plural. Singular is avoided for two reasons:
    --
-   --  1. It would be too specific - someone would be tempted to ask for details!
-   --  2. It may be the beginning of a finger-pointing session. Better stay
-   --    impersonal to survive the meeting...
+   --    1. It would be too specific. Someone could be tempted to ask for details!
+   --    2. It may be the beginning of a finger-pointing session. Better stay
+   --         impersonal to survive the meeting...
 
    function Bad_Things return String is
    begin
@@ -1545,6 +1543,15 @@ package body Corporate_Bullshit is
       end case;
    end Add_Random_Article;
 
+   function Thing_With_Random_Article (P : Plurality) return String is
+   begin
+      if P = Singular and then R100 = 1 then
+         --  The "why" is always the "why". Why?
+         return "the ""why"" behind " & Thing_Atom (Random_Plural); -- FOSDEM 2019
+      end if;
+     return Add_Random_Article (P, Thing (P));
+   end Thing_With_Random_Article;
+
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
@@ -1559,16 +1566,16 @@ package body Corporate_Bullshit is
          when 7 => return " throughout the organization";
          when 8 => return " as part of the plan";
          when 9 => return " by thinking outside of the box";
-         when 10 => return " using " & Add_Random_Article (P, Thing (P));
-         when 11 => return " by leveraging " & Add_Random_Article (P, Thing (P));
-         when 12 => return " taking advantage of " & Add_Random_Article (P, Thing (P));
+         when 10 => return " using " & Thing_With_Random_Article (P);
+         when 11 => return " by leveraging " & Thing_With_Random_Article (P);
+         when 12 => return " taking advantage of " & Thing_With_Random_Article (P);
          when 13 => return " within the " & Matrix_Or_So;
          when 14 => return " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
          when 15 => return " across and beyond the " & Make_Eventual_Plural (Matrix_Or_So, Plural);
          when 16 => return " resulting in " & Add_Indefinite_Article (Singular, Growth);
          when 17 => return " reaped from our " & Growth;
          when 18 => return " as a consequence of " & Add_Indefinite_Article (Singular, Growth);
-         when 19 => return " because " & Add_Random_Article (P, Thing (P))
+         when 19 => return " because " & Thing_With_Random_Article (P)
                            & ' ' & Build_Plural_Verb ("produce", P) & ' '
                            & Add_Indefinite_Article (Singular, Growth);
          when 20 => return " ahead of schedule";
@@ -1990,7 +1997,7 @@ package body Corporate_Bullshit is
          when 1 .. 55  =>
             return Thing_Verb_Having_Thing_Complement (P) &
               ' ' &
-              Add_Random_Article (Compl_Sp, Thing (Compl_Sp));
+              Thing_With_Random_Article (Compl_Sp);
          when 56 .. 100 =>
             return Thing_Verb_Having_Person_Complement (P) &
               " the " & Person (Compl_Sp);
@@ -2014,7 +2021,7 @@ package body Corporate_Bullshit is
             return
               Person_Verb_Having_Thing_Complement (P, Infinitive) &
               ' ' &
-              Add_Random_Article (Compl_Sp, Thing (Compl_Sp));
+              Thing_With_Random_Article (Compl_Sp);
       end case;
    end Person_Verb_And_Ending;
 
@@ -2064,7 +2071,7 @@ package body Corporate_Bullshit is
               Eventual_Postfixed_Adverb;
          when 51 .. 92   => -- ** THING...
             return
-            Add_Random_Article (Sp1, Thing (Sp1)) & ' ' &
+            Thing_With_Random_Article (Sp1) & ' ' &
             Eventual_Adverb &
             Thing_Verb_And_Ending (Sp1) &
             Eventual_Postfixed_Adverb;
@@ -2117,13 +2124,12 @@ package body Corporate_Bullshit is
                Thing_Atom (Singular) & " won't happen without " & Thing_Atom (Sp1);
          when 111 =>
             return
-               Add_Random_Article (Singular, Thing (Singular)) &
+               Thing_With_Random_Article (Singular) &
                " will be best positioned to " & Person_Infinitive_Verb_And_Ending;
       end case;
    end Proposition;
 
    function Articulated_Propositions return String is
-     P : Plurality;
    begin
       case R413 is
          when   1 .. 270 => return Proposition;
@@ -2141,10 +2147,9 @@ package body Corporate_Bullshit is
                "the point is not merely to " & Person_Infinitive_Verb_And_Ending &
                ". The point is to " & Person_Infinitive_Verb_And_Ending;
          when 307 .. 310 =>
-            P := Random_Plural;
             return
                "it's not about " & Thing_Atom (Random_Plural) &
-               ". It's about " & Add_Random_Article (P, Thing (P));
+               ". It's about " & Thing_With_Random_Article (Random_Plural);
          when 381 .. 383 =>
             return
                "our challenge is not to " & Person_Infinitive_Verb_And_Ending &
