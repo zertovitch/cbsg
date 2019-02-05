@@ -1440,7 +1440,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R47 is
+      case R48 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1488,6 +1488,7 @@ package body Corporate_Bullshit is
          when 45 => return "shortcomings";
          when 46 => return "pitfalls";
          when 47 => return "friction"; -- FOSDEM 2019; note: not plural
+         when 48 => return "red flags";
       end case;
    end Bad_Things;
 
