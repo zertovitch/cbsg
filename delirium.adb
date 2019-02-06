@@ -31,6 +31,7 @@
 --  http://www.opensource.org/licenses/mit-license.php
 -------------------------------------------------------------------------
 
+with Ada.Characters.Handling;           use Ada.Characters.Handling;
 with Ada.Numerics.Float_Random;         use Ada.Numerics.Float_Random;
 with Ada.Numerics.Discrete_Random;
 with Ada.Strings.Fixed;                 use Ada.Strings.Fixed;
@@ -143,18 +144,24 @@ package body Delirium is
    end Add_Indefinite_Article;
 
    function Silly_Abbreviation_Generator_SAG (X : String) return String is
-      space : Natural;
+      space   : Natural;
+      initial : Character;
+      lower_X : constant String := To_Lower (X);
    begin
       if X'Length = 0 then
          return "";
       end if;
+      if Index (lower_X, "experience") = lower_X'First then
+         initial := 'X';  --  Special case: the 'x' in "experience"
+      else
+         initial := X (X'First);
+      end if;
       space := Index (X, " ");
       if space > X'First then
-         return
-            X (X'First) &
-            Silly_Abbreviation_Generator_SAG (X (space + 1 .. X'Last));
+         --  There is a space. We split the problem "a la Lisp".
+         return initial & Silly_Abbreviation_Generator_SAG (X (space + 1 .. X'Last));
       end if;
-      return (1 => X (X'First));
+      return (1 => initial);
    end Silly_Abbreviation_Generator_SAG;
 
    ----------------------

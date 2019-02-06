@@ -862,7 +862,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R258 is
+         case R259 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -985,7 +985,7 @@ package body Corporate_Bullshit is
             when 111 => return Abbreviate ("Strategic Management System", 0.5);
             when 112 => return "Balanced Scorecard";
             when 113 => return "key differentiator"; -- PDM
-            when 114 => return "case study";
+            when 114 => return "competitive differentiator";  --  Variant of key differentiator
             when 115 => return "idiosyncrasy"; -- ED
             when 116 => return "benefit";
             when 117 => return "say/do ratio";
@@ -1130,13 +1130,14 @@ package body Corporate_Bullshit is
             when 256 => return "customer-orientation";
             when 257 => return "realignment";
             when 258 => return "governmentalization"; -- FOSDEM 2019
+            when 259 => return "case study";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R447 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R449 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1186,8 +1187,8 @@ package body Corporate_Bullshit is
                when 44  => return "strategic thinking";
                when 45  => return "cross-fertilization"; -- Andy
                when 46  => return "cross-breeding";
-               when 47  => return "customer experience";
-               when 48  => return "centerpiece";
+               when 47  => return Abbreviate ("Customer Experience", 0.5);
+               when 48  => return Abbreviate ("Customer Experience Management", 0.5);
                when 49  => return "SWOT analysis";
                when 50  => return "responsibility";
                when 51  => return "accountability";
@@ -1332,12 +1333,13 @@ package body Corporate_Bullshit is
                when 189 => return "leadership effectiveness";
                when 190 => return "customer's journey"; -- FOSDEM 2019
                when 191 => return "adding services"; -- FOSDEM 2019
+               when 192 => return "centerpiece";
 
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R293 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R294 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1550,7 +1552,7 @@ package body Corporate_Bullshit is
          --  The "why" is always the "why". Why?
          return "the ""why"" behind " & Thing_Atom (Random_Plural); -- FOSDEM 2019
       end if;
-     return Add_Random_Article (P, Thing (P));
+      return Add_Random_Article (P, Thing (P));
    end Thing_With_Random_Article;
 
    function Eventual_Postfixed_Adverb return String is

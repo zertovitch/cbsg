@@ -17,7 +17,7 @@ procedure Produce_Corporate_Bullshit is
 
    Current_Output : constant Text_Streams.Stream_Access
       := Text_Streams.Stream (Ada.Text_IO.Current_Output);
-   
+
    procedure Produce_Workshop_Report;
    procedure Produce_Workshop_Report is
       F : File_Type;
