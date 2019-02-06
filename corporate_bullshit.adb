@@ -1137,7 +1137,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R449 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R451 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1334,6 +1334,8 @@ package body Corporate_Bullshit is
                when 190 => return "customer's journey"; -- FOSDEM 2019
                when 191 => return "adding services"; -- FOSDEM 2019
                when 192 => return "centerpiece";
+               when 193 => return "reinvention in the digital age";
+               when 194 => return "modern simplicity";
 
                --  Equiprobable:
                when others => return Inner;
@@ -2059,7 +2061,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1 : constant Plurality := Random_Plural;
    begin
-      case R111 is
+      case R112 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -2129,12 +2131,15 @@ package body Corporate_Bullshit is
             return
                Thing_With_Random_Article (Singular) &
                " will be best positioned to " & Person_Infinitive_Verb_And_Ending;
+         when 112 => 
+            return
+               Thing_Atom (Singular) & " calls for " & Thing_Atom (Sp1);
       end case;
    end Proposition;
 
    function Articulated_Propositions return String is
    begin
-      case R413 is
+      case R414 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2194,7 +2199,7 @@ package body Corporate_Bullshit is
                Thing_Atom (Singular) & ", " &
                Thing_Atom (Singular) & " - all are competing for the attention of " &
                Person (Plural);
-         when 411 => return "success brings success";  --  Thx Marco!
+         when 411 => return "success brings success";  --  Thx Marco Carenzo!
          when 412 => return "everyone is coming to grips with the fact that " & Proposition;
          when 413 =>
             return
@@ -2202,6 +2207,8 @@ package body Corporate_Bullshit is
             " will be a thing of the past over the next decade" &
             " and be fully replaced with " &
             Thing (Random_Plural);
+         when 414 =>
+            return "as the consumer and commerce landscape continues to evolve, " & Proposition;
       end case;
    end Articulated_Propositions;
 
