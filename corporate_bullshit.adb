@@ -1137,7 +1137,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R451 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R450 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1334,8 +1334,7 @@ package body Corporate_Bullshit is
                when 190 => return "customer's journey"; -- FOSDEM 2019
                when 191 => return "adding services"; -- FOSDEM 2019
                when 192 => return "centerpiece";
-               when 193 => return "reinvention in the digital age";
-               when 194 => return "modern simplicity";
+               when 193 => return "modern simplicity";
 
                --  Equiprobable:
                when others => return Inner;
@@ -2133,7 +2132,7 @@ package body Corporate_Bullshit is
                " will be best positioned to " & Person_Infinitive_Verb_And_Ending;
          when 112 => 
             return
-               Thing_Atom (Singular) & " calls for " & Thing_Atom (Sp1);
+               Thing_Atom (Singular) & " in the digital age calls for " & Thing_Atom (Sp1);
       end case;
    end Proposition;
 
