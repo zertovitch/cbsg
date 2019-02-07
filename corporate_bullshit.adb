@@ -862,7 +862,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R259 is
+         case R260 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1131,13 +1131,14 @@ package body Corporate_Bullshit is
             when 257 => return "realignment";
             when 258 => return "governmentalization"; -- FOSDEM 2019
             when 259 => return "case study";
+            when 260 => return "blockchain";  --  Thx Vinzent Hoefler
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R450 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R451 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1340,7 +1341,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R294 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R295 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
