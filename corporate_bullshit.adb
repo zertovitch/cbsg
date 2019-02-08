@@ -180,6 +180,8 @@ package body Corporate_Bullshit is
               return "Strategist";
             when 4 =>
               return "Technologist";
+            when 5 =>
+              return "Evangelist";
             when others =>
               return "Officer";
          end case;
@@ -202,7 +204,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R45 is
+            case R46 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -234,6 +236,7 @@ package body Corporate_Bullshit is
                when 29 => return "facilitator";
                when 30 => return "disruptor";
                when 31 => return "challenger";
+               when 32 => return "six-sigma black belt";
                when others =>  --  ~ 1/3
                   return Boss;
             end case;
@@ -278,12 +281,13 @@ package body Corporate_Bullshit is
 
    function Matrix_Or_So return String is
    begin
-      case R12 is
+      case R13 is
          when 1 .. 2  => return "organization"; -- a bit flat, but flashy combined with "within the "
          when 3 .. 6  => return "silo";   -- classic 1-dimension units in organizations
          when 7 .. 10 => return "matrix"; -- 2nd dimension, with dotted lines
          when 11      => return "cube";   -- 3rd dimension (Converium); at last then, the company has become totally dysfunctional)
          when 12      => return "sphere"; -- another esoteric 3-dimensional structure - ME 20-Jun-2011
+         when 13      => return "pyramid"; -- with a benevolent dictator for life at the top, of course.  Also a Thing.
       end case;
    end Matrix_Or_So;
 
@@ -291,7 +295,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R470 is
+      case R471 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -777,6 +781,7 @@ package body Corporate_Bullshit is
          when 468 => return "organization-focused";
          when 469 => return "spot-on"; -- FOSDEM 2019
          when 470 => return "distributed"; -- FOSDEM 2019, with regards to Fred Praca.
+         when 471 => return "deterministic"; -- but "non-deterministic" is just as good, see above
       end case;
    end Thing_Adjective;
 
@@ -786,7 +791,7 @@ package body Corporate_Bullshit is
          when 1 => return "kick-off";
          when 2 => return "roll-out";
          when 3 => return "client event";
-         when 4 => return "quarter results";
+         when 4 => return "quarterly results";
       end case;
    end Timeless_Event;
 
@@ -1138,7 +1143,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R451 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R452 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1336,12 +1341,13 @@ package body Corporate_Bullshit is
                when 191 => return "adding services"; -- FOSDEM 2019
                when 192 => return "centerpiece";
                when 193 => return "modern simplicity";
+               when 194 => return "cost control";
 
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R295 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R296 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1384,6 +1390,8 @@ package body Corporate_Bullshit is
                when 35 => return "lessons learned";
                when 36 => return "core verticals";
                when 37 => return "metrics"; -- FOSDEM 2019
+               when 38 => return "cost-control measures";
+
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
             end case;
@@ -1444,7 +1452,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R48 is
+      case R49 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1493,6 +1501,7 @@ package body Corporate_Bullshit is
          when 46 => return "pitfalls";
          when 47 => return "friction"; -- FOSDEM 2019; note: not plural
          when 48 => return "red flags";
+         when 49 => return "cost structure";
       end case;
    end Bad_Things;
 
@@ -1620,7 +1629,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P : Plurality; Infinitive : Boolean) return String is
       function Inner return String is
       begin
-         case R98 is
+         case R99 is
             when 1  => return "manage";
             when 2  => return "target";
             when 3  => return "streamline";
@@ -1722,6 +1731,7 @@ package body Corporate_Bullshit is
             when 96 => return "envisioneer";
             when 97 => return "reintermediate";
             when 98 => return "reframe";
+            when 99 => return "control";
          end case;
       end Inner;
    begin
@@ -1849,7 +1859,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R111 is
+         case R112 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -1968,6 +1978,7 @@ package body Corporate_Bullshit is
                                " to " & Person_Infinitive_Verb_And_Ending;
             when 110 => return "deliver greater value for our customers";
             when 111 => return "generate new value for shareholders";
+            when 112 => return "strengthen the balance sheet";
          end case;
       end Inner;
    begin
@@ -2131,7 +2142,7 @@ package body Corporate_Bullshit is
             return
                Thing_With_Random_Article (Singular) &
                " will be best positioned to " & Person_Infinitive_Verb_And_Ending;
-         when 112 => 
+         when 112 =>
             return
                Thing_Atom (Singular) & " in the digital age calls for " & Thing_Atom (Sp1);
       end case;
