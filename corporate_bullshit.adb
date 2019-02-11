@@ -98,7 +98,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R41 is
+         case R43 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -140,12 +140,14 @@ package body Corporate_Bullshit is
             when 39 => return "Information Security";  --  http://yetanotherico.com
             when 40 => return "Corporate Planning";
             when 41 => return "Enterprise Customer Experience"; -- (c) Maria Marino, 2018
+            when 42 => return "Growth Initiatives";
+            when 43 => return "Finance";
          end case;
       end Department;
 
       function Department_or_Top_Role return String is
       begin
-         case R57 is
+         case R58 is
             when  1 => return "Visionary";
             when  2 => return "Digital";
             when  3 => return "Technical";
@@ -295,7 +297,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R471 is
+      case R473 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -782,6 +784,8 @@ package body Corporate_Bullshit is
          when 469 => return "spot-on"; -- FOSDEM 2019
          when 470 => return "distributed"; -- FOSDEM 2019, with regards to Fred Praca.
          when 471 => return "deterministic"; -- but "non-deterministic" is just as good, see above
+         when 472 => return "converged";
+         when 473 => return "on-premise";
       end case;
    end Thing_Adjective;
 
@@ -867,7 +871,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R260 is
+         case R261 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1137,13 +1141,14 @@ package body Corporate_Bullshit is
             when 258 => return "governmentalization"; -- FOSDEM 2019
             when 259 => return "case study";
             when 260 => return "blockchain";  --  Thx Vinzent Hoefler
+            when 261 => return "Innovation Incubator";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R452 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R453 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1347,7 +1352,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R296 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R297 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
