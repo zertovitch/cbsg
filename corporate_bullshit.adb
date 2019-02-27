@@ -826,7 +826,7 @@ package body Corporate_Bullshit is
 
       function Superlative return String is
       begin
-         case R30 is
+         case R32 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -849,8 +849,8 @@ package body Corporate_Bullshit is
             when 17 => return "recurring";
             when 18 => return "sizeable";  --  (obtained by bootstrapping)
             when 19 => return "rapid";     --  (obtained by bootstrapping)
-            when 20 => return "breakneck";    --  (obtained by bootstrapping)
-            when 21 => return "profitable";   --  (obtained by bootstrapping)
+            when 20 => return "breakneck";    --  (obtained by bootstrapping) - usual pre-crash adjective
+            when 21 => return "profitable";   --  (obtained by bootstrapping) - usual post-crash adjective
             when 22 => return "disciplined";  --  (obtained by bootstrapping)
             when 23 => return "accelerated";  --  (obtained by bootstrapping)
             when 24 => return "impressive";
@@ -860,6 +860,8 @@ package body Corporate_Bullshit is
             when 28 => return "above-potential";
             when 29 => return "better-than-average";
             when 30 => return "exponential";  --  Search: "Use of the phrase 'exponential growth' by decade"
+            when 31 => return "long-term";  --  Used when the growth is not quite happening now...
+            when 32 => return "future";     --  Used when the growth is not quite happening now...
          end case;
       end Superlative;
 
