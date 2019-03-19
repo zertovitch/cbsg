@@ -873,7 +873,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R261 is
+         case R266 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1144,13 +1144,18 @@ package body Corporate_Bullshit is
             when 259 => return "case study";
             when 260 => return "blockchain";  --  Thx Vinzent Hoefler
             when 261 => return "Innovation Incubator";
+            when 262 => return "input";
+            when 263 => return "scope";
+            when 264 => return "action";
+            when 265 => return "context";
+            when 266 => return "next level";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R454 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R461 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1350,12 +1355,14 @@ package body Corporate_Bullshit is
                when 193 => return "modern simplicity";
                when 194 => return "cost control";
                when 195 => return "operations delivery";
+               when 196 => return "guidance";
+               when 197 => return "onboarding";
 
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R297 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R303 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1399,6 +1406,7 @@ package body Corporate_Bullshit is
                when 36 => return "core verticals";
                when 37 => return "metrics"; -- FOSDEM 2019
                when 38 => return "cost-control measures";
+               when 39 => return "expectations";
 
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
@@ -1517,7 +1525,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R124 is -- proportion: 3/4 empty adverb
+      case R128 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -1551,6 +1559,7 @@ package body Corporate_Bullshit is
          when 29 => return "cost-effectively ";
          when 30 => return "proactively ";
          when 31 => return "inherently ";
+         when 32 => return "directionally ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -1637,7 +1646,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P : Plurality; Infinitive : Boolean) return String is
       function Inner return String is
       begin
-         case R100 is
+         case R102 is
             when   1 => return "manage";
             when   2 => return "target";
             when   3 => return "streamline";
@@ -1739,6 +1748,8 @@ package body Corporate_Bullshit is
             when  98 => return "reframe";
             when  99 => return "control";
             when 100 => return "ideate";
+            when 101 => return "reprioritize";
+            when 102 => return "operate";  --  with or without ending
          end case;
       end Inner;
    begin
@@ -1866,7 +1877,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R112 is
+         case R113 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -1986,6 +1997,7 @@ package body Corporate_Bullshit is
             when 110 => return "deliver greater value for our customers";
             when 111 => return "generate new value for shareholders";
             when 112 => return "strengthen the balance sheet";
+            when 113 => return "operate";  --  with or without ending
          end case;
       end Inner;
    begin
