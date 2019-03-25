@@ -297,7 +297,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R474 is
+      case R478 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -787,6 +787,10 @@ package body Corporate_Bullshit is
          when 472 => return "converged";
          when 473 => return "on-premise";
          when 474 => return "company-first";
+         when 475 => return "multi-vendor";
+         when 476 => return "contextual";
+         when 477 => return "hybrid";
+         when 478 => return "higher-level";  --  High-level is not enough.
       end case;
    end Thing_Adjective;
 
@@ -874,7 +878,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R266 is
+         case R267 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1150,13 +1154,14 @@ package body Corporate_Bullshit is
             when 264 => return "action";
             when 265 => return "context";
             when 266 => return "next level";
+            when 267 => return "topology";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R462 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R463 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1364,7 +1369,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R303 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R304 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
