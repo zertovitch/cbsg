@@ -297,7 +297,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R478 is
+      case R483 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -781,9 +781,9 @@ package body Corporate_Bullshit is
          when 466 => return "data-focused";
          when 467 => return "workforce-focused";
          when 468 => return "organization-focused";
-         when 469 => return "spot-on"; -- FOSDEM 2019
-         when 470 => return "distributed"; -- FOSDEM 2019, with regards to Fred Praca.
-         when 471 => return "deterministic"; -- but "non-deterministic" is just as good, see above
+         when 469 => return "spot-on";       --  FOSDEM 2019
+         when 470 => return "distributed";   --  FOSDEM 2019, with regards to Fred Praca.
+         when 471 => return "deterministic"; --  but "non-deterministic" is just as good, see above
          when 472 => return "converged";
          when 473 => return "on-premise";
          when 474 => return "company-first";
@@ -791,6 +791,11 @@ package body Corporate_Bullshit is
          when 476 => return "contextual";
          when 477 => return "hybrid";
          when 478 => return "higher-level";  --  High-level is not enough.
+         when 479 => return "user-driven";
+         when 480 => return "full-stack";    --  E.g.: full-stack startup.
+         when 481 => return "build-as-you-go";
+         when 482 => return "fully-digital";
+         when 483 => return "agent-based";
       end case;
    end Thing_Adjective;
 
@@ -878,7 +883,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R267 is
+         case R268 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1063,7 +1068,7 @@ package body Corporate_Bullshit is
             when 173 => return "insight";
             when 174 => return "accomplishment";
             when 175 => return "correlation";
-            when 176 => return "touchpoint";
+            when 176 => return "touch point";
             when 177 => return "knowledge transfer";
             when 178 => return "correlation";
             when 179 => return "capability";
@@ -1155,13 +1160,14 @@ package body Corporate_Bullshit is
             when 265 => return "context";
             when 266 => return "next level";
             when 267 => return "topology";
+            when 268 => return "data point";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R463 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R464 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1364,12 +1370,13 @@ package body Corporate_Bullshit is
                when 196 => return "guidance";
                when 197 => return "onboarding";
                when 198 => return "cost structure";
+               when 199 => return "traction";
 
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R304 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R305 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1593,7 +1600,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R245 is  --  proportion: ~ 4/5 empty postfixed adverb
+      case R250 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1646,6 +1653,7 @@ package body Corporate_Bullshit is
          when 47 => return " moving forward";
          when 48 => return " downstream";
          when 49 => return " down the chain";
+         when 50 => return " in the space";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1653,7 +1661,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Thing_Complement (P : Plurality; Infinitive : Boolean) return String is
       function Inner return String is
       begin
-         case R102 is
+         case R103 is
             when   1 => return "manage";
             when   2 => return "target";
             when   3 => return "streamline";
@@ -1757,6 +1765,7 @@ package body Corporate_Bullshit is
             when 100 => return "ideate";
             when 101 => return "reprioritize";
             when 102 => return "operate";  --  with or without ending
+            when 103 => return "cascade";  --  E.g.: to cascade information
          end case;
       end Inner;
    begin
@@ -1774,7 +1783,7 @@ package body Corporate_Bullshit is
    function Person_Verb_Having_Bad_Thing_Complement (P : Plurality) return String is
       function Inner return String is
       begin
-         case R11 is
+         case R12 is
             when 1  => return "address";
             when 2  => return "identify";
             when 3  => return "avoid";
@@ -1786,6 +1795,7 @@ package body Corporate_Bullshit is
             when 9  => return "alleviate";
             when 10 => return "filter out";
             when 11 => return "remove"; -- FOSDEM 2019
+            when 12 => return "prevent";
          end case;
       end Inner;
    begin
