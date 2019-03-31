@@ -98,7 +98,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R43 is
+         case R44 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -142,6 +142,7 @@ package body Corporate_Bullshit is
             when 41 => return "Enterprise Customer Experience"; -- (c) Maria Marino, 2018
             when 42 => return "Growth Initiatives";
             when 43 => return "Finance";
+            when 44 => return "AI Strategy";
          end case;
       end Department;
 
@@ -297,7 +298,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R483 is
+      case R485 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -796,6 +797,8 @@ package body Corporate_Bullshit is
          when 481 => return "build-as-you-go";
          when 482 => return "fully-digital";
          when 483 => return "agent-based";
+         when 484 => return "AI-ready";
+         when 485 => return "managerial";
       end case;
    end Thing_Adjective;
 
@@ -1376,7 +1379,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R305 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R306 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1421,6 +1424,7 @@ package body Corporate_Bullshit is
                when 37 => return "metrics"; -- FOSDEM 2019
                when 38 => return "cost-control measures";
                when 39 => return "expectations";
+               when 40 => return "data practices";
 
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
