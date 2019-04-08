@@ -814,7 +814,7 @@ package body Corporate_Bullshit is
 
    function Growth_Atom return String is
    begin
-      case R17 is
+      case R18 is
          when 1 => return "growth";
          when 2 => return "improvement";
          when 3 => return "throughput increase";
@@ -832,6 +832,7 @@ package body Corporate_Bullshit is
          when 15 => return "profits growth";  --  ironical, from D. Stockman: https://dailyreckoning.com/hurricane-bearing-casino/
          when 16 => return "growth momentum";  --  (bootstrapped)
          when 17 => return "increase in sales";
+         when 18 => return "run-rate efficiency";  --  Convoluted form of "cost cutting"
       end case;
    end Growth_Atom;
 
@@ -886,7 +887,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R268 is
+         case R270 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1164,6 +1165,8 @@ package body Corporate_Bullshit is
             when 266 => return "next level";
             when 267 => return "topology";
             when 268 => return "data point";
+            when 269 => return "enablement";
+            when 270 => return "test-first design";    --  Agile development 2.0
          end case;
       end Inner;
 
@@ -2112,7 +2115,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1 : constant Plurality := Random_Plural;
    begin
-      case R112 is
+      case R114 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -2185,6 +2188,12 @@ package body Corporate_Bullshit is
          when 112 =>
             return
                Thing_Atom (Singular) & " in the digital age calls for " & Thing_Atom (Sp1);
+         when 113 =>
+            return
+               Thing_Atom (Singular) & " moves the company up the value chain";
+         when 114 =>
+            return
+               Thing_Atom (Singular) & " requires that we all pull in the same direction";
       end case;
    end Proposition;
 
