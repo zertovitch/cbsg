@@ -1173,7 +1173,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R464 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R470 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1377,12 +1377,13 @@ package body Corporate_Bullshit is
                when 197 => return "onboarding";
                when 198 => return "cost structure";
                when 199 => return "traction";
+               when 200 => return "ethos";  --  Thx Elias!
 
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R306 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R310 is -- assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1607,7 +1608,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R250 is  --  proportion: ~ 4/5 empty postfixed adverb
+      case R255 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1661,6 +1662,7 @@ package body Corporate_Bullshit is
          when 48 => return " downstream";
          when 49 => return " down the chain";
          when 50 => return " in the space";
+         when 51 => return " across the entire spectrum";  --  Thx Elias!
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
