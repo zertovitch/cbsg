@@ -298,7 +298,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R485 is
+      case R487 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -799,6 +799,8 @@ package body Corporate_Bullshit is
          when 483 => return "agent-based";
          when 484 => return "AI-ready";
          when 485 => return "managerial";
+         when 486 => return "industry-recognized";
+         when 487 => return "top-ranking";
       end case;
    end Thing_Adjective;
 
@@ -2201,7 +2203,7 @@ package body Corporate_Bullshit is
 
    function Articulated_Propositions return String is
    begin
-      case R414 is
+      case R415 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2271,6 +2273,8 @@ package body Corporate_Bullshit is
             Thing (Random_Plural);
          when 414 =>
             return "as the consumer and commerce landscape continues to evolve, " & Proposition;
+         when 415 =>
+            return "in an age of information, " & Proposition;
       end case;
    end Articulated_Propositions;
 
