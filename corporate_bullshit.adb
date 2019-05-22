@@ -1175,7 +1175,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R470 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R471 is -- assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1380,6 +1380,7 @@ package body Corporate_Bullshit is
                when 198 => return "cost structure";
                when 199 => return "traction";
                when 200 => return "ethos";  --  Thx Elias!
+               when 201 => return "auditability";
 
                --  Equiprobable:
                when others => return Inner;
@@ -1492,7 +1493,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R49 is
+      case R50 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1542,6 +1543,7 @@ package body Corporate_Bullshit is
          when 47 => return "friction"; -- FOSDEM 2019; note: not plural
          when 48 => return "red flags";
          when 49 => return "roadblocks";
+         when 50 => return "decision-making biases";
       end case;
    end Bad_Things;
 
@@ -2203,7 +2205,7 @@ package body Corporate_Bullshit is
 
    function Articulated_Propositions return String is
    begin
-      case R415 is
+      case R416 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2275,6 +2277,8 @@ package body Corporate_Bullshit is
             return "as the consumer and commerce landscape continues to evolve, " & Proposition;
          when 415 =>
             return "in an age of information, " & Proposition;
+         when 416 =>
+            return "in a growing digital environment, " & Proposition;
       end case;
    end Articulated_Propositions;
 
