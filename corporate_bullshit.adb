@@ -842,7 +842,7 @@ package body Corporate_Bullshit is
 
       function Superlative return String is
       begin
-         case R32 is
+         case R33 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -878,6 +878,7 @@ package body Corporate_Bullshit is
             when 30 => return "exponential";  --  Search: "Use of the phrase 'exponential growth' by decade"
             when 31 => return "long-term";  --  Used when the growth is not quite happening now...
             when 32 => return "future";     --  Used when the growth is not quite happening now...
+            when 33 => return "step-function";
          end case;
       end Superlative;
 
@@ -1551,7 +1552,7 @@ package body Corporate_Bullshit is
 
    function Eventual_Adverb return String is
    begin
-      case R128 is -- proportion: 3/4 empty adverb
+      case R136 is -- proportion: 3/4 empty adverb
          when 1 => return "interactively ";
          when 2 => return "credibly ";
          when 3 => return "quickly ";
@@ -1586,6 +1587,8 @@ package body Corporate_Bullshit is
          when 30 => return "proactively ";
          when 31 => return "inherently ";
          when 32 => return "directionally ";
+         when 33 => return "relentlessly ";
+         when 34 => return "radically ";
          when others => return "";
       end case;
    end Eventual_Adverb;
@@ -1907,7 +1910,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R113 is
+         case R114 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -2028,6 +2031,7 @@ package body Corporate_Bullshit is
             when 111 => return "generate new value for shareholders";
             when 112 => return "strengthen the balance sheet";
             when 113 => return "operate";  --  with or without ending
+            when 114 => return "move up the power curve";
          end case;
       end Inner;
    begin
