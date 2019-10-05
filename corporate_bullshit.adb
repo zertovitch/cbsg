@@ -1910,7 +1910,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R114 is
+         case R115 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -2032,6 +2032,7 @@ package body Corporate_Bullshit is
             when 112 => return "strengthen the balance sheet";
             when 113 => return "operate";  --  with or without ending
             when 114 => return "move up the power curve";
+            when 115 => return "cut the dry business";
          end case;
       end Inner;
    begin
