@@ -92,13 +92,14 @@ package body Corporate_Bullshit is
          case R20 is
             when 1 => return "Group ";
             when 2 => return "Global ";
+            when 3 => return "Enterprise ";
             when others => return "";
          end case;
       end Groupal;
 
       function Department return String is
       begin
-         case R44 is
+         case R45 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -139,10 +140,11 @@ package body Corporate_Bullshit is
             when 38 => return "Creativity and Innovation";  --  "Bullshit jobs" article, Les Echos
             when 39 => return "Information Security";  --  http://yetanotherico.com
             when 40 => return "Corporate Planning";
-            when 41 => return "Enterprise Customer Experience"; -- (c) Maria Marino, 2018
+            when 41 => return "Customer Experience"; -- (c) Maria Marino, 2018
             when 42 => return "Growth Initiatives";
             when 43 => return "Finance";
             when 44 => return "AI Strategy";
+            when 45 => return "Business Agility";  --  https://dilbert.com/strip/2019-10-28
          end case;
       end Department;
 
@@ -175,18 +177,15 @@ package body Corporate_Bullshit is
       function Officer_or_Catalyst return String is
       begin
          case R20 is
-            when 1 =>
-              return "Catalyst";  --  Guffpedia
-            when 2 =>
-              return "Futurist";  --  Tech bubble 2.0
-            when 3 =>
-              return "Strategist";
-            when 4 =>
-              return "Technologist";
-            when 5 =>
-              return "Evangelist";
+            when 1 => return "Catalyst";  --  Guffpedia
+            when 2 => return "Futurist";  --  Tech bubble 2.0
+            when 3 => return "Strategist";
+            when 4 => return "Technologist";
+            when 5 => return "Evangelist";
+            when 6 => return "Solutionist";  --  https://dilbert.com/strip/2019-10-28
+            when 7 => return "Influencer";   --  https://dilbert.com/strip/2019-10-28
             when others =>
-              return "Officer";
+               return "Officer";
          end case;
       end Officer_or_Catalyst;
 
@@ -298,7 +297,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R487 is
+      case R489 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -801,6 +800,8 @@ package body Corporate_Bullshit is
          when 485 => return "managerial";
          when 486 => return "industry-recognized";
          when 487 => return "top-ranking";
+         when 488 => return "empowering";
+         when 489 => return "courage-building";
       end case;
    end Thing_Adjective;
 
@@ -1176,7 +1177,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R471 is -- assume equiprobability between explicit singular and "others => ..." items
+            case R479 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1382,12 +1383,20 @@ package body Corporate_Bullshit is
                when 199 => return "traction";
                when 200 => return "ethos";  --  Thx Elias!
                when 201 => return "auditability";
+               when 202 => return "business agility";
+               when 203 => return "delivery of business value";
+               when 204 => return "agile planning";
+               when 205 => return "data science innovation";
+               when 206 => return "project management";
+               when 207 => return "business process quality engineering";
+               when 208 => return "field workforce optimization";
+               when 209 => return "business operations strategy design and velocity";
 
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R310 is -- assume equiprobability between explicit plural and "others => ..." items
+            case R313 is  --  assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1433,6 +1442,9 @@ package body Corporate_Bullshit is
                when 38 => return "cost-control measures";
                when 39 => return "expectations";
                when 40 => return "data practices";
+               when 41 => return "industry market shifts";
+               when 42 => return "regulatory pivots";
+               when 43 => return "customer behavior patterns";
 
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
@@ -1615,7 +1627,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R255 is  --  proportion: ~ 4/5 empty postfixed adverb
+      case R260 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1670,6 +1682,7 @@ package body Corporate_Bullshit is
          when 49 => return " down the chain";
          when 50 => return " in the space";
          when 51 => return " across the entire spectrum";  --  Thx Elias!
+         when 52 => return " as a matter of day-to-day operations";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1910,7 +1923,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R115 is
+         case R116 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -2003,7 +2016,7 @@ package body Corporate_Bullshit is
             when  87 => return "leverage the benefits of our differentiation";
             when  88 => return "stretch our data bucket";  --  Guffpedia
             when  89 => return "leapfrog the competition";
-            when  90 => return "take the elevator beyond the top floor";
+            when  90 => return "call ""check-mate"" ahead of competition";
             when  91 => return "stick to the knitting";
             when  92 => return "bring our vision to reality";
             when  93 => return "create an environment where " &
@@ -2033,6 +2046,7 @@ package body Corporate_Bullshit is
             when 113 => return "operate";  --  with or without ending
             when 114 => return "move up the power curve";
             when 115 => return "cut the dry business";
+            when 116 => return "take the elevator beyond the top floor";  --  Mind your heads!
          end case;
       end Inner;
    begin

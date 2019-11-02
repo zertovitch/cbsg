@@ -1,6 +1,6 @@
--- This is a GNAT, GCC or GNAT Programming Studio (GPS) project file
--- for the project Corporate Bullshit Generator ( http://sf.net/projects/cbsg/ )
--- Build me with "gnatmake -P delirium", or open me with GPS
+--  This is a GNAT, GCC or GNAT Programming Studio (GPS) project file
+--  for the project Corporate Bullshit Generator ( http://sf.net/projects/cbsg/ )
+--  Build me with "gnatmake -P delirium", or open me with GPS
 --
 project Delirium is
 
@@ -16,22 +16,23 @@ project Delirium is
       when "Fast" =>  for Object_Dir use "obj_fast";
    end case;
 
+   Common_Options := (
+      "-g",
+      "-gnatyM131",
+      "-gnatwa",
+      "-gnatyaknpr",  --  Style: check all casings: a:attribute, k:keywords, n:package Standard identifiers, p:pragma, r:identifier references
+      "-gnatyfhiu",   --  Style: check f:no ff/vtabs, h: no htabs, i:if-then layout, u:no unnecessary blank lines
+      "-gnatybct",    --  Style: check b:blanks at end of lines, c:comment format (two spaces), t:token separation rules
+      "-gnatyx",      --  Style: check x:no extra parens
+      "-gnatye"       --  Style: check e:end/exit labels present
+   );
+
    package Compiler is
       case Build_Mode is
          when "Debug" =>
-            for Default_Switches ("ada") use ("-g", "-gnatVa", "-gnato", "-gnatyM131", "-gnatwa",
-              "-gnatyaknpr",  --  Style: check all casings: a:attribute, k:keywords, n:package Standard identifiers, p:pragma, r:identifier references
-              "-gnatyfhiu",   --  Style: check f:no ff/vtabs, h: no htabs, i:if-then layout, u:no unnecessary blank lines
-              "-gnatybct",    --  Style: check b:blanks at end of lines, c:comment format (two spaces), t:token separation rules
-              "-gnatyx"       --  Style: check x:no extra parens
-            );
+            for Default_Switches ("ada") use Common_Options & ("-gnatVa", "-gnato");
          when "Fast" =>
-            for Default_Switches ("ada") use ("-g", "-O2", "-gnatpn", "-gnatyM131", "-gnatwa",
-              "-gnatyaknpr",  --  Style: check all casings: a:attribute, k:keywords, n:package Standard identifiers, p:pragma, r:identifier references
-              "-gnatyfhiu",   --  Style: check f:no ff/vtabs, h: no htabs, i:if-then layout, u:no unnecessary blank lines
-              "-gnatybct",    --  Style: check b:blanks at end of lines, c:comment format (two spaces), t:token separation rules
-              "-gnatyx"       --  Style: check x:no extra parens
-            );
+            for Default_Switches ("ada") use Common_Options & ("-g", "-O2", "-gnatpn");
       end case;
    end Compiler;
 
