@@ -297,7 +297,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R489 is
+      case R490 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -802,6 +802,7 @@ package body Corporate_Bullshit is
          when 487 => return "top-ranking";
          when 488 => return "empowering";
          when 489 => return "courage-building";
+         when 490 => return "multi-class";
       end case;
    end Thing_Adjective;
 
@@ -1177,7 +1178,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R479 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R481 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1384,13 +1385,15 @@ package body Corporate_Bullshit is
                when 200 => return "ethos";  --  Thx Elias!
                when 201 => return "auditability";
                when 202 => return "business agility";
-               when 203 => return "delivery of business value";
+               when 203 => return "capital agility";
                when 204 => return "agile planning";
                when 205 => return "data science innovation";
                when 206 => return "project management";
                when 207 => return "business process quality engineering";
                when 208 => return "field workforce optimization";
                when 209 => return "business operations strategy design and velocity";
+               when 210 => return "delivery of business value";
+               when 211 => return "client-centricity";
 
                --  Equiprobable:
                when others => return Inner;
@@ -2224,7 +2227,7 @@ package body Corporate_Bullshit is
 
    function Articulated_Propositions return String is
    begin
-      case R416 is
+      case R417 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2298,6 +2301,8 @@ package body Corporate_Bullshit is
             return "in an age of information, " & Proposition;
          when 416 =>
             return "in a growing digital environment, " & Proposition;
+         when 417 =>
+            return "to remain relevant, " & Proposition;
       end case;
    end Articulated_Propositions;
 
