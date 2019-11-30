@@ -1630,7 +1630,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R260 is  --  proportion: ~ 4/5 empty postfixed adverb
+      case R265 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1686,6 +1686,7 @@ package body Corporate_Bullshit is
          when 50 => return " in the space";
          when 51 => return " across the entire spectrum";  --  Thx Elias!
          when 52 => return " as a matter of day-to-day operations";
+         when 53 => return " by turning data into " & Thing (P);
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -2065,10 +2066,11 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R3 is
+         case R4 is
             when  1 => return "add value";
             when  2 => return "deliver maximum impact";
             when  3 => return "be on track";
+            when  4 => return "deliver value";
          end case;
       end Inner;
    begin
@@ -2080,7 +2082,7 @@ package body Corporate_Bullshit is
    function Thing_Verb_And_Ending (P : Plurality) return String is
       Compl_Sp : constant Plurality := Random_Plural;
    begin
-      case R103 is
+      case R104 is
          when 1 .. 55  =>
             return Thing_Verb_Having_Thing_Complement (P) &
               ' ' &
@@ -2088,7 +2090,7 @@ package body Corporate_Bullshit is
          when 56 .. 100 =>
             return Thing_Verb_Having_Person_Complement (P) &
               " the " & Person (Compl_Sp);
-         when 101 .. 103 =>
+         when 101 .. 104 =>
             return Thing_Verb_And_Definite_Ending (P);
       end case;
    end Thing_Verb_And_Ending;
@@ -2227,7 +2229,7 @@ package body Corporate_Bullshit is
 
    function Articulated_Propositions return String is
    begin
-      case R417 is
+      case R418 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2303,6 +2305,12 @@ package body Corporate_Bullshit is
             return "in a growing digital environment, " & Proposition;
          when 417 =>
             return "to remain relevant, " & Proposition;
+         when 418 =>
+            return "at the crossroads of " &
+               Thing_Atom (Singular) & ", " &
+               Thing_Atom (Singular) & " and " &
+               Thing_Atom (Singular) & ", " &
+               Proposition;
       end case;
    end Articulated_Propositions;
 
