@@ -243,7 +243,7 @@ package body Corporate_Bullshit is
                   return Boss;
             end case;
          when Plural =>
-            case R33 is
+            case R34 is
                when 1  => return "key people";
                when 2  => return "human resources";
                when 3  => return "customers";
@@ -277,6 +277,7 @@ package body Corporate_Bullshit is
                when 31 => return "Products Owners";
                when 32 => return "disruptors";
                when 33 => return "challengers";
+               when 34 => return "growers";  --  1996 article about Enron and others
             end case;
       end case;
    end Person;
@@ -297,7 +298,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R492 is
+      case R495 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -805,6 +806,9 @@ package body Corporate_Bullshit is
          when 490 => return "multi-class";
          when 491 => return "AI-ready";
          when 492 => return "AI-assisted";
+         when 493 => return "distinctive";  --  1996 article about Enron and others
+         when 494 => return "manageable";   --  1996 article about Enron and others
+         when 495 => return "bifocal";      --  1996 article about Enron and others
       end case;
    end Thing_Adjective;
 
@@ -1633,7 +1637,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R265 is  --  proportion: ~ 4/5 empty postfixed adverb
+      case R270 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1690,6 +1694,7 @@ package body Corporate_Bullshit is
          when 51 => return " across the entire spectrum";  --  Thx Elias!
          when 52 => return " as a matter of day-to-day operations";
          when 53 => return " by turning data into " & Thing (P);
+         when 54 => return " without pre-empting or constraining future flexibility";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;
@@ -1930,7 +1935,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R116 is
+         case R120 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -2024,7 +2029,7 @@ package body Corporate_Bullshit is
             when  88 => return "stretch our data bucket";  --  Guffpedia
             when  89 => return "leapfrog the competition";
             when  90 => return "call ""check-mate"" ahead of competition";
-            when  91 => return "stick to the knitting";
+            when  91 => return "preempt competitors";  --  1996 article about Enron and others
             when  92 => return "bring our vision to reality";
             when  93 => return "create an environment where " &
                Thing_Atom (Singular) & ", " &
@@ -2054,6 +2059,10 @@ package body Corporate_Bullshit is
             when 114 => return "move up the power curve";
             when 115 => return "cut the dry business";
             when 116 => return "take the elevator beyond the top floor";  --  Mind your heads!
+            when 117 => return "stick to the knitting";
+            when 118 => return "create new business options";   --  1996 article about Enron and others
+            when 119 => return "create strategic options and opportunities";  --  idem
+            when 120 => return "carve a competitive position";  --  1996 article about Enron and others
          end case;
       end Inner;
    begin
@@ -2232,7 +2241,7 @@ package body Corporate_Bullshit is
 
    function Articulated_Propositions return String is
    begin
-      case R418 is
+      case R420 is
          when   1 .. 270 => return Proposition;
          when 271 .. 280 => return Proposition & "; this is why " & Proposition;
          when 281 .. 290 => return Proposition & "; nevertheless " & Proposition;
@@ -2314,6 +2323,13 @@ package body Corporate_Bullshit is
                Thing_Atom (Singular) & " and " &
                Thing_Atom (Singular) & ", " &
                Proposition;
+         when 419 =>
+            return "one thing about " & Thing_Atom (Random_Plural) &
+                   " is clear: " & Proposition;  --  1996 article about Enron and others
+         when 420 =>
+            return "the appropriate strategy for the " & Matrix_Or_So &
+                   " depends on where it is today and on the state of the world down the road";
+                   --  1996 article about Enron and others
       end case;
    end Articulated_Propositions;
 

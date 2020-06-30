@@ -38,8 +38,24 @@ procedure Produce_Corporate_Bullshit is
          String'Write (Output, ASCII.LF & "</ul></p></body></html>" & ASCII.LF);
       end;
       Close (F);
-      String'Write (Current_Output, "New corporate bullshit is in bullshit.html.  Enjoy." & ASCII.LF);
+      String'Write (Current_Output,
+         "New corporate bullshit is in bullshit.html.  Enjoy." &
+         "  Use switch -h for help about options." &
+         ASCII.LF);
    end Produce_Workshop_Report;
+
+   procedure Help is
+   begin
+      String'Write (Current_Output, "Options:" & ASCII.LF);
+      String'Write (Current_Output,
+         "  -1, --one, --sig     single sentence" & ASCII.LF);
+      String'Write (Current_Output,
+         "  -b, --bulk EXPR      infinite loop; shows only sentences with EXPR" & ASCII.LF);
+      String'Write (Current_Output,
+         "  -h, --help           this help" & ASCII.LF);
+      String'Write (Current_Output,
+         "  -w, --workshop       workshop format" & ASCII.LF);
+   end Help;
 
 begin
    if Ada.Command_Line.Argument_Count = 0 then
@@ -57,6 +73,11 @@ begin
         or Ada.Command_Line.Argument (J) = "-w"
       then
          Produce_Workshop_Report;
+      end if;
+      if Ada.Command_Line.Argument (J) = "--help"
+        or Ada.Command_Line.Argument (J) = "-h"
+      then
+         Help;
       end if;
       if Ada.Command_Line.Argument (J) = "--bulk"
         or Ada.Command_Line.Argument (J) = "-b"
