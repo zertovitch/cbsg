@@ -2152,12 +2152,11 @@ package body Corporate_Bullshit is
 
    function Person_Infinitive_Verb_And_Ending return String is
       (Person_Verb_And_Ending (Plural, Infinitive => True));
-      --  Plural: trick to get the infinitive, unless explicitely built as infinitive.
 
    function Proposition return String is
       Sp1 : constant Plurality := Random_Plural;
    begin
-      case R114 is
+      case R115 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -2236,6 +2235,9 @@ package body Corporate_Bullshit is
          when 114 =>
             return
                Thing_Atom (Singular) & " requires that we all pull in the same direction";
+         when 115 =>
+            return
+               "together, we " & Person_Verb_And_Ending (Plural, Infinitive => False);
       end case;
    end Proposition;
 
