@@ -2066,27 +2066,36 @@ package body Corporate_Bullshit is
          end case;
       end Inner;
    begin
-      if Infinitive then  --  be /= are
+      if Infinitive then
+         --  In general we could (mis)use the plural as an infinitive
+         --  but there are some exceptions: "be" /= "are"...
          return Inner;
       else
          return Build_Plural_Verb (Inner, P);
       end if;
    end Person_Verb_And_Definite_Ending;
 
-   function Thing_Verb_And_Definite_Ending (P : Plurality) return String is
+   function Thing_Verb_And_Definite_Ending (P : Plurality; Infinitive : Boolean) return String is
       --  NB: this function produces an eventual definite complement
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R4 is
+         case R5 is
             when  1 => return "add value";
             when  2 => return "deliver maximum impact";
             when  3 => return "be on track";
             when  4 => return "deliver value";
+            when  5 => return "deliver the best possible value";
          end case;
       end Inner;
    begin
-      return Build_Plural_Verb (Inner, P);
+      if Infinitive then
+         --  In general we could (mis)use the plural as an infinitive
+         --  but there are some exceptions: "be" /= "are"...
+         return Inner;
+      else
+         return Build_Plural_Verb (Inner, P);
+      end if;
    end Thing_Verb_And_Definite_Ending;
 
    --  Verb + Ending. Ending is a Complement or something else
@@ -2103,7 +2112,7 @@ package body Corporate_Bullshit is
             return Thing_Verb_Having_Person_Complement (P) &
               " the " & Person (Compl_Sp);
          when 101 .. 104 =>
-            return Thing_Verb_And_Definite_Ending (P);
+            return Thing_Verb_And_Definite_Ending (P, Infinitive => False);
       end case;
    end Thing_Verb_And_Ending;
 
@@ -2156,7 +2165,7 @@ package body Corporate_Bullshit is
    function Proposition return String is
       Sp1 : constant Plurality := Random_Plural;
    begin
-      case R115 is
+      case R116 is
          when 1 .. 5    => -- "We need to..."
             return
             Faukon & ' ' &
@@ -2236,6 +2245,11 @@ package body Corporate_Bullshit is
             return
                Thing_Atom (Singular) & " requires that we all pull in the same direction";
          when 115 =>
+            return
+               Thing_Atom (Singular) & " requires truly optimizing " &
+               Thing_Atom (Singular) & " to " &
+               Thing_Verb_And_Definite_Ending (Plural, Infinitive => True);
+         when 116 =>
             return
                "together, we " & Person_Verb_And_Ending (Plural, Infinitive => False);
       end case;
