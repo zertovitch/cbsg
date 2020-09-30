@@ -898,7 +898,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R271 is
+         case R272 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1179,13 +1179,14 @@ package body Corporate_Bullshit is
             when 269 => return "enablement";
             when 270 => return "test-first design";    --  Agile development 2.0
             when 271 => return "R&D initiative";
+            when 272 => return "aspirational destination";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R482 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R483 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1406,7 +1407,7 @@ package body Corporate_Bullshit is
                when others => return Inner;
             end case;
          when Plural =>
-            case R314 is  --  assume equiprobability between explicit plural and "others => ..." items
+            case R315 is  --  assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
