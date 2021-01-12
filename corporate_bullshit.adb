@@ -1186,7 +1186,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R483 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R484 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1402,7 +1402,8 @@ package body Corporate_Bullshit is
                when 209 => return "business operations strategy design and velocity";
                when 210 => return "delivery of business value";
                when 211 => return "client-centricity";
-
+               --  2021-01-12: https://finance.yahoo.com/ : "2021's buzziest phrase has already been a winner" :
+               when 212 => return "operating leverage";
                --  Equiprobable:
                when others => return Inner;
             end case;
