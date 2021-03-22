@@ -824,7 +824,7 @@ package body Corporate_Bullshit is
 
    function Growth_Atom return String is
    begin
-      case R18 is
+      case R19 is
          when 1 => return "growth";
          when 2 => return "improvement";
          when 3 => return "throughput increase";
@@ -834,7 +834,7 @@ package body Corporate_Bullshit is
          when 7 => return "productivity improvement";
          when 8 => return "gain in task efficiency";
          when 9 => return "shift in value";  --  (obtained by bootstrapping)
-         when 10 => return "increase in margins";
+         when 10 => return "cost reduction scaling";
          when 11 => return "cost reduction";
          when 12 => return "cost effectiveness";
          when 13 => return "level of change";
@@ -843,6 +843,7 @@ package body Corporate_Bullshit is
          when 16 => return "growth momentum";  --  (bootstrapped)
          when 17 => return "increase in sales";
          when 18 => return "run-rate efficiency";  --  Convoluted form of "cost cutting"
+         when 19 => return "increase in margins";
       end case;
    end Growth_Atom;
 
@@ -1186,7 +1187,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R484 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R485 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1404,6 +1405,9 @@ package body Corporate_Bullshit is
                when 211 => return "client-centricity";
                --  2021-01-12: https://finance.yahoo.com/ : "2021's buzziest phrase has already been a winner" :
                when 212 => return "operating leverage";
+               when 213 => return "interplay between " &
+                                    Thing_Atom (Random_Plural) & " and " &
+                                    Thing_Atom (Random_Plural);
                --  Equiprobable:
                when others => return Inner;
             end case;
