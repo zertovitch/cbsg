@@ -1187,7 +1187,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R485 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R487 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1408,6 +1408,8 @@ package body Corporate_Bullshit is
                when 213 => return "interplay between " &
                                     Thing_Atom (Random_Plural) & " and " &
                                     Thing_Atom (Random_Plural);
+               when 214 => return "next stage of growth";
+               when 215 => return "high-volume production";
                --  Equiprobable:
                when others => return Inner;
             end case;
