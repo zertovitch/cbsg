@@ -298,7 +298,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R495 is
+      case R497 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -809,6 +809,8 @@ package body Corporate_Bullshit is
          when 493 => return "distinctive";  --  1996 article about Enron and others
          when 494 => return "manageable";   --  1996 article about Enron and others
          when 495 => return "bifocal";      --  1996 article about Enron and others
+         when 496 => return "cross-sector";
+         when 497 => return "interdisciplinary";
       end case;
    end Thing_Adjective;
 
@@ -851,7 +853,7 @@ package body Corporate_Bullshit is
 
       function Superlative return String is
       begin
-         case R33 is
+         case R35 is
             when 1 => return "organic";
             when 2 => return "double-digit";
             when 3 => return "upper single-digit";
@@ -888,6 +890,8 @@ package body Corporate_Bullshit is
             when 31 => return "long-term";  --  Used when the growth is not quite happening now...
             when 32 => return "future";     --  Used when the growth is not quite happening now...
             when 33 => return "step-function";
+            when 34 => return "outsized";
+            when 35 => return "step-change";
          end case;
       end Superlative;
 
@@ -899,7 +903,7 @@ package body Corporate_Bullshit is
 
       function Inner return String is -- can be made plural
       begin
-         case R272 is
+         case R273 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1168,7 +1172,7 @@ package body Corporate_Bullshit is
             when 257 => return "realignment";
             when 258 => return "governmentalization"; -- FOSDEM 2019
             when 259 => return "case study";
-            when 260 => return "blockchain";  --  Thx Vinzent Hoefler
+            when 260 => return "aspirational destination";
             when 261 => return "Innovation Incubator";
             when 262 => return "input";
             when 263 => return "scope";
@@ -1180,14 +1184,15 @@ package body Corporate_Bullshit is
             when 269 => return "enablement";
             when 270 => return "test-first design";    --  Agile development 2.0
             when 271 => return "R&D initiative";
-            when 272 => return "aspirational destination";
+            when 272 => return "blockchain";  --  Thx Vinzent Hoefler
+            when 273 => return "blockchain technology";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R487 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R490 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1410,11 +1415,13 @@ package body Corporate_Bullshit is
                                     Thing_Atom (Random_Plural);
                when 214 => return "next stage of growth";
                when 215 => return "high-volume production";
+               when 216 => return "artificial intelligence";
+               when 217 => return "DNA sequencing";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R315 is  --  assume equiprobability between explicit plural and "others => ..." items
+            case R317 is  --  assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -1463,6 +1470,7 @@ package body Corporate_Bullshit is
                when 41 => return "industry market shifts";
                when 42 => return "regulatory pivots";
                when 43 => return "customer behavior patterns";
+               when 44 => return "robotics";
 
                --  Equiprobable:
                when others => return Make_Eventual_Plural (Inner, Plural);
@@ -1645,7 +1653,7 @@ package body Corporate_Bullshit is
    function Eventual_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
-      case R270 is  --  proportion: ~ 4/5 empty postfixed adverb
+      case R275 is  --  proportion: ~ 4/5 empty postfixed adverb
          when 1 => return " going forward";
          when 2 => return " within the industry";
          when 3 => return " across the board";
@@ -1703,6 +1711,7 @@ package body Corporate_Bullshit is
          when 52 => return " as a matter of day-to-day operations";
          when 53 => return " by turning data into " & Thing (P);
          when 54 => return " without pre-empting or constraining future flexibility";
+         when 55 => return " as industries transform";
          when others => return "";
       end case;
    end Eventual_Postfixed_Adverb;

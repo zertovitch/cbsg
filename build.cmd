@@ -1,1 +1,1 @@
-gnatmake -p -P delirium
+gnatmake -P delirium
