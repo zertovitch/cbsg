@@ -298,7 +298,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R497 is
+      case R499 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -811,6 +811,8 @@ package body Corporate_Bullshit is
          when 495 => return "bifocal";      --  1996 article about Enron and others
          when 496 => return "cross-sector";
          when 497 => return "interdisciplinary";
+         when 498 => return "data-dependent";
+         when 499 => return "gradual";
       end case;
    end Thing_Adjective;
 
@@ -1532,7 +1534,7 @@ package body Corporate_Bullshit is
 
    function Bad_Things return String is
    begin
-      case R50 is
+      case R51 is
          when 1  => return "issues";
          when 2  => return "intricacies";
          when 3  => return "organizational diseconomies";
@@ -1583,6 +1585,7 @@ package body Corporate_Bullshit is
          when 48 => return "red flags";
          when 49 => return "roadblocks";
          when 50 => return "decision-making biases";
+         when 51 => return "second-round effects";
       end case;
    end Bad_Things;
 
