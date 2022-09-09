@@ -150,7 +150,7 @@ package body Corporate_Bullshit is
 
       function Department_or_Top_Role return String is
       begin
-         case R58 is
+         case R62 is
             when  1 => return "Visionary";
             when  2 => return "Digital";
             when  3 => return "Technical";
@@ -169,6 +169,7 @@ package body Corporate_Bullshit is
             --  Bloomberg 2018-10-29:
             --  Snapchat CEO Named Chief Business Officer, Then Changed His Mind
             when 16 => return "Business";
+            when 17 => return "People";
             when others =>
                return Department;
         end case;
@@ -1417,7 +1418,7 @@ package body Corporate_Bullshit is
                                     Thing_Atom (Random_Plural);
                when 214 => return "next stage of growth";
                when 215 => return "high-volume production";
-               when 216 => return "artificial intelligence";
+               when 216 => return Abbreviate ("Artificial Intelligence", 0.75);
                when 217 => return "DNA sequencing";
                --  Equiprobable:
                when others => return Inner;
