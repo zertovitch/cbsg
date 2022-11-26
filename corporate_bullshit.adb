@@ -47,9 +47,9 @@ package body Corporate_Bullshit is
          function Vice return String is
          begin
             case R40 is
-               when 1 .. 10  => return "Vice ";
-               when 11     => return "Corporate Vice ";
-               when others => return "";
+               when 1 .. 10 => return "Vice ";
+               when 11      => return "Corporate Vice ";
+               when others  => return "";
             end case;
          end Vice;
          function Co return String is
@@ -299,7 +299,7 @@ package body Corporate_Bullshit is
 
    function Thing_Adjective return String is
    begin
-      case R499 is
+      case R500 is
          when 1  => return "efficient";
          when 2  => return "strategic";
          when 3  => return "constructive";
@@ -814,6 +814,7 @@ package body Corporate_Bullshit is
          when 497 => return "interdisciplinary";
          when 498 => return "data-dependent";
          when 499 => return "gradual";
+         when 500 => return "industry-first";  --  https://www.weforum.org/organizations/ftx
       end case;
    end Thing_Adjective;
 
@@ -1195,7 +1196,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R490 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R491 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1420,6 +1421,7 @@ package body Corporate_Bullshit is
                when 215 => return "high-volume production";
                when 216 => return Abbreviate ("Artificial Intelligence", 0.75);
                when 217 => return "DNA sequencing";
+               when 218 => return "value added experience";
                --  Equiprobable:
                when others => return Inner;
             end case;
@@ -1956,7 +1958,7 @@ package body Corporate_Bullshit is
       --     after the verb, or no complement at all.
       function Inner return String is
       begin
-         case R120 is
+         case R124 is
             when   1 => return "streamline the process";
             when   2 => return "address the overarching issues";
             when   3 => return "benchmark the portfolio";
@@ -2069,8 +2071,13 @@ package body Corporate_Bullshit is
             when 104 => return "close the loop";
             when 105 => return "create value";
             when 106 => return "disrupt the status quo";
-            when 107 => return "be on the same page";
-            when 108 => return "advance our strategy to " & Person_Infinitive_Verb_And_Ending;
+            when 107 =>
+               --  Alameda Research:
+               return "make sure everyone is working together toward common " &
+                      "goals rather than working at cross purposes";
+            when 108 =>
+               return "advance our strategy to " &
+                      Person_Infinitive_Verb_And_Ending;
             when 109 => return "focus on our " & Thing_Atom (Plural) &
                                " to " & Person_Infinitive_Verb_And_Ending;
             when 110 => return "deliver greater value for our customers";
@@ -2084,6 +2091,11 @@ package body Corporate_Bullshit is
             when 118 => return "create new business options";   --  1996 article about Enron and others
             when 119 => return "create strategic options and opportunities";  --  idem
             when 120 => return "carve a competitive position";  --  1996 article about Enron and others
+            when 121 => return "be on the same page";
+            --  Alameda Research:
+            when 122 => return "make sure everyone is on the same page";
+            when 123 => return "have a culture of getting stuff done quickly";
+            when 124 => return "be able to move quickly and flexibly";
          end case;
       end Inner;
    begin
@@ -2160,16 +2172,16 @@ package body Corporate_Bullshit is
    --
    function Faukon return String is
    begin
-      case R16 is
-         when 1 => return "we need to";
-         when 2 => return "we've got to";
-         when 3 => return "the reporting unit should";
-         when 4 => return "controlling should";
-         when 5 => return "we must activate the " & Matrix_Or_So & " to";
-         when 6 => return "pursuing this route will enable us to";
-         when 7 => return "we will go the extra mile to";
-         when 8 => return "we are working hard to";
-         when 9 => return "we continue to work tirelessly and diligently to";
+      case R17 is
+         when  1 => return "we need to";
+         when  2 => return "we've got to";
+         when  3 => return "the reporting unit should";
+         when  4 => return "controlling should";
+         when  5 => return "we must activate the " & Matrix_Or_So & " to";
+         when  6 => return "pursuing this route will enable us to";
+         when  7 => return "we will go the extra mile to";
+         when  8 => return "we are working hard to";
+         when  9 => return "we continue to work tirelessly and diligently to";
          when 10 => return "we will execute to";
          when 11 => return "we will sharpen our business models to";
          when 12 => return "to continue our growth, we must";
@@ -2177,6 +2189,7 @@ package body Corporate_Bullshit is
          when 14 => return "we look forward to working together to";
          when 15 => return "in order to improve, you need to";
          when 16 => return "trending your numbers should"; -- FOSDEM 2019
+         when 17 => return "it is really important to";  --  Alameda Research
       end case;
    end Faukon;
 
