@@ -49,6 +49,7 @@ package body Corporate_Bullshit is
             case R40 is
                when 1 .. 10 => return "Vice ";
                when 11      => return "Corporate Vice ";
+               when 12      => return "Deputy ";
                when others  => return "";
             end case;
          end Vice;
@@ -62,11 +63,11 @@ package body Corporate_Bullshit is
       begin
          case R6 is
             when 1 => return Vice & Co & "Director";
-            when 2 => return Co & "Chief";
-            when 3 => return Co & "Head";
+            when 2 => return        Co & "Chief";
+            when 3 => return        Co & "Head";
             when 4 => return Vice & Co & "President";
-            when 5 => return "Supervisor";
-            when 6 => return Co & "Manager";
+            when 5 => return             "Supervisor";
+            when 6 => return        Co & "Manager";
          end case;
       end Title;
 
@@ -99,7 +100,7 @@ package body Corporate_Bullshit is
 
       function Department return String is
       begin
-         case R45 is
+         case R49 is
             when 1  => return "Human Resources";
             when 2  => return "Controlling";
             when 3  => return "Internal Audit";
@@ -145,6 +146,11 @@ package body Corporate_Bullshit is
             when 43 => return "Finance";
             when 44 => return "AI Strategy";
             when 45 => return "Business Agility";  --  https://dilbert.com/strip/2019-10-28
+            --  From an article in https://insideparadeplatz.ch , 2023-01-11 :
+            when 46 => return "Digital Client Lifecyle";
+            when 47 => return "Transformation Office";
+            when 48 => return "Project Portfolio Management";
+            when 49 => return "Organizational Change Management";
          end case;
       end Department;
 
@@ -286,12 +292,14 @@ package body Corporate_Bullshit is
    function Matrix_Or_So return String is
    begin
       case R13 is
-         when 1 .. 2  => return "organization"; -- a bit flat, but flashy combined with "within the "
-         when 3 .. 6  => return "silo";   -- classic 1-dimension units in organizations
-         when 7 .. 10 => return "matrix"; -- 2nd dimension, with dotted lines
-         when 11      => return "cube";   -- 3rd dimension (Converium); at last then, the company has become totally dysfunctional)
-         when 12      => return "sphere"; -- another esoteric 3-dimensional structure - ME 20-Jun-2011
-         when 13      => return "pyramid"; -- with a benevolent dictator for life at the top, of course.  Also a Thing.
+         when 1 .. 2  => return "organization"; --  A bit flat, but flashy combined with "within the "
+         when 3 .. 6  => return "silo";         --  Classic 1-dimension units in organizations
+         when 7 .. 10 => return "matrix";       --  2nd dimension, with dotted lines
+         when 11      => return "cube";         --  3rd dimension (Converium); at last then, the company
+                                                --    has become totally dysfunctional)
+         when 12      => return "sphere";       --  Another esoteric 3-dimensional structure - ME 20-Jun-2011
+         when 13      => return "pyramid";      --  With a benevolent dictator for life at the top, of course.
+                                                --    Also a Thing.
       end case;
    end Matrix_Or_So;
 
@@ -564,12 +572,12 @@ package body Corporate_Bullshit is
          when 248 => return "consumer-facing";
          when 249 => return "unified";
          when 250 => return "cooperative";
-         when 251 => return "laser-focused";  -- From a top diplomate
+         when 251 => return "laser-focused";  --  From a top diplomate
          when 252 => return "well-implemented";
          when 253 => return "diversifying";
          when 254 => return "market-changing";
-         when 255 => return "metrics-driven"; -- Found in an article about criminal activities reported with many details
-         when 256 => return "pre-integrated"; -- (obtained by bootstrapping)
+         when 255 => return "metrics-driven";  --  Found in an article about criminal activities.
+         when 256 => return "pre-integrated";  --  (obtained by bootstrapping)
          when 257 => return "solution-oriented";
          when 258 => return "impactful";
          when 259 => return "world-class";
@@ -590,7 +598,7 @@ package body Corporate_Bullshit is
          when 274 => return "tri-face";
          when 275 => return "disruptive";
          when 276 => return "technological";
-         when 277 => return "marketplace";  --  noun used as an adjective
+         when 277 => return "marketplace";  --  Noun used as an adjective
          when 278 => return "fast-evolving";
          when 279 => return "open";
          when 280 => return "fully networked";
@@ -845,7 +853,8 @@ package body Corporate_Bullshit is
          when 12 => return "cost effectiveness";
          when 13 => return "level of change";
          when 14 => return "revenue growth";
-         when 15 => return "profits growth";  --  ironical, from D. Stockman: https://dailyreckoning.com/hurricane-bearing-casino/
+         when 15 => return "profits growth";   --  Ironical, from D. Stockman:
+                                               --    https://dailyreckoning.com/hurricane-bearing-casino/
          when 16 => return "growth momentum";  --  (bootstrapped)
          when 17 => return "increase in sales";
          when 18 => return "run-rate efficiency";  --  Convoluted form of "cost cutting"
@@ -1412,7 +1421,8 @@ package body Corporate_Bullshit is
                when 209 => return "business operations strategy design and velocity";
                when 210 => return "delivery of business value";
                when 211 => return "client-centricity";
-               --  2021-01-12: https://finance.yahoo.com/ : "2021's buzziest phrase has already been a winner" :
+               --  2021-01-12: https://finance.yahoo.com/ :
+               --              "2021's buzziest phrase has already been a winner" :
                when 212 => return "operating leverage";
                when 213 => return "interplay between " &
                                     Thing_Atom (Random_Plural) & " and " &
@@ -1696,7 +1706,7 @@ package body Corporate_Bullshit is
          when 31 => return " in the marketplace";
          when 32 => return " by thinking and acting beyond boundaries";
          when 33 => return " at the individual, team and organizational level";
-         when 34 => return " ensuring " & Add_Indefinite_Article (P, Thing (P));  --  (obtained by bootstrapping)
+         when 34 => return " ensuring " & Add_Indefinite_Article (P, Thing (P));  --  (bootstrapping)
          when 35 => return " over the long term";
          when 36 => return " across geographies";  --  2012 Golden Flannel Awards article
          when 37 => return " in the core";         --  2011 Golden Flannel Awards article
@@ -2238,7 +2248,8 @@ package body Corporate_Bullshit is
             "there can be no " & Growth_Atom &
             " until we can achieve " & Add_Indefinite_Article (Singular, Growth);
          when 102 =>
-            return Thing (Plural) & " challenge us to " & Person_Infinitive_Verb_And_Ending;  --  (obtained by bootstrapping)
+            return Thing (Plural) & " challenge us to " & Person_Infinitive_Verb_And_Ending;
+                                    --  ^ (obtained by bootstrapping)
          when 103 =>
             return Thing (Singular) & " is all about " & Thing (Sp1);  --  (obtained by bootstrapping)
          when 104 =>

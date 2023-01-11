@@ -19,7 +19,7 @@ project Delirium is
 
    Common_Options := (
       "-g",
-      "-gnatyM131",
+      "-gnatyM110",
       "-gnatwa",
       "-gnatyaknpr",  --  Style: check all casings: a:attribute, k:keywords, n:package Standard identifiers, p:pragma, r:identifier references
       "-gnatyfhiu",   --  Style: check f:no ff/vtabs, h: no htabs, i:if-then layout, u:no unnecessary blank lines
