@@ -16,7 +16,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2019
+--  Copyright (c) Gautier de Montmollin 2006 .. 2023
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -46,6 +46,7 @@ generic
    Paragraph_Mark     : String;
    Paragraph_End_Mark : String;
    Dialog_Mark        : String;
+
 package Corporate_Bullshit is
 
    function Sentence return String;

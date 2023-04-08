@@ -1,6 +1,8 @@
-with Ada.Command_Line;
-with Ada.Text_IO.Text_Streams;                       use Ada.Text_IO;
 with Corporate_Bullshit;
+
+with Ada.Command_Line,
+     Ada.Text_IO.Text_Streams;
+
 with GNAT.Regpat;
 
 procedure Produce_Corporate_Bullshit is
@@ -14,6 +16,8 @@ procedure Produce_Corporate_Bullshit is
       new Corporate_Bullshit (Paragraph_Mark     => "",
                               Paragraph_End_Mark => "",
                               Dialog_Mark        => "");
+
+   use Ada.Text_IO;
 
    Current_Output : constant Text_Streams.Stream_Access
       := Text_Streams.Stream (Ada.Text_IO.Current_Output);

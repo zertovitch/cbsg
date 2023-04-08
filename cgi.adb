@@ -1,5 +1,5 @@
-with Ada.Strings.Maps, Ada.Characters.Handling, Interfaces.C.Strings, Text_IO;
-use  Ada.Strings.Maps, Ada.Characters.Handling, Interfaces.C.Strings, Text_IO;
+with Ada.Strings.Maps, Ada.Characters.Handling, Interfaces.C.Strings, Ada.Text_IO;
+use  Ada.Strings.Maps, Ada.Characters.Handling, Interfaces.C.Strings, Ada.Text_IO;
 with Ada.Strings.Maps.Constants;
 use  Ada.Strings.Maps.Constants;
 

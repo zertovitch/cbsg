@@ -2,11 +2,11 @@
 --  The Corporate Bullshit Generator (CBSG)
 --  See specification for sources, authors, contributors, license.
 -------------------------------------------------------------------------
---  NB: this package is done with the functional programming paradigm.
+--  NB: this package happens to apply the functional programming paradigm.
 --  http://en.wikipedia.org/wiki/Functional_programming
 
-with Ada.Characters.Handling;           use Ada.Characters.Handling;
-with Delirium;                          use Delirium;
+with Ada.Characters.Handling;
+with Delirium;
 
 package body Corporate_Bullshit is
 
@@ -14,7 +14,8 @@ package body Corporate_Bullshit is
    --   * Enrich the Proposition function
    --   * Person_adjective: "committed", "multi-skilled", "inspirational",
    --                       "high-caliber", "cross-trained", "multi-cultural",
-   --                       "fully-fledged"
+   --                       "fully-fledged", "performance-driven",
+   --                       "execution-focused"
    --   * other sentences; rhetorical questions
    --   * Slogans, such as: "It's about breaking down the silos"
    --     "less is more", "it's about quality, not about quantity",
@@ -28,6 +29,8 @@ package body Corporate_Bullshit is
    --       of the organization's [whatever]
    --   * "...is top-of-mind", "...is key", "...is critical"
    --   * "How to win?"
+
+   use Delirium;
 
    -- Persons or groups --
 
@@ -213,7 +216,7 @@ package body Corporate_Bullshit is
    begin
       case P is
          when Singular =>
-            case R46 is
+            case R48 is
                when 1  => return "steering committee";
                when 2  => return "group";
                when 3  => return "project manager";
@@ -233,7 +236,7 @@ package body Corporate_Bullshit is
                when 17 => return "product manager";      -- from a Dilbert cartoon
                when 18 => return "naming committee";
                when 19 => return "executive committee";
-               when 20 => return "white-collar workforce";
+               when 20 => return "management committee";
                when 21 => return "innovator";      --  (obtained by bootstrapping)
                when 22 => return "game changer";
                when 23 => return "visionary";
@@ -246,6 +249,7 @@ package body Corporate_Bullshit is
                when 30 => return "disruptor";
                when 31 => return "challenger";
                when 32 => return "six-sigma black belt";
+               when 33 => return "white-collar workforce";
                when others =>  --  ~ 1/3
                   return Boss;
             end case;
@@ -914,9 +918,9 @@ package body Corporate_Bullshit is
 
    function Thing_Atom (P : Plurality) return String is
 
-      function Inner return String is -- can be made plural
+      function Inner return String is  --  can be made plural
       begin
-         case R273 is
+         case R274 is
             when 1 => return "mission";
             when 2 => return "vision";
             when 3 => return "guideline";
@@ -1199,13 +1203,14 @@ package body Corporate_Bullshit is
             when 271 => return "R&D initiative";
             when 272 => return "blockchain";  --  Thx Vinzent Hoefler
             when 273 => return "blockchain technology";
+            when 274 => return "product portfolio";
          end case;
       end Inner;
 
    begin
       case P is
          when Singular =>
-            case R491 is  --  assume equiprobability between explicit singular and "others => ..." items
+            case R493 is  --  assume equiprobability between explicit singular and "others => ..." items
                --  Things where plural would sound clunky.
                when 1   => return Timeless_Event;
                when 2   => return "team building";
@@ -1432,11 +1437,12 @@ package body Corporate_Bullshit is
                when 216 => return Abbreviate ("Artificial Intelligence", 0.75);
                when 217 => return "DNA sequencing";
                when 218 => return "value added experience";
+               when 219 => return "optimization of the business activities";
                --  Equiprobable:
                when others => return Inner;
             end case;
          when Plural =>
-            case R317 is  --  assume equiprobability between explicit plural and "others => ..." items
+            case R318 is  --  assume equiprobability between explicit plural and "others => ..." items
                --  Things you find usually as plural
                when 1  => return "key target markets";
                when 2  => return "style guidelines";
@@ -2182,7 +2188,7 @@ package body Corporate_Bullshit is
    --
    function Faukon return String is
    begin
-      case R17 is
+      case R18 is
          when  1 => return "we need to";
          when  2 => return "we've got to";
          when  3 => return "the reporting unit should";
@@ -2200,6 +2206,9 @@ package body Corporate_Bullshit is
          when 15 => return "in order to improve, you need to";
          when 16 => return "trending your numbers should"; -- FOSDEM 2019
          when 17 => return "it is really important to";  --  Alameda Research
+         when 18 =>
+           return "we are laser-focused on successfully executing " &
+                  "our plan and on progressing towards our targets to";
       end case;
    end Faukon;
 
@@ -2396,6 +2405,7 @@ package body Corporate_Bullshit is
 
    function Sentence return String is
       Ap : constant String := Articulated_Propositions;
+      use Ada.Characters.Handling;
    begin
       return To_Upper (Ap (Ap'First)) & Ap (Ap'First + 1 .. Ap'Last) & ". ";
    end Sentence;

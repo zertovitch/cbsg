@@ -5,7 +5,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2019
+--  Copyright (c) Gautier de Montmollin 2006 .. 2023
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -31,12 +31,14 @@
 --  http://www.opensource.org/licenses/mit-license.php
 -------------------------------------------------------------------------
 
-with Ada.Characters.Handling;           use Ada.Characters.Handling;
-with Ada.Numerics.Float_Random;         use Ada.Numerics.Float_Random;
-with Ada.Numerics.Discrete_Random;
-with Ada.Strings.Fixed;                 use Ada.Strings.Fixed;
+with Ada.Characters.Handling,
+     Ada.Numerics.Float_Random,
+     Ada.Numerics.Discrete_Random,
+     Ada.Strings.Fixed;
 
 package body Delirium is
+
+   use Ada.Characters.Handling, Ada.Strings.Fixed;
 
    ---------------------------
    -- English grammar tools --
@@ -176,6 +178,8 @@ package body Delirium is
    begin
       return Rand_Pl.Random (Seed_Pl);
    end Random_Plural;
+
+   use Ada.Numerics.Float_Random;
 
    Seed : Generator;
    function R (N : Positive) return Positive is
