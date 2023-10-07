@@ -1616,7 +1616,7 @@ package body Corporate_Bullshit is
       P : constant Plurality := Random_Plural;
    begin
       return
-         (case R275 is  --  proportion: ~ 4/5 empty postfixed adverb
+         (case R280 is  --  proportion: ~ 4/5 empty postfixed adverb
              when 1  => " going forward",
              when 2  => " within the industry",
              when 3  => " across the board",
@@ -1675,6 +1675,7 @@ package body Corporate_Bullshit is
              when 53 => " by turning data into " & Thing (P),
              when 54 => " without pre-empting or constraining future flexibility",
              when 55 => " as industries transform",
+             when 56 => " in supply chains",
              when others => "");
    end Eventual_Postfixed_Adverb;
 
@@ -1901,24 +1902,24 @@ package body Corporate_Bullshit is
       --  NB: this function produces an eventual definite complement
       --     after the verb, or no complement at all.
       function Inner return String is
-      (case R124 is
+      (case R129 is
           when   1 => "streamline the process",
           when   2 => "address the overarching issues",
           when   3 => "benchmark the portfolio",
           when   4 => "manage the cycle",     -- Fad of 2004
           when   5 => "figure out where we come from, where we are going to",
           when   6 => "maximize the value",
-          when   7 => "execute the strategy", -- Obsessive in 2006
+          when   7 => "execute the strategy",  --  Obsessive in 2006
           when   8 => "think out of the box",
           when   9 => "think differently",
           when  10 => "think across the full value chain",
-             --  BBC office-speak phrases
+          --  BBC office-speak phrases:
           when  11 => "loop back",
           when  12 => "conversate",
           when  13 => "go forward together",
           when  14 => "achieve efficiencies",
-          when  15 => "deliver", --  "deliver", form without complement
-                                 --  GAC 2010
+          when  15 => "deliver",  --  "deliver", form without complement
+                                  --  GAC 2010
           when  16 => "stay in the mix",
           when  17 => "stay in the zone",
           when  18 => "evolve",
@@ -1931,7 +1932,7 @@ package body Corporate_Bullshit is
           when  25 => "cultivate talent",
           when  26 => "make it possible",
           when  27 => "manage the portfolio",
-          when  28 => "align resources",
+          when  28 => "be able to move quickly and flexibly",
           when  29 => "drive the business forward",
           when  30 => "make things happen",
           when  31 => "stay ahead",
@@ -2038,7 +2039,17 @@ package body Corporate_Bullshit is
           --  Alameda Research:
           when 122 => "make sure everyone is on the same page",
           when 123 => "have a culture of getting stuff done quickly",
-          when 124 => "be able to move quickly and flexibly");
+          --
+          when 124 => "align resources",
+          --  https://twitter.com/ParikPatelCFA/status/1710411360927138003
+          --    "Twitter isn't burning cash, it's aligning incentives
+          --     with users by operating as a nonprofit":
+          when 125 => "align incentives with users",
+          --  Variants and further findings through search engines:
+          when 126 => "align incentives with customers",
+          when 127 => "align incentives with customers' success",
+          when 128 => "align users' and stakeholders' needs",
+          when 129 => "close the loop on our customer-first culture");
    begin
       if Infinitive then
          --  In general we could (mis)use the plural as an infinitive
