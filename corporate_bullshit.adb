@@ -1163,7 +1163,7 @@ package body Corporate_Bullshit is
       return
          (case P is
              when Singular =>
-                (case R493 is
+                (case R494 is
                  --  Items where plural would sound clunky.
                  --  Assume equiprobability between explicit singular and "others => ..." items.
                     when 1   => Timeless_Event,
@@ -1392,6 +1392,7 @@ package body Corporate_Bullshit is
                     when 217 => "DNA sequencing",
                     when 218 => "value added experience",
                     when 219 => "optimization of the business activities",
+                    when 220 => "deliverability",
                     --  Equiprobable:
                     when others => Inner),
          when Plural =>
