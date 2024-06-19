@@ -140,7 +140,7 @@ package body Corporate_Bullshit is
           when 49 => "Organizational Change Management");
 
       function Department_or_Top_Role return String is
-      (case R62 is
+      (case R63 is
           when  1 => "Visionary",
           when  2 => "Digital",
           when  3 => "Technical",
@@ -155,11 +155,12 @@ package body Corporate_Bullshit is
           when 12 => "Content",               --  http://yetanotherico.com
           when 13 => "Holacracy",        --  "Bullshit jobs" article, Les Echos
           when 14 => "Data Protection",  --  GDPR mania, 2018
-          when 15 => "Risk Appetite",    --  Job offering in a bank, 2018
+          when 15 => "Data Privacy",     --  GDPR again (2024)
+          when 16 => "Risk Appetite",    --  Job offering in a bank, 2018
           --  Bloomberg 2018-10-29:
           --  Snapchat CEO Named Chief Business Officer, Then Changed His Mind
-          when 16 => "Business",
-          when 17 => "People",
+          when 17 => "Business",
+          when 18 => "People",
           when others =>
              Department);
 
