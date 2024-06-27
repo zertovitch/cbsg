@@ -279,7 +279,7 @@ package body Corporate_Bullshit is
    -- Things --
 
    function Thing_Adjective return String is
-   (case R500 is
+   (case R501 is
        when 1  => "efficient",
        when 2  => "strategic",
        when 3  => "constructive",
@@ -784,9 +784,9 @@ package body Corporate_Bullshit is
        when 487 => "top-ranking",
        when 488 => "empowering",
        when 489 => "courage-building",
-       when 490 => "multi-class",
-       when 491 => "AI-ready",
-       when 492 => "AI-assisted",
+       when 490 => "AI-assisted",
+       when 491 => "AI-first",
+       when 492 => "AI-ready",
        when 493 => "distinctive",  --  1996 article about Enron and others
        when 494 => "manageable",   --  1996 article about Enron and others
        when 495 => "bifocal",      --  1996 article about Enron and others
@@ -794,7 +794,8 @@ package body Corporate_Bullshit is
        when 497 => "interdisciplinary",
        when 498 => "data-dependent",
        when 499 => "gradual",
-       when 500 => "industry-first");  --  https://www.weforum.org/organizations/ftx
+       when 500 => "industry-first",  --  https://www.weforum.org/organizations/ftx
+       when 501 => "multi-class");
 
    function Timeless_Event return String is
    (case R4 is

@@ -5,7 +5,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2023
+--  Copyright (c) Gautier de Montmollin 2006 .. 2024
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -204,7 +204,7 @@ package body Delirium is
 
    --  Below, a Windows CMD script for producing the function bodies:
    --
-   --  for /l %i in (1,1,500) do echo    function R%i return T%i is (T%i (R (%i))); >>body.txt
+   --  for /l %i in (1,1,600) do echo    function R%i return T%i is (T%i (R (%i))); >>body.txt
 
    function R1 return T1 is (T1 (R (1)));
    function R2 return T2 is (T2 (R (2)));
@@ -706,6 +706,106 @@ package body Delirium is
    function R498 return T498 is (T498 (R (498)));
    function R499 return T499 is (T499 (R (499)));
    function R500 return T500 is (T500 (R (500)));
+   function R501 return T501 is (T501 (R (501)));
+   function R502 return T502 is (T502 (R (502)));
+   function R503 return T503 is (T503 (R (503)));
+   function R504 return T504 is (T504 (R (504)));
+   function R505 return T505 is (T505 (R (505)));
+   function R506 return T506 is (T506 (R (506)));
+   function R507 return T507 is (T507 (R (507)));
+   function R508 return T508 is (T508 (R (508)));
+   function R509 return T509 is (T509 (R (509)));
+   function R510 return T510 is (T510 (R (510)));
+   function R511 return T511 is (T511 (R (511)));
+   function R512 return T512 is (T512 (R (512)));
+   function R513 return T513 is (T513 (R (513)));
+   function R514 return T514 is (T514 (R (514)));
+   function R515 return T515 is (T515 (R (515)));
+   function R516 return T516 is (T516 (R (516)));
+   function R517 return T517 is (T517 (R (517)));
+   function R518 return T518 is (T518 (R (518)));
+   function R519 return T519 is (T519 (R (519)));
+   function R520 return T520 is (T520 (R (520)));
+   function R521 return T521 is (T521 (R (521)));
+   function R522 return T522 is (T522 (R (522)));
+   function R523 return T523 is (T523 (R (523)));
+   function R524 return T524 is (T524 (R (524)));
+   function R525 return T525 is (T525 (R (525)));
+   function R526 return T526 is (T526 (R (526)));
+   function R527 return T527 is (T527 (R (527)));
+   function R528 return T528 is (T528 (R (528)));
+   function R529 return T529 is (T529 (R (529)));
+   function R530 return T530 is (T530 (R (530)));
+   function R531 return T531 is (T531 (R (531)));
+   function R532 return T532 is (T532 (R (532)));
+   function R533 return T533 is (T533 (R (533)));
+   function R534 return T534 is (T534 (R (534)));
+   function R535 return T535 is (T535 (R (535)));
+   function R536 return T536 is (T536 (R (536)));
+   function R537 return T537 is (T537 (R (537)));
+   function R538 return T538 is (T538 (R (538)));
+   function R539 return T539 is (T539 (R (539)));
+   function R540 return T540 is (T540 (R (540)));
+   function R541 return T541 is (T541 (R (541)));
+   function R542 return T542 is (T542 (R (542)));
+   function R543 return T543 is (T543 (R (543)));
+   function R544 return T544 is (T544 (R (544)));
+   function R545 return T545 is (T545 (R (545)));
+   function R546 return T546 is (T546 (R (546)));
+   function R547 return T547 is (T547 (R (547)));
+   function R548 return T548 is (T548 (R (548)));
+   function R549 return T549 is (T549 (R (549)));
+   function R550 return T550 is (T550 (R (550)));
+   function R551 return T551 is (T551 (R (551)));
+   function R552 return T552 is (T552 (R (552)));
+   function R553 return T553 is (T553 (R (553)));
+   function R554 return T554 is (T554 (R (554)));
+   function R555 return T555 is (T555 (R (555)));
+   function R556 return T556 is (T556 (R (556)));
+   function R557 return T557 is (T557 (R (557)));
+   function R558 return T558 is (T558 (R (558)));
+   function R559 return T559 is (T559 (R (559)));
+   function R560 return T560 is (T560 (R (560)));
+   function R561 return T561 is (T561 (R (561)));
+   function R562 return T562 is (T562 (R (562)));
+   function R563 return T563 is (T563 (R (563)));
+   function R564 return T564 is (T564 (R (564)));
+   function R565 return T565 is (T565 (R (565)));
+   function R566 return T566 is (T566 (R (566)));
+   function R567 return T567 is (T567 (R (567)));
+   function R568 return T568 is (T568 (R (568)));
+   function R569 return T569 is (T569 (R (569)));
+   function R570 return T570 is (T570 (R (570)));
+   function R571 return T571 is (T571 (R (571)));
+   function R572 return T572 is (T572 (R (572)));
+   function R573 return T573 is (T573 (R (573)));
+   function R574 return T574 is (T574 (R (574)));
+   function R575 return T575 is (T575 (R (575)));
+   function R576 return T576 is (T576 (R (576)));
+   function R577 return T577 is (T577 (R (577)));
+   function R578 return T578 is (T578 (R (578)));
+   function R579 return T579 is (T579 (R (579)));
+   function R580 return T580 is (T580 (R (580)));
+   function R581 return T581 is (T581 (R (581)));
+   function R582 return T582 is (T582 (R (582)));
+   function R583 return T583 is (T583 (R (583)));
+   function R584 return T584 is (T584 (R (584)));
+   function R585 return T585 is (T585 (R (585)));
+   function R586 return T586 is (T586 (R (586)));
+   function R587 return T587 is (T587 (R (587)));
+   function R588 return T588 is (T588 (R (588)));
+   function R589 return T589 is (T589 (R (589)));
+   function R590 return T590 is (T590 (R (590)));
+   function R591 return T591 is (T591 (R (591)));
+   function R592 return T592 is (T592 (R (592)));
+   function R593 return T593 is (T593 (R (593)));
+   function R594 return T594 is (T594 (R (594)));
+   function R595 return T595 is (T595 (R (595)));
+   function R596 return T596 is (T596 (R (596)));
+   function R597 return T597 is (T597 (R (597)));
+   function R598 return T598 is (T598 (R (598)));
+   function R599 return T599 is (T599 (R (599)));
+   function R600 return T600 is (T600 (R (600)));
 
 begin
    Reset (Seed);

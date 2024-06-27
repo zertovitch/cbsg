@@ -5,7 +5,7 @@
 --
 --  Legal licensing note:
 --
---  Copyright (c) Gautier de Montmollin 2006 .. 2023
+--  Copyright (c) Gautier de Montmollin 2006 .. 2024
 --  CH-8810 Horgen
 --  SWITZERLAND
 --
@@ -75,7 +75,7 @@ package Delirium is
    --  The bounds of the random generation are well under control.
    --  Below, a Windows CMD script for producing them:
    --
-   --  for /l %i in (1,1,500) do echo    type T%i is range 1 .. %i; function R%i return T%i;>>spec.txt
+   --  for /l %i in (1,1,600) do echo    type T%i is range 1 .. %i; function R%i return T%i;>>spec.txt
 
    type T1 is range 1 .. 1; function R1 return T1;
    type T2 is range 1 .. 2; function R2 return T2;
@@ -577,5 +577,105 @@ package Delirium is
    type T498 is range 1 .. 498; function R498 return T498;
    type T499 is range 1 .. 499; function R499 return T499;
    type T500 is range 1 .. 500; function R500 return T500;
+   type T501 is range 1 .. 501; function R501 return T501;
+   type T502 is range 1 .. 502; function R502 return T502;
+   type T503 is range 1 .. 503; function R503 return T503;
+   type T504 is range 1 .. 504; function R504 return T504;
+   type T505 is range 1 .. 505; function R505 return T505;
+   type T506 is range 1 .. 506; function R506 return T506;
+   type T507 is range 1 .. 507; function R507 return T507;
+   type T508 is range 1 .. 508; function R508 return T508;
+   type T509 is range 1 .. 509; function R509 return T509;
+   type T510 is range 1 .. 510; function R510 return T510;
+   type T511 is range 1 .. 511; function R511 return T511;
+   type T512 is range 1 .. 512; function R512 return T512;
+   type T513 is range 1 .. 513; function R513 return T513;
+   type T514 is range 1 .. 514; function R514 return T514;
+   type T515 is range 1 .. 515; function R515 return T515;
+   type T516 is range 1 .. 516; function R516 return T516;
+   type T517 is range 1 .. 517; function R517 return T517;
+   type T518 is range 1 .. 518; function R518 return T518;
+   type T519 is range 1 .. 519; function R519 return T519;
+   type T520 is range 1 .. 520; function R520 return T520;
+   type T521 is range 1 .. 521; function R521 return T521;
+   type T522 is range 1 .. 522; function R522 return T522;
+   type T523 is range 1 .. 523; function R523 return T523;
+   type T524 is range 1 .. 524; function R524 return T524;
+   type T525 is range 1 .. 525; function R525 return T525;
+   type T526 is range 1 .. 526; function R526 return T526;
+   type T527 is range 1 .. 527; function R527 return T527;
+   type T528 is range 1 .. 528; function R528 return T528;
+   type T529 is range 1 .. 529; function R529 return T529;
+   type T530 is range 1 .. 530; function R530 return T530;
+   type T531 is range 1 .. 531; function R531 return T531;
+   type T532 is range 1 .. 532; function R532 return T532;
+   type T533 is range 1 .. 533; function R533 return T533;
+   type T534 is range 1 .. 534; function R534 return T534;
+   type T535 is range 1 .. 535; function R535 return T535;
+   type T536 is range 1 .. 536; function R536 return T536;
+   type T537 is range 1 .. 537; function R537 return T537;
+   type T538 is range 1 .. 538; function R538 return T538;
+   type T539 is range 1 .. 539; function R539 return T539;
+   type T540 is range 1 .. 540; function R540 return T540;
+   type T541 is range 1 .. 541; function R541 return T541;
+   type T542 is range 1 .. 542; function R542 return T542;
+   type T543 is range 1 .. 543; function R543 return T543;
+   type T544 is range 1 .. 544; function R544 return T544;
+   type T545 is range 1 .. 545; function R545 return T545;
+   type T546 is range 1 .. 546; function R546 return T546;
+   type T547 is range 1 .. 547; function R547 return T547;
+   type T548 is range 1 .. 548; function R548 return T548;
+   type T549 is range 1 .. 549; function R549 return T549;
+   type T550 is range 1 .. 550; function R550 return T550;
+   type T551 is range 1 .. 551; function R551 return T551;
+   type T552 is range 1 .. 552; function R552 return T552;
+   type T553 is range 1 .. 553; function R553 return T553;
+   type T554 is range 1 .. 554; function R554 return T554;
+   type T555 is range 1 .. 555; function R555 return T555;
+   type T556 is range 1 .. 556; function R556 return T556;
+   type T557 is range 1 .. 557; function R557 return T557;
+   type T558 is range 1 .. 558; function R558 return T558;
+   type T559 is range 1 .. 559; function R559 return T559;
+   type T560 is range 1 .. 560; function R560 return T560;
+   type T561 is range 1 .. 561; function R561 return T561;
+   type T562 is range 1 .. 562; function R562 return T562;
+   type T563 is range 1 .. 563; function R563 return T563;
+   type T564 is range 1 .. 564; function R564 return T564;
+   type T565 is range 1 .. 565; function R565 return T565;
+   type T566 is range 1 .. 566; function R566 return T566;
+   type T567 is range 1 .. 567; function R567 return T567;
+   type T568 is range 1 .. 568; function R568 return T568;
+   type T569 is range 1 .. 569; function R569 return T569;
+   type T570 is range 1 .. 570; function R570 return T570;
+   type T571 is range 1 .. 571; function R571 return T571;
+   type T572 is range 1 .. 572; function R572 return T572;
+   type T573 is range 1 .. 573; function R573 return T573;
+   type T574 is range 1 .. 574; function R574 return T574;
+   type T575 is range 1 .. 575; function R575 return T575;
+   type T576 is range 1 .. 576; function R576 return T576;
+   type T577 is range 1 .. 577; function R577 return T577;
+   type T578 is range 1 .. 578; function R578 return T578;
+   type T579 is range 1 .. 579; function R579 return T579;
+   type T580 is range 1 .. 580; function R580 return T580;
+   type T581 is range 1 .. 581; function R581 return T581;
+   type T582 is range 1 .. 582; function R582 return T582;
+   type T583 is range 1 .. 583; function R583 return T583;
+   type T584 is range 1 .. 584; function R584 return T584;
+   type T585 is range 1 .. 585; function R585 return T585;
+   type T586 is range 1 .. 586; function R586 return T586;
+   type T587 is range 1 .. 587; function R587 return T587;
+   type T588 is range 1 .. 588; function R588 return T588;
+   type T589 is range 1 .. 589; function R589 return T589;
+   type T590 is range 1 .. 590; function R590 return T590;
+   type T591 is range 1 .. 591; function R591 return T591;
+   type T592 is range 1 .. 592; function R592 return T592;
+   type T593 is range 1 .. 593; function R593 return T593;
+   type T594 is range 1 .. 594; function R594 return T594;
+   type T595 is range 1 .. 595; function R595 return T595;
+   type T596 is range 1 .. 596; function R596 return T596;
+   type T597 is range 1 .. 597; function R597 return T597;
+   type T598 is range 1 .. 598; function R598 return T598;
+   type T599 is range 1 .. 599; function R599 return T599;
+   type T600 is range 1 .. 600; function R600 return T600;
 
 end Delirium;
