@@ -139,8 +139,12 @@ package body Corporate_Bullshit is
           when 48 => "Project Portfolio Management",
           when 49 => "Organizational Change Management");
 
+      --  This function includes fictitious departments under the broader
+      --  denomination "role". In this inclusive setup, the Chief is expected
+      --  to be an actor and actual work is strictly forbidden.
+      --
       function Department_or_Top_Role return String is
-      (case R63 is
+      (case R68 is
           when  1 => "Visionary",
           when  2 => "Digital",
           when  3 => "Technical",
@@ -161,6 +165,7 @@ package body Corporate_Bullshit is
           --  Snapchat CEO Named Chief Business Officer, Then Changed His Mind
           when 17 => "Business",
           when 18 => "People",
+          when 19 => "Disruption",  --  Chief Disruption Officer (Business Bullshit, brand eins 1/2024)
           when others =>
              Department);
 
