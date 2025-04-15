@@ -1403,7 +1403,7 @@ package body Corporate_Bullshit is
                     --  Equiprobable:
                     when others => Inner),
          when Plural =>
-            (case R318 is
+            (case R320 is
                --  Things you find usually as plural.
                --  Assume equiprobability between explicit plural and "others => ..." items.
                when 1  => "key target markets",
@@ -1454,6 +1454,8 @@ package body Corporate_Bullshit is
                when 42 => "regulatory pivots",
                when 43 => "customer behavior patterns",
                when 44 => "robotics",
+               when 45 => "guiding principles",
+               when 46 => "tech stacks",
 
                --  Equiprobable:
                when others => Make_Eventual_Plural (Inner, Plural)));
