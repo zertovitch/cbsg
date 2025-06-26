@@ -884,7 +884,7 @@ package body Corporate_Bullshit is
    function Thing_Atom (P : Plurality) return String is
 
       function Inner return String is  --  Items that can be made plural.
-      (case R274 is
+      (case R275 is
           when 1   => "mission",
           when 2   => "vision",
           when 3   => "guideline",
@@ -1084,7 +1084,7 @@ package body Corporate_Bullshit is
           when 188 => "recalibration",
           when 189 => "wow factor", -- (obtained by bootstrapping)
           when 190 => "onboarding solution", -- (obtained by bootstrapping)
-          when 191 => "brand pyramid",
+          when 191 => "onboarding process",
           when 192 => "dashboard",
           when 193 => "branding",
           when 194 => "local-for-local strategy",
@@ -1167,13 +1167,14 @@ package body Corporate_Bullshit is
           when 271 => "R&D initiative",
           when 272 => "blockchain",  --  Thx Vinzent Hoefler
           when 273 => "blockchain technology",
-          when 274 => "product portfolio");
+          when 274 => "product portfolio",
+          when 275 => "brand pyramid");
 
    begin
       return
          (case P is
              when Singular =>
-                (case R494 is
+                (case R495 is
                  --  Items where plural would sound clunky.
                  --  Assume equiprobability between explicit singular and "others => ..." items.
                     when 1   => Timeless_Event,
@@ -1406,7 +1407,7 @@ package body Corporate_Bullshit is
                     --  Equiprobable:
                     when others => Inner),
          when Plural =>
-            (case R320 is
+            (case R321 is
                --  Things you find usually as plural.
                --  Assume equiprobability between explicit plural and "others => ..." items.
                when 1  => "key target markets",
