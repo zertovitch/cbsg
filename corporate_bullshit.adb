@@ -11,11 +11,14 @@ with Delirium;
 package body Corporate_Bullshit is
 
    --  To do:
+   --   * Future form
    --   * Enrich the Proposition function
-   --   * Person_adjective: "committed", "multi-skilled", "inspirational",
-   --                       "high-caliber", "cross-trained", "multi-cultural",
-   --                       "fully-fledged", "performance-driven",
-   --                       "execution-focused"
+   --   * Person_adjective:
+   --        "committed", "multi-skilled", "inspirational",
+   --        "high-caliber", "cross-trained", "multi-cultural",
+   --        "fully-fledged", "performance-driven",
+   --        "execution-focused", "energized", "high-performing",
+   --        "purpose-led", "future-thinking"
    --   * other sentences; rhetorical questions
    --   * Slogans, such as: "It's about breaking down the silos"
    --     "less is more", "it's about quality, not about quantity",
@@ -199,6 +202,7 @@ package body Corporate_Bullshit is
 
    function Person (P : Plurality) return String is
    (case P is
+
        when Singular =>
           (case R48 is
               when 1  => "steering committee",
@@ -236,16 +240,17 @@ package body Corporate_Bullshit is
               when 33 => "white-collar workforce",
               when others =>  --  ~ 1/3
                  Boss),
+
          when Plural =>
-            (case R34 is
+            (case R35 is
                 when 1  => "key people",
                 when 2  => "human resources",
                 when 3  => "customers",
                 when 4  => "clients",
                 when 5  => "resources",
                 when 6  => "team players",
-                when 7  => "enablers", -- also a thing
-                when 8  => "stakeholders",
+                when 7  => "enablers",  --  also a thing
+                when 8  => "key enablers",
                 when 9  => "standard-setters",
                 when 10 => "partners",
                 when 11 => "business leaders",
@@ -271,7 +276,8 @@ package body Corporate_Bullshit is
                 when 31 => "Products Owners",
                 when 32 => "disruptors",
                 when 33 => "challengers",
-                when 34 => "growers"));  --  1996 article about Enron and others
+                when 34 => "growers",  --  1996 article about Enron and others
+                when 35 => "stakeholders"));
 
    function Matrix_Or_So return String is
    (case R13 is
@@ -287,7 +293,7 @@ package body Corporate_Bullshit is
    -- Things --
 
    function Thing_Adjective return String is
-   (case R504 is
+   (case R509 is
        when 1  => "efficient",
        when 2  => "strategic",
        when 3  => "constructive",
@@ -806,7 +812,12 @@ package body Corporate_Bullshit is
        when 501 => "multi-class",
        when 502 => "frontier-level",
        when 503 => "production-grade",
-       when 504 => "agentic");
+       when 504 => "agentic",
+       when 505 => "talkable",
+       when 506 => "community-centered",
+       when 507 => "chain-mediated",
+       when 508 => "cross-sectional",
+       when 509 => "future-fit");
 
    function Timeless_Event return String is
    (case R4 is
@@ -887,7 +898,7 @@ package body Corporate_Bullshit is
    function Thing_Atom (P : Plurality) return String is
 
       function Inner return String is  --  Items that can be made plural.
-      (case R275 is
+      (case R276 is
           when 1   => "mission",
           when 2   => "vision",
           when 3   => "guideline",
@@ -1171,13 +1182,15 @@ package body Corporate_Bullshit is
           when 272 => "blockchain",  --  Thx Vinzent Hoefler
           when 273 => "blockchain technology",
           when 274 => "product portfolio",
-          when 275 => "brand pyramid");
+          when 275 => "brand pyramid",
+          when 276 => "chain mediation");
 
    begin
       return
          (case P is
+
              when Singular =>
-                (case R495 is
+                (case R496 is
                  --  Items where plural would sound clunky.
                  --  Assume equiprobability between explicit singular and "others => ..." items.
                     when 1   => Timeless_Event,
@@ -1407,8 +1420,10 @@ package body Corporate_Bullshit is
                     when 218 => "value added experience",
                     when 219 => "optimization of the business activities",
                     when 220 => "deliverability",
+                    when 221 => "brand story",
                     --  Equiprobable:
                     when others => Inner),
+
          when Plural =>
             (case R321 is
                --  Things you find usually as plural.
@@ -2257,7 +2272,7 @@ package body Corporate_Bullshit is
    end Proposition;
 
    function Articulated_Propositions return String is
-   (case R420 is
+   (case R421 is
        when   1 .. 270 => Proposition,
        when 271 .. 280 => Proposition & ", this is why " & Proposition,
        when 281 .. 290 => Proposition & ", nevertheless " & Proposition,
@@ -2337,8 +2352,10 @@ package body Corporate_Bullshit is
           " is clear: " & Proposition,  --  1996 article about Enron and others
        when 420 =>
            "the appropriate strategy for the " & Matrix_Or_So &
-           " depends on where it is today and on the state of the world down the road");
+           " depends on where it is today and on the state of the world down the road",
            --  1996 article about Enron and others
+       when 421 =>
+           "nowadays, " & Proposition);
 
    function Sentence return String is
       Ap : constant String := Articulated_Propositions;
