@@ -293,7 +293,7 @@ package body Corporate_Bullshit is
    -- Things --
 
    function Thing_Adjective return String is
-   (case R509 is
+   (case R510 is
        when 1  => "efficient",
        when 2  => "strategic",
        when 3  => "constructive",
@@ -817,7 +817,8 @@ package body Corporate_Bullshit is
        when 506 => "community-centered",
        when 507 => "chain-mediated",
        when 508 => "cross-sectional",
-       when 509 => "future-fit");
+       when 509 => "future-fit",
+       when 510 => "inward-to-outward");
 
    function Timeless_Event return String is
    (case R4 is
@@ -1190,7 +1191,7 @@ package body Corporate_Bullshit is
          (case P is
 
              when Singular =>
-                (case R496 is
+                (case R497 is
                  --  Items where plural would sound clunky.
                  --  Assume equiprobability between explicit singular and "others => ..." items.
                     when 1   => Timeless_Event,
@@ -1421,6 +1422,7 @@ package body Corporate_Bullshit is
                     when 219 => "optimization of the business activities",
                     when 220 => "deliverability",
                     when 221 => "brand story",
+                    when 222 => "resilience",
                     --  Equiprobable:
                     when others => Inner),
 
@@ -2272,7 +2274,7 @@ package body Corporate_Bullshit is
    end Proposition;
 
    function Articulated_Propositions return String is
-   (case R421 is
+   (case R423 is
        when   1 .. 270 => Proposition,
        when 271 .. 280 => Proposition & ", this is why " & Proposition,
        when 281 .. 290 => Proposition & ", nevertheless " & Proposition,
@@ -2355,7 +2357,14 @@ package body Corporate_Bullshit is
            " depends on where it is today and on the state of the world down the road",
            --  1996 article about Enron and others
        when 421 =>
-           "nowadays, " & Proposition);
+           "nowadays, " & Proposition,
+       when 422 =>
+           "to keep " & Thing_Atom (Plural) &
+           " on track, " & Thing_Atom (Plural) & " are crucial",
+       when 423 =>
+           "to scale impact in the " & Thing_Atom (Singular) &
+           " era, organizations must reset their " & Thing_Atom (Random_Plural) &
+           " approaches from scattered initiatives to strategic programs");
 
    function Sentence return String is
       Ap : constant String := Articulated_Propositions;
