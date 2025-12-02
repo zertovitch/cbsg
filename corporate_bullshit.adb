@@ -90,7 +90,7 @@ package body Corporate_Bullshit is
           when others => "");
 
       function Department return String is
-      (case R52 is
+      (case R53 is
           when 1  => "Human Resources",
           when 2  => "Controlling",
           when 3  => "Internal Audit",
@@ -143,7 +143,8 @@ package body Corporate_Bullshit is
           when 49 => "Organizational Change Management",
           when 50 => "Business Excellence",
           when 51 => "Digital Excellence",
-          when 52 => "Data Governance");
+          when 52 => "Data Governance",
+          when 53 => "Transition");  --  See also "Transition Transformation"
 
       --  This function includes fictitious departments under the broader
       --  denomination "role". In this inclusive setup, the Chief is expected
