@@ -294,7 +294,7 @@ package body Corporate_Bullshit is
    -- Things --
 
    function Thing_Adjective return String is
-   (case R510 is
+   (case R512 is
        when 1  => "efficient",
        when 2  => "strategic",
        when 3  => "constructive",
@@ -819,7 +819,9 @@ package body Corporate_Bullshit is
        when 507 => "chain-mediated",
        when 508 => "cross-sectional",
        when 509 => "future-fit",
-       when 510 => "inward-to-outward");
+       when 510 => "inward-to-outward",
+       when 511 => "transversal",
+       when 512 => "market-leading");
 
    function Timeless_Event return String is
    (case R4 is
@@ -900,7 +902,7 @@ package body Corporate_Bullshit is
    function Thing_Atom (P : Plurality) return String is
 
       function Inner return String is  --  Items that can be made plural.
-      (case R276 is
+      (case R277 is
           when 1   => "mission",
           when 2   => "vision",
           when 3   => "guideline",
@@ -1185,7 +1187,8 @@ package body Corporate_Bullshit is
           when 273 => "blockchain technology",
           when 274 => "product portfolio",
           when 275 => "brand pyramid",
-          when 276 => "chain mediation");
+          when 276 => "chain mediation",
+          when 277 => "market chain");
 
    begin
       return
@@ -1716,7 +1719,7 @@ package body Corporate_Bullshit is
 
    function Person_Verb_Having_Thing_Complement (P : Plurality; Infinitive : Boolean) return String is
       function Inner return String is
-      (case R103 is
+      (case R104 is
           when   1 => "manage",
           when   2 => "target",
           when   3 => "streamline",
@@ -1820,7 +1823,8 @@ package body Corporate_Bullshit is
           when 100 => "ideate",
           when 101 => "reprioritize",
           when 102 => "operate",   --  with or without ending
-          when 103 => "cascade");  --  E.g.: to cascade information
+          when 103 => "cascade",  --  E.g.: to cascade information
+          when 104 => "amplify");
    begin
       return
          (if Infinitive then  --  be /= are
