@@ -190,7 +190,7 @@ package body Corporate_Bullshit is
 
    begin
       case R2 is
-         when 1 =>      -- A fully normal boss (eventually, a managing one)
+         when 1 =>      -- A fully normal boss (possibly, a managing one)
             return Managing & Age & Exec & Title & " of " & Department;
          when others => -- Chief X Officer
             return
@@ -1486,7 +1486,7 @@ package body Corporate_Bullshit is
                when 46 => "tech stacks",
 
                --  Equiprobable:
-               when others => Make_Eventual_Plural (Inner, Plural)));
+               when others => Make_Possible_Plural (Inner, Plural)));
    end Thing_Atom;
 
    function Thing (P : Plurality) return String is
@@ -1596,7 +1596,7 @@ package body Corporate_Bullshit is
        when 51 => "second-round effects");
    -- Verbs --
 
-   function Eventual_Adverb return String is
+   function Possible_Adverb return String is
    (case R136 is  --  proportion: 3/4 empty adverb
        when 1  => "interactively ",
        when 2  => "credibly ",
@@ -1650,7 +1650,7 @@ package body Corporate_Bullshit is
     else
        Add_Random_Article (P, Thing (P)));
 
-   function Eventual_Postfixed_Adverb return String is
+   function Possible_Postfixed_Adverb return String is
       P : constant Plurality := Random_Plural;
    begin
       return
@@ -1669,8 +1669,8 @@ package body Corporate_Bullshit is
              when 11 => " by leveraging " & Thing_With_Random_Article (P),
              when 12 => " taking advantage of " & Thing_With_Random_Article (P),
              when 13 => " within the " & Matrix_Or_So,
-             when 14 => " across the " & Make_Eventual_Plural (Matrix_Or_So, Plural),
-             when 15 => " across and beyond the " & Make_Eventual_Plural (Matrix_Or_So, Plural),
+             when 14 => " across the " & Make_Possible_Plural (Matrix_Or_So, Plural),
+             when 15 => " across and beyond the " & Make_Possible_Plural (Matrix_Or_So, Plural),
              when 16 => " resulting in " & Add_Indefinite_Article (Singular, Growth),
              when 17 => " reaped from our " & Growth,
              when 18 => " as a consequence of " & Add_Indefinite_Article (Singular, Growth),
@@ -1715,7 +1715,7 @@ package body Corporate_Bullshit is
              when 55 => " as industries transform",
              when 56 => " in supply chains",
              when others => "");
-   end Eventual_Postfixed_Adverb;
+   end Possible_Postfixed_Adverb;
 
    function Person_Verb_Having_Thing_Complement (P : Plurality; Infinitive : Boolean) return String is
       function Inner return String is
@@ -1938,7 +1938,7 @@ package body Corporate_Bullshit is
    function Person_Infinitive_Verb_And_Ending return String;
 
    function Person_Verb_And_Definite_Ending (P : Plurality; Infinitive : Boolean) return String is
-      --  NB: this function produces an eventual definite complement
+      --  NB: this function produces a possible definite complement
       --     after the verb, or no complement at all.
       function Inner return String is
       (case R129 is
@@ -2100,7 +2100,7 @@ package body Corporate_Bullshit is
    end Person_Verb_And_Definite_Ending;
 
    function Thing_Verb_And_Definite_Ending (P : Plurality; Infinitive : Boolean) return String is
-      --  NB: this function produces an eventual definite complement
+      --  NB: this function produces a possible definite complement
       --     after the verb, or no complement at all.
       function Inner return String is
       (case R5 is
@@ -2192,35 +2192,35 @@ package body Corporate_Bullshit is
             return
             Faukon & ' ' &
             Person_Infinitive_Verb_And_Ending &
-            Eventual_Postfixed_Adverb;
+            Possible_Postfixed_Adverb;
             --  infinitive written same as present plural
          when 6 .. 50    => -- ** PERSON...
             return
               "the " & Person (Sp1) & ' ' &
-              Eventual_Adverb &
+              Possible_Adverb &
               Person_Verb_And_Ending (Sp1, Infinitive => False) &
-              Eventual_Postfixed_Adverb;
+              Possible_Postfixed_Adverb;
          when 51 .. 92   => -- ** THING...
             return
             Thing_With_Random_Article (Sp1) & ' ' &
-            Eventual_Adverb &
+            Possible_Adverb &
             Thing_Verb_And_Ending (Sp1) &
-            Eventual_Postfixed_Adverb;
+            Possible_Postfixed_Adverb;
          when 93 .. 97     => -- ** thing and thing ...
             return -- nb: no article, no adjective
             Thing_Atom (Singular) & " and " &
             Thing_Atom (Singular) & ' ' &
-            Eventual_Adverb &
+            Possible_Adverb &
             Thing_Verb_And_Ending (Plural) &
-            Eventual_Postfixed_Adverb;
+            Possible_Postfixed_Adverb;
          when 98 .. 100    => -- ** thing, thing and thing ...
             return -- nb: no article, no adjective
             Thing_Atom (Singular) & ", " &
             Thing_Atom (Singular) & " and " &
             Thing_Atom (Singular) & ' ' &
-            Eventual_Adverb &
+            Possible_Adverb &
             Thing_Verb_And_Ending (Plural) &
-            Eventual_Postfixed_Adverb;
+            Possible_Postfixed_Adverb;
          when 101 =>
             return
             "there can be no " & Growth_Atom &

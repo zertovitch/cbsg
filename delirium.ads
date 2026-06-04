@@ -47,7 +47,7 @@ package Delirium is
    -- English grammar tools --
    ---------------------------
 
-   function Make_Eventual_Plural (S : String; P : Plurality) return String;
+   function Make_Possible_Plural (S : String; P : Plurality) return String;
 
    --  Input: infinitive form of a verb (without the "to "): be, have, go, see, ...
    --  Complements can be appended to the input verb.

@@ -48,7 +48,7 @@ package body Delirium is
      ('a' | 'e' | 'i' | 'o' | 'u' | 'y' |
       'A' | 'E' | 'I' | 'O' | 'U' | 'Y' => True, others => False);
 
-   function Make_Eventual_Plural (S : String; P : Plurality) return String is
+   function Make_Possible_Plural (S : String; P : Plurality) return String is
       abbr : Natural;
    begin
       if S'Length < 3 or P = Singular then
@@ -57,7 +57,7 @@ package body Delirium is
       abbr := Index (S, " (");
       if abbr > 0 then
          --  Example: Quality Management Systems (QMS)
-         return Make_Eventual_Plural (S (S'First .. abbr - 1), P) & S (abbr .. S'Last);
+         return Make_Possible_Plural (S (S'First .. abbr - 1), P) & S (abbr .. S'Last);
       elsif S = "matrix" then
          return "matrices";
       elsif S = "analysis" then
@@ -78,7 +78,7 @@ package body Delirium is
                return S & 's';
          end case;
       end if;
-   end Make_Eventual_Plural;
+   end Make_Possible_Plural;
 
    function Build_Plural_Verb (Verb : String; P : Plurality) return String is
       Last : Natural;
