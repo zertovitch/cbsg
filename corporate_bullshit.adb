@@ -1195,7 +1195,7 @@ package body Corporate_Bullshit is
          (case P is
 
              when Singular =>
-                (case R497 is
+                (case R498 is
                  --  Items where plural would sound clunky.
                  --  Assume equiprobability between explicit singular and "others => ..." items.
                     when 1   => Timeless_Event,
@@ -1427,6 +1427,7 @@ package body Corporate_Bullshit is
                     when 220 => "deliverability",
                     when 221 => "brand story",
                     when 222 => "resilience",
+                    when 223 => "convexity",  --  https://x.com/CJ_Bitcoin/status/2071251763760369958
                     --  Equiprobable:
                     when others => Inner),
 
